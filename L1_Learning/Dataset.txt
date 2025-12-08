@@ -1,0 +1,7 @@
+Explore some datasets related to our project requirements:
+data.gov.in -> Dataset and APIs
+APISetu ->APIs
+
+Done with basic setups for creating Django backend and react frontend
+
+Explore and got the overview of RAG .
