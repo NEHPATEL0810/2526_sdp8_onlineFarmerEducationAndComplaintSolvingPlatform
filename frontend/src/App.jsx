@@ -3,7 +3,8 @@ import { BrowserRouter,Routes,Route,useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import LandingPage from "./pages/LandingPage.jsx";
 import HomePage from "./pages/Homepage.jsx";
-
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 function AnimatedRoutes(){
   const location = useLocation()
@@ -13,6 +14,8 @@ function AnimatedRoutes(){
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </AnimatePresence>
   )
