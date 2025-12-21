@@ -16,6 +16,12 @@ class RegisterSerializer(serializers.ModelSerializer):
                 "Enter a valid 10-digit mobile number"
             )
         return value
+
+    def validate_email(self,value):
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("Email already register")
+        return value
+        
     def create(self,validated_data):
         mobile=validated_data.pop("mobile_number")
 

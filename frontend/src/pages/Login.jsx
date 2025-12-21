@@ -46,7 +46,9 @@ function Login(){
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange}/>
             <br/>
             <button onClick={handleSubmit}>Login</button>
-
+            <p>
+                <a href="/forgot-password">Forgot Password?</a>
+            </p>
         </div>
     )
 }
