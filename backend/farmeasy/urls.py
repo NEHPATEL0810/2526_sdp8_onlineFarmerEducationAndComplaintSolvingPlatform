@@ -18,11 +18,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from farm_app.views import home
+from django.contrib.auth import views as auth_views
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 urlpatterns = [
     # path("",home,name="home"),
     path("admin/", admin.site.urls),
     path("api/",include("chatbot.urls")),
+    path("api/",include("farm_app.urls")),
+
+    path("api/auth/login/",TokenObtainPairView.as_view()),
+    path("api/auth/refresh/", TokenRefreshView.as_view()),
+
+    
+
     path("",include("api.urls")),
     path("api/", include("translation.urls")),
 

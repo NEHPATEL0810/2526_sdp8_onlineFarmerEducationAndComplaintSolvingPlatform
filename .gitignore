@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 backend/venv/
 venv/
+=======
+>>>>>>> a8c37f73bc596ab28e77230853c9a0b126b71cd8
 __pycache__/
 *.pyc
 *.pyo
