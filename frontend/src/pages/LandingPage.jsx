@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import FallingLeaves from "../components/FallingLeaves";
 import FarmEasyLogo from "../assets/Logo.png";
 import { useState, useEffect } from "react";
+import TranslateText from "../components/TranslateText";
 import axios from "axios";
 const FINAL_SEQUENCE = [
   { id: 1, text: "Fa", color: "#2e7d32" },
@@ -52,7 +53,7 @@ export default function LandingPage() {
 
     return (
       <>
-        <h1>{message}</h1>
+        {/* <h1>{message}</h1> */}
         <FallingLeaves />
         <motion.div>
           <img src={FarmEasyLogo} className="logo" alt="FarmEasy logo" />
@@ -81,7 +82,7 @@ export default function LandingPage() {
           </motion.button>
           <p>
             Enhance Your knowledge with farming and get use to with our App.
-            <p>Start your journey towards smarter farming with FarmEasy!</p>
+          Start your journey towards smarter farming with FarmEasy!
           </p>
         </div>
 

@@ -9,9 +9,9 @@
 body{
   position:relative;
   z-index:1;
+  background-color: #FFFFC5;
 }
 *{
-   background-color: #FFFFC5;
 }
 .logo {
   height: 5em;

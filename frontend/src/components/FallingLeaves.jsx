@@ -5,7 +5,7 @@ function random(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-export default function FallingLeaves() {
+export default function FallingLeaves({ mode }) {
   return (
     <div style={container}>
       {Array.from({ length: 22 }).map((_, index) => (
