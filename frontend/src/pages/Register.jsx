@@ -47,6 +47,9 @@ function Register(){
             <input type="text" name="mobile_number" placeholder="Mobile Number" onChange={handleChange}/>
             <br/>
             <button onClick={handleSubmit}>Register</button>
+            <p>
+                already registered ? <a href="/login">login</a>
+            </p>
 
         </div>
     )

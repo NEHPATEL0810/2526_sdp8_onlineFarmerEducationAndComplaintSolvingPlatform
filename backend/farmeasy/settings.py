@@ -9,9 +9,13 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
+from dotenv import load_dotenv
 from pathlib import Path
 from datetime import timedelta
+
+load_dotenv()
+DATA_GOV_API_KEY = os.getenv("DATA_GOV_API_KEY")
 
 REST_FRAMEWORK={
     "DEFAULT_AUTHENTICATION_CLASSES":(
@@ -52,6 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "chatbot",
     "farm_app",
+    "education",
 ]
 
 MIDDLEWARE = [

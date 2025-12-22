@@ -47,6 +47,9 @@ function Login(){
             <br/>
             <button onClick={handleSubmit}>Login</button>
             <p>
+                Are you new user? <a href="/register">Register</a>
+            </p>
+            <p>
                 <a href="/forgot-password">Forgot Password?</a>
             </p>
         </div>

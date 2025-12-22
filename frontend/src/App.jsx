@@ -7,6 +7,7 @@ import Login from './pages/Login.jsx';
 import ForgotPassword from './pages/ForgotPassword.jsx';
 import ResetPassword from './pages/ResetPassword.jsx';
 import Register from './pages/Register.jsx';
+import MarketPrices from './pages/MarketPrices.jsx';
 
 function AnimatedRoutes(){
   const location = useLocation()
@@ -20,6 +21,7 @@ function AnimatedRoutes(){
         <Route path="/register" element={<Register/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/reset-password/:uid/:token" element={<ResetPassword/>}/>
+        <Route path="/market-prices" element={<MarketPrices/>}/>
       </Routes>
     </AnimatePresence>
   )

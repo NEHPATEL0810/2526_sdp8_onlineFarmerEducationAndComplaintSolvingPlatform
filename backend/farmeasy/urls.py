@@ -29,6 +29,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/",include("chatbot.urls")),
     path("api/",include("farm_app.urls")),
+    path("api/education/", include("education.urls")),
 
     path("api/auth/login/",TokenObtainPairView.as_view()),
     path("api/auth/refresh/", TokenRefreshView.as_view()),
