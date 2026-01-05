@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import API_BASE_URL from '../services/api';
 
-function ForgotPassword(){
+function ForgotPassword({ onBackToLogin,onResetLinkSent }){
     const [email,setEmail]=useState("");
     const [message,setMessage]=useState("");
 
@@ -17,10 +17,11 @@ function ForgotPassword(){
 
         const data=await res.json();
         if(res.ok){
-            setMessage("Password reset link sent to your email");
+            alert("Password reset link sent to your email");
+            onResetLinkSent();
         }
         else{
-            setMessage(data.error || "Something went wrong");
+            alert(data.error || "Something went wrong");
         }
     };
     return(
@@ -31,6 +32,14 @@ function ForgotPassword(){
                 <button type="submit">Send Reset Link</button>
             </form>
             {message && <p>{message}</p>}
+
+        <p
+        style={{color:"green",cursor:"pointer",marginTop:"1rem"}}
+        onClick={onBackToLogin}
+        >
+            Back to Login
+        </p>
+
         </div>
     )
 }

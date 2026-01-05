@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useParams,useNavigate} from "react-router-dom";
 import API_BASE_URL from "../services/api";
 
-function ResetPassword(){
+function ResetPassword({onBackToLogin}){
     const {uid,token}=useParams();
     const navigate=useNavigate();
 
@@ -34,7 +34,8 @@ function ResetPassword(){
 
         if(res.ok){
             alert("Password reset successful");
-            navigate("/login");
+            // navigate("/login");
+            onBackToLogin();
         }
         else{
             setError(data.error || "Reset link invalid or expired");

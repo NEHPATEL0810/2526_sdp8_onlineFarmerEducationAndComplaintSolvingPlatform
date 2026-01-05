@@ -2,7 +2,7 @@ import {useState} from "react"
 import {useNavigate} from "react-router-dom";
 import API_BASE_URL from "../services/api"
 
-function Register(){
+function Register({ onBackToLogin }){
     const navigate=useNavigate();
     const [formData,setFormData]=useState({
         username:"",
@@ -29,14 +29,15 @@ function Register(){
         if(response.status===201){
             alert("Registration successful");
             setFormData({username:"",email:"",password:""});
-            navigate('/login');
+            // navigate('/login');
+            onBackToLogin();
         }
         else{
             alert(JSON.stringify(data));
         }
     };
     return(
-        <div>
+        <div style= {{ minWidth:"300px" }}>
             <h2>Register</h2>
             <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
             <br/>
@@ -47,7 +48,17 @@ function Register(){
             <input type="text" name="mobile_number" placeholder="Mobile Number" onChange={handleChange}/>
             <br/>
             <button onClick={handleSubmit}>Register</button>
-
+             <p style={{ marginTop:"1rem" }}>
+                Already have an account?{" "}
+                <span
+                style={{
+                    cursor:"pointer",
+                    color:"green",
+                }}
+                onClick={onBackToLogin}>
+                    Login
+                </span>
+             </p>
         </div>
     )
 }
