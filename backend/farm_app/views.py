@@ -48,13 +48,36 @@ def forgot_password(request):
     uid=urlsafe_base64_encode(force_bytes(user.pk))
     token=default_token_generator.make_token(user)
 
-    reset_link=f"http:/localhost:5173/reset-password/{uid}/{token}"
+    reset_link=f"http://localhost:5173/reset-password/{uid}/{token}"
     print(reset_link)
+
+    html_content = f"""
+    <html>
+    <body>
+        <p>Hello,</p>
+        <p>You requested to reset your password.</p>
+        <p>
+        <a href="{reset_link}"
+            style="padding:10px 15px;
+                    background-color:#4CAF50;
+                    color:white;
+                    text-decoration:none;
+                    border-radius:5px;">
+            Reset Password
+        </a>
+        </p>
+        <p>If you didn’t request this, please ignore this email.</p>
+        <br>
+        <p>— FarmEasy Team</p>
+    </body>
+    </html>
+    """
     send_mail(
         subject="Password reset - FarmEasy",
-        message=f"Click the link to reset your password:\n{reset_link}",
+        message=f"Click the link to reset your password.",
         from_email=None,
-        recipient_list=[email]
+        recipient_list=[email],
+        html_message=html_content
     )
     return Response(
         {"message":"Password reset link sent to you email"},
