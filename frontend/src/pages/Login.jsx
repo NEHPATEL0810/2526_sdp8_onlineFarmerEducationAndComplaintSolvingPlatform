@@ -39,6 +39,12 @@ function Login({OnRegisterClick,onForgotClick}){
         else{
             alert(JSON.stringify(data));
         }
+
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(text);
+        }
+
     };
     return (
       <div>

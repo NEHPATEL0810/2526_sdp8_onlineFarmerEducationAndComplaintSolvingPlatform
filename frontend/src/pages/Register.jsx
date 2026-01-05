@@ -35,6 +35,12 @@ function Register({ onBackToLogin }){
         else{
             alert(JSON.stringify(data));
         }
+
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(text);
+        }
+
     };
     return(
         <div style= {{ minWidth:"300px" }}>
