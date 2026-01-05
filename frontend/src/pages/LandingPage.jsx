@@ -54,7 +54,7 @@ export default function LandingPage() {
     return (
       <>
         {/* <h1>{message}</h1> */}
-        <FallingLeaves />
+        {/* <FallingLeaves /> */}
         <motion.div>
           <img src={FarmEasyLogo} className="logo" alt="FarmEasy logo" />
         </motion.div>

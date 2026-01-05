@@ -7,36 +7,42 @@ function MarketPrices() {
   const [commodity, setCommodity] = useState("");
   const [records, setRecords] = useState([]);
   const [commodities, setCommodities] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // Fetch data when state changes
   useEffect(() => {
-    if (!state) return;
+    if (!state) {
+      setRecords([]);
+      setCommodities([]);
+      return;
+    }
 
-    fetch(`${API_URL}?state=${state}&limit=200`)
+    setLoading(true);
+
+    fetch(`${API_URL}?state=${state}`)
       .then((res) => res.json())
       .then((data) => {
         const recs = data.records || [];
         setRecords(recs);
-
-        // extract unique commodities for dropdown
-        const uniqueCommodities = [
-          ...new Set(recs.map((r) => r.commodity)),
-        ];
-        setCommodities(uniqueCommodities);
+        setCommodities([...new Set(recs.map(r => r.commodity))]);
         setCommodity("");
+      })
+      .catch(() => {
+        setRecords([]);
+        setCommodities([]);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [state]);
 
-  // Filter by commodity
   const filteredRecords = commodity
-    ? records.filter((r) => r.commodity === commodity)
+    ? records.filter(r => r.commodity === commodity)
     : records;
 
   return (
     <div style={{ padding: "20px" }}>
       <h2>Daily Market Prices</h2>
 
-      {/* STATE SELECT */}
       <label>
         State:&nbsp;
         <select value={state} onChange={(e) => setState(e.target.value)}>
@@ -51,7 +57,6 @@ function MarketPrices() {
 
       &nbsp;&nbsp;
 
-      {/* COMMODITY SELECT */}
       <label>
         Commodity:&nbsp;
         <select
@@ -61,16 +66,15 @@ function MarketPrices() {
         >
           <option value="">-- All Commodities --</option>
           {commodities.map((c, idx) => (
-            <option key={idx} value={c}>
-              {c}
-            </option>
+            <option key={idx} value={c}>{c}</option>
           ))}
         </select>
       </label>
 
       <br /><br />
 
-      {/* TABLE */}
+      {loading && <p>Loading...</p>}
+
       <table border="1" cellPadding="8">
         <thead>
           <tr>
@@ -86,11 +90,9 @@ function MarketPrices() {
         </thead>
 
         <tbody>
-          {filteredRecords.length === 0 ? (
+          {!loading && filteredRecords.length === 0 ? (
             <tr>
-              <td colSpan="8" align="center">
-                No data available
-              </td>
+              <td colSpan="8" align="center">No data available</td>
             </tr>
           ) : (
             filteredRecords.map((r, idx) => (
