@@ -100,6 +100,8 @@ DATABASES = {
     }
 }
 
+MONGO_URI = os.getenv("MONGO_URI")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

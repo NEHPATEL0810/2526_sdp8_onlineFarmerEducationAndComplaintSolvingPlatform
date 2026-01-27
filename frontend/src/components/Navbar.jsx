@@ -17,6 +17,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ResetPassword from "../pages/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword";
+import MarketPrices from "../pages/MarketPrices";
 export default function Navbar() {
 // const [open, setOpen] = React.useState(false);
 //   const handleClickOpen = () => {
@@ -50,88 +51,73 @@ const [openReset,setOpenReset] = useState(false);
         <a style={linkStyle} href="#">
           <TranslateText> About Us </TranslateText>
         </a>
-        <a style={linkStyle} href="#">
-          <TranslateText> Education </TranslateText>
-        </a>
+   
+          <TranslateText>
+            <Link style={linkStyle} to="/market-prices"> Education</Link>{" "}
+          </TranslateText>
+
         <a style={linkStyle} href="#">
           <TranslateText> Complaints </TranslateText>
         </a>
-        {/* <React.Fragment>
-          <motion.a style={linkStyle} onClick={handleClickOpen}>
-            <TranslateText> Profile </TranslateText>
-          </motion.a> */}
-          {/* <Dialog open={open} onClose={handleClose}> */}
-            {/* <DialogTitle>Login</DialogTitle> */}
-            {/* <DialogContent>
-               <Login />
-            </DialogContent>
-          </Dialog>
-        </React.Fragment> */}
+       
 
-        <motion.span
-        style={linkStyle}
-        onClick={() => setOpenLogin(true)}
-        >
-             <TranslateText>Profile</TranslateText>
+        <motion.span style={linkStyle} onClick={() => setOpenLogin(true)}>
+          <TranslateText>Profile</TranslateText>
         </motion.span>
 
         <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
-           <DialogContent>
+          <DialogContent>
             <Login
-            OnRegisterClick={() => 
-            {
-              setOpenLogin(false);
-              setOpenRegister(true);
-            }
-            }
-            onForgotClick={() => {
-              setOpenLogin(false);
-              setOpenForgot(true);
-            }}
+              OnRegisterClick={() => {
+                setOpenLogin(false);
+                setOpenRegister(true);
+              }}
+              onForgotClick={() => {
+                setOpenLogin(false);
+                setOpenForgot(true);
+              }}
             />
-           </DialogContent>
-
+          </DialogContent>
         </Dialog>
 
-        <Dialog open={openRegister} onClose={() => {
-          setOpenRegister(false)
-        }}>
-
-        <DialogContent>
-          <Register 
-          onBackToLogin={() => {
+        <Dialog
+          open={openRegister}
+          onClose={() => {
             setOpenRegister(false);
-            setOpenLogin(true);
           }}
-          />
-        </DialogContent>
+        >
+          <DialogContent>
+            <Register
+              onBackToLogin={() => {
+                setOpenRegister(false);
+                setOpenLogin(true);
+              }}
+            />
+          </DialogContent>
         </Dialog>
         <Dialog open={openForgot} onClose={() => setOpenForgot(false)}>
           <DialogContent>
             <ForgotPassword
-
-            onBackToLogin={() => {
-              setOpenForgot(false);
-              setOpenLogin(true);
-            }}
-            onResetLinkSent={() => {
-              setOpenForgot(false);
-              setOpenReset(true);
-            }}
-                      />
+              onBackToLogin={() => {
+                setOpenForgot(false);
+                setOpenLogin(true);
+              }}
+              onResetLinkSent={() => {
+                setOpenForgot(false);
+                setOpenReset(true);
+              }}
+            />
           </DialogContent>
-
         </Dialog>
 
         <Dialog open={openReset} onClose={() => setOpenReset(false)}>
           <DialogContent>
             <ResetPassword
-            onBackToLogin={() => {
-              setOpenReset(false);
-              setOpenLogin(true);
-            }}
+              onBackToLogin={() => {
+                setOpenReset(false);
+                setOpenLogin(true);
+              }}
             />
-
           </DialogContent>
         </Dialog>
         <a style={linkStyle} href="#">

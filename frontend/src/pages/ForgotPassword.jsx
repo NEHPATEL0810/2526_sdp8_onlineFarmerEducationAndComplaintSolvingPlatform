@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import API_BASE_URL from '../services/api';
 
-function ForgotPassword({ onBackToLogin,onResetLinkSent }){
+function ForgotPassword({ onBackToLogin }){
     const [email,setEmail]=useState("");
     const [message,setMessage]=useState("");
 
@@ -18,7 +18,7 @@ function ForgotPassword({ onBackToLogin,onResetLinkSent }){
         const data=await res.json();
         if(res.ok){
             alert("Password reset link sent to your email");
-            onResetLinkSent();
+            setMessage("If an account with that email exists, a reset link has been sent.");
         }
         else{
             alert(data.error || "Something went wrong");

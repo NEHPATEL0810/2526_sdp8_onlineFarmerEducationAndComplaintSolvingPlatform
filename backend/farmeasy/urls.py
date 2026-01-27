@@ -27,7 +27,7 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     # path("",home,name="home"),
     path("admin/", admin.site.urls),
-    path("api/",include("chatbot.urls")),
+    # path("api/",include("chatbot.urls")),
     path("api/",include("farm_app.urls")),
     path("api/education/", include("education.urls")),
 
