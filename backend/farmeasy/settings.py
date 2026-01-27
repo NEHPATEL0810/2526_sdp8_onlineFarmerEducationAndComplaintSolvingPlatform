@@ -16,6 +16,8 @@ from datetime import timedelta
 
 load_dotenv()
 DATA_GOV_API_KEY = os.getenv("DATA_GOV_API_KEY")
+SCHEMES_API_KEY = os.getenv("SCHEMES_API_KEY")
+
 
 REST_FRAMEWORK={
     "DEFAULT_AUTHENTICATION_CLASSES":(
@@ -146,5 +148,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATICFILES_DIRS=[
+    BASE_DIR / "static"
+]
 CORS_ALLOW_ALL_ORIGINS=True

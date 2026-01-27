@@ -8,7 +8,8 @@ import ForgotPassword from './pages/ForgotPassword.jsx';
 import ResetPassword from './pages/ResetPassword.jsx';
 import Register from './pages/Register.jsx';
 import MarketPrices from './pages/MarketPrices.jsx';
-
+import AgriSchemes from "./pages/AgriSchemes.jsx";  
+import CropList from "./pages/CropList.jsx";
 function AnimatedRoutes(){
   const location = useLocation()
 
@@ -22,6 +23,8 @@ function AnimatedRoutes(){
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/reset-password/:uid/:token" element={<ResetPassword/>}/>
         <Route path="/market-prices" element={<MarketPrices/>}/>
+        <Route path="/agri-schemes" element={<AgriSchemes/>}/>
+        <Route path="/crops" element={<CropList/>}/>
       </Routes>
     </AnimatePresence>
   )

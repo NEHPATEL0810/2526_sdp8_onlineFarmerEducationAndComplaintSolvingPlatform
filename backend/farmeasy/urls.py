@@ -19,6 +19,8 @@ from django.contrib import admin
 from django.urls import path,include
 from farm_app.views import home
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -30,6 +32,7 @@ urlpatterns = [
     # path("api/",include("chatbot.urls")),
     path("api/",include("farm_app.urls")),
     path("api/education/", include("education.urls")),
+    
 
     path("api/auth/login/",TokenObtainPairView.as_view()),
     path("api/auth/refresh/", TokenRefreshView.as_view()),
@@ -40,3 +43,8 @@ urlpatterns = [
     path("api/", include("translation.urls")),
 
 ]
+
+urlpatterns+=static(
+    settings.STATIC_URL,
+    document_root=settings.BASE_DIR / "static"
+)
