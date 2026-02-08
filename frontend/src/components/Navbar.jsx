@@ -18,6 +18,8 @@ import Register from "../pages/Register";
 import ResetPassword from "../pages/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword";
 import MarketPrices from "../pages/MarketPrices";
+import LoginModal from "./LoginModal";
+import ElectricBorder from "./ElectricBorder";
 export default function Navbar() {
 // const [open, setOpen] = React.useState(false);
 //   const handleClickOpen = () => {
@@ -65,7 +67,7 @@ const [openReset,setOpenReset] = useState(false);
           <TranslateText>Profile</TranslateText>
         </motion.span>
 
-        <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
+        {/* <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
           <DialogContent>
             <Login
               OnRegisterClick={() => {
@@ -77,6 +79,44 @@ const [openReset,setOpenReset] = useState(false);
                 setOpenForgot(true);
               }}
             />
+          </DialogContent>
+        </Dialog> */}
+
+        <Dialog 
+        open={openLogin}
+        onClose={() => setOpenLogin(false)}
+        PaperProps={{
+          style:{
+            background:"transparent",
+            boxShadow:"none",
+            overflow:"visible",
+          },
+        }}
+        >
+          <DialogContent style={{ padding: 0,
+          overflow:"visible",
+          }}>
+            <ElectricBorder
+            color="#4ca750"
+            speed={1}
+            chaos={0.12}
+            borderRadius={16}
+            style={{borderRadius:16}}
+            >
+              <div style={loginCardStyle}>
+                <Login
+                OnRegisterClick={() => {
+                  setOpenLogin(false);
+                  setOpenRegister(true);
+                }}
+                onForgotClick={() => {
+                  setOpenLogin(false);
+                  setOpenForgot(true);
+                }}
+                />
+
+              </div>
+            </ElectricBorder>
           </DialogContent>
         </Dialog>
 
@@ -145,7 +185,7 @@ const navStyle = {
   borderRadius: "0 0 25px 25px",
 };
 
-/* Logo */
+
 const logoContainer = {
   display: "flex",
   alignItems: "center",
@@ -182,4 +222,18 @@ const linkStyle = {
 const linkHoverStyle = {
   backgroundColor: "#45a049",
   borderRadius: "8px",
+};
+
+
+const loginCardStyle = {
+  background:"#0f172a",
+  padding:"2rem",
+  width:"360px",
+  borderRadius:"16px",
+  color:"#fff",
+
+  display:"flex",
+  flexDirection:"column",
+  alignItems:"center",
+  textAlign:"center",
 };

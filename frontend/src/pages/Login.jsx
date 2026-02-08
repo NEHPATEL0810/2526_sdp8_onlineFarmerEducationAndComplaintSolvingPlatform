@@ -1,108 +1,184 @@
-import {useState} from "react"
+import { useState } from "react";
 import API_BASE_URL from "../services/api";
 import TranslateText from "../components/TranslateText";
-// import Dialog from "@mui/material/Dialog";
-// import DialogContent from "@mui/material/DialogContent";
-function Login({OnRegisterClick,onForgotClick}){
-    const [formData,setFormData]=useState({
-        username:"",
-        email:"",
-        password:"",
-    });
 
-    const handleChange=(e)=>{
-        setFormData({
-            ...formData,
-            [e.target.name]:e.target.value,
-        });
-    };
+function Login({ OnRegisterClick, onForgotClick }) {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-    const handleSubmit=async(e)=>{
-        e.preventDefault();
-        const response=await fetch(`${API_BASE_URL}/auth/login/`,{
-            method:"POST",
-            headers:{
-                'Content-Type':"application/json",
-            },
-            body: JSON.stringify(formData),
-        });
-        const data=await response.json();
+  const [errors, setErrors] = useState({});
 
-        if(response.status===200){
-            localStorage.setItem("accress",data.access);
-            localStorage.setItem("refresh",data.refresh);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-            alert("Login successful");
-            setFormData({username:"",password:""});
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors({});
 
-        }
-        else{
-            alert(JSON.stringify(data));
-        }
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/login/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+        }),
+      });
 
-        if (!response.ok) {
-          const text = await response.text();
-          throw new Error(text);
-        }
+      const text = await response.text();
+      let data = {};
 
-    };
-    return (
-      <div>
-        <h1>
-          <TranslateText>Login</TranslateText>
-        </h1>
+      try {
+        data = JSON.parse(text);
+      } catch {
+        console.error("Server returned HTML:", text);
+        return; // ⛔ stop execution
+      }
+
+      if (response.ok) {
+        localStorage.setItem("access", data.access);
+        localStorage.setItem("refresh", data.refresh);
+        alert("Login successful");
+        setFormData({ username: "", password: "" });
+      } else {
+        setErrors(data);
+      }
+    } catch (err) {
+      console.error("Network error:", err);
+    }
+  };
+
+  return (
+    <div style={loginContainerStyle}>
+      <h1 style={titleStyle}>
+        <TranslateText>Login</TranslateText>
+      </h1>
+
+      <form onSubmit={handleSubmit} style={formStyle}>
         <input
           type="text"
           name="username"
           placeholder="Username"
           value={formData.username}
           onChange={handleChange}
+          autoComplete="username"
+          style={inputStyle}
         />
-        <br />
+        {errors.username && <p style={errorStyle}>{errors.username[0]}</p>}
+
         <input
           type="password"
           name="password"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
+          autoComplete="current-password"
+          style={inputStyle}
         />
-        <br />
-        <button onClick={handleSubmit}>Login</button>
-        <br />
-               <p
-               style={{ color:"green",cursor:"pointer",
-                 marginTop:"1rem"
-               }}
-               onClick={onForgotClick}
-               >
-                 Forgot Password?
-               </p>
+        {errors.password && <p style={errorStyle}>{errors.password[0]}</p>}
 
-        <p style={{marginTop:"1rem" }}>
-            Don't Have an account?{" "}
-            <span
-             style={{
-                color:"green",
-                cursor:"pointer",
-             }}
-             onClick={OnRegisterClick}>
-                Register
-            </span>
-        </p>
-      </div>
-    );
+        <button type="submit" style={buttonStyle}>
+          Login
+        </button>
+      </form>
+
+      <p style={forgotStyle} onClick={onForgotClick}>
+        Forgot Password?
+      </p>
+
+      <p style={registerStyle}>
+        Don&apos;t have an account?{" "}
+        <span style={registerLinkStyle} onClick={OnRegisterClick}>
+          Register
+        </span>
+      </p>
+    </div>
+  );
 }
+
 export default Login;
+const loginContainerStyle = {
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
 
+const formStyle = {
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
 
-const linkStyle = {
-  color: "#fff",
+const titleStyle = {
+  marginBottom: "1.8rem",
+  fontSize: "2rem",
+  fontWeight: "700",
+  fontFamily: "'Poppins', sans-serif",
+  letterSpacing: "-0.02em",
+};
 
-  textDecoration: "none",
-  fontSize: "1.5rem",
-  fontWeight: "500",
-  padding: "0.5rem 1rem",
-  margin: "0 0.5rem",
-  transition: "all 0.3s ease",
+const inputStyle = {
+  width: "100%",
+  maxWidth: "280px",
+  padding: "0.75rem",
+  marginBottom: "0.9rem",
+  borderRadius: "10px",
+  border: "1px solid #334155",
+  background: "#020617",
+  color: "#ffffff",
+  textAlign: "center",
+  fontFamily: "'Inter', sans-serif",
+  fontSize: "0.95rem",
+};
+
+const buttonStyle = {
+  width: "100%",
+  maxWidth: "280px",
+  padding: "0.75rem",
+  marginTop: "0.6rem",
+  borderRadius: "10px",
+  border: "none",
+  background: "#4ca750",
+  color: "#ffffff",
+  fontFamily: "'Inter', sans-serif",
+  fontSize: "1rem",
+  fontWeight: "600",
   cursor: "pointer",
+};
+
+const errorStyle = {
+  width: "100%",
+  maxWidth: "280px",
+  color: "#ef4444",
+  fontSize: "0.8rem",
+  marginTop: "-0.4rem",
+  marginBottom: "0.6rem",
+  textAlign: "left",
+  fontFamily: "'Inter', sans-serif",
+};
+
+const forgotStyle = {
+  marginTop: "1rem",
+  fontSize: "0.9rem",
+  fontFamily: "'Inter', sans-serif",
+  color: "#4ca750",
+  cursor: "pointer",
+};
+
+const registerStyle = {
+  marginTop: "1.5rem",
+  fontSize: "0.9rem",
+  fontFamily: "'Inter', sans-serif",
+  opacity: 0.9,
+};
+
+const registerLinkStyle = {
+  color: "#4ca750",
+  cursor: "pointer",
+  fontWeight: "500",
 };

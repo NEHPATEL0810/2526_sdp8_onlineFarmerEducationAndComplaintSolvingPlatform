@@ -1,71 +1,195 @@
-import {useState} from "react"
-import {useNavigate} from "react-router-dom";
-import API_BASE_URL from "../services/api"
+import { useState } from "react";
+import API_BASE_URL from "../services/api";
+import ElectricBorder from "../components/ElectricBorder";
 
-function Register({ onBackToLogin }){
-    const navigate=useNavigate();
-    const [formData,setFormData]=useState({
-        username:"",
-        email:"",
-        password:"",
-    });
-    const handleChange=(e)=>{
-        setFormData({
-            ...formData,
-            [e.target.name]:e.target.value,
-        });
-    };
-    const handleSubmit=async(e)=>{
-        e.preventDefault();
-        const response=await fetch(`${API_BASE_URL}/auth/register/`,{
-            method: "POST",
-            headers:{
-                "Content-Type":"application/json",
-            },
-            body:JSON.stringify(formData),
-        });
-        const data=await response.json();
+function Register({ onBackToLogin }) {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    mobile_number: "",
+  });
 
-        if(response.status===201){
-            alert("Registration successful");
-            setFormData({username:"",email:"",password:""});
-            // navigate('/login');
-            onBackToLogin();
-        }
-        else{
-            alert(JSON.stringify(data));
-        }
+  const [errors, setErrors] = useState({});
 
-        if (!response.ok) {
-          const text = await response.text();
-          throw new Error(text);
-        }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    };
-    return(
-        <div style= {{ minWidth:"300px" }}>
-            <h2>Register</h2>
-            <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
-            <br/>
-            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}/>
-            <br/>
-            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange}/>
-            <br/>
-            <input type="text" name="mobile_number" placeholder="Mobile Number" onChange={handleChange}/>
-            <br/>
-            <button onClick={handleSubmit}>Register</button>
-             <p style={{ marginTop:"1rem" }}>
-                Already have an account?{" "}
-                <span
-                style={{
-                    cursor:"pointer",
-                    color:"green",
-                }}
-                onClick={onBackToLogin}>
-                    Login
-                </span>
-             </p>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors({});
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/auth/register/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const text = await response.text();
+      let data = {};
+      try{
+        data = JSON.parse(text);
+
+      }catch{
+        console.error("Server returned HTML:",text);
+        return;
+      }
+
+      if (response.ok) {
+        alert("Registration successful");
+        onBackToLogin();
+      } else {
+        setErrors(data);
+      }
+    } catch (err) {
+      console.error("Network Error:",err);
+    }
+  };
+
+  return (
+    <div style={overlayStyle}>
+      <ElectricBorder color="#4ca750" thickness={2} speed={0.8} chaos={0.08}>
+        <div style={cardStyle}>
+          <h1 style={titleStyle}>Register</h1>
+
+          <form onSubmit={handleSubmit} style={formStyle}>
+            <input
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              style={inputStyle}
+            />
+            {errors.username && (<p style={errorStyle}>{errors.username[0]}</p>)}
+
+            <input
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              style={inputStyle}
+            />
+            {errors.email && (<p style={errorStyle}>{errors.email[0]}</p>)}
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              style={inputStyle}
+            />
+            {errors.password && (<p style={errorStyle}>{errors.password[0]}</p>)}
+
+            <input
+              name="mobile_number"
+              placeholder="Mobile Number"
+              value={formData.mobile_number}
+              onChange={handleChange}
+              style={inputStyle}
+            />
+
+            <button type="submit" style={buttonStyle}>
+              Register
+            </button>
+          </form>
+
+          <p style={footerStyle}>
+            Already have an account?{" "}
+            <span style={linkStyle} onClick={onBackToLogin}>
+              Login
+            </span>
+          </p>
         </div>
-    )
+      </ElectricBorder>
+    </div>
+  );
 }
+
 export default Register;
+const overlayStyle = {
+  position: "fixed",
+  inset: 0,
+  background: "rgba(0,0,0,0.35)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  zIndex: 9999,
+};
+
+const cardStyle = {
+  width: "480px",
+  background: "#020617", // 🔥 SAME AS LOGIN
+  borderRadius: "22px",
+  padding: "1.8rem 1.6rem",
+  boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
+  overflow: "hidden",
+  color: "#fff",
+  textAlign:"center",
+};
+
+const titleStyle = {
+  marginBottom: "1.4rem",
+  fontSize: "2rem",
+  fontWeight: 700,
+  fontFamily: "'Poppins', sans-serif",
+  textAlign: "center",
+};
+
+const formStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.85rem", 
+  alignItems:"center",
+};
+
+const inputStyle = {
+  width: "90%",
+  padding: "0.75rem",
+  borderRadius: "10px",
+  border: "1px solid #334155",
+  background: "#020617",
+  color: "#fff",
+  textAlign: "center",
+  fontFamily: "'Inter', sans-serif",
+  fontSize: "0.95rem",
+};
+
+const buttonStyle = {
+  marginTop: "0.8rem",
+  padding: "0.75rem",
+  borderRadius: "10px",
+  border: "none",
+  background: "#4ca750",
+  color: "#fff",
+  fontSize: "1rem",
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const footerStyle = {
+  marginTop: "1.2rem",
+  fontSize: "0.9rem",
+  textAlign: "center",
+  opacity: 0.9,
+  fontFamily: "'Inter', sans-serif",
+};
+
+const linkStyle = {
+  color: "#4ca750",
+  cursor: "pointer",
+  fontWeight: 500,
+};
+
+const errorStyle = {
+  width: "100%",
+  textAlign: "left", 
+  color: "#ef4444",
+  fontSize: "0.8rem",
+  fontFamily: "'Inter', sans-serif",
+  marginTop: "-0.3rem",
+  marginBottom: "0.4rem",
+};
+
