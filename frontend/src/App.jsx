@@ -11,6 +11,9 @@ import Register from './pages/Register.jsx';
 import MarketPrices from './pages/MarketPrices.jsx';
 import AgriSchemes from "./pages/AgriSchemes.jsx";
 import CropList from "./pages/CropList.jsx";
+import MyDoubts from "./pages/MyDoubts.jsx";
+import CreateDoubt from "./pages/CreateDoubt.jsx";
+import Profile from "./pages/Profile.jsx";
 
 const withNavbar = (Page) => (
   <>
@@ -36,6 +39,10 @@ function AnimatedRoutes(){
         <Route path="/market-prices" element={<MarketPrices/>}/>
         <Route path="/agri-schemes" element={<AgriSchemes/>}/>
         <Route path="/crops" element={<CropList/>}/>
+        <Route path="/doubts" element={<MyDoubts/>}/>
+        <Route path="/create/doubts" element={<CreateDoubt/>}/>
+        <Route path="/profile" element={<Profile />} />
+
       </Routes>
     </AnimatePresence>
   )

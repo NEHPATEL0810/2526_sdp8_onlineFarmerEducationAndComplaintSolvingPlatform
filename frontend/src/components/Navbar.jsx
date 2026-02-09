@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import FarmEasyLogo from "../assets/Logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoShuffle from "./ShufflingLogo";
 import LanguageToggle from "./LanguageToggle";
 import TranslateText from "./TranslateText";
@@ -21,17 +21,22 @@ import MarketPrices from "../pages/MarketPrices";
 import LoginModal from "./LoginModal";
 import ElectricBorder from "./ElectricBorder";
 export default function Navbar() {
-// const [open, setOpen] = React.useState(false);
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-const [openLogin,setOpenLogin] = useState(false);
-const [openRegister,setOpenRegister] = useState(false);
-const [openForgot,setOpenForgot] = useState(false);
-const [openReset,setOpenReset] = useState(false);
+  // const [open, setOpen] = React.useState(false);
+  //   const handleClickOpen = () => {
+  //     setOpen(true);
+  //   };
+  //   const handleClose = () => {
+  //     setOpen(false);
+  //   };
+  const [openLogin, setOpenLogin] = useState(false);
+  const [openRegister, setOpenRegister] = useState(false);
+  const [openForgot, setOpenForgot] = useState(false);
+  const [openReset, setOpenReset] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showEduDropdown, setShowEduDropdown] = useState(false);
+  const navigate = useNavigate();
+  const isLoggedIn = !!localStorage.getItem("access");
+
   return (
     <nav style={navStyle}>
       <motion.div
@@ -49,19 +54,88 @@ const [openReset,setOpenReset] = useState(false);
         <a style={linkStyle} href="#">
           <TranslateText> About Us </TranslateText>
         </a>
-   
-          <TranslateText>
-            <Link style={linkStyle} to="/market-prices"> Education</Link>{" "}
-          </TranslateText>
 
-        <a style={linkStyle} href="#">
-          <TranslateText> Complaints </TranslateText>
-        </a>
-       
+        <div
+          style={{ position: "relative", display: "inline-block" }}
+          onMouseEnter={() => setShowEduDropdown(true)}
+          onMouseLeave={() => setShowEduDropdown(false)}
+        >
+          <span style={linkStyle}>
+            <TranslateText>Education</TranslateText> ▼
+          </span>
 
-        <motion.span style={linkStyle} onClick={() => setOpenLogin(true)}>
+          {showEduDropdown && (
+            <div style={dropdownStyle}>
+              <div style={dropdownItemStyle} onClick={() => navigate("/crops")}>
+                Crop Encyclopedia
+              </div>
+
+              <div style={dropdownItemStyle} onClick={() => navigate("/market-prices")}>
+                Market Prices
+              </div>
+
+              <div style={dropdownItemStyle} onClick={() => navigate("/agri-schemes")}>
+                Agriculture Schemes
+              </div>
+            </div>
+          )}
+        </div>
+
+
+        <div
+          style={{ position: "relative" }}
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        >
+          <span style={linkStyle}>
+            <TranslateText>Complaints</TranslateText> ▼
+          </span>
+
+          {showDropdown && (
+            <div
+              style={{
+                position: "absolute",
+                top: "35px",
+                background: "#020617",
+                border: "1px solid #334155",
+                borderRadius: "8px",
+                padding: "10px",
+                minWidth: "150px",
+                zIndex: 1000,
+              }}
+            >
+              <div
+                style={dropdownItemStyle}
+                onClick={() => navigate("/create/doubts")}
+              >
+                Create Doubt
+              </div>
+
+              <div
+                style={dropdownItemStyle}
+                onClick={() => navigate("/doubts")}
+              >
+                View My Doubts
+              </div>
+            </div>
+          )}
+        </div>
+
+
+
+        <motion.span
+          style={linkStyle}
+          onClick={() => {
+            if (isLoggedIn) {
+              navigate("/profile");
+            } else {
+              setOpenLogin(true);
+            }
+          }}
+        >
           <TranslateText>Profile</TranslateText>
         </motion.span>
+
 
         {/* <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
           <DialogContent>
@@ -78,37 +152,38 @@ const [openReset,setOpenReset] = useState(false);
           </DialogContent>
         </Dialog> */}
 
-        <Dialog 
-        open={openLogin}
-        onClose={() => setOpenLogin(false)}
-        PaperProps={{
-          style:{
-            background:"transparent",
-            boxShadow:"none",
-            overflow:"visible",
-          },
-        }}
+        <Dialog
+          open={openLogin}
+          onClose={() => setOpenLogin(false)}
+          PaperProps={{
+            style: {
+              background: "transparent",
+              boxShadow: "none",
+              overflow: "visible",
+            },
+          }}
         >
-          <DialogContent style={{ padding: 0,
-          overflow:"visible",
+          <DialogContent style={{
+            padding: 0,
+            overflow: "visible",
           }}>
             <ElectricBorder
-            color="#4ca750"
-            speed={1}
-            chaos={0.12}
-            borderRadius={16}
-            style={{borderRadius:16}}
+              color="#4ca750"
+              speed={1}
+              chaos={0.12}
+              borderRadius={16}
+              style={{ borderRadius: 16 }}
             >
               <div style={loginCardStyle}>
                 <Login
-                OnRegisterClick={() => {
-                  setOpenLogin(false);
-                  setOpenRegister(true);
-                }}
-                onForgotClick={() => {
-                  setOpenLogin(false);
-                  setOpenForgot(true);
-                }}
+                  OnRegisterClick={() => {
+                    setOpenLogin(false);
+                    setOpenRegister(true);
+                  }}
+                  onForgotClick={() => {
+                    setOpenLogin(false);
+                    setOpenForgot(true);
+                  }}
                 />
 
               </div>
@@ -168,7 +243,7 @@ const navStyle = {
   position: "fixed",
   top: 0,
   left: 0,
-  right:0,
+  right: 0,
   width: "100%",
   height: "70px",
   display: "flex",
@@ -185,7 +260,7 @@ const navStyle = {
 const logoContainer = {
   display: "flex",
   alignItems: "center",
-  fontSize:"1.2rem",
+  fontSize: "1.2rem",
 };
 
 const logoStyle = {
@@ -197,10 +272,10 @@ const logoStyle = {
 const menuStyle = {
   display: "flex",
   alignItems: "center",
-//   justifyContent:"right-align",
+  //   justifyContent:"right-align",
   gap: "1rem",
-//   flexDirection: "row",
-  marginRight:"2rem",
+  //   flexDirection: "row",
+  marginRight: "2rem",
 };
 
 const linkStyle = {
@@ -212,7 +287,7 @@ const linkStyle = {
   padding: "0.5rem 1rem",
   margin: "0 0.5rem",
   transition: "all 0.3s ease",
-  cursor:"pointer",
+  cursor: "pointer",
 };
 
 const linkHoverStyle = {
@@ -222,14 +297,36 @@ const linkHoverStyle = {
 
 
 const loginCardStyle = {
-  background:"#0f172a",
-  padding:"2rem",
-  width:"360px",
-  borderRadius:"16px",
-  color:"#fff",
+  background: "#0f172a",
+  padding: "2rem",
+  width: "360px",
+  borderRadius: "16px",
+  color: "#fff",
 
-  display:"flex",
-  flexDirection:"column",
-  alignItems:"center",
-  textAlign:"center",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+};
+
+const dropdownItemStyle = {
+  padding: "8px",
+  cursor: "pointer",
+  color: "#fff",
+};
+
+dropdownItemStyle["hover"] = {
+  backgroundColor: "#334155",
+};
+
+const dropdownStyle = {
+  position: "absolute",
+  top: "100%",
+  left: 0,
+  background: "#020617",
+  border: "1px solid #334155",
+  borderRadius: "8px",
+  padding: "8px 0",
+  minWidth: "180px",
+  zIndex: 1000,
 };

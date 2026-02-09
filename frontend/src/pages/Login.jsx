@@ -1,12 +1,14 @@
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
 import TranslateText from "../components/TranslateText";
+import { useNavigate } from "react-router-dom";
 
 function Login({ OnRegisterClick, onForgotClick }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const navigate=useNavigate();
 
   const [errors, setErrors] = useState({});
 
@@ -38,8 +40,8 @@ function Login({ OnRegisterClick, onForgotClick }) {
       if (response.ok) {
         localStorage.setItem("access", data.access);
         localStorage.setItem("refresh", data.refresh);
-        alert("Login successful");
         setFormData({ username: "", password: "" });
+        navigate("/profile");
       } else {
         setErrors(data);
       }

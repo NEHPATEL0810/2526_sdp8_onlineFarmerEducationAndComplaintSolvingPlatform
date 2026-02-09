@@ -6,8 +6,9 @@ export default function LanguageToggle() {
   return (
     <div style={wrapper}>
       <select value={toLang} onChange={(e) => setToLang(e.target.value)}>
-        <option value="en">English</option>
+        
         <option value="hi">हिन्दी</option>
+        <option value="en">English</option>
         <option value="gu">ગુજરાતી</option>
         <option value="mr">मराठी</option>
         <option value="ta">தமிழ்</option>

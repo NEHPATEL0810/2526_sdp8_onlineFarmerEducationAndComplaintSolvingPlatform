@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TranslateText from "../components/TranslateText";
-import ScrollGallery from "../components/ScrollGallery";
-import { galleryImages } from "../assets/gallery";
 export default function HomePage() {
   return (
     <>
@@ -13,8 +11,7 @@ export default function HomePage() {
         <p><TranslateText>Your Farming Companion starts here</TranslateText></p>
       </section>
 
-      {/* Scroll gallery owns everything */}
-      <ScrollGallery images={galleryImages} />
+      
 
       <section style={{ minHeight: "100vh" }} />
     </>
