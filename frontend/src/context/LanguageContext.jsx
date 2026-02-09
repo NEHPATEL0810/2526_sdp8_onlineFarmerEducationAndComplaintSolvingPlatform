@@ -3,23 +3,12 @@ import { createContext,useContext,useState } from "react";
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }){
-    const [translationEnabled,setTranslationEnabled] = useState(false);
-    // const[fromLang,setFromLang] = useState("en");
     const [toLang,setToLang] = useState("hi");
     const fromLang = "en";
-    const toggleTranslation = () => {
-        if(translationEnabled){
-            setTranslationEnabled(false);
-            setToLang("en");
-        }
-        else{
-            setTranslationEnabled(true);
-        }
-    };
+    const translationEnabled = toLang !== "en";
     return(
         <LanguageContext.Provider value ={{
             translationEnabled,
-            toggleTranslation,
             fromLang,
             toLang,
             setToLang,

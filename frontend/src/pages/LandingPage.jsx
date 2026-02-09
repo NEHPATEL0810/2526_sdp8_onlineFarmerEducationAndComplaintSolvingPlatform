@@ -4,6 +4,7 @@ import FallingLeaves from "../components/FallingLeaves";
 import FarmEasyLogo from "../assets/Logo.png";
 import { useState, useEffect } from "react";
 import TranslateText from "../components/TranslateText";
+import Navbar from "../components/Navbar";
 import axios from "axios";
 const FINAL_SEQUENCE = [
   { id: 1, text: "Fa", color: "#2e7d32" },
@@ -53,6 +54,7 @@ export default function LandingPage() {
 
     return (
       <>
+        <Navbar />
         {/* <h1>{message}</h1> */}
         {/* <FallingLeaves /> */}
         <motion.div>
@@ -78,16 +80,16 @@ export default function LandingPage() {
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/home")}
           >
-            Get Started 
+            <TranslateText>Get Started</TranslateText>
           </motion.button>
           <p>
-            Enhance Your knowledge with farming and get use to with our App.
-          Start your journey towards smarter farming with FarmEasy!
+            <TranslateText>Enhance Your knowledge with farming and get use to with our App.
+          Start your journey towards smarter farming with FarmEasy!</TranslateText>
           </p>
         </div>
 
         <p className="read-the-docs">
-          FarmEasy - Online Farmer education and doubt solving app
+          <TranslateText>FarmEasy - Online Farmer education and doubt solving app</TranslateText>
         </p>
       </>
     );

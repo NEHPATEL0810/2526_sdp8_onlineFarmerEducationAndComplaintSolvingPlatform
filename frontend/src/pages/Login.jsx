@@ -67,7 +67,7 @@ function Login({OnRegisterClick,onForgotClick}){
           onChange={handleChange}
         />
         <br />
-        <button onClick={handleSubmit}>Login</button>
+        <button onClick={handleSubmit}><TranslateText>Login</TranslateText></button>
         <br />
                <p
                style={{ color:"green",cursor:"pointer",
@@ -75,18 +75,18 @@ function Login({OnRegisterClick,onForgotClick}){
                }}
                onClick={onForgotClick}
                >
-                 Forgot Password?
+                 <TranslateText>Forgot Password?</TranslateText>
                </p>
 
         <p style={{marginTop:"1rem" }}>
-            Don't Have an account?{" "}
+            <TranslateText>Don't Have an account?</TranslateText>{" "}
             <span
              style={{
                 color:"green",
                 cursor:"pointer",
              }}
              onClick={OnRegisterClick}>
-                Register
+                <TranslateText>Register</TranslateText>
             </span>
         </p>
       </div>

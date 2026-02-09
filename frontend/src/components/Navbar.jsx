@@ -40,11 +40,7 @@ const [openReset,setOpenReset] = useState(false);
       >
         {/* <img src={FarmEasyLogo} alt="FarmEasy Logo" style={logoStyle} /> */}
         {/* <LogoShuffle /> */}
-        <LanguageToggle
-          onChange={(data) => {
-            console.log("Translation:", data);
-          }}
-        />
+        <LanguageToggle />
       </motion.div>
 
       <div style={menuStyle}>

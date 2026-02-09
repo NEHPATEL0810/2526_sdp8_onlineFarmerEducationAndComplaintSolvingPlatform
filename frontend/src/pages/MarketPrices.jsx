@@ -1,98 +1,100 @@
 import { useEffect, useState } from "react";
+import TranslateText from "../components/TranslateText";
+import Navbar from "../components/Navbar";
 
 const API_URL = "http://127.0.0.1:8000/api/education/market-prices/";
+const INDIAN_STATES = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry"];
 
 function MarketPrices() {
   const [state, setState] = useState("");
   const [commodity, setCommodity] = useState("");
   const [records, setRecords] = useState([]);
   const [commodities, setCommodities] = useState([]);
-  const [loading, setLoading] = useState(false);
-
+  // Fetch data when state changes
   useEffect(() => {
-    if (!state) {
-      setRecords([]);
-      setCommodities([]);
-      return;
+    let url=`${API_URL}?limit=200`;
+    if(state){
+      url+=`&state=${state}`;
     }
 
-    setLoading(true);
-
-    fetch(`${API_URL}?state=${state}`)
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const recs = data.records || [];
         setRecords(recs);
-        setCommodities([...new Set(recs.map(r => r.commodity))]);
+        // extract unique commodities for dropdown
+        const uniqueCommodities = [
+          ...new Set(recs.map((r) => r.commodity)),
+        ];
+        setCommodities(uniqueCommodities);
         setCommodity("");
-      })
-      .catch(() => {
-        setRecords([]);
-        setCommodities([]);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   }, [state]);
 
+  // Filter by commodity
   const filteredRecords = commodity
-    ? records.filter(r => r.commodity === commodity)
+    ? records.filter((r) => r.commodity === commodity)
     : records;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Daily Market Prices</h2>
+    <>
+      <Navbar />
+      <div style={{ padding: "20px", paddingTop: "90px" }}>
+      <h2><TranslateText>Daily Market Prices</TranslateText></h2>
 
+      {/* STATE SELECT */}
       <label>
-        State:&nbsp;
+        <TranslateText>State:</TranslateText>&nbsp;
         <select value={state} onChange={(e) => setState(e.target.value)}>
-          <option value="">-- Select State --</option>
-          <option value="Gujarat">Gujarat</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Rajasthan">Rajasthan</option>
-          <option value="Punjab">Punjab</option>
-          <option value="Haryana">Haryana</option>
+          <option value=''><TranslateText>-- All States --</TranslateText></option>
+          {INDIAN_STATES.map((s,idx)=>(
+            <option key={idx} value={s}>{s}</option>
+          ))}
         </select>
       </label>
 
       &nbsp;&nbsp;
 
+      {/* COMMODITY SELECT */}
       <label>
-        Commodity:&nbsp;
+        <TranslateText>Commodity:</TranslateText>&nbsp;
         <select
           value={commodity}
           onChange={(e) => setCommodity(e.target.value)}
           disabled={!commodities.length}
         >
-          <option value="">-- All Commodities --</option>
+          <option value=""><TranslateText>-- All Commodities --</TranslateText></option>
           {commodities.map((c, idx) => (
-            <option key={idx} value={c}>{c}</option>
+            <option key={idx} value={c}>
+              {c}
+            </option>
           ))}
         </select>
       </label>
 
       <br /><br />
 
-      {loading && <p>Loading...</p>}
-
+      {/* TABLE */}
       <table border="1" cellPadding="8">
         <thead>
           <tr>
-            <th>State</th>
-            <th>District</th>
-            <th>Market</th>
-            <th>Commodity</th>
-            <th>Min Price</th>
-            <th>Max Price</th>
-            <th>Modal Price</th>
-            <th>Date</th>
+            <th><TranslateText>State</TranslateText></th>
+            <th><TranslateText>District</TranslateText></th>
+            <th><TranslateText>Market</TranslateText></th>
+            <th><TranslateText>Commodity</TranslateText></th>
+            <th><TranslateText>Min Price Per 1 Quintal</TranslateText></th>
+            <th><TranslateText>Max Price</TranslateText></th>
+            <th><TranslateText>Modal Price</TranslateText></th>
+            <th><TranslateText>Date</TranslateText></th>
           </tr>
         </thead>
 
         <tbody>
-          {!loading && filteredRecords.length === 0 ? (
+          {filteredRecords.length === 0 ? (
             <tr>
-              <td colSpan="8" align="center">No data available</td>
+              <td colSpan="8" align="center">
+                <TranslateText>No data available</TranslateText>
+              </td>
             </tr>
           ) : (
             filteredRecords.map((r, idx) => (
@@ -110,7 +112,8 @@ function MarketPrices() {
           )}
         </tbody>
       </table>
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -9,8 +9,8 @@ export default function HomePage() {
       <Navbar />
 
       <section style={{ minHeight: "100vh", padding: "2rem" }}>
-        <h1>Welcome to FarmEasy 🌱</h1>
-        <p>Your Farming Companion starts here</p>
+        <h1><TranslateText>Welcome to FarmEasy 🌱</TranslateText></h1>
+        <p><TranslateText>Your Farming Companion starts here</TranslateText></p>
       </section>
 
       {/* Scroll gallery owns everything */}

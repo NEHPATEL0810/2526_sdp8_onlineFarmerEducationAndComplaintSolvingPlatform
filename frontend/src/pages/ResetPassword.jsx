@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useParams,useNavigate} from "react-router-dom";
 import API_BASE_URL from "../services/api";
+import TranslateText from "../components/TranslateText";
 
 function ResetPassword({onBackToLogin}){
     const {uid,token}=useParams();
@@ -43,12 +44,12 @@ function ResetPassword({onBackToLogin}){
     };
     return(
         <div>
-            <h2>Reset Password</h2>
+            <h2><TranslateText>Reset Password</TranslateText></h2>
             <form onSubmit={handleSubmit}>
                 <input type="password" placeholder="New Password" value={password} onChange={(e)=>setPassword(e.target.value)} required/>
                 <input type="password" placeholder="Confirm Password" value={confirm} onChange={(e)=>setConfirmPassword(e.target.value)} required/>
 
-                <button type="submit">Reset Password</button>
+                <button type="submit"><TranslateText>Reset Password</TranslateText></button>
             </form>
             {error && <p style={{color:"red"}}>{error}</p>}
         </div>

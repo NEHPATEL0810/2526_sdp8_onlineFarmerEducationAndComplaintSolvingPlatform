@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import API_BASE_URL from '../services/api';
+import TranslateText from '../components/TranslateText';
 
 function ForgotPassword({ onBackToLogin }){
     const [email,setEmail]=useState("");
@@ -26,10 +27,10 @@ function ForgotPassword({ onBackToLogin }){
     };
     return(
         <div>
-            <h2>Forgot Password</h2>
+            <h2><TranslateText>Forgot Password</TranslateText></h2>
             <form onSubmit={handleSubmit}>
                 <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
-                <button type="submit">Send Reset Link</button>
+                <button type="submit"><TranslateText>Send Reset Link</TranslateText></button>
             </form>
             {message && <p>{message}</p>}
 
@@ -37,7 +38,7 @@ function ForgotPassword({ onBackToLogin }){
         style={{color:"green",cursor:"pointer",marginTop:"1rem"}}
         onClick={onBackToLogin}
         >
-            Back to Login
+            <TranslateText>Back to Login</TranslateText>
         </p>
 
         </div>

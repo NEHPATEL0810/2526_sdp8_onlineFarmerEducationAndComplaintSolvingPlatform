@@ -1,6 +1,7 @@
 import {useState} from "react"
 import {useNavigate} from "react-router-dom";
 import API_BASE_URL from "../services/api"
+import TranslateText from "../components/TranslateText";
 
 function Register({ onBackToLogin }){
     const navigate=useNavigate();
@@ -44,7 +45,7 @@ function Register({ onBackToLogin }){
     };
     return(
         <div style= {{ minWidth:"300px" }}>
-            <h2>Register</h2>
+            <h2><TranslateText>Register</TranslateText></h2>
             <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange}/>
             <br/>
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}/>
@@ -53,16 +54,16 @@ function Register({ onBackToLogin }){
             <br/>
             <input type="text" name="mobile_number" placeholder="Mobile Number" onChange={handleChange}/>
             <br/>
-            <button onClick={handleSubmit}>Register</button>
+            <button onClick={handleSubmit}><TranslateText>Register</TranslateText></button>
              <p style={{ marginTop:"1rem" }}>
-                Already have an account?{" "}
+                <TranslateText>Already have an account?</TranslateText>{" "}
                 <span
                 style={{
                     cursor:"pointer",
                     color:"green",
                 }}
                 onClick={onBackToLogin}>
-                    Login
+                    <TranslateText>Login</TranslateText>
                 </span>
              </p>
         </div>
