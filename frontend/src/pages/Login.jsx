@@ -1,15 +1,17 @@
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
 import TranslateText from "../components/TranslateText";
+import { useAuth } from "../context/AuthContext";
 
-function Login({ OnRegisterClick, onForgotClick }) {
+function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({});
-
+  const [loading,setLoading] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -17,6 +19,7 @@ function Login({ OnRegisterClick, onForgotClick }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
+    setLoading(true);
 
     try {
       const response = await fetch(`${API_BASE_URL}/auth/login/`, {
@@ -35,19 +38,30 @@ function Login({ OnRegisterClick, onForgotClick }) {
         data = JSON.parse(text);
       } catch {
         console.error("Server returned HTML:", text);
-        return; // ⛔ stop execution
+        setLoading(false);
+        return; 
       }
 
       if (response.ok) {
         localStorage.setItem("access", data.access);
         localStorage.setItem("refresh", data.refresh);
-        alert("Login successful");
+        // alert("Login successful");
+        const userData = {
+          username:formData.username,
+        };
+        login(userData,data.access);
         setFormData({ username: "", password: "" });
+
+        if(onLoginSuccess) {
+          onLoginSuccess();
+        }
       } else {
         setErrors(data);
       }
     } catch (err) {
       console.error("Network error:", err);
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -67,7 +81,7 @@ function Login({ OnRegisterClick, onForgotClick }) {
           autoComplete="username"
           style={inputStyle}
         />
-        {errors.username && <p style={errorStyle}>{errors.username[0]}</p>}
+        {errors.username && (<p style={errorStyle}>{errors.username[0]}</p>)}
 
         <input
           type="password"
@@ -78,7 +92,7 @@ function Login({ OnRegisterClick, onForgotClick }) {
           autoComplete="current-password"
           style={inputStyle}
         />
-        {errors.password && <p style={errorStyle}>{errors.password[0]}</p>}
+        {errors.password && (<p style={errorStyle}>{errors.password[0]}</p>)}
 
         <button type="submit" style={buttonStyle}>
           Login

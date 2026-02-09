@@ -20,6 +20,8 @@ import ForgotPassword from "../pages/ForgotPassword";
 import MarketPrices from "../pages/MarketPrices";
 import LoginModal from "./LoginModal";
 import ElectricBorder from "./ElectricBorder";
+import { useAuth } from "../context/AuthContext";
+import ProfileAvatar from "./ProfileAvatar";
 export default function Navbar() {
 // const [open, setOpen] = React.useState(false);
 //   const handleClickOpen = () => {
@@ -28,6 +30,7 @@ export default function Navbar() {
 //   const handleClose = () => {
 //     setOpen(false);
 //   };
+const { isAuthenticated } = useAuth();
 const [openLogin,setOpenLogin] = useState(false);
 const [openRegister,setOpenRegister] = useState(false);
 const [openForgot,setOpenForgot] = useState(false);
@@ -53,20 +56,31 @@ const [openReset,setOpenReset] = useState(false);
         <a style={linkStyle} href="#">
           <TranslateText> About Us </TranslateText>
         </a>
-   
-          <TranslateText>
-            <Link style={linkStyle} to="/market-prices"> Education</Link>{" "}
-          </TranslateText>
+
+        <TranslateText>
+          <Link style={linkStyle} to="/market-prices">
+            {" "}
+            Education
+          </Link>{" "}
+        </TranslateText>
 
         <a style={linkStyle} href="#">
           <TranslateText> Complaints </TranslateText>
         </a>
-       
 
-        <motion.span style={linkStyle} onClick={() => setOpenLogin(true)}>
-          <TranslateText>Profile</TranslateText>
-        </motion.span>
+        {!isAuthenticated ? (
+          <>
+            <motion.span style={linkStyle} onClick={() => setOpenLogin(true)}>
+              <TranslateText>Profile</TranslateText>
+            </motion.span>
 
+            <span style={linkStyle}>
+              <TranslateText>Contact Us</TranslateText>
+            </span>
+          </>
+        ) : (
+          <ProfileAvatar />
+        )}
         {/* <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
           <DialogContent>
             <Login
@@ -82,39 +96,37 @@ const [openReset,setOpenReset] = useState(false);
           </DialogContent>
         </Dialog> */}
 
-        <Dialog 
-        open={openLogin}
-        onClose={() => setOpenLogin(false)}
-        PaperProps={{
-          style:{
-            background:"transparent",
-            boxShadow:"none",
-            overflow:"visible",
-          },
-        }}
+        <Dialog
+          open={openLogin}
+          onClose={() => setOpenLogin(false)}
+          PaperProps={{
+            style: {
+              background: "transparent",
+              boxShadow: "none",
+              overflow: "visible",
+            },
+          }}
         >
-          <DialogContent style={{ padding: 0,
-          overflow:"visible",
-          }}>
+          <DialogContent style={{ padding: 0, overflow: "visible" }}>
             <ElectricBorder
-            color="#4ca750"
-            speed={1}
-            chaos={0.12}
-            borderRadius={16}
-            style={{borderRadius:16}}
+              color="#4ca750"
+              speed={1}
+              chaos={0.12}
+              borderRadius={16}
+              style={{ borderRadius: 16 }}
             >
               <div style={loginCardStyle}>
                 <Login
-                OnRegisterClick={() => {
-                  setOpenLogin(false);
-                  setOpenRegister(true);
-                }}
-                onForgotClick={() => {
-                  setOpenLogin(false);
-                  setOpenForgot(true);
-                }}
+                  OnRegisterClick={() => {
+                    setOpenLogin(false);
+                    setOpenRegister(true);
+                  }}
+                  onForgotClick={() => {
+                    setOpenLogin(false);
+                    setOpenForgot(true);
+                  }}
+                  onLoginSuccess={() => setOpenLogin(false)}
                 />
-
               </div>
             </ElectricBorder>
           </DialogContent>
@@ -160,9 +172,7 @@ const [openReset,setOpenReset] = useState(false);
             />
           </DialogContent>
         </Dialog>
-        <a style={linkStyle} href="#">
-          <TranslateText>Contact Us </TranslateText>
-        </a>
+       
       </div>
     </nav>
   );
