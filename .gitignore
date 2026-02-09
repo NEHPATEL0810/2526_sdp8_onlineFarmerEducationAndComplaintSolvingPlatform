@@ -16,3 +16,15 @@ backend/db.sqlite3
 env/
 # Django local database
 backend/db.sqlite3
+migrations
+migrations/pycache/
+migrations/__pycache__/
+# VS Code settings
+.vscode/
+# macOS files
+.DS_Store
+# Logs
+logs/
+education/migrations/
+education/migrations/pycache/   
+education/migrations/__pycache__/
