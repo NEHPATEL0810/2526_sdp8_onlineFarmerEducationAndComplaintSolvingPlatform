@@ -13,11 +13,14 @@ function ForgotPassword({ onBackToLogin }) {
     setError("");
 
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/forgot-password/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      const response = await fetch(
+        `${API_BASE_URL}/auth/forgot-password/`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       const text = await response.text();
       let data = {};
@@ -32,7 +35,7 @@ function ForgotPassword({ onBackToLogin }) {
 
       if (response.ok) {
         setMessage(
-          "If an account with that email exists, a reset link has been sent.",
+          "If an account with that email exists, a reset link has been sent."
         );
         setEmail("");
       } else {
@@ -83,6 +86,7 @@ function ForgotPassword({ onBackToLogin }) {
 export default ForgotPassword;
 
 
+/* ------------------ STYLES ------------------ */
 
 const overlayStyle = {
   position: "fixed",
@@ -96,7 +100,7 @@ const overlayStyle = {
 
 const cardStyle = {
   width: "420px",
-  background: "#020617", // SAME AS LOGIN
+  background: "#020617",
   borderRadius: "22px",
   padding: "1.8rem 1.6rem",
   boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
@@ -127,7 +131,6 @@ const inputStyle = {
   background: "#020617",
   color: "#fff",
   textAlign: "center",
-  fontFamily: "'Inter', sans-serif",
   fontSize: "0.95rem",
 };
 
@@ -147,7 +150,6 @@ const buttonStyle = {
 const footerStyle = {
   marginTop: "1.3rem",
   fontSize: "0.9rem",
-  fontFamily: "'Inter', sans-serif",
   opacity: 0.9,
 };
 
@@ -163,7 +165,6 @@ const errorStyle = {
   color: "#ef4444",
   fontSize: "0.8rem",
   marginTop: "-0.3rem",
-  fontFamily: "'Inter', sans-serif",
 };
 
 const successStyle = {
@@ -171,5 +172,4 @@ const successStyle = {
   textAlign: "center",
   color: "#22c55e",
   fontSize: "0.85rem",
-  fontFamily: "'Inter', sans-serif",
 };

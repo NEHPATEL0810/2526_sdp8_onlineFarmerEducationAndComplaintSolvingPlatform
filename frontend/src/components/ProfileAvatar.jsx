@@ -26,11 +26,11 @@ const profileAvatar ={
     height: "40px",
     borderRadius: "50%",
     background:"linear-gradient(135deg, #4ca750, #22cc88)",
-    color:white,
+    color:"white",
     fontWeight:600,
     display:"flex",
     alignItems:"center",
     justifyContent:"center",
     cursor:"pointer",
-    fontFamily: inherit,
+    fontFamily: "inherit",
   }

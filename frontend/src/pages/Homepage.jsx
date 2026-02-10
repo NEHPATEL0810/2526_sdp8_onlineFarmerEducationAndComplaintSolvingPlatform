@@ -1,20 +1,40 @@
-import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TranslateText from "../components/TranslateText";
-import ScrollGallery from "../components/ScrollGallery";
-import { galleryImages } from "../assets/gallery";
+import DomeGallery from "../components/DomeGallery";
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
-      <section style={{ minHeight: "100vh", padding: "2rem" }}>
-        <h1>Welcome to FarmEasy 🌱</h1>
-        <p>Your Farming Companion starts here</p>
+      <section
+        style={{
+          marginTop: "72px",
+          padding: 0,
+          height: "calc(100vh - 72px)",
+          width: "100%",
+        }}
+      >
+        <DomeGallery
+          fit={0.8}
+          minRadius={600}
+          maxVerticalRotationDeg={0}
+          segments={34}
+          dragDampening={2}
+          grayscale={false}
+          overlayBlurColor="#14532d"
+        />
       </section>
 
-      {/* Scroll gallery owns everything */}
-      <ScrollGallery images={galleryImages} />
+      <section style={{ minHeight: "100vh", padding: "0 2rem 2rem" }}>
+        <h1>
+          <TranslateText>Welcome to FarmEasy 🌱</TranslateText>
+        </h1>
+        <p>
+          <TranslateText>Your Farming Companion starts here</TranslateText>
+        </p>
+      </section>
+
+      
 
       <section style={{ minHeight: "100vh" }} />
     </>

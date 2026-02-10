@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import API_BASE_URL from "../services/api";
+import TranslateText from "../components/TranslateText";
+import Navbar from "../components/Navbar";
 
 function CropList() {
     const [crops, setCrops] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
     const [selectedCrop, setSelectedCrop] = useState(null);
+    const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
         fetchCrops();
@@ -21,7 +24,7 @@ function CropList() {
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                setCrops(data.crops || []);
+                setCrops(data);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
@@ -33,8 +36,10 @@ function CropList() {
     };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h2>🌾 Crop Encyclopedia</h2>
+        <>
+            <Navbar />
+            <div style={{ padding: "20px", paddingTop: "90px" }}>
+            <h2><TranslateText>🌾 Crop Encyclopedia</TranslateText></h2>
 
             {/* SEARCH */}
             <form onSubmit={handleSearch} style={{ marginBottom: "20px" }}>
@@ -42,19 +47,57 @@ function CropList() {
                     type="text"
                     placeholder="Search crop (e.g. Wheat)"
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        setSearch(value);
+
+                        if (value.length > 0) {
+                            fetch(`${API_BASE_URL}/education/crops/?search=${value}`)
+                                .then((res) => res.json())
+                                .then((data) => {
+                                    setSuggestions(data);
+                                })
+                        }
+                        else {
+                            setSuggestions([]);
+                        }
+                    }}
                     style={{ padding: "8px", width: "250px" }}
                 />
+                {suggestions.length > 0 && (
+                    <div style={{
+                        border: "1px solid #ccc",
+                        width: "250px",
+                        backgroundColor: "#fff",
+                        position: "absolute",
+                        zIndex: 1000
+                    }}>
+                        {suggestions.map((crop) => (
+                            <div
+                                key={crop.id}
+                                style={{ padding: "8px", cursor: "pointer" }}
+                                onClick={() => {
+                                    setSelectedCrop(crop);
+                                    setSearch(crop.name);
+                                    setSuggestions([]);
+                                }}
+                            >
+                                {crop.name}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
                 &nbsp;
                 <button type="submit" style={{ padding: "8px 15px" }}>
-                    Search
+                    <TranslateText>Search</TranslateText>
                 </button>
             </form>
 
-            {loading && <p>Loading crops...</p>}
+            {loading && <p><TranslateText>Loading crops...</TranslateText></p>}
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-                {!loading && crops.length === 0 && <p>No crops found.</p>}
+                {!loading && crops.length === 0 && <p><TranslateText>No crops found.</TranslateText></p>}
 
                 {crops.map((crop) => (
                     <div
@@ -66,9 +109,9 @@ function CropList() {
                             padding: "10px",
                         }}
                     >
-                        {crop.images && crop.images.length > 0 && (
+                        {crop.image && (
                             <img
-                                src={`http://127.0.0.1:8000${crop.images[0]}`}
+                                src={`http://127.0.0.1:8000${crop.image}`}
                                 alt={crop.name}
                                 style={{
                                     width: "100%",
@@ -80,13 +123,13 @@ function CropList() {
                         )}
 
                         <h3>{crop.name}</h3>
-                        <p><b>Season:</b> {crop.season}</p>
-                        <p><b>Soil:</b> {crop.soil.join(", ")}</p>
+                        <p><b><TranslateText>Season:</TranslateText></b> {crop.season}</p>
+                        <p><b><TranslateText>Soil:</TranslateText></b> {crop.soil.join(", ")}</p>
                         <button
                             style={{ marginTop: "10px" }}
                             onClick={() => setSelectedCrop(crop)}
                         >
-                            View Details
+                            <TranslateText>View Details</TranslateText>
                         </button>
 
 
@@ -116,29 +159,28 @@ function CropList() {
                             }}
                         >
 
-                            {selectedCrop.images?.map((img, idx) => (
+                            {selectedCrop.image && (
                                 <img
-                                    key={idx}
-                                    src={`http://127.0.0.1:8000${img}`}
+                                    src={`http://127.0.0.1:8000${selectedCrop.image}`}
                                     alt={selectedCrop.name}
                                     style={{ width: "180px", borderRadius: "6px" }}
                                 />
-                            ))}
+                            )}
                         </div>
 
-                        <p><b>Season:</b> {selectedCrop.season}</p>
-                        <p><b>Soil:</b> {selectedCrop.soil.join(", ")}</p>
-                        <p><b>Climate:</b> {selectedCrop.climate}</p>
-                        <p><b>Duration:</b> {selectedCrop.duration}</p>
-                        <p><b>Sowing Time:</b> {selectedCrop.sowing_time}</p>
+                        <p><b><TranslateText>Season:</TranslateText></b> {selectedCrop.season}</p>
+                        <p><b><TranslateText>Soil:</TranslateText></b> {selectedCrop.soil.join(", ")}</p>
+                        <p><b><TranslateText>Climate:</TranslateText></b> {selectedCrop.climate}</p>
+                        <p><b><TranslateText>Duration:</TranslateText></b> {selectedCrop.duration}</p>
+                        <p><b><TranslateText>Sowing Time:</TranslateText></b> {selectedCrop.sowing_time}</p>
 
                         <hr />
 
-                        <p><b>Fertilizer:</b> {selectedCrop.fertilizer}</p>
-                        <p><b>Irrigation:</b> {selectedCrop.irrigation}</p>
-                        <p><b>Expected Yield:</b> {selectedCrop.yield}</p>
+                        <p><b><TranslateText>Fertilizer:</TranslateText></b> {selectedCrop.fertilizer}</p>
+                        <p><b><TranslateText>Irrigation:</TranslateText></b> {selectedCrop.irrigation}</p>
+                        <p><b><TranslateText>Expected Yield:</TranslateText></b> {selectedCrop.yield_info}</p>
 
-                        <h3>🌱 Farming Steps</h3>
+                        <h3><TranslateText>🌱 Farming Steps</TranslateText></h3>
                         <ul>
                             {selectedCrop.steps?.map((step, idx) => (
                                 <li key={idx}>{step}</li>
@@ -147,7 +189,7 @@ function CropList() {
 
                         {selectedCrop.common_mistakes && (
                             <>
-                                <h3>⚠️ Common Mistakes</h3>
+                                <h3><TranslateText>⚠️ Common Mistakes</TranslateText></h3>
                                 <ul>
                                     {selectedCrop.common_mistakes.map((m, idx) => (
                                         <li key={idx}>{m}</li>
@@ -158,8 +200,8 @@ function CropList() {
                     </div>
                 </div>
             )}
-        </div>
-
+            </div>
+        </>
     );
 }
 const overlayStyle = {

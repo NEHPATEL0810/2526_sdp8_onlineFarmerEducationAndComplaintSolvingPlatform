@@ -29,11 +29,11 @@ function Register({ onBackToLogin }) {
 
       const text = await response.text();
       let data = {};
-      try{
-        data = JSON.parse(text);
 
-      }catch{
-        console.error("Server returned HTML:",text);
+      try {
+        data = JSON.parse(text);
+      } catch {
+        console.error("Server returned HTML:", text);
         return;
       }
 
@@ -44,7 +44,7 @@ function Register({ onBackToLogin }) {
         setErrors(data);
       }
     } catch (err) {
-      console.error("Network Error:",err);
+      console.error("Network error:", err);
     }
   };
 
@@ -61,17 +61,24 @@ function Register({ onBackToLogin }) {
               value={formData.username}
               onChange={handleChange}
               style={inputStyle}
+              required
             />
-            {errors.username && (<p style={errorStyle}>{errors.username[0]}</p>)}
+            {errors.username && (
+              <p style={errorStyle}>{errors.username[0]}</p>
+            )}
 
             <input
+              type="email"
               name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
               style={inputStyle}
+              required
             />
-            {errors.email && (<p style={errorStyle}>{errors.email[0]}</p>)}
+            {errors.email && (
+              <p style={errorStyle}>{errors.email[0]}</p>
+            )}
 
             <input
               type="password"
@@ -80,8 +87,11 @@ function Register({ onBackToLogin }) {
               value={formData.password}
               onChange={handleChange}
               style={inputStyle}
+              required
             />
-            {errors.password && (<p style={errorStyle}>{errors.password[0]}</p>)}
+            {errors.password && (
+              <p style={errorStyle}>{errors.password[0]}</p>
+            )}
 
             <input
               name="mobile_number"
@@ -89,6 +99,7 @@ function Register({ onBackToLogin }) {
               value={formData.mobile_number}
               onChange={handleChange}
               style={inputStyle}
+              required
             />
 
             <button type="submit" style={buttonStyle}>
@@ -109,6 +120,10 @@ function Register({ onBackToLogin }) {
 }
 
 export default Register;
+
+
+/* ------------------ STYLES ------------------ */
+
 const overlayStyle = {
   position: "fixed",
   inset: 0,
@@ -121,28 +136,26 @@ const overlayStyle = {
 
 const cardStyle = {
   width: "480px",
-  background: "#020617", // 🔥 SAME AS LOGIN
+  background: "#020617",
   borderRadius: "22px",
   padding: "1.8rem 1.6rem",
   boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
   overflow: "hidden",
   color: "#fff",
-  textAlign:"center",
+  textAlign: "center",
 };
 
 const titleStyle = {
   marginBottom: "1.4rem",
   fontSize: "2rem",
   fontWeight: 700,
-  fontFamily: "'Poppins', sans-serif",
-  textAlign: "center",
 };
 
 const formStyle = {
   display: "flex",
   flexDirection: "column",
-  gap: "0.85rem", 
-  alignItems:"center",
+  gap: "0.85rem",
+  alignItems: "center",
 };
 
 const inputStyle = {
@@ -153,7 +166,6 @@ const inputStyle = {
   background: "#020617",
   color: "#fff",
   textAlign: "center",
-  fontFamily: "'Inter', sans-serif",
   fontSize: "0.95rem",
 };
 
@@ -172,9 +184,7 @@ const buttonStyle = {
 const footerStyle = {
   marginTop: "1.2rem",
   fontSize: "0.9rem",
-  textAlign: "center",
   opacity: 0.9,
-  fontFamily: "'Inter', sans-serif",
 };
 
 const linkStyle = {
@@ -184,12 +194,9 @@ const linkStyle = {
 };
 
 const errorStyle = {
-  width: "100%",
-  textAlign: "left", 
+  width: "90%",
+  textAlign: "left",
   color: "#ef4444",
   fontSize: "0.8rem",
-  fontFamily: "'Inter', sans-serif",
   marginTop: "-0.3rem",
-  marginBottom: "0.4rem",
 };
-

@@ -1,17 +1,16 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
- 
+  width: 100%;
+  min-height: 100vh;
+}
 
+body {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffc5;
 }
-body{
-  position:relative;
-  z-index:1;
-  background-color: #FFFFC5;
-}
-*{
+
+* {
 }
 .logo {
   height: 5em;

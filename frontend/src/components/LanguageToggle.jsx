@@ -1,73 +1,52 @@
-// "use client"
-import { motion } from "framer-motion";
-import { div } from "motion/react-client";
 import { useLanguage } from "../context/LanguageContext";
 
-export default function LanguageToggle(){
-    const{
-        translationEnabled,
-        toggleTranslation,
-        toLang,
-        setToLang,
-    } = useLanguage();
+export default function LanguageToggle() {
+  const { toLang, setToLang } = useLanguage();
 
-return (
+  return (
     <div style={wrapper}>
-     <select value={toLang} onChange={(e) => setToLang(e.target.value)}disabled={!translationEnabled}>
+      <span style={labelStyle}>Language</span>
+      <select
+        value={toLang}
+        onChange={(e) => setToLang(e.target.value)}
+        style={selectStyle}
+      >
+        <option value="hi">हिन्दी</option>
         <option value="en">English</option>
-        <option value="hi">हिन्दी</option> 
         <option value="gu">ગુજરાતી</option>
         <option value="mr">मराठी</option>
         <option value="ta">தமிழ்</option>
         <option value="te">తెలుగు</option>
         <option value="kn">ಕನ್ನಡ</option>
-     </select>
-    
-    <div
-    style={{
-        ...switchContainer,
-        justifyContent:translationEnabled ? "flex-end" : "flex-start",
-        backgroundColor:translationEnabled ? "#22cc88" : "#ddd",
-    }}
-    onClick={toggleTranslation}
-    >
-        <motion.div 
-        style = {switchHandle} 
-        layout 
-        transition={{ type: "spring",stiffness:700,damping:30}}
-        />
+      </select>
     </div>
-
-
-    </div>
-);
-
+  );
 }
-
 
 const wrapper = {
   display: "flex",
   alignItems: "center",
-  gap: "10px",
+  gap: "8px",
 };
 
-const switchContainer = {
-  width: "70px",
-  height: "36px",
-  // backgroundColor: "#ddd",
-  borderRadius: "50px",
-  padding:"4px",
-  display:"flex",
-  cursor:"pointer",
-  // borderRadius: 20,
-  // padding: 5,
-  // cursor: "pointer",
-  // display: "flex",
+const labelStyle = {
+  fontSize: "0.78rem",
+  textTransform: "uppercase",
+  letterSpacing: "0.08em",
+  fontWeight: 600,
+  color: "#ecfdf5",
 };
 
-const switchHandle = {
-  width: "28px",
-  height: "28px",
-  backgroundColor: "#4caf50",
-  borderRadius: "50%",
+const selectStyle = {
+  backgroundColor: "rgba(255,255,255,0.9)",
+  borderRadius: 999,
+  border: "1px solid rgba(22,163,74,0.65)",
+  color: "#064e3b",
+  fontSize: "0.82rem",
+  padding: "4px 16px",
+  outline: "none",
+  cursor: "pointer",
+  appearance: "none",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
 };

@@ -1,14 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
 import TranslateText from "../components/TranslateText";
-import { useAuth } from "../context/AuthContext";
 
 function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const navigate=useNavigate();
 
   const [errors, setErrors] = useState({});
   const [loading,setLoading] = useState(false);
@@ -25,10 +26,7 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
       const response = await fetch(`${API_BASE_URL}/auth/login/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: formData.username,
-          password: formData.password,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const text = await response.text();
@@ -38,23 +36,16 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
         data = JSON.parse(text);
       } catch {
         console.error("Server returned HTML:", text);
-        setLoading(false);
         return; 
-      }
+   }
 
       if (response.ok) {
         localStorage.setItem("access", data.access);
         localStorage.setItem("refresh", data.refresh);
         // alert("Login successful");
-        const userData = {
-          username:formData.username,
-        };
-        login(userData,data.access);
+        onLoginSuccess?.();
+        navigate("/home");
         setFormData({ username: "", password: "" });
-
-        if(onLoginSuccess) {
-          onLoginSuccess();
-        }
       } else {
         setErrors(data);
       }
@@ -80,8 +71,9 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
           onChange={handleChange}
           autoComplete="username"
           style={inputStyle}
+          required
         />
-        {errors.username && (<p style={errorStyle}>{errors.username[0]}</p>)}
+        {errors.username && <p style={errorStyle}>{errors.username[0]}</p>}
 
         <input
           type="password"
@@ -91,22 +83,23 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
           onChange={handleChange}
           autoComplete="current-password"
           style={inputStyle}
+          required
         />
-        {errors.password && (<p style={errorStyle}>{errors.password[0]}</p>)}
+        {errors.password && <p style={errorStyle}>{errors.password[0]}</p>}
 
         <button type="submit" style={buttonStyle}>
-          Login
+          <TranslateText>Login</TranslateText>
         </button>
       </form>
 
       <p style={forgotStyle} onClick={onForgotClick}>
-        Forgot Password?
+        <TranslateText>Forgot Password?</TranslateText>
       </p>
 
       <p style={registerStyle}>
-        Don&apos;t have an account?{" "}
+        <TranslateText>Don't have an account?</TranslateText>{" "}
         <span style={registerLinkStyle} onClick={OnRegisterClick}>
-          Register
+          <TranslateText>Register</TranslateText>
         </span>
       </p>
     </div>
@@ -114,6 +107,10 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
 }
 
 export default Login;
+
+
+
+
 const loginContainerStyle = {
   width: "100%",
   display: "flex",
@@ -133,7 +130,6 @@ const titleStyle = {
   fontSize: "2rem",
   fontWeight: "700",
   fontFamily: "'Poppins', sans-serif",
-  letterSpacing: "-0.02em",
 };
 
 const inputStyle = {
@@ -146,7 +142,6 @@ const inputStyle = {
   background: "#020617",
   color: "#ffffff",
   textAlign: "center",
-  fontFamily: "'Inter', sans-serif",
   fontSize: "0.95rem",
 };
 
@@ -159,7 +154,6 @@ const buttonStyle = {
   border: "none",
   background: "#4ca750",
   color: "#ffffff",
-  fontFamily: "'Inter', sans-serif",
   fontSize: "1rem",
   fontWeight: "600",
   cursor: "pointer",
@@ -173,13 +167,11 @@ const errorStyle = {
   marginTop: "-0.4rem",
   marginBottom: "0.6rem",
   textAlign: "left",
-  fontFamily: "'Inter', sans-serif",
 };
 
 const forgotStyle = {
   marginTop: "1rem",
   fontSize: "0.9rem",
-  fontFamily: "'Inter', sans-serif",
   color: "#4ca750",
   cursor: "pointer",
 };
@@ -187,7 +179,6 @@ const forgotStyle = {
 const registerStyle = {
   marginTop: "1.5rem",
   fontSize: "0.9rem",
-  fontFamily: "'Inter', sans-serif",
   opacity: 0.9,
 };
 

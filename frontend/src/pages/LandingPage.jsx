@@ -78,16 +78,16 @@ export default function LandingPage() {
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/home")}
           >
-            Get Started 
+            <TranslateText>Get Started</TranslateText>
           </motion.button>
           <p>
-            Enhance Your knowledge with farming and get use to with our App.
-          Start your journey towards smarter farming with FarmEasy!
+            <TranslateText>Enhance Your knowledge with farming and get use to with our App.
+          Start your journey towards smarter farming with FarmEasy!</TranslateText>
           </p>
         </div>
 
         <p className="read-the-docs">
-          FarmEasy - Online Farmer education and doubt solving app
+          <TranslateText>FarmEasy - Online Farmer education and doubt solving app</TranslateText>
         </p>
       </>
     );

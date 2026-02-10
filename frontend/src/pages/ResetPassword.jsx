@@ -47,6 +47,10 @@ function ResetPassword({ onBackToLogin }) {
         setMessage("Password reset successful. You can now log in.");
         setPassword("");
         setConfirm("");
+
+        setTimeout(() => {
+          onBackToLogin();
+        }, 2000);
       } else {
         setError(data.error || "Reset link invalid or expired");
       }
@@ -90,12 +94,6 @@ function ResetPassword({ onBackToLogin }) {
               Reset Password
             </button>
           </form>
-
-          {/* <p style={footerStyle}>
-            <span style={linkStyle} onClick={onBackToLogin}>
-              Back to Login
-            </span>
-          </p> */}
         </div>
       </ElectricBorder>
     </div>
@@ -105,6 +103,7 @@ function ResetPassword({ onBackToLogin }) {
 export default ResetPassword;
 
 
+/* ------------------ STYLES ------------------ */
 
 const overlayStyle = {
   position: "fixed",
@@ -118,7 +117,7 @@ const overlayStyle = {
 
 const cardStyle = {
   width: "420px",
-  background: "#020617", 
+  background: "#020617",
   borderRadius: "22px",
   padding: "1.8rem 1.6rem",
   boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
@@ -131,7 +130,6 @@ const titleStyle = {
   marginBottom: "1.4rem",
   fontSize: "2rem",
   fontWeight: 700,
-  fontFamily: "'Poppins', sans-serif",
 };
 
 const formStyle = {
@@ -149,7 +147,6 @@ const inputStyle = {
   background: "#020617",
   color: "#fff",
   textAlign: "center",
-  fontFamily: "'Inter', sans-serif",
   fontSize: "0.95rem",
 };
 
@@ -166,25 +163,11 @@ const buttonStyle = {
   cursor: "pointer",
 };
 
-const footerStyle = {
-  marginTop: "1.3rem",
-  fontSize: "0.9rem",
-  fontFamily: "'Inter', sans-serif",
-  opacity: 0.9,
-};
-
-const linkStyle = {
-  color: "#4ca750",
-  cursor: "pointer",
-  fontWeight: 500,
-};
-
 const errorStyle = {
   width: "90%",
   textAlign: "left",
   color: "#ef4444",
   fontSize: "0.8rem",
-  fontFamily: "'Inter', sans-serif",
   marginTop: "-0.2rem",
 };
 
@@ -193,5 +176,4 @@ const successStyle = {
   textAlign: "center",
   color: "#22c55e",
   fontSize: "0.85rem",
-  fontFamily: "'Inter', sans-serif",
 };
