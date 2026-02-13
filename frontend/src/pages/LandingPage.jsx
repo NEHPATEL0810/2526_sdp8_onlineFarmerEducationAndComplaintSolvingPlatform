@@ -15,115 +15,177 @@ const FINAL_SEQUENCE = [
 export default function LandingPage() {
   const navigate = useNavigate();
 
-  // const handleGetStarted = () => {
-  //     navigate("/home")
-  // }
+  const [blocks, setBlocks] = useState(FINAL_SEQUENCE);
+  const [isShuffling, setIsShuffling] = useState(true);
 
+  const [message, setMessage] = useState("");
 
-  
-    const [blocks, setBlocks] = useState(FINAL_SEQUENCE);
-    const [isShuffling, setIsShuffling] = useState(true);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/test/")
+      .then((res) => setMessage(res.data.message))
+      .catch((err) => console.error(err));
+  }, []);
 
-    const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (!isShuffling) return;
 
-    useEffect(() => {
-      axios
-        .get("http://127.0.0.1:8000/test/")
-        .then((res) => setMessage(res.data.message))
-        .catch((err) => console.error(err));
-    }, []);
+    const shuffleInterval = setInterval(() => {
+      setBlocks((prev) => shuffle([...prev]));
+    }, 300);
 
-    useEffect(() => {
-      if (!isShuffling) return;
+    const stopShuffle = setTimeout(() => {
+      setIsShuffling(false);
+      setBlocks(FINAL_SEQUENCE);
+    }, 2000);
 
-      const shuffleInterval = setInterval(() => {
-        setBlocks((prev) => shuffle([...prev]));
-      }, 300);
+    return () => {
+      clearInterval(shuffleInterval);
+      clearTimeout(stopShuffle);
+    };
+  }, [isShuffling]);
 
-      const stopShuffle = setTimeout(() => {
-        setIsShuffling(false);
-        setBlocks(FINAL_SEQUENCE);
-      }, 2000);
+  return (
+    <div style={pageWrapper}>
+      {/* <h1>{message}</h1> */}
+      {/* <FallingLeaves /> */}
 
-      return () => {
-        clearInterval(shuffleInterval);
-        clearTimeout(stopShuffle);
-      };
-    }, [isShuffling]);
+      <motion.div style={logoWrapper}>
+        <img src={FarmEasyLogo} alt="FarmEasy logo" style={heroLogoStyle} />
+      </motion.div>
 
-    return (
-      <>
-        {/* <h1>{message}</h1> */}
-        {/* <FallingLeaves /> */}
-        <motion.div>
-          <img src={FarmEasyLogo} className="logo" alt="FarmEasy logo" />
-        </motion.div>
-
-        <ul style={container}>
-          {blocks.map((block) => (
-            <motion.li
-              key={block.id}
-              layout
-              transition={spring}
-              style={{ ...moveItem, backgroundColor: block.color }}
-            >
-              {block.text}
-            </motion.li>
-          ))}
-        </ul>
-
-        <div className="card">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/home")}
+      <ul style={container}>
+        {blocks.map((block) => (
+          <motion.li
+            key={block.id}
+            layout
+            transition={spring}
+            style={{ ...moveItem, backgroundColor: block.color }}
           >
-            <TranslateText>Get Started</TranslateText>
-          </motion.button>
-          <p>
-            <TranslateText>Enhance Your knowledge with farming and get use to with our App.
-          Start your journey towards smarter farming with FarmEasy!</TranslateText>
-          </p>
-        </div>
+            {block.text}
+          </motion.li>
+        ))}
+      </ul>
 
-        <p className="read-the-docs">
-          <TranslateText>FarmEasy - Online Farmer education and doubt solving app</TranslateText>
+      <div style={cardStyle}>
+        <motion.button
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.96 }}
+          onClick={() => navigate("/home")}
+          style={ctaButtonStyle}
+        >
+          <TranslateText>Get Started</TranslateText>
+        </motion.button>
+        <p style={cardTextStyle}>
+          <TranslateText>
+            Enhance your farming knowledge and get comfortable with our app.
+            Start your journey towards smarter farming with FarmEasy!
+          </TranslateText>
         </p>
-      </>
-    );
-  }
+      </div>
 
-  function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
-  }
+      <p style={taglineStyle}>
+        <TranslateText>
+          FarmEasy – Online farmer education and doubt solving platform
+        </TranslateText>
+      </p>
+    </div>
+  );
+}
 
-  const spring = {
-    type: "spring",
-    stiffness: 300,
-    damping: 20,
-  };
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
-  const container = {
-    listStyle: "none",
-    padding: 0,
-    margin: "20px auto",
-    display: "flex",
-    gap: 0,
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1,
-    position: "relative",
-  };
+const spring = {
+  type: "spring",
+  stiffness: 300,
+  damping: 20,
+};
 
-  const moveItem = {
-    width: 100,
-    height: 90,
-    borderRadius: 12,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "5rem",
-    fontWeight: "bold",
-    color: "#fff",
-  };
+const container = {
+  listStyle: "none",
+  padding: 0,
+  margin: "20px auto",
+  display: "flex",
+  gap: 0,
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 1,
+  position: "relative",
+};
+
+const moveItem = {
+  width: 100,
+  height: 90,
+  borderRadius: 18,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "4rem",
+  fontWeight: "bold",
+  color: "#fff",
+};
+
+const pageWrapper = {
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "3rem 1.5rem 2.5rem",
+  background:
+    "radial-gradient(circle at top, rgba(187,247,208,0.35), transparent 55%)",
+};
+
+const logoWrapper = {
+  marginBottom: "1.5rem",
+};
+
+const heroLogoStyle = {
+  height: "96px",
+  width: "auto",
+  borderRadius: "24px",
+  boxShadow: "0 18px 45px rgba(22,101,52,0.35)",
+};
+
+const cardStyle = {
+  marginTop: "1.75rem",
+  padding: "1.75rem 2rem",
+  maxWidth: "460px",
+  width: "100%",
+  borderRadius: "20px",
+  background: "#f9fafb",
+  boxShadow: "0 16px 40px rgba(15,23,42,0.18)",
+  textAlign: "center",
+};
+
+const ctaButtonStyle = {
+  background:
+    "linear-gradient(90deg, rgba(22,163,74,0.98), rgba(34,197,94,0.98))",
+  border: "none",
+  borderRadius: "999px",
+  padding: "0.75rem 2.25rem",
+  fontSize: "1rem",
+  fontWeight: 600,
+  color: "#f9fafb",
+  cursor: "pointer",
+  boxShadow: "0 10px 30px rgba(22,163,74,0.35)",
+};
+
+const cardTextStyle = {
+  marginTop: "1rem",
+  fontSize: "0.98rem",
+  lineHeight: 1.7,
+  color: "#1f2933",
+};
+
+const taglineStyle = {
+  marginTop: "1.75rem",
+  fontSize: "0.9rem",
+  color: "#4b5563",
+  textAlign: "center",
+};
+
+
 

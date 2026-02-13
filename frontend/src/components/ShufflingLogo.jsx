@@ -76,6 +76,7 @@ export default function LogoShuffle() {
     alignItems: "center",
     justifyContent: "center",
     fontSize: "3rem",
-    fontWeight: "bold",
+    fontWeight: 800,
+    letterSpacing: "0.04em",
     color: "#fff",
   };
