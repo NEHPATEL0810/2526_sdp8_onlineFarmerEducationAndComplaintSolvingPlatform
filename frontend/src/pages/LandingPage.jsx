@@ -4,6 +4,7 @@ import FallingLeaves from "../components/FallingLeaves";
 import FarmEasyLogo from "../assets/Logo.png";
 import { useState, useEffect } from "react";
 import TranslateText from "../components/TranslateText";
+import { Boxes } from "../components/ui/background-boxes";
 import axios from "axios";
 const FINAL_SEQUENCE = [
   { id: 1, text: "Fa", color: "#2e7d32" },
@@ -47,14 +48,35 @@ export default function LandingPage() {
 
   return (
     <div style={pageWrapper}>
-      {/* <h1>{message}</h1> */}
-      {/* <FallingLeaves /> */}
+      {/* Background Boxes layer */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          overflow: "hidden",
+        }}
+      >
+        <Boxes />
+        {/* Radial mask to fade edges and blend with page background */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+            background:
+              "radial-gradient(circle at center, transparent 30%, rgba(255,255,197,0.9) 80%)",
+            pointerEvents: "none",
+          }}
+        />
+      </div>
 
-      <motion.div style={logoWrapper}>
+      {/* All existing content — layered above the boxes */}
+      <motion.div style={{ ...logoWrapper, position: "relative", zIndex: 2 }}>
         <img src={FarmEasyLogo} alt="FarmEasy logo" style={heroLogoStyle} />
       </motion.div>
 
-      <ul style={container}>
+      <ul style={{ ...container, position: "relative", zIndex: 2 }}>
         {blocks.map((block) => (
           <motion.li
             key={block.id}
@@ -67,7 +89,7 @@ export default function LandingPage() {
         ))}
       </ul>
 
-      <div style={cardStyle}>
+      <div style={{ ...cardStyle, position: "relative", zIndex: 2 }}>
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.96 }}
@@ -84,7 +106,7 @@ export default function LandingPage() {
         </p>
       </div>
 
-      <p style={taglineStyle}>
+      <p style={{ ...taglineStyle, position: "relative", zIndex: 2 }}>
         <TranslateText>
           FarmEasy – Online farmer education and doubt solving platform
         </TranslateText>
@@ -134,8 +156,9 @@ const pageWrapper = {
   alignItems: "center",
   justifyContent: "center",
   padding: "3rem 1.5rem 2.5rem",
-  background:
-    "radial-gradient(circle at top, rgba(187,247,208,0.35), transparent 55%)",
+  position: "relative",
+  overflow: "hidden",
+  background: "#ffffc5",
 };
 
 const logoWrapper = {

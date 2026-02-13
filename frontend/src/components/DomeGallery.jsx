@@ -28,6 +28,26 @@ const DEFAULT_IMAGES = [
     src: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&w=1200&auto=format&fit=crop",
     alt: "Close-up of hands holding soil and plant",
   },
+  {
+    src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1200&auto=format&fit=crop",
+    alt: "Rice paddy terraces with water reflection",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1200&auto=format&fit=crop",
+    alt: "Aerial view of lush green farmland",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?q=80&w=1200&auto=format&fit=crop",
+    alt: "Farmer harvesting vegetables in morning light",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop",
+    alt: "Freshly harvested organic produce on wooden table",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop",
+    alt: "Corn field at golden hour",
+  },
 ];
 
 const DEFAULTS = {
@@ -126,6 +146,8 @@ export default function DomeGallery({
   imageBorderRadius = "30px",
   openedImageBorderRadius = "30px",
   grayscale = false,
+  autoRotate = true,
+  autoRotateSpeed = 0.15,
 }) {
   const rootRef = useRef(null);
   const mainRef = useRef(null);
@@ -142,6 +164,7 @@ export default function DomeGallery({
   const draggingRef = useRef(false);
   const movedRef = useRef(false);
   const inertiaRAF = useRef(null);
+  const autoRotateRAF = useRef(null);
   const openingRef = useRef(false);
   const openStartedAtRef = useRef(0);
   const lastDragEndAt = useRef(0);
@@ -270,6 +293,37 @@ export default function DomeGallery({
   useEffect(() => {
     applyTransform(rotationRef.current.x, rotationRef.current.y);
   }, []);
+
+  // Continuous auto-rotation effect
+  useEffect(() => {
+    if (!autoRotate) return;
+
+    let lastTime = performance.now();
+
+    const tick = (now) => {
+      const delta = now - lastTime;
+      lastTime = now;
+
+      // Pause auto-rotation while user is dragging, inertia is active, or an image is focused
+      if (!draggingRef.current && !inertiaRAF.current && !focusedElRef.current) {
+        const frameFactor = delta / 16.667; // normalise to ~60fps
+        const nextY = rotationRef.current.y + autoRotateSpeed * frameFactor;
+        rotationRef.current = { ...rotationRef.current, y: nextY };
+        applyTransform(rotationRef.current.x, nextY);
+      }
+
+      autoRotateRAF.current = requestAnimationFrame(tick);
+    };
+
+    autoRotateRAF.current = requestAnimationFrame(tick);
+
+    return () => {
+      if (autoRotateRAF.current) {
+        cancelAnimationFrame(autoRotateRAF.current);
+        autoRotateRAF.current = null;
+      }
+    };
+  }, [autoRotate, autoRotateSpeed]);
 
   const stopInertia = useCallback(() => {
     if (inertiaRAF.current) {
@@ -473,7 +527,7 @@ export default function DomeGallery({
                 if (
                   !draggingRef.current &&
                   rootRef.current?.getAttribute("data-enlarging") !==
-                    "true"
+                  "true"
                 )
                   document.body.classList.remove("dg-scroll-lock");
               }, 300);

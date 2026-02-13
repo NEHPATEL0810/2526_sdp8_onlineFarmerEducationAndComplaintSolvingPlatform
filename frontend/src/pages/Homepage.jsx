@@ -1,11 +1,19 @@
 import Navbar from "../components/Navbar";
 import TranslateText from "../components/TranslateText";
 import DomeGallery from "../components/DomeGallery";
+import ServicesSection from "../components/ServicesSection";
+import SolutionsSection from "../components/SolutionsSection";
+import StatsSection from "../components/StatsSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import BlogSection from "../components/BlogSection";
+import Footer from "../components/Footer";
+
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
+      {/* Hero — DomeGallery (existing) */}
       <section
         style={{
           marginTop: "72px",
@@ -25,18 +33,29 @@ export default function HomePage() {
         />
       </section>
 
-      <section style={{ minHeight: "100vh", padding: "0 2rem 2rem" }}>
-        <h1>
-          <TranslateText>Welcome to FarmEasy 🌱</TranslateText>
+      {/* Welcome Banner */}
+      <section
+        className="w-full py-20 md:py-28 px-4 text-center"
+        style={{ background: "#ffffc5" }}
+      >
+        <h1
+          className="text-4xl md:text-5xl font-extrabold mb-4"
+          style={{ color: "#15803d" }}
+        >
+          <TranslateText>Welcome to</TranslateText> <span style={{ color: "#4caf50" }}>FarmEasy</span> 🌱
         </h1>
-        <p>
-          <TranslateText>Your Farming Companion starts here</TranslateText>
+        <p className="text-base md:text-lg max-w-2xl mx-auto text-gray-600 leading-relaxed">
+          <TranslateText>Your AI-powered farming companion — ask crop queries, check real-time market prices, explore government schemes, and grow with confidence.</TranslateText>
         </p>
       </section>
 
-      
-
-      <section style={{ minHeight: "100vh" }} />
+      {/* New Sections */}
+      <ServicesSection />
+      <SolutionsSection />
+      <StatsSection />
+      <TestimonialsSection />
+      <BlogSection />
+      <Footer />
     </>
   );
 }
