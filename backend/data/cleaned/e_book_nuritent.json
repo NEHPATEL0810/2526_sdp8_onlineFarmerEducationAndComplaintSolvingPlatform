@@ -1,0 +1,1102 @@
+[
+  {
+    "crop_name": "Identification and Management of",
+    "description": ""
+  },
+  {
+    "crop_name": "Nutrient Disorders and Diseases",
+    "description": "in Rice: A Visual Diagnostic Tool 2013 AK Nayak, Mohammad Shahid, R Raja, B Lal, Priyanka Gautam, P Bhattacharyya, Anjani Kumar, R Tripathi, Sangita Mohanty, BB Panda, SD Mohapatra, KM Das and AK Shukla"
+  },
+  {
+    "crop_name": "CENTRAL RICE RESEARCH INSTITUTE",
+    "description": ""
+  },
+  {
+    "crop_name": "Indian Council of Agricultural Research",
+    "description": "Cuttack 753006, Odisha, India"
+  },
+  {
+    "crop_name": "PREFACE",
+    "description": ""
+  },
+  {
+    "crop_name": "Rice is a major cereal crop grown across the world and meets the food",
+    "description": "demand of more than half of the world population. There is a wide varia- tion in rice yield from one region to other more so in India. For improving and sustaining the rice yield to meet the demand of burgeoning popula- tion, there is a need to apply all the ingenuity of rice science. Managing the nutrient deficiencies, toxicities and pathogenic diseases is key to achieve this goal. A simple and easy to use visual diagnostic tool is very effective for timely identifying the symptoms and applying the corrective measures at field level. Normally 16 elements are considered as essential, out of which N, P and K are the primary macronutrients; Ca, Mg and S are the secondary macronutrients; and Fe, Mn, Zn, Cu, B, Mo and Cl are the micronutri- ents. For optimum growth and reproduction all the essential nutrients are required by plants in balanced proportion. Nutrient deficiency occurs when an essential nutrient is not available in sufficient quantity to meet the requirements of a growing plant while the toxicity occurs when a nutrient is in excess of critical limits of plant. Both the situation hamper the nor- mal plant growth and exhibit characteristics symptoms."
+  },
+  {
+    "crop_name": "Plant diseases also show visible symptoms like nutrient deficiency and",
+    "description": "toxicity symptoms, sometimes it is difficult to distinguish one from an- other and requires expertise on the visual diagnosis. Though laboratory based molecular techniques are accurate tools, the visible symptoms based on the morphological characters sometimes are the only means of diagno- sis available to farmers for adopting the corrective measures against the pathogenic diseases. In most of the cases, interpreting visual nutrient deficiency, toxicity and disease symptoms in plants can be difficult, even for the most experi- enced eyes and hence plant analysis or soil testing is necessary to confirm the result. Many symptoms appear similar and multiple deficiencies and/ or toxicities can occur at the same time, making it even more confusing. Nutrient deficiencies can also be confused with symptoms of disease, drought, excess water, herbicide and pesticide damage and pest attack. This book on visual symptoms of nutrient deficiency, toxicity and some major disease in rice crop is designed as a management guide to identify, understand and manage the occurrence of nutrient deficiencies, toxicities and diseases in rice crop. We hope that this book will act as an useful tool for rice researchers, extension workers, students and farmers, and would help to boost up the rice production and productivity."
+  },
+  {
+    "crop_name": "Authors",
+    "description": ""
+  },
+  {
+    "crop_name": "CONTRIBUTORS",
+    "description": ""
+  },
+  {
+    "crop_name": "AK Nayak P Bhattacharyya",
+    "description": ""
+  },
+  {
+    "crop_name": "Principal Scientist Senior Scientist",
+    "description": "Soil Science & Microbiology Soil Science & Microbiology"
+  },
+  {
+    "crop_name": "Central Rice Research Institute Central Rice Research Institute",
+    "description": "Cuttack (India) - 753 006 Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "AK Shukla Priyanka Gautam",
+    "description": "Project Coordinator (Micronutrients) Scientist"
+  },
+  {
+    "crop_name": "Indian Institute of Soil Science Agronomy",
+    "description": "Bhopal (India) - 402038 Central Rice Research Institute Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "Anjani Kumar",
+    "description": ""
+  },
+  {
+    "crop_name": "Scientist R Raja",
+    "description": "Soil Science & Microbiology Senior Scientist"
+  },
+  {
+    "crop_name": "Central Rice Research Institute Agronomy",
+    "description": "Cuttack (India) - 753 006 Central Rice Research Institute Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "B Lal",
+    "description": ""
+  },
+  {
+    "crop_name": "Scientist R Tripathi",
+    "description": ""
+  },
+  {
+    "crop_name": "Agronomy Scientist",
+    "description": "Central Rice Research Institute Soil Science & Microbiology Cuttack (India) - 753 006 Central Rice Research Institute Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "BB Panda",
+    "description": ""
+  },
+  {
+    "crop_name": "Senior Scientist Sangita Mohanty",
+    "description": ""
+  },
+  {
+    "crop_name": "Agronomy Scientist",
+    "description": "Central Rice Research Institute Soil Science & Microbiology Cuttack (India) - 753 006 Central Rice Research Institute Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "KM Das",
+    "description": "Ex-Principal Scientist S D Mohapatra"
+  },
+  {
+    "crop_name": "Plant Pathology Senior Scientist",
+    "description": ""
+  },
+  {
+    "crop_name": "Central Rice Research Institute Entomology",
+    "description": "Cuttack (India) - 753 006 Central Rice Research Institute Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "Mohammad Shahid",
+    "description": ""
+  },
+  {
+    "crop_name": "Scientist",
+    "description": "Soil Science & Microbiology"
+  },
+  {
+    "crop_name": "Central Rice Research Institute",
+    "description": "Cuttack (India) - 753 006"
+  },
+  {
+    "crop_name": "CONTENTS",
+    "description": "1 Introduction.....................................................................................1 2 Mineral deficiency symptoms and management 2.1 Nitrogen................................................................................10 2.2 Phosphorus...........................................................................12 2.3 Potassium .............................................................................14 2.4 Calcium ................................................................................16 2.5 Magnesium ...........................................................................18 2.6 Sulphur .................................................................................20 2.7 Zinc.......................................................................................22 2.8 Iron .......................................................................................24 2.9 Manganese............................................................................26 2.10Copper..................................................................................28 2.11Boron....................................................................................30 3 Mineral toxicity symptoms and management 3.1 Iron .......................................................................................32 3.2 Boron....................................................................................34 3.3 Manganese............................................................................36 3.4 Aluminium ............................................................................38 3.5 Sulphide................................................................................39 4 Disease symptoms and management 4.1 Bacterial leaf blight.............................................................42 4.2 Brown spot............................................................................44 4.3 Blast......................................................................................46 4.4 Bacterial leaf streak.............................................................48 4.5 Sheath blight.........................................................................50 4.6 Rice Tungro ..........................................................................52 References......................................................................................53"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "INTRODUCTION",
+    "description": "Plants need 16 elements for their growth and completion of life cycle. Plant takes C from atmosphere, H and O from water and rest 13 (N, P, K, Ca, Mg, S, Fe, Mn, Zn, Cu, B, Mo and Cl) are mainly absorbed from soil. These elements are essential for rice plant in one form or other for per- forming various metabolic functions and to complete vegetative and re- productive stages of life cycle (Table 1). There are also some beneficial elements like Ni, Na, Si and Co. Plant growth is af- fected when any of the essential nutrient is not present in soil in opti- mum range. Plants may not show visual symptoms up to a cer- tain level of nutrient content, but growth is affected and this situ- ation is known as hid- den hunger. When a nutrient level still falls, plants show character- Fig 1. Concentration of essential elements istics symptoms of de- exhibiting deficiency or toxicity ficiency (Fig. 1). When present in excess, it shows symptoms of toxicity. Growth and/or quality of plants are affected in both the situations. Nutri- ent deficiency and toxicity are often referred as nutrient disorders."
+  },
+  {
+    "crop_name": "Some symptoms are masked by diseases and other stresses therefore a",
+    "description": "careful and patient observation is required on more number of plants for typical symptoms of nutrient disorders."
+  },
+  {
+    "crop_name": "How nutritional disorders occur",
+    "description": ""
+  },
+  {
+    "crop_name": "A number of integrated factors which influence nutrient availability to",
+    "description": "plants resulting in nutritional disorders. The deficiency and toxicity of macro and micronutrients in soil may arise due to: i) natural supply of nutrients; ii) adverse soil conditions such as excessive acidity, alkalinity and salinity; iii) relative activity of micro-organisms which play a vital role in nutrient release; iv) addition of fertilizer; v) weather conditions. Severe deficiencies (in some cases hidden hunger) and toxicities can be identified by visual symptoms, clearly examining and differentiating from disease symptoms. 1(cid:132)"
+  },
+  {
+    "crop_name": "Elements Functions",
+    "description": "Nitrogen (N) It is integral part of chlorophyll. It promotes rapid growth, increase plant height and tiller number. It plays an impor tant role in synthesis of proteins, enzymes, hormones, vita mins, alkaloids, nucleic acids (DNA, RNA) etc. Phosphorus (P) It plays central role in energy transfer and protein metabo- lism. It is a constituent of sugar phosphates, nucleotides, nucleic acids, co-enzymes and phospho-lipids. Potassium (K) It helps in osmotic and ionic regulation and is required as a co-factor or activator for 40 or more enzymes. It imparts disease and drought resistance. Calcium (Ca) It is involved in cell division and plays a major role in the maintenance of membrane integrity. It is a constituent of cell wall as calcium pectate. Magnesium (Mg) It is central part of chlorophyll and it is required in several enzymes involved in phosphate transfer. It is structural com- ponent of ribosomes. Sulfur (S) Somewhat like phosphorus, it is involved in plant cell en- ergetics. It plays an important role in plant lipid synthesis and amino acids. Zinc (Zn) It is an essential component of several enzyme systems (de- hydrogenases, proteinases and peptidases including carbonic anhydrase and alcohol dehydrogenase). Iron (Fe) As a constituent of various enzymes (cytochrome, catalase, dipeptides etc.), iron plays the part of a vital catalyst in the plant. It is a key element in various redox reaction of respi- ration and photosynthesis. Manganese (Mn) It is involved in the O evolving system of photosynthesis 2 and it is a constituent of decarboxylases, kinases, oxidases etc. and hence, essential for respiration, formation of chlo- rophyll and reduction in nitrates. Copper (Cu) Acting as a component of metalloenzymes, regulating some enzymatic actions, and catalyzing oxidation reactions; Play ing a role in: i) nitrogen, protein and hormone metabolism; ii) photosynthesis and respiration. Contd..... (cid:132)2"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Elements Functions",
+    "description": "Boron (B) It is essential for development and growth of new cells in plant meristem. It is necessary for the germination of pol- len, formation of flowers and for the absorption of cations. Molybdenum (Mo) It’s function in rice plants is limited to the reduction of nitrate to nitrite. It is a component of nitrogenase, nitrate reductase, sulphate oxidase and xanthine hydrogenase en- zymes . Chlorine (Cl) Essential for photosynthesis and as an activator of enzymes involved in splitting of water. Associated with osmo-regula- tion of plants growing in saline soils."
+  },
+  {
+    "crop_name": "Diagnosis of nutrient disorders in rice plants",
+    "description": ""
+  },
+  {
+    "crop_name": "The cheapest diagnostic technique for identifying nutrient disorders",
+    "description": "in rice is visual symptoms. There are three steps in identifying nutrient disorders by visual symptoms. 1. Observing plants for its normal growth and development Symptoms are one way plants communicate; they are a kind of lan- guage. When plants are deficient in a nutrient or suffer toxicity of an element visible symptoms appear. Plant height: Stunted growth is a common symptom for deficiency or toxicity, but N and P have more influence on growth reduction. Unusually tall plants may be induced by Bakanae disease. Tillers: Reduced tiller number is a common symptom for deficiency or toxicity. Leaves: Chlorosis, necrosis (brown spots) and orange discoloration are common symptoms of deficiency or toxicity. 2. Identifying the affected plant parts"
+  },
+  {
+    "crop_name": "The mobility of nutrients within the plant and the position of the leaf",
+    "description": "on which the deficiency symptoms appear are interrelated. Knowledge of mobility of nutrients in the plant helps in finding which nutrient is defi- cient. A mobile nutrient in the plant moves to the growing points in case of deficiency, therefore symptoms appear on the lower leaves. For a nutri- ent whose mobility is low, symptoms normally appear in upper leaves because the nutrient fails to move from lower to upper leaves where it is needed for active growth (Fig. 2). Based on the mobility in plants nutri- ents are grouped as follows: 3(cid:132)"
+  },
+  {
+    "crop_name": "Younger Terminal",
+    "description": ""
+  },
+  {
+    "crop_name": "Older leaves Middle leaves",
+    "description": "leaves buds"
+  },
+  {
+    "crop_name": "Yellowing Yellowing",
+    "description": "N , P, K, Mg Ca, B Zn, Mo S, Fe, Mn, Cu"
+  },
+  {
+    "crop_name": "Leaf edges brown or",
+    "description": ""
+  },
+  {
+    "crop_name": "Dead spots No dead spots White leaf tips Green veins scorched",
+    "description": "K N, P, Mg Zn Fe, Mn Ca"
+  },
+  {
+    "crop_name": "Death of",
+    "description": ""
+  },
+  {
+    "crop_name": "Leaf yellowing Leaf purpling Yellow veins growing points",
+    "description": "N, Mg P S, Cu B"
+  },
+  {
+    "crop_name": "Green veins",
+    "description": "Mg"
+  },
+  {
+    "crop_name": "Yellow veins",
+    "description": "N Fig. 3 Key to visual diagnosis of nutrient deficiencies (cid:132)4"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Nitrogen",
+    "description": ""
+  },
+  {
+    "crop_name": "Uniform over leaf",
+    "description": ""
+  },
+  {
+    "crop_name": "Possibly S if",
+    "description": "symptoms are also"
+  },
+  {
+    "crop_name": "Chlorosis on young leaves",
+    "description": ""
+  },
+  {
+    "crop_name": "Interveinal or blotchy Magnesium",
+    "description": ""
+  },
+  {
+    "crop_name": "Older leaves",
+    "description": "Tip or edge scorch, interveinal yellowing Potassium or browning"
+  },
+  {
+    "crop_name": "Necrosis",
+    "description": "Interveinal or blotchy, varying shades of Magnesium colour Uniform over leaf Sulphur, Iron Chlorosis Leaf e c d u g p e p s in p g urple, Sulphur Younger Interv o e r i n b a lo l t y c e h l y lowing M Z C i a n o n c p g , p a I e n r e r o s , n e , leaves"
+  },
+  {
+    "crop_name": "Interveinal blotches",
+    "description": "and leaf edge Calcium scorching"
+  },
+  {
+    "crop_name": "Necrosis Yellow to brown",
+    "description": "interveinal area, red to brown purple Boron leaves, deformed, curled, torn leaves Fig. 4 Flow chart for visual diagnosis of nutrient deficiencies"
+  },
+  {
+    "crop_name": "Limitations of visual diagnosis",
+    "description": "(cid:55) Some hunger signs are common for more than one elements e.g. all the elements which govern the chlorophyll content such as N, Fe, and Mg show similar symptoms. (cid:55) Deficiency and toxicity symptoms of plant nutrients sometimes re- sembles with the symptoms of certain plant diseases. (cid:55) An attack of insect, pest and disease or mechanical injury may cause wilting which may be similar to the symptoms for certain deficient/ toxic elements. (cid:55) It gives only a qualitative analysis of plant deficiency which cannot be a basis for suggesting the nutrient requirement of the crop."
+  },
+  {
+    "crop_name": "Visual diagnosis of diseases",
+    "description": ""
+  },
+  {
+    "crop_name": "Plant diseases also show visible symptoms like deficiency and toxicity",
+    "description": "symptoms, sometimes it is difficult to distinguish one from another and requires expertise on the visual diagnosis. Though laboratory based 5(cid:132)"
+  },
+  {
+    "crop_name": "Progression of symptoms is one of the most important characteristics",
+    "description": "associated with problems caused by biotic agents. In some cases, such as improper herbicide usage, symptoms observed may be similar to spots present as a result of an infectious agent, but with herbicide injury, the symptoms usually appear suddenly and there is no observable progression of symptoms. The spots may also follow spray patterns of the herbicide. Herbicides, such as 2,4-D, can cause leaf distortion which may be con- fused with viral diseases. However, when new leaves form, they will gen- erally be free of symptoms, indicating a lack of symptom progression. Similarly, deficiency and toxicity symptoms may also resemble with the symptoms caused by diseases. The difference is that most of the plant diseases appear under favorable weather conditions like high humidity, day and night temperature, cloudiness etc. and occurs mostly in patches except under severe infestation. However, the symptoms of nutrient defi- ciencies and toxicities generally spread uniformly in the field. Signs of plant diseases are the observable evidence of the actual dis- ease causing agent. Signs are much more specific to disease causing agents than are symptoms and are extremely useful in the proper diagnosis of a disease and identification of the agent causing the disease. The use of a magnifying lens and a knife can be valuable for a diagnostician in the field. For example, bacterial ooze can be observed by cutting the affected stems and placing them in water."
+  },
+  {
+    "crop_name": "Variations in symptoms expressed by diseased plants may lead to an",
+    "description": "improper diagnosis. It is possible that more than one problem may present."
+  },
+  {
+    "crop_name": "Sometimes symptoms associated with deficiencies and toxicities appear",
+    "description": "(cid:132)6"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool simultaneously with the disease symptoms as the nutrient deficiency and toxicity is the predisposed condition for the occurrence of some diseases."
+  },
+  {
+    "crop_name": "Interaction between nutrient and plant diseases",
+    "description": "Interactions between plants, nutrients, and disease pathogens are very complex and not completely understood. Nutrition, although frequently unrecognized, has always been a primary component of disease control. Plants suffering a nutrient stress will be less vigorous and more suscep- tible to a variety of diseases. The severity of most diseases can be reduced and the chemical, biological or genetic control of many plant pathogens can be enhanced by proper nutrition (Table 2). Table 2. Plant diseases and nutrient interactions"
+  },
+  {
+    "crop_name": "Elements Relation with diseases",
+    "description": ""
+  },
+  {
+    "crop_name": "Nitrogen Excessive N enhanced tissue susceptibility to blast disease N",
+    "description": "suppresses fungal disease and feeding intensity of sucking insects."
+  },
+  {
+    "crop_name": "Phosphorus P lowers the susceptibility to fungal attacks because it is a com",
+    "description": "ponent of phospholipids in cellular membranes."
+  },
+  {
+    "crop_name": "Potassium K application reduces insect attacks and fungal and nematode",
+    "description": "infections, because is has a role in cellular functions and thick- cuticle development. Calcium Ca as a component of calcium pectate in the middle lamella, its levels were related to lower susceptibility of leaves to fungus."
+  },
+  {
+    "crop_name": "Sulphur S used as fungicide to control and suppress fungal diseases",
+    "description": "Accumulation of S in xylem vessel invading fungal pathogen. Zinc Zn prevents leakage of sugar onto the plant surfaces, which can enhance the invasion of fungus and bacteria."
+  },
+  {
+    "crop_name": "Copper Cu fertilization decreases the severity of the Pyricularia oryzae",
+    "description": "on rice due to its role as a component of polyphenol oxidase"
+  },
+  {
+    "crop_name": "Copper has the ability to denature the spores and conidia of",
+    "description": "fungus. Silicon Diseases such as blast, brown spot and sheath blight can be ex- tremely threatening to rice cultivation if Si is deficient in soil. Silicon has physiological roles in disease resistance. 7(cid:132)"
+  },
+  {
+    "crop_name": "Rice diseases vs plant nutrients",
+    "description": ""
+  },
+  {
+    "crop_name": "Essential nutrient elements besides their growth enhancing and yield",
+    "description": "maximizing roles may also have secondary effect on survival and viru- lence of pathogens or the tolerance of the host plant to the disease. Defi- ciency of nutrients has often been regarded as predisposing factors in plant susceptibility to many plant diseases. Application of nutrient elements has shown reduction in disease incidence in rice plant (Table 3). Table 3. Disease incidence reduction vis-à-vis plant nutrients"
+  },
+  {
+    "crop_name": "Element Diseases Causal organism",
+    "description": "K Leaf spot Helminthosporium spp."
+  },
+  {
+    "crop_name": "Brown spot Cochliobolus miyabeanus",
+    "description": ""
+  },
+  {
+    "crop_name": "Sheath blight Rhizoctonia solani",
+    "description": ""
+  },
+  {
+    "crop_name": "Stem rot Sclerotium oryzae",
+    "description": ""
+  },
+  {
+    "crop_name": "Brown spot Ophiobolus miyabeanus",
+    "description": ""
+  },
+  {
+    "crop_name": "Blast Pyricularia grisea",
+    "description": ""
+  },
+  {
+    "crop_name": "Stem rot Sclerotium oryzae",
+    "description": "Bacterial leaf blight Xanthomonas oryzae pv. oryzae"
+  },
+  {
+    "crop_name": "Cu Blast Pyricularia grisea",
+    "description": ""
+  },
+  {
+    "crop_name": "Mn Blast Pyricularia grisea",
+    "description": "Leaf spot Alternaria spp."
+  },
+  {
+    "crop_name": "Zn Leaf spot Cochliobolus miyabeanus",
+    "description": "Stem/sheath blight Rhizoctonia solani"
+  },
+  {
+    "crop_name": "Si Blast Pyricularia grisea",
+    "description": ""
+  },
+  {
+    "crop_name": "Brown spot Cochliobolus miyabeanus",
+    "description": ""
+  },
+  {
+    "crop_name": "In this diagnostic tool typical colorful visual symptoms of nutrient",
+    "description": "deficiencies, toxicities and diseases whose symptoms resembles with the deficiency symptoms or excess of nutrients in rice plant have been pre- sented which can serve as a guide to diagnose and take timely, appropri- ate remedial measures so that productivity can be enhanced. (cid:132)8"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool 2. Mineral Deficiency"
+  },
+  {
+    "crop_name": "Symptoms and",
+    "description": ""
+  },
+  {
+    "crop_name": "Management",
+    "description": "9(cid:132)"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Leaves are narrow, short, erect and lemon-yellowish green (cid:55) Nitrogen deficient plants are stunted with spindly stem and limited tillers (cid:55) Symptom occurs initially in older leaves and sometimes all leaves be- come light green (cid:55) Pale yellow chlorosis begins at the leaf tip and progresses towards the base, the entire field may appear yellowish (cid:55) In severe cases, the whole leaf becomes pale brown, then withers away (cid:55) Flowering is greatly reduced (cid:55) Leaf colour below the critical value of LCC shows N deficiency (cid:55) N deficiency can be misjudged with S and Fe deficiency symptoms However, the deficiency due to later elements first appears in young leaves."
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Soils with low organic matter (cid:55) Light textured acid soils (cid:55) Water logged soils (cid:55) Calcareous and sodic soils (cid:55) Soils exhausted by intensive cultivation"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering-PI Y-leaf* 2.9-4.2 <2.5 Flowering Flag leaf 2.2-2.5 <2.0 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply soil test based 1/3rd recommended dose of N as basal (cid:55) Top dress urea in 2 splits for HYVs and 3 splits for hybrids (cid:55) Leaf colour chart can also be used for monitoring and correcting N deficiency (cid:55) Adopt integrated nutrient management by using inorganic N fertil- izer, organic manures, bio fertilizers and green manures (cid:55) Apply 2% urea solution as foliar spray for quick recovery of standing crops after submergence and repeat it at 10 -15 days interval (cid:55) Incorporate legumes into the rotation (cid:132)10"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool Pale green N deficient rice crop (top) and N deficient crop with pale green dark green healthy crop (bottom) younger leaves, yellow middle leaves and pale brown old leaves"
+  },
+  {
+    "crop_name": "Individual N deficient A comparison of Pale yellow chlorosis",
+    "description": "plant showing pale green leaves showing proceeds from tip to younger leaves and healthy leaves (right), the base yellow older leaves pale green (middle) and lemon yellow (left) LCC showing healthy leaf (right) and N deficient leaves (on the left) Whole leaf turns pale brown and withers 11(cid:132)"
+  },
+  {
+    "crop_name": "INPI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "INPI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Leaves, particularly older ones, are narrow, short, very erect, and dark green (cid:55) Stunted growth of rice plants with reduced tillering and abnormal blu- ish color foliages (cid:55) Stems are thin and spindly and plant development is reduced (cid:55) Young leaves appear to be healthy but older leaves turn brown and eventually die (cid:55) Red and purple colours may develop in leaves, especially when the variety has a tendency to produce anthocyanin pigment (cid:55) In severe P deficiency, plants may not flower at all"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Highly acidic soil rich in Fe and Al (cid:55) Alkaline and calcareous soils (cid:55) Highly weathered and eroded soil (cid:55) Coarse textured soil with low indigenous P supplying power (cid:55) Soil exhausted by intensive cultivation"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering-PI Y-leaf* 0.20-0.40 <0.10 Flowering Flag leaf 0.20-0.30 <0.18 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply soil test based P dose as basal (cid:55) Apply phosphobacteria to the soil as seed coating or as a seedling dip (cid:55) Reclaim acid soils by applying lime (cid:55) Apply vesicular arbuscular mycorrhiza (VAM) in upland soils (cid:55) Apply rock phosphate along with phosphate solubilizing bacteria in acidic soil (cid:55) Incorporate rice straw to maintain a positive P balance in the long term (cid:132)12"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "P deficient field showing bluish green Severe P deficient field with browning of",
+    "description": "appearance older leaves"
+  },
+  {
+    "crop_name": "P deficient plant with bluish P deficient",
+    "description": "green leaves bluish green leaf"
+  },
+  {
+    "crop_name": "Severe P deficient field with Severe P deficient field with reduced tillering",
+    "description": "reduced tillering at late stage at early stage 13(cid:132) sasnakrA fo ytisrevinU :otohP"
+  },
+  {
+    "crop_name": "ACAL",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Symptoms appear in older leaves first (cid:55) Yellowing of leaves progresses from the tip to base and margin to midrib of the leaves (cid:55) Leaves become short, droopy, and sometimes turns dirty dark green (cid:55) Under severe deficiency, rusty brown spots appear on older leaves fol- lowed by necrosis starting at the leaf tip and margin, and advances towards the base, leaving the mid-vein and surrounding tissues green (cid:55) If the deficiency is not corrected, discoloration gradually appears on younger leaves (cid:55) Symptoms of K deficiency are similar to those of tungro virus disease. Unlike K deficiency, however, tungro occurs as patches within a field, affecting single hills rather than the whole field."
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Highly weathered acid soils (cid:55) Poorly drained soils with excessive concentrations of Fe2+, H S and 2 organic acids (cid:55) HYVs/ hybrid rice with greater K demand (cid:55) Intensively cultivated lands with continuous removal of straw"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering-PI Y-leaf* 1.8-2.6 <1.5 Flowering Flag leaf 1.4-2.0 <1.2 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply recommended dose of soil test based K as basal (cid:55) In extremely light textured soils and in hybrids, apply K in 2 splits at basal and panicle initiation (cid:55) Wherever possible recycle the crop residue/apply organic manures (cid:132)14"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Bronzing of leaves in K deficient crop",
+    "description": ""
+  },
+  {
+    "crop_name": "K deficient crop showing rusty brown spots",
+    "description": ""
+  },
+  {
+    "crop_name": "Yellowish orange to yellowish brown",
+    "description": "at tips proceeding towards base discolouration of leaves (Insert: Leaf showing marginal necrosis)"
+  },
+  {
+    "crop_name": "Dirty green coloured leaves Late season K deficiency showing necrosis of leaf",
+    "description": "showing coalescence of tips in older leaves brown spots 15(cid:132) sasnakrA fo ytisrevinU :otohP eciR anaisiuoL :otohP"
+  },
+  {
+    "crop_name": "INPI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Symptoms are apparent only in case of acute deficiency (cid:55) Younger leaves show necrosis along the lateral margins (cid:55) Growing tip of the youngest leaf becomes white, bent downward and curled (cid:55) In severe deficiency, old leaves turn brown and die (cid:55) In an extreme case the plant is stunted and the growing point dies (cid:55) Ca deficiency resembles with B deficiency, however, in case of B defi- ciency partial exertion of panicles is noticed"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Strongly leached acidic soil low in available Ca (cid:55) Alkaline and sodic soils (cid:55) Fields irrigated with irrigation water rich in sodium bicarbonate"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering-PI Y-leaf* 0.2 – 0.6 <0.15 Maturity Straw 0.3 - 0.5 <0.15 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Use single super phosphate as a source of phosphorus (cid:55) Apply lime on acid soils to raise pH and Ca availability (cid:55) Apply gypsum on Ca-deficient non acidic soils (cid:55) Apply CaCl (solid or in solution) or Ca containing foliar sprays in 2 case of severe Ca deficiency (cid:55) Apply farmyard manure or incorporate crop residues (cid:132)16"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Ca deficient crop showing necrosis Younger leaves of rice showing Ca deficiency",
+    "description": "along the lateral margins of leaves"
+  },
+  {
+    "crop_name": "Ca deficient leaves showing whitish discolouration at the leaf tip advancing",
+    "description": "down the leaf along the midrib 17(cid:132)"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Orange yellow interveinal chlorosis first appears on older leaves (cid:55) Green and yellow stripes run parallel to the midrib unlike in K defi- ciency where only the mid-vein and surrounding tissues remain green (cid:55) In case of severe deficiency young leaves also affected (cid:55) Expansion of the angle between the leaf blade and the leaf sheath (cid:55) Leaves are wavy and droopy (cid:55) Reduced number of spikelets"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Highly leached upland soils with low available Mg (cid:55) Decreased Mg uptake because of a wide ratio of exchangeable K:Mg (cid:55) Coarse-textured sandy soils with high percolation rates and leaching losses"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering-PI Y-leaf* 0.15-0.30 <0.12 Shoot 0.15-0.30 <0.13 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply Mg containing fertilizers like kieserite, langbeinite or magne- sium chloride (cid:55) Apply dolomite to upland acid soils (cid:55) Spray MgCl whenever deficiency symptoms appear 2 (cid:132)18"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Mg deficient rice leaves showing Mg deficient rice leaves showing",
+    "description": "orange yellow interveinal chlorosis green and yellow stripes running parallel to the midrib"
+  },
+  {
+    "crop_name": "Symptoms at mild Symptoms at severe",
+    "description": "deficiency deficiency 19(cid:132)"
+  },
+  {
+    "crop_name": "UANT",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) The leaf canopy appears pale yellow due to yellowing of the younger leaves (cid:55) Yellowish seedlings in nursery beds with retarded growth (cid:55) Leaves show uniform chlorosis of the veins and interveinal tissues and sometimes the leaf tips may become necrotic (cid:55) In later stages, the pale yellow, youngest leaf turns white (cid:55) The symptoms are very similar to those of nitrogen deficiency. How- ever, the N deficiency symptom first appears in older leaves."
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Low available S content in the soil (cid:55) Depletion of soil S as a result of intensive cropping (cid:55) Continuous use of S-free fertilizers (cid:55) Burning of crop residues (cid:55) Highly weathered soils containing large amount of iron oxides"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum Critical level for",
+    "description": "range (%) deficiency (%) Tillering Y-leaf* 0.15-0.30 <0.11 Flowering Flag leaf 0.10-0.15 <0.10 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply 10 kg S ha-1 if moderate S deficiency is observed, in case of severe S deficiency; apply 20-40 kg S ha-1 (cid:55) Apply S at least once in three years or after two subsequent rice crops (cid:55) Use slow acting S forms by mixing gypsum and elemental S in light textured, highly permeable soils well before sowing (cid:132)20"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "S deficient rice with pale green yellow young leaves and dark",
+    "description": "green old leaves"
+  },
+  {
+    "crop_name": "Symptoms appears in young",
+    "description": "leaves"
+  },
+  {
+    "crop_name": "Uniform yellowing Necrotic leaf tip",
+    "description": "of leaf"
+  },
+  {
+    "crop_name": "Symptoms at severe deficiency",
+    "description": "21(cid:132) eciRlihP :otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Symptoms usually appear from 2-4 weeks after transplanting or sow- ing (cid:55) In seedlings, yellowing (chlorosis) starts from the base of older leaves and progresses towards the leaf tip (cid:55) Reddish brown, irregular blotches appear on the leaf blades (bronz- ing) (cid:55) Midribs of the younger leaves, especially at the base become chlorotic (cid:55) In case of severe deficiency, entire leaf may give rusty brown appear- ance which is known as “Khaira” disease (cid:55) Smaller size leaf blade with normal leaf sheath (cid:55) Plants exhibit restricted root growth and roots turn brown in colour (cid:55) In case of severe deficiency, plants may die"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Calcareous soils with high organic matter content (cid:55) Soils with higher available phosphorus (cid:55) Alkaline and sodic soils (cid:55) Fields with exposed subsoil due to quarrying and leveling (cid:55) Fields irrigated with water having higher bicarbonate concentration (cid:55) If well water has calcium carbonate, the problem is most acute at the water inlet or other high pH locations in fields (cid:55) Fields irrigated with sewage water with higher phosphate"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) deficiency (mg kg-1) Tillering-PI Y-leaf* 25-50 <20 Flowering Flag leaf 25-50 <10 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply 25 kg ZnSO ha-1 before transplanting/sowing and repeat it af- 4 ter three seasons in the fields of known Zn deficiency (cid:55) The deficiency can be corrected by dipping seedling roots in a 2%"
+  },
+  {
+    "crop_name": "ZnO suspension",
+    "description": "(cid:55) Spray 0.5% ZnSO solution (5 kg ZnSO ha-1 + 25 kg lime in 1000 4 4 litre water) thrice at 15 days interval upon appearance of deficiency symptoms (cid:132)22"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice field showing Zn deficiency Middle leaves of rice plant showing Zn",
+    "description": "deficiency"
+  },
+  {
+    "crop_name": "Bronzing of the Bronzing of older Bronzing of flag",
+    "description": "leaves under Zn leaves starts from leaf leaf under late deficiency base and progresses season Zn towards leaf tip deficiency 23(cid:132)"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Appearance of interveinal chlorosis characterized by a fine reticulate network of green veins in younger leaves (cid:55) If deficiency persists, the whole leaf turns pale yellow (cid:55) Plants become stunted with narrow leaves (cid:55) If deficiency is acute, the entire leaf bleaches to a papery white appear- ance (cid:55) Iron deficiency can easily be mistaken for nitrogen and sulphur defi- ciency. However, nitrogen deficiency affects the older leaves first and sulphur deficiency is exhibited by yellowing of whole younger leaves."
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Upland soils with low soluble iron (Fe2+) concentration (cid:55) Light textured sandy soils with low organic matter status (cid:55) Alkaline and calcareous soil with higher bicarbonate concentration (cid:55) Soils with high phosphorus and low soluble iron availability"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) deficiency (mg kg-1) Tillering - PI Y-leaf* 75-150 <70 Shoot 60-100 <50 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Reclaim alkaline calcareous soils (cid:55) Grow iron efficient rice cultivars (cid:55) Apply organic manure well before sowing (cid:55) Ponding of water in nursery beds during dry spell (cid:55) Green manuring with dhaincha before rice transplanting, wherever possible (cid:55) Copious irrigation of rice fields as soon as chlorosis appears (cid:55) Spray with un-neutralized 1% FeSO.7H O solution 2-3 times at 10 4 2 days interval (cid:55) In soils with very low level of Fe, broadcast FeSO.7H O @ 30 kg Fe 4 2 ha-1 as basal (cid:132)24"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice field showing stunted plants and pale yellow narrow leaves under",
+    "description": ""
+  },
+  {
+    "crop_name": "Fe deficiency",
+    "description": ""
+  },
+  {
+    "crop_name": "Pale yellow leaves under Fe deficiency",
+    "description": ""
+  },
+  {
+    "crop_name": "Fe deficient young rice leaves showing Entire leaf bleaches to a",
+    "description": "interveinal chlorosis papery white appearance 25(cid:132)"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Deficiency occurs in the newly developing leaves; leaves become short, narrow and light green (cid:55) Interveinal chlorotic streaks spread downward from the tip to the base of the leaves and veins remain green (cid:55) Necrotic brown spots develop as the deficiency becomes more severe (cid:55) Stems are slender and weak (cid:55) Distinct green veins and yellow chlorotic streaks of Mn deficiency differentiate it from Fe deficiency. Moreover, in advance stage of Fe deficiency, leaves become white."
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Alkaline and sodic soil with low organic matter in soil (cid:55) Leached and acid sulphate soils (cid:55) Degraded soils containing large amount of soluble iron (cid:55) Excessive liming of acid soils"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) deficiency (mg kg-1) Tillering-PI Y-leaf* 40-700 <40 Flowering Flag leaf 50-150 <20 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply organic manures like FYM, compost or green manure (cid:55) Apply 25 kg MnSO ha-1 as basal 4 (cid:55) Spray 0.5% MnSO for rapid correction of Mn deficiency. Multiple 4 applications may be required, starting at tillering when sufficient foli- age has developed. (cid:132)26"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice field showing light green chlorotic Rice plant with light green chlorotic leaves",
+    "description": "leaves"
+  },
+  {
+    "crop_name": "Light green leaf showing early stage Distinct green veins and yellow chlorotic",
+    "description": ""
+  },
+  {
+    "crop_name": "Mn deficiency streaks under acute deficiency",
+    "description": "27(cid:132)"
+  },
+  {
+    "crop_name": "ACAL",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Symptoms are more common on young leaves (cid:55) Leaves develop chlorotic streaks on either side of the midrib (cid:55) Dark brown necrotic lesions on leaf tips (cid:55) Leaves often bluish green and chlorotic near the leaf tip (cid:55) New leaves do not unroll and the distal parts of leaves maintain a needlelike appearance, while the proximal portion of the leaf appears normal"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Soils containing high organic matter (cid:55) Highly weathered, sandy textured and calcareous soils (cid:55) Soils with excessive Zn content (cid:55) Excessive liming of acid soils"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) deficiency (mg kg-1) Tillering-PI Y-leaf* 7-15 <5 Flowering Flag leaf 7-15 <6 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Dip seedling roots in 1% CuSO suspensions for 1 hour before trans- 4 planting (cid:55) Spray 0.1% CuSO for quick recovery from Cu deficiency 4 (cid:55) Apply 5-10 kg CuSO ha-1 as soil application once in 5 years 4 (cid:55) Avoid over liming of acid soils (cid:132)28"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice field showing Cu deficiency",
+    "description": ""
+  },
+  {
+    "crop_name": "Leaves of the rice plant at different levels of",
+    "description": ""
+  },
+  {
+    "crop_name": "Bluish green leaves with chlorotic",
+    "description": ""
+  },
+  {
+    "crop_name": "Cu deficiecny showing chlorotic streaks on",
+    "description": "tips either side of the midrib"
+  },
+  {
+    "crop_name": "New leaves do not unroll and the distal",
+    "description": "parts of leaf showing needlelike appearance 29(cid:132)"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Deficiency symptoms",
+    "description": "(cid:55) Deficiency symptoms first appear on young leaves (cid:55) Plant height reduced and the tips of emerging leaves are white and rolled (cid:55) Chlorosis at the tips of the older leaves, especially along the margins followed by the appearance of large, dark brown elliptical spots in the affected parts, which ultimately turn brown and dry up (cid:55) Death of growing points, but new tillers continue to emerge during se- vere deficiency (cid:55) Partial exertion of panicles; in some cases plants unable to produce panicles"
+  },
+  {
+    "crop_name": "Deficiency occurs in",
+    "description": "(cid:55) Less availability of native soil boron (cid:55) Highly weathered, acid upland and"
+  },
+  {
+    "crop_name": "White and rolled tips of rice leaf",
+    "description": "coarse textured sandy soils (cid:55) Acid soils derived from igneous rocks (cid:55) Soils with high organic matter (cid:55) Calcareous soils (cid:55) Excessive liming"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) deficiency (mg kg-1) Tillering-PI Y-leaf* 6-15 <5 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Apply Borax @ 5-10 kg ha-1 as basal based on soil testing (cid:55) Spray Borax or Boric acid @ 0.05% for quick recov- ery from B deficiency (cid:55) Avoid excessive leaching (percolation), because B is mobile in flooded rice soils (cid:55) For hidden deficiency spray 0.2% boric acid or borax at pre flowering or heading stages"
+  },
+  {
+    "crop_name": "Partial exertion",
+    "description": "of panicle (cid:132)30"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool 3. Mineral Toxicity"
+  },
+  {
+    "crop_name": "Symptoms and",
+    "description": ""
+  },
+  {
+    "crop_name": "Management",
+    "description": "31(cid:132)"
+  },
+  {
+    "crop_name": "Toxicity symptoms",
+    "description": "(cid:55) Symptoms first appear in old leaves and is characterized by a reddish brown, yellow, or purple bronzing or orange discoloration of the leaves (cid:55) Tiny brown spots start at leaf tips and spread towards the base and then coalesce on the interveins (cid:55) In severe stress, the entire affected leaves look purplish brown (cid:55) The roots become dark brown in color (cid:55) Symptoms commonly develop at the maximum tillering and heading stage (cid:55) A red brown oily scum on the surface of stagnant water (cid:55) Deficiency symptoms of other elements such as P, K, Ca, Mn and Zn may appear"
+  },
+  {
+    "crop_name": "Toxicity occurs in",
+    "description": "(cid:55) Fe-toxicity occurs mostly in Ultisols, Oxisols and acid sulfate soils, high in active iron and potential acidity, irrespective of organic matter and texture (cid:55) Light textured acid soils in valleys receiving interflow water from ad- jacent higher land rich in iron (cid:55) Water logged soils with poor drainage (cid:55) High water table and poor nutrient status of soil may cause Fe-toxicity under certain situation"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) toxicity (mg kg-1) Tillering to PI Y-leaf* 75-150 > 300-500 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Drain the soil to oxidize reduced ferrous ions (Fe2+) (cid:55) Liming acid soils may also reduce Fe-toxicity (cid:55) Apply additional K, Mn and Zn (cid:55) Plant tolerant cultivars/genotypes (cid:55) Delay the planting till the peak in Fe2+ concentration has passed (cid:55) Carry out dry tillage after the rice harvest to increase Fe2+ oxidation during the fallow period (cid:132)32"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Reddish brown Purplish brown appearance of rice field",
+    "description": "spots first appear on older leaves (left) and gradually spreads to upper leaves (right) Roots of the healthy (left) and Fe toxicity affected (right) rice plant"
+  },
+  {
+    "crop_name": "Red brown oily scum on the surface of the Complete failure of the susceptible",
+    "description": "stagnant water under rice crop varieties 33(cid:132)"
+  },
+  {
+    "crop_name": "Toxicity symptoms",
+    "description": "(cid:55) Appearance of a light brown or yellowish white discoloration on the tips and margins of the older leaves (cid:55) With the progress of toxicity, leaf tips eventually turn brown and die (cid:55) Later on, elliptical dark brown blotches appear in the discolored areas (cid:55) Finally the entire leaf blade turns light brown and withers (cid:55) Symptoms appear during early tillering"
+  },
+  {
+    "crop_name": "Toxicity occurs in",
+    "description": "(cid:55) Arid irrigated areas, in saline, sodic soils and in volcanic areas (cid:55) Use of irrigation water with high B content (> 2 ppm)"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) toxicity (mg kg-1) Tillering to PI Y-leaf* 6-15 100 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Plant B toxicity tolerant varieties (cid:55) Use irrigation water with low B content (cid:55) If B concentration is very high in irrigation water, dilute it with good quality water before use (cid:55) To reduce the level of boron in the soil solution, use irrigation water with low boron content to leach boron form the root zone (cid:55) Avoid over use of urban compost/sewage water (cid:132)34"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Entire rice field affected by B toxicity",
+    "description": ""
+  },
+  {
+    "crop_name": "Rice leaves showing B toxicity in field",
+    "description": ""
+  },
+  {
+    "crop_name": "Light brown and yellowish white discolouration on the",
+    "description": "tips and margins 35(cid:132) onipsE siuoL :otohP onipsE siuoL :otohP onipsE siuoL :otohP"
+  },
+  {
+    "crop_name": "Toxicity symptoms",
+    "description": "(cid:55) Yellowish brown spots appear between the veins of lower leaf blades and sheaths (cid:55) Drying of leaf tips (cid:55) Development of chlorosis in younger leaves similar to Fe deficiency (cid:55) Whole plant stunted with reduced tillering (cid:55) Grain yield is markedly depressed because of high spikelet sterility"
+  },
+  {
+    "crop_name": "Toxicity occurs in",
+    "description": "(cid:55) Upland rice where the soil has a pH of less than 5.5 (cid:55) It rarely occurs in lowland paddy soils, but may occur if the soil con- tains very large amounts of easily reducible manganese, or in areas contaminated by manganese mining (cid:55) Acid sulfate soils (cid:55) Poor and unbalanced soil nutrient status particularly Si, K, P, Ca or Mg"
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) toxicity (mg kg-1) Tillering to PI Y-leaf* 40-700 >800-2500 * Uppermost fully expanded leaf"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Use lime to alleviate the soil acidity on upland soils (cid:55) Use silica slag at a rate of 1.5 to 3 t ha-1 to alleviate Si deficiency (cid:55) Incorporating rice straw into the soil may help replenish levels of silica and potassium (cid:132)36"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Mn toxicity affected older leaves",
+    "description": ""
+  },
+  {
+    "crop_name": "Yellowish brown spots between the veins of leaf blades with dried",
+    "description": "leaf tips"
+  },
+  {
+    "crop_name": "Brown spots covering whole leaf and yellowing",
+    "description": "37(cid:132)"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Toxicity symptoms",
+    "description": "(cid:55) Interveinal orange-yellow to white discoloration of the tips of older leaves, which may later turn necrotic (cid:55) Stunted plant growth (cid:55) The roots of affected plants are stunted and deformed"
+  },
+  {
+    "crop_name": "Toxicity occurs in",
+    "description": "(cid:55) Oxisols and Ultisols as well as in other heavily leached soils such as lateritic soils of the humid tropics (cid:55) Upland soils with a pH of less than 5.0 (cid:55) In wetland rice, generally Al toxicity is not observed due to increase in pH after submergence. However, in most acid sulfate soils during the initial phase of soil flooding Al toxicity may appear."
+  },
+  {
+    "crop_name": "Critical limits in plants",
+    "description": ""
+  },
+  {
+    "crop_name": "Growth stage Plant part Optimum range Critical level for",
+    "description": "(mg kg-1) toxicity (mg kg-1) Tillering to PI Shoot 15-18 >100"
+  },
+  {
+    "crop_name": "Interveinal yellow to white discolouration of rice leaf",
+    "description": ""
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Use lime to alleviate the soil acidity on upland soils (cid:55) Plant Al toxicity tolerant cultivars (cid:55) Planting should be delayed after flooding so that pH increased suffi- ciently (cid:55) Apply sufficient Mg (through dolomite lime) (cid:132)38"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "IRRI",
+    "description": ":otohP"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool 3.5 SULPHIDE TOXICITY"
+  },
+  {
+    "crop_name": "Toxicity symptoms",
+    "description": "(cid:55) Interveinal chlorosis of emerging leaves similar to that of Fe defi- ciency, older leaves become yellow and dry out prematurely (cid:55) Parched appearance of field and poorly developed root system (cid:55) The roots appear black when pulled out of the soil and turn to reddish brown when exposed to air (cid:55) The roots and the rhizospheric soil emit foul smell of hydrogen sul- phide (cid:55) Hydrogen sulphide toxicity of rice is known as “Akiochi disease”, causes black crown and root rot in rice"
+  },
+  {
+    "crop_name": "Toxicity occurs in",
+    "description": "(cid:55) Soils having highly reduced condition (cid:55) Poorly drained organic soils (cid:55) Acid sulphate soils (cid:55) Soil containing large concentration of hydrogen sulphide"
+  },
+  {
+    "crop_name": "Rice root with mild sulphide injury Rice root with severe",
+    "description": "sulphide injury 39(cid:132) sasnakrA fo ytisrevinU :otohP sasnakrA fo ytisrevinU :otohP"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Proper drainage is necessary (cid:55) Dry tillage after harvesting the crop decreases the redox potential (cid:55) Application of Si with balanced application of fertilizer (cid:55) Avoid excessive use of organic residues"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) Water soaked lesions move from tip to downwards on the edges of leaves (cid:55) Gradually, symptoms turn into yellow and straw coloured stripes with wavy margins (cid:55) In Kresek (wilt) phase, leaves roll completely, droop and plants die completely (cid:55) Late season potassium deficiency resembles to BLB. However, in case of BLB, a yellowish, opaque, turbid drops of bacterial ooze will come out from cut edge of the infected leaf when immersed in water (Ooze test). (cid:55) In the early stage of the disease, it is difficult to distinguish BLB and bacterial leaf streak. In case of BLB, the symptoms start appearing from the tip and progress downwards in the form of inverted ‘V’ shape. (cid:55) Affected grains have discoloured spots sorrounded by water soaked areas"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Grow tolerant varieties such as IR 64, Ajaya, Naveen, Lalat, Gayatri, Varsadhan, Sarjoo 52, Saket (cid:55) Treat the seed by soaking 1 kg seeds in 2 liters of water containing 0.15 g streptocycline + 2 g captan for 8-10 hours (cid:55) Soak the seed for 12 hrs and treat in hot water at 53°C for 30 min (cid:55) Dip roots of the seedlings in solution of plantomycin (0.1%) or streptocycline (0.01%) for 30 minutes (cid:55) Balanced fertilizer application with split application of N (cid:55) Potash application, alternate drying and flooding in the field help in reducing infection (cid:55) Give need based spray of plantomycin @ 1 g L-1 of water or streptocycline (0.15g) + copper oxy chloride (1 g) per liter of water (cid:55) Spray fresh cow dung extracts (1 kg cow dung in 5 liter water) (cid:132)42"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "BLB infected rice field Yellow and straw coloured stripes",
+    "description": "on the sides of the leaves starting from tip Inverted ‘V’ shape symptom in BLB infected rice leaf Late season potassium deficiency resembling BLB 43(cid:132) eciR anaisiuoL :otohP"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) Spots appear in the leaves and glumes of the affected plants, some- times seedlings, sheaths, stems and grains may also show the symp- tom (cid:55) Infected seedlings have small, circular or oval, brown lesions. In se- vere infestation seedlings become stunted or die (cid:55) On older leaves, small, circular, dark brown or purplish brown young or underdeveloped lesions appear. A fully developed lesion on older leaves is oval, brown with gray or whitish center with reddish brown margin (cid:55) Under severe infection, the lesions may coalesce, killing large areas of affected leaves (cid:55) Black or dark lesions with a velvety aspect also develop on glumes (cid:55) Black discoloration or brown lesions appear on grains of infected plants (cid:55) In some cases, the fungus may also infect and cause a black discolora- tion of the roots (cid:55) In potassium deficient plants brown spot appears in the older leaves sometimes create confusion in diagnosis. However, in the former case the spots are dusky without any distinct margin."
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Use healthy seeds from disease free crops (cid:55) Adopt deep summer ploughing (cid:55) Apply balanced NPK with zinc and manganese (if soil is deficit in Mn) (cid:55) Apply addtional K (20% extra) at the appearance of disease (cid:55) Grow tolerant varieties such as Naveen, Komal-9, Savitri, Parijat"
+  },
+  {
+    "crop_name": "Shrabani",
+    "description": "(cid:55) Treat the seeds with captan or thiram (3 g kg-1 seed) (cid:55) Spray with propiconazole @ 1 mL L-1 or 0.4% mancozeb or 0.25% ziram or 0.2% carbendazim (cid:132)44"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool Small, circular, dark brown lesions Severely infected plant showing oval, brown spot on leaves with gray/ whitish center with reddish brown margin"
+  },
+  {
+    "crop_name": "Late season K deficiency with irregular spots concentrated",
+    "description": "towards leaf tip"
+  },
+  {
+    "crop_name": "Brown spot along with the symptoms of K deficiency",
+    "description": "45(cid:132)"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) Disease occurs at all the crop stages viz., nursery, tillering and flowering (cid:55) On the leaves, elliptical or spindle shaped lesions with brown border and grayish/ashy center occur (Leaf blast) (cid:55) Under favorable conditions, these lesions enlarge and coalesce and entire leaf withers (cid:55) The pathogen also infects the collar region marked by rusty brown appearance at the junction of leaf blade and leaf sheath and ulti- mately entire leaf blade dries up (Collar blast) (cid:55) The disease affected stems turn dark brown to blackish colour at the node. The stem becomes weak and break easily (Node blast). (cid:55) Black necrotic lesions around the base of the panicles may occur re- sulting in breakdown of panicles and formation of chaffy grains (Neck blast) (cid:55) Usually, the symptoms appear in the soils rich in N/fields applied with excess N"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Use healthy seeds collected from disease free crops (cid:55) Apply balanced dose of nitrogenous fertilizer in 3-4 splits (80 kg N ha-1) (cid:55) Weed out alternate hosts viz; Cynodron sp. and Paspalum sp. (cid:55) Maintain standing water in the field (cid:55) Grow tolerant varieties such as Heera, Vandana, Kalinga III, Annada, IR 64, Gayatri (cid:55) Give need based spray of some effective fungicides or plant products- carbendazim 50WP (2 g L-1 water) of water or tricyclazole 75WP (0.6g L-1 water) of water or Bael leaf extract (25 g fresh leaves L-1 water) or Tulsi leaf extract (25 g fresh young leaves L-1 water) or Neem leaf extract (200 g fresh leaves L-1 water) (cid:132)46"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Spindle shaped lesions on the leaves with Collar blast",
+    "description": "brown border and grayish centre"
+  },
+  {
+    "crop_name": "Node blast Neck blast",
+    "description": "47(cid:132)"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) The symptoms usually appear as small, dark-green and water-soaked streaks between the veins from tillering to booting stage (cid:55) The streaks appear dark-green in the beginning, enlarge later to be- come yellowish gray and translucent then turn to light brown or yel- lowish brown (cid:55) Large areas of the leaf may become dry due to numerous streaks. At the later stage, the disease is indistinguishable from the BLB however, the later can be distinguished by its ‘inverted V’ shape appearance. (cid:55) Sometimes potassium deficiency can be confused with BLS, however potassium deficiency symptom starts from the leaf tip and margin and progresses toward mid rib (cid:55) Bacterial exudates from the infected cut leaves when placed in water confirms the infection"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Treat the seeds by soaking 1 kg seeds in 2 liters of water containing 0.15 g streptocycline + 2 g captan for 8-10 hours (cid:55) Hot water treatment of seeds for 12 hours at 530C for 30 minutes (cid:55) Root dipping of seedlings in plantomycin (0.1%) or streptocycline (0.01%) for 30 minutes (cid:55) Grow tolerant varieties such as Gayatri, Durga, Varshadhan, Rambha,"
+  },
+  {
+    "crop_name": "Kanchan",
+    "description": "(cid:55) Apply balanced dose of NPK (cid:55) Additional potash application in the field helps in reducing infection (cid:55) Avoid field to field irrigation (cid:55) Avoid clipping of seedlings at the time of transplanting (cid:55) Upon on set of symptoms, spray plantomycin 1 g + copperoxychloride 1 g L-1 twice at an interval of 8 days (cid:55) Spray fresh cow dung extract (1 kg cow dung in 5 liters water) thrice at eight days interval (cid:132)48"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice plant showing BLS symptoms",
+    "description": ""
+  },
+  {
+    "crop_name": "Patch of yellowish gray",
+    "description": "interveinal streaks on early infected leaf 49(cid:132)"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) Sheath blight disease usually appears in the later growth stages of the plant in the late tillering or early internode elongation stage (cid:55) Initial symptoms appear on sheaths of lower leaves or just below the leaf collar near the water line and is characterized by small, ellipsoi- dal or ovoid, greenish-gray and water-soaked lesions (cid:55) Later on the lesions occur with a grayish white center and light brown to dark brown margin (cid:55) Disease development progresses very rapidly in the early heading and grain filling stages and may reach the uppermost leaf under favorable conditions (cid:55) During later stage of disease, lesions will dry and become grayish- white to tan with brownish borders and may coalesce forming bigger lesions with irregular outline and may cause the death of the whole leaf (cid:55) Severely infected plants produced poorly filled or empty grains, espe- cially those on the lower portion of the panicles (cid:55) At times white sclerotia of mustard seed size found on infected sheaths"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Adopt deep summer ploughing so that sclerotia remaining inside the soil are exposed to hot sunlight (cid:55) Incorporate green manure (Sesbania sp.) in sheath blight endemic areas (cid:55) Do not transplant more than 3 seedlings hill-1 (cid:55) Maintain field sanitation by removing weeds (cid:55) Grow sheath blight tolerant varieties such as Ajaya, IR 36, Ratna, CR 1014, Nalini (cid:55) Need based spray of effective fungicides- validamycin 3L (2 mL L-1 water)or hexaconazole 5 EC (2 mL L-1 water) or thifluzamide 24SC (1 mL L-1 water) or carbendazim 50 WP (2.5 g L-1 water) (cid:132)50"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "Rice plant showing sheath blight lesions on",
+    "description": "leaf sheath"
+  },
+  {
+    "crop_name": "Rice plant showing sheath blight lesions",
+    "description": "with brownish border and grayish white centre 51(cid:132)"
+  },
+  {
+    "crop_name": "Disease symptoms",
+    "description": "(cid:55) Freshly emerged leaves exhibit intervenial chlorosis (cid:55) Leaves gradually turn pale yellow and later reddish orange in colour (cid:55) Plants get stunted and numbers of tillers are reduced (cid:55) At the maturity stage, panicles do not exert completely (cid:55) Tungro infected plants show impaired root growth (cid:55) Symptoms of K deficiency are similar to those of tungro virus disease (cid:55) Unlike K deficiency, however, tungro occurs as patches within a field, affecting single hills rather than the whole field"
+  },
+  {
+    "crop_name": "Infected rice plant with reddish orange Stunted plants with pale yellow leaves in an",
+    "description": "leaves infected field"
+  },
+  {
+    "crop_name": "Management",
+    "description": "(cid:55) Avoid late planting (beyond 2nd week of August) in Eastern Indian states (cid:55) Clean out weeds like C. rotundus, H. compressa, Hydrolia Zeylanica and Phyllanthus niruri from surrounding of the rice fields (cid:55) Need based application of cartap hydrochloride 4G @ 25 kg ha-1 or carbofuran @ 25 kg ha-1 (cid:55) Give need based spray of imidacloprid 200SL @ 0.5 mL L-1 of water (cid:55) Grow tolerant varieties such as Ratna, Naveen, Lunishree etc. (cid:132)52"
+  },
+  {
+    "crop_name": "Identification and Management of Nutrient Disorders and",
+    "description": "Diseases in Rice: A Visual Diagnostic Tool"
+  },
+  {
+    "crop_name": "REFERENCES",
+    "description": "Dobermann, A., Fairhurst, T.H., 2000. Rice: Nutrient Disorders and Nu- trient Management. Ed 1st, Oxford Graphic Printers Pte Ltd. Fairhurst, T.H., Wit, C., Buresh, R., Dobermann, A., 2007. Rice: A Prac- tical Guide to Nutrient Management. Los Baños, Laguna, Philip- pines, International Rice Research Institute (IRRI). Katsantonis, D., Koutroubas, S.D., Ntanos, D.A., Lupotto. E. 2008. Ef- fect of blast disease on nitrogen accumulation and remobilization to rice grain. Journal of Plant Pathology, 90 (2), 263-272. Marschner H., 1995. Mineral Nutrition of Higher Plants. 2nd Ed. Aca- demic Press, London, UK. Matsuyama N., Dimond A.E., 1973. Effect of nitrogen fertilizer on bio- chemical processes that could affect lesion size of rice blast. Phyto- pathology 63, 1202-1203. Seebold, K., Kucharek, T., Datnoff, L., Correa- Victoria, F., & Marchetti, M. 2001. The influence of silicon on components of resistance to blast in susceptible, partially resistant, and resistant cultivars of rice. Phytopathology, 91(1), 63-69. Shui, M. X., Du, X. F., Chen, D. F., Ye, C., & Li, Q. 1995. Effect of soluble silicon fertilizer on rice resistance to blast. Acta Agriculturae Zhejiangensis, 7, 289-292. Stevens, G., Motavalli, P., Scharf, P., Nathan, M., Dunn, D., 2002. Inte- grated pest management: Crop nutrient deficiencies and toxicities, Eds. University of Missouri Columbia. Williams, Jack, Smith, S.G., 2001. Correcting Potassium Deficiency Can Reduce Rice Stem Diseases. Better Crops, 85,7-9. Yoshida, S. 1981. Fundamentals of rice crop science: Los Baños, Laguna, Philippines, International Rice Research Institute (IRRI). Yoshida, S., Ohnishi, Y., & Kitagishi, K. 1962. Chemical forms, mobility and deposition of silicon in rice plant. Soil Science and Plant Nu- trition, 8, 107-113."
+  },
+  {
+    "crop_name": "Websites",
+    "description": "http://www.ipni.net/ http://louisianacrops.com/ http://arkansascrops.com/ http://lariceman.wordpress.com/ http://www.laca1.org/ http://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=5663 53(cid:132)"
+  }
+]

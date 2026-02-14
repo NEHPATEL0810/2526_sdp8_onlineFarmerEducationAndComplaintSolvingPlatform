@@ -1,0 +1,1218 @@
+[
+  {
+    "crop_name": "The International Code of Conduct on Pesticide Management",
+    "description": ""
+  },
+  {
+    "crop_name": "Managing pesticides",
+    "description": "in agriculture and public health"
+  },
+  {
+    "crop_name": "An overview of FAO and WHO",
+    "description": "guidelines and other resources ISBN 978-92-5-131596-5 9 7 8 9 2 51 3 1 5 9 65 CA5201EN/1/07.19"
+  },
+  {
+    "crop_name": "Managing pesticides",
+    "description": "in agriculture and public health"
+  },
+  {
+    "crop_name": "An overview of FAO and WHO",
+    "description": "guidelines and other resources"
+  },
+  {
+    "crop_name": "Food and Agriculture Organization of the United Nations",
+    "description": ""
+  },
+  {
+    "crop_name": "World Health Organization",
+    "description": "Rome, 2019"
+  },
+  {
+    "crop_name": "The designations employed and the presentation of material in this information product do not imply the expression of any",
+    "description": "opinion whatsoever on the part of the Food and Agriculture Organization of the United Nations (FAO) or World Health Organization (WHO) concerning the legal or development status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. The mention of specific companies or products of manufacturers, whether or not these have been patented, does not imply that these have been endorsed or recommended by FAO or WHO in preference to others of a similar nature that are not mentioned. The views expressed in this information product are those of the author(s) and do not necessarily reflect the views or policies of FAO or WHO. ISBN 978-92-5-131596-5 (FAO) ISBN 978-92-4-151602-0 (WHO) © FAO and WHO, 2019 Some rights reserved. This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo/legalcode). Under the terms of this licence, this work may be copied, redistributed and adapted for non-commercial purposes, provided that the work is appropriately cited. In any use of this work, there should be no suggestion that FAO or WHO endorses any specific organization, products or services. The use of the FAO or WHO logo is not permitted. If the work is adapted, then it must be licensed under the same or equivalent Creative Commons licence. If a translation of this work is created, it must include the following disclaimer along with the required citation: “This translation was not created by the Food and Agriculture Organization of the United Nations (FAO) or WHO. FAO/WHO are not responsible for the content or accuracy of this translation. The original English edition shall be the authoritative edition."
+  },
+  {
+    "crop_name": "Disputes arising under the licence that cannot be settled amicably will be resolved by mediation and arbitration as described",
+    "description": "in Article 8 of the licence except as otherwise provided herein. The applicable mediation rules will be the mediation rules of the World Intellectual Property Organization http://www.wipo.int/amc/en/mediation/rules and any arbitration will be conducted in accordance with the Arbitration Rules of the United Nations Commission on International Trade Law (UNCITRAL). Third-party materials. Users wishing to reuse material from this work that is attributed to a third party, such as tables, figures or images, are responsible for determining whether permission is needed for that reuse and for obtaining permission from the copyright holder. The risk of claims resulting from infringement of any third-party-owned component in the work rests solely with the user. Sales, rights and licensing. FAO information products are available on the FAO website (www.fao.org/publications) and can be purchased through publications-sales@fao.org. Requests for commercial use should be submitted via: www.fao.org/contact-us/licence-request. Queries regarding rights and licensing should be submitted to: copyright@fao.org."
+  },
+  {
+    "crop_name": "Contents",
+    "description": ""
+  },
+  {
+    "crop_name": "Preface v",
+    "description": ""
+  },
+  {
+    "crop_name": "Acknowledgements vii",
+    "description": "Policy and Legislation 1 Guidelines on Pesticide Legislation 2 Guidance on Pest and Pesticide Management Policy Development 3 Guidelines on Highly Hazardous Pesticides 4 The FAOLEX Database 5 Guidance on Policy-making for Integrated Vector Management 6"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for the",
+    "description": "WHO South-East Asia Region 7"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for the",
+    "description": "WHO African Region 8 Registration 9 Pesticide Registration Toolkit 10 Guidelines for the Registration of Pesticides 11 Guidelines for the Registration of Microbial, Botanical and"
+  },
+  {
+    "crop_name": "Semiochemical Pest Control Agents for Plant Protection and Public",
+    "description": "Health Uses 12 Guidelines on Data Requirements for the Registration of Pesticides 13"
+  },
+  {
+    "crop_name": "Guidelines on Efficacy Evaluation for the Registration of Plant",
+    "description": "Protection Products 14"
+  },
+  {
+    "crop_name": "III",
+    "description": ""
+  },
+  {
+    "crop_name": "The WHO Recommended Classification of Pesticides by Hazard and",
+    "description": "Guidelines to Classification 18 Compliance and Enforcement 19"
+  },
+  {
+    "crop_name": "Guidelines on Compliance and Enforcement of a Pesticide Regulatory",
+    "description": "Programme 20 Guidelines for Quality Control of Pesticides 21 Quality Control of Pesticide Products: Guidelines for National Laboratories 22 Distribution and Sales 23 Guidelines on Pesticide Advertising 24"
+  },
+  {
+    "crop_name": "Provisional Guidelines on Tender Procedures for the Procurement of",
+    "description": "Pesticides 25"
+  },
+  {
+    "crop_name": "Guidelines for Retail Distribution of Pesticides with particular",
+    "description": ""
+  },
+  {
+    "crop_name": "Reference to Storage and Handling at the Point of Supply to Users in",
+    "description": "Low and Middle Income (Developing) Countries 26 Guidelines for Procuring Public Health Pesticides 27 Use 29 Guidelines on Good Practice for Ground Application of Pesticides 30 Guidelines on Good Practice for Aerial Application of Pesticides 31 Guidelines for Personal Protection when Handling and Applying Pesticides 32"
+  },
+  {
+    "crop_name": "Guidelines on Organization and Operation of Training Schemes and",
+    "description": "Certification Procedures for Operators of Pesticide Application Equipment 33 Other guidelines related to pesticide application 34 IV"
+  },
+  {
+    "crop_name": "Prevention of Accumulation and Disposal of Obsolete",
+    "description": "Stocks 39 Environmental Management Toolkit for Obsolete Pesticides, Vols. 1–4 40 Environmental Management Toolkit for Obsolete Pesticides, Vols. 5–6 41 Other Tools Related to Obsolete Pesticides 42 Guidelines on Management Options for Empty Containers 43"
+  },
+  {
+    "crop_name": "Post Registration Surveillance",
+    "description": "Guidelines on Prevention and Management of Pesticide Resistance 46"
+  },
+  {
+    "crop_name": "Test Procedures for Insecticide Resistance Monitoring in Malaria",
+    "description": "Vector Mosquitoes – Second Edition 47"
+  },
+  {
+    "crop_name": "Guidelines on Developing a Reporting System for Health and",
+    "description": "Environmental Incidents Resulting from Exposure to Pesticides 48"
+  },
+  {
+    "crop_name": "Guidelines on Post Registration Surveillance and Other Activities in",
+    "description": "the Field of Pesticides 49 Monitoring and Observance of the Code of Conduct 50"
+  },
+  {
+    "crop_name": "Additional Manuals and Tools",
+    "description": "Web Links to Guidelines and Tools 53 The International Code of Conduct on Pesticide Management 63 Articles of the Code of Conduct 64 V"
+  },
+  {
+    "crop_name": "Preface",
+    "description": "This brochure describes the technical guidelines, toolkits, databases and other resources for pesticide management developed by FAO and WHO."
+  },
+  {
+    "crop_name": "These resources support the standards outlined in the International Code",
+    "description": "of Conduct on Pesticide Management by providing detailed information and guidance on how to manage pesticides at the different stages of their life cycle, from production to disposal. The resources are principally intended for use by governments in low- and middle-income countries but they may also be useful to other stakeholders. The resources cover both agricultural and public health uses of pesticides. The documents listed in this brochure have been prepared, reviewed and adopted by FAO and WHO expert groups including, since 2007, the FAO/ WHO Joint Meeting on Pesticide Management (JMPM). The documents are updated regularly, and this brochure will be updated accordingly. Older documents included in the brochure are still considered valid as the issues they address have not changed. All of the resources are available at the following websites: FAO: http://www.fao.org/agriculture/crops/thematic-sitemap/theme/pests/code/ list-guide-new/en/ WHO: https://www.who.int/neglected_diseases/vector_ecology/en/"
+  },
+  {
+    "crop_name": "Full web links of all tools and guidelines are provided at the end of this",
+    "description": "document."
+  },
+  {
+    "crop_name": "VII",
+    "description": ""
+  },
+  {
+    "crop_name": "Acknowledgements",
+    "description": "This publication was developed with the technical support of the FAO/WHO Joint Meeting on Pesticide Management, and with a financial contribution to FAO from the Swedish International Development Cooperation Agency and the Swedish Chemical Agency."
+  },
+  {
+    "crop_name": "VIII",
+    "description": ""
+  },
+  {
+    "crop_name": "Acknowledgements Policy and Legislation",
+    "description": "1"
+  },
+  {
+    "crop_name": "Guidelines on Pesticide Legislation",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines provide detailed instructions for",
+    "description": "governments that wish to draft or revise national legislation for the management of pesticides."
+  },
+  {
+    "crop_name": "The guidelines describe the typical contents of",
+    "description": "a pesticide law, outline the steps in the drafting process, review the international agreements and standards that affect pesticide management, and discuss the advantages of regional approaches. The guidelines also address the institutional structure needed to coordinate pesticide management in a country, as different authorities are likely to be involved at different stages in the pesticide life cycle."
+  },
+  {
+    "crop_name": "The guidelines stress the importance of having a law in place to make",
+    "description": "pesticide registration and regulation mandatory, and they explain how to link the different sections of the law to a country’s pesticide policies and regulatory programmes. Year of publication: 2015 Available in: English 2"
+  },
+  {
+    "crop_name": "Guidance on Pest and Pesticide Management Policy",
+    "description": ""
+  },
+  {
+    "crop_name": "Development",
+    "description": ""
+  },
+  {
+    "crop_name": "This guidance advises governments on the",
+    "description": "development of policies that support pesticide risk reduction and sustainable agricultural production."
+  },
+  {
+    "crop_name": "The guidance places pesticide management in the",
+    "description": "broader context of pest management, it warns about the problems that result from overuse of pesticides, and it links sustainable pest management to environmental protection, human health, food safety and trade."
+  },
+  {
+    "crop_name": "The guidance encourages governments to analyze their pest and pesticide",
+    "description": "management situation, to identify areas for improvement, and to develop plans to realize these improvements. Special attention is given to integrated pest management, including biological control, as an approach to sustainable pest management and a means to reduce reliance on pesticides. An overview of policy tools that can play a role in such plans is provided."
+  },
+  {
+    "crop_name": "The guidelines focus explicitly on pest and pesticide management in",
+    "description": "agriculture. Year of publication: 2010 Available in: English, French, Spanish 3"
+  },
+  {
+    "crop_name": "Guidelines on Highly Hazardous Pesticides",
+    "description": "These guidelines present a three-step process to identify, assess and mitigate the risks of highly hazardous pesticides (HHPs) used in a country. The guidelines apply to all pesticides, including agri¬cultural, public health, household, amenity and industrial pesticides. The three-step process considers not only the risks from but also the needs for the HHPs and explains how to find viable alternatives. The process is linked to tools in the FAO Pesticide Registration Toolkit and other resources that can support the work."
+  },
+  {
+    "crop_name": "The guidelines provide the definition of HHPs given in the International",
+    "description": "Code of Conduct on Pesticide Management, as well as the eight criteria developed by the FAO/WHO JMPM for determining if a pesticide is highly hazardous. The guidelines also discuss the international context for action on HHPs, which includes the Stockholm and Rotterdam Conventions and the Strategic Approach to International Chemicals Management (SAICM) resolution that calls for concerted action to address HHPs. Year of publication: 2016 Available in: English, French, Spanish 4"
+  },
+  {
+    "crop_name": "The FAOLEX Database",
+    "description": "This comprehensive and up-to-date database is one of the world’s largest electronic collections of national laws and regulations on food, agriculture and renewable natural resources. The database includes the pesticide laws, regulations and policies of many countries. Available at: http://www.fao. org/faolex/en/ 5"
+  },
+  {
+    "crop_name": "This document provides guidance to the managers",
+    "description": "of vector control programmes and other stakeholders involved in setting policy and planning work to support integrated vector management (IVM). The guidance explains why IVM requires interdisciplinary collaboration, and why the health sector, which usually has the lead in vector control, must involve other sectors and stakeholders. The guidance also explains why IVM promotes judicious and low-risk use of pesticides for vector control as well as risk prevention and safe disposal of pesticide waste and used containers. The guidance was developed in the context of the WHO policy framework on IVM for the control of vector-borne diseases, adopted in 2004. Year of publication: 2004 Available in: English 6"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for",
+    "description": "the WHO South-East Asia Region"
+  },
+  {
+    "crop_name": "These guidelines are intended to guide national",
+    "description": "policy-makers in the WHO South-East Asia Region in developing, strengthening, implementing and evaluating national policy for the management of public health pesticides such as vector control pesticides, household pesticides, and pesticides used by pest control operators. The guidelines identify issues and driving forces that may instigate national policy development, and they outline the process of policy formulation. The guidelines are directed at policy-makers and do not address technical aspects relating to use and management of public health pesticides, for which separate guidance exists. Year of publication: 2010 Available in: English 7"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for",
+    "description": "the WHO African Region"
+  },
+  {
+    "crop_name": "These guidelines are intended to guide national",
+    "description": "policy-makers in the WHO African Region in developing, strengthening, implementing and evaluating national policy for the management of public health pesticides such as vector control pesticides, household pesticides, and pesticides used by pest control operators. The guidelines identify issues and driving forces that may instigate national policy development, and they outline the process of policy formulation. The guidelines are directed at policy-makers and do not address technical aspects relating to use and management of public health pesticides, for which separate guidance exists. Year of publication: 2011"
+  },
+  {
+    "crop_name": "Available in English and French",
+    "description": "8"
+  },
+  {
+    "crop_name": "Registration",
+    "description": "9 ocimA aidualC/OAF© azsI cnereF/OAF©"
+  },
+  {
+    "crop_name": "Pesticide Registration Toolkit",
+    "description": ""
+  },
+  {
+    "crop_name": "The FAO Pesticide Registration Toolkit is a decision",
+    "description": "support system for pesticide registrars responsible for reviewing and registering pesticide products. The Toolkit is intended to serve as a desk-top electronic handbook for day-to-day use in registration of agriculture and public health pesticides. The Toolkit has two types of tools. The first provide technical advice on procedures that apply to all pesticides undergoing registration, such as data requirements, testing guidelines, assessment methods, and decision-making steps. The second type are information sources on individual pesticides, such as registrations elsewhere, restrictions and bans, approved labels, maximum residue limits, pesticide properties, and scientific reviews. The Toolkit also has a section on “special topics”, so far including highly hazardous and public health pesticides."
+  },
+  {
+    "crop_name": "The Pesticide Registration Toolkit is under continuous development and",
+    "description": "can be expected to have new modules in the future. http://www.fao.org/pesticide-registration-toolkit/en/ Year of initial online publication: 2016-(on-going) Available in: English, French, Spanish, Russian, Arabic and Chinese 10"
+  },
+  {
+    "crop_name": "Guidelines for the Registration of Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines set out basic principles for pesticide",
+    "description": "registration, such as having clear requirements and criteria, maintaining transparency but protecting the applicant’s intellectual property rights, evaluating hazards and precautions needed, assessing risks and benefits based on the local situation, and providing for post-registration monitoring and re-evaluation of risks to consider new information."
+  },
+  {
+    "crop_name": "The guidelines highlight the importance of",
+    "description": "collaboration between the health, agriculture and environmental sectors, and they outline the roles of other stakeholders in the registration process."
+  },
+  {
+    "crop_name": "The guidelines also provide guidance to countries with limited resources for",
+    "description": "a registration programme. Year of publication: 2010 Available in: English, French, Spanish, Russian, Arabic 11"
+  },
+  {
+    "crop_name": "Semiochemical Pest Control Agents for Plant Protection and",
+    "description": ""
+  },
+  {
+    "crop_name": "Public Health Uses",
+    "description": ""
+  },
+  {
+    "crop_name": "This document provides detailed guidance for",
+    "description": "governments in the registration of products commonly known as biological pesticides."
+  },
+  {
+    "crop_name": "The guidelines describe the different types of",
+    "description": "products, list and discuss their respective data requirements, explain how to evaluate the test results, explain how and where the products differ from chemical pesticides, and indicate where particular attention is needed."
+  },
+  {
+    "crop_name": "The guidelines also discuss the labelling of biological products and identify",
+    "description": "criteria for granting them a fast-track registration, which is often justified due to their having a low-risk profile or being used in very small quantities."
+  },
+  {
+    "crop_name": "The guidelines are harmonized with the corresponding guidelines published",
+    "description": "by other international organizations. Year of publication: 2017 Available in: English 12"
+  },
+  {
+    "crop_name": "Guidelines on Data Requirements for the Registration of",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines describe the technical data and",
+    "description": "information that governments need to evaluate pesticides for registration and to ensure that the pesticides are effective for their intended purpose and do not pose unacceptable risks to human health or the environment."
+  },
+  {
+    "crop_name": "The guidelines describe the conditions in which",
+    "description": "different requirements are appropriate and guide countries in deciding which data to require."
+  },
+  {
+    "crop_name": "The guidelines are also intended to harmonize the requirements among",
+    "description": "countries and to facilitate the generation of data, the submission of applications for pesticide registration, and the sharing of information and cooperation among governments. Year of publication: 2013 Available in: English 13"
+  },
+  {
+    "crop_name": "Guidelines on Efficacy Evaluation for the Registration of Plant",
+    "description": ""
+  },
+  {
+    "crop_name": "Protection Products",
+    "description": "These guidelines describe how to design, conduct and evaluate pesticide efficacy trials. These trials are considered an integral part of registration, to confirm that products are effective when used as recommended on the label, and to avoid inadequate pest control that can lead users to increase the dose or application frequency and thereby augment the human health and environmental risk. The guidelines are limited to pesticides intended for plant protection and do not address efficacy testing of pesticides used in vector control. Year of publication: 2006 Available in: English and Arabic 14"
+  },
+  {
+    "crop_name": "Guidelines on Good Labelling Practice for Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to help governments",
+    "description": "establish pesticide labelling requirements as well as to review the design and content of existing labels."
+  },
+  {
+    "crop_name": "The guidelines should also be useful for stakeholders",
+    "description": "who write or evaluate pesticide labels."
+  },
+  {
+    "crop_name": "The guidelines identify the information that should",
+    "description": "appear on a pesticide label; describe label design; discuss hazard and risk classifications; highlight the importance of providing information and training; and give examples of label statements, hazard colour bands, and precautionary pictograms."
+  },
+  {
+    "crop_name": "The guidelines are in line with the Globally Harmonized System of",
+    "description": "Classification and Labelling of Chemicals (GHS) and they provide specific options for cases where the GHS allows for national differences. Year of publication: 2015 Available in: English and Chinese 15"
+  },
+  {
+    "crop_name": "Guidelines on Efficacy Testing and Evaluation of Public Health",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "The following WHO guidelines for efficacy testing of vector control products",
+    "description": "are available: Guidelines for Laboratory and Field testing of Long-lasting"
+  },
+  {
+    "crop_name": "Insecticidal Nets",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Spatial Repellents",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for Testing the Efficacy of Insecticide Products Used",
+    "description": "in Aircraft"
+  },
+  {
+    "crop_name": "Guidelines for Testing mosquito Adulticides for Indoor Residual",
+    "description": ""
+  },
+  {
+    "crop_name": "Spraying and Treatment of Mosquito Nets",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for Laboratory and Field testing of Mosquito",
+    "description": ""
+  },
+  {
+    "crop_name": "Larvicides",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Mosquito Repellents for Human",
+    "description": ""
+  },
+  {
+    "crop_name": "Skin",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Household Insecticide Products",
+    "description": "- Mosquito Coils, Vaporizer Mats, Liquid Vaporizers, Ambient"
+  },
+  {
+    "crop_name": "Emanators and Aerosols",
+    "description": ""
+  },
+  {
+    "crop_name": "Field Testing and Evaluation of Insecticides for Indoor Residual",
+    "description": ""
+  },
+  {
+    "crop_name": "Spraying Against Chagas Vectors",
+    "description": "Years of publication: 2001–2018 Available in: English 16"
+  },
+  {
+    "crop_name": "Generic Models for Risk Assessment of Public Health",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "The following guidance is available from WHO for assessing human health",
+    "description": "risks of vector control products: A Generic Risk Assessment Model for Insecticide-Treated Nets –Second Edition (2018)"
+  },
+  {
+    "crop_name": "A Generic Risk Assessment Model for Indoor Residual Spraying",
+    "description": "of Insecticides — Second Edition (2018)"
+  },
+  {
+    "crop_name": "Generic Risk Assessment Model for Larvicidal Insecticides and",
+    "description": "Molluscicides — Second Edition (2018)"
+  },
+  {
+    "crop_name": "Generic Risk Assessment Model for Indoor and Outdoor Space",
+    "description": "Spraying of Insecticides — Second Edition (2018) Aircraft Disinsection Insecticides – Environmental Health Criteria 243 (2013) Years of publication: 2013–2018 Available in: English 17"
+  },
+  {
+    "crop_name": "The WHO Recommended Classification of Pesticides by",
+    "description": ""
+  },
+  {
+    "crop_name": "Hazard and Guidelines to Classification",
+    "description": ""
+  },
+  {
+    "crop_name": "This document sets out a classification system to",
+    "description": "distinguish between the more and the less hazardous forms of pesticides. The classification system is aligned with the Globally Harmonized System of"
+  },
+  {
+    "crop_name": "Classification and Labelling of Chemicals and is",
+    "description": "based mainly on acute toxicity to health resulting from single or multiple exposures over a relatively short period of time."
+  },
+  {
+    "crop_name": "The document takes into consideration the toxicity of the",
+    "description": "technical active substance and describes methods for the classification of formulations. The document lists common technical grade pesticides and recommended classifications. It also lists active ingredients believed to be obsolete or discontinued for use as pesticides, pesticides subject to the Rotterdam Convention’s prior informed consent procedure, persistent organic pollutants whose trading is limited by the Stockholm Convention, and provides information on gaseous or volatile fumigants not classified under these recommendations."
+  },
+  {
+    "crop_name": "The document is updated periodically based on the latest WHO",
+    "description": "evaluations available. The current version was based on evaluations dated up to 2019. Year of publication: 2020 Available in: English 18"
+  },
+  {
+    "crop_name": "Compliance and Enforcement",
+    "description": "19 iredlaB ovI/OAF© nopaG iegreS/OAF©"
+  },
+  {
+    "crop_name": "Guidelines on Compliance and Enforcement of a Pesticide",
+    "description": ""
+  },
+  {
+    "crop_name": "Regulatory Programme",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines guide governments in starting and",
+    "description": "carrying out a programme to enforce compliance with their pesticide regulatory system. The guidelines emphasize that compliance can be difficult to obtain but that even the best regulatory system cannot accomplish its purpose without it."
+  },
+  {
+    "crop_name": "The guidelines encourage governments to make",
+    "description": "allowances for programmes. They note that compliance programmes usually have to be built gradually over time with experimentation to see what works best, and that governments should consider that some enforcement is better than none."
+  },
+  {
+    "crop_name": "The guidelines identify core principles and building blocks for a compliance",
+    "description": "and enforcement programme, and they provide examples to show how countries at different starting points could proceed. Year of publication: 2006 Available in: English 20"
+  },
+  {
+    "crop_name": "Guidelines for Quality Control of Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines give an overview of tools",
+    "description": "governments can use to control pesticide quality and prevent the marketing of substandard products."
+  },
+  {
+    "crop_name": "Guidance on sample selection and sampling",
+    "description": "procedure is included."
+  },
+  {
+    "crop_name": "The guidelines outline the responsibilities",
+    "description": "of governments, industry, and international organizations in carrying out pesticide quality control programmes, and they identify the legislation, organizational set up, and administrative requirements and resources that are needed. The guidelines also address regional cooperation, education and public awareness, and funding. The guidelines note that many poor-quality pesticides are marketed in low- and middle-income countries, and that their use can cause serious problems. These include ineffective pest or vector control leading to higher application rates and development of pest resistance, and increased health and environmental risks due to toxic impurities or additives in the products. Year of publication: 2011 Available in: English, French, Spanish, Russian and Arabic 21"
+  },
+  {
+    "crop_name": "Laboratories",
+    "description": ""
+  },
+  {
+    "crop_name": "Distribution and Sales",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to assist governments",
+    "description": "in establishing or strengthening the quality control activities carried out in laboratories for both agricultural and public health pesticides."
+  },
+  {
+    "crop_name": "The guidelines cover the organization and",
+    "description": "management of the laboratory; the roles, qualifications and training of the staff; quality assurance schemes; document and data recording; participation in international ring and collaborative studies; facilities, equipment and chemicals; and operational procedures for quality control. The guidelines were prepared collaboratively by the FAO, the WHO, and the Collaborative International Pesticide Analytical Council. Year of publication: 2005"
+  },
+  {
+    "crop_name": "Available in English",
+    "description": "22"
+  },
+  {
+    "crop_name": "Laboratories",
+    "description": ""
+  },
+  {
+    "crop_name": "Distribution and Sales",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to assist governments",
+    "description": "in establishing or strengthening the quality control activities carried out in laboratories for both agricultural and public health pesticides."
+  },
+  {
+    "crop_name": "The guidelines cover the organization and",
+    "description": "management of the laboratory; the roles, qualifications and training of the staff; quality assurance schemes; document and data recording; participation in international ring and collaborative studies; facilities, equipment and chemicals; and operational procedures for quality control. The guidelines were prepared collaboratively by the FAO, the WHO, and the Collaborative International Pesticide Analytical Council. Year of publication: 2005"
+  },
+  {
+    "crop_name": "Available in English",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Pesticide Advertising",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines elaborate on the standards for best",
+    "description": "practice in advertising outlined in the International Code of Conduct, which focus on the responsibility of the pesticide industry to voluntarily comply. The guidelines focus on the role of government authorities in ensuring that pesticide advertising is truthful and responsible, and in accordance with the Code. The guidelines apply to all pesticide use situations."
+  },
+  {
+    "crop_name": "The guidelines explain how to create a legal framework to enforce the",
+    "description": "standards in the Code of Conduct. They then enumerate the duties that must be carried out, such as: promoting observance of the Code and of any national requirements on advertising; evaluating applications for advertising; instituting a strategy for action against infringements; receiving and investigating complaints; promoting farmer awareness of what to expect from advertising; documenting and publicizing the results of monitoring and of violations; and taking action against advertisements that do not comply with national requirements or the Code of Conduct. Year of publication: 2010 Available in: English, French, Spanish and Chinese 24"
+  },
+  {
+    "crop_name": "Provisional Guidelines on Tender Procedures for the",
+    "description": ""
+  },
+  {
+    "crop_name": "Procurement of Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines advise both suppliers and procurers",
+    "description": "of agricultural pesticides on steps to ensure that the products are of good quality and are suitably packaged and labelled, taking into account local transport and warehousing facilities. The guidelines are designed to help avoid problems commonly encountered in low- and middle-income countries, such as supply of sub-standard and inappropriate formulations, contained in unsuitable packaging of poor quality and with inadequate labelling. The guidance is relevant to all procurement entities, including government agencies, donor agencies, and other organizations and private procurers."
+  },
+  {
+    "crop_name": "The guidelines were prepared in collaboration with the pesticide industry",
+    "description": "and are called provisional because they have not yet been approved by the FAO member countries. Year of publication: 1994 Available in: English 25"
+  },
+  {
+    "crop_name": "Guidelines for Retail Distribution of Pesticides with particular",
+    "description": ""
+  },
+  {
+    "crop_name": "Reference to Storage and Handling at the Point of Supply to",
+    "description": "Users in Low and Middle Income (Developing) Countries"
+  },
+  {
+    "crop_name": "These guidelines focus on minimizing risks during",
+    "description": "the storage and handling of pesticides, which is often done by retailers or dealers in rural areas after the pesticides have been transported by sea and then by road or rail."
+  },
+  {
+    "crop_name": "The guidelines provide general precautions and",
+    "description": "requirements for handling pesticides as well as specific instructions for on-site safety and first- aid, procedures for cleaning up spills, and decontamination of spill areas. The guidelines outline requirements for pesticide storage, such as: the composition, structure and ventilation of storage buildings; the separation of pesticides from food, fertilizer, and other materials; stacking of pesticide containers and rotation of stocks; and record keeping. The guidelines also provide advice on transporting pesticides, preventing leaks and spills, and emergency response in case of accident. An update of the guidelines is under way. Year of publication: 1988 Available in: English 26"
+  },
+  {
+    "crop_name": "Guidelines for Procuring Public Health Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines provide guidance on the procurement",
+    "description": "of appropriate, good-quality public health pesticides. The guidelines promote fairness, transparency, integrity, accountability and quality assurance in procurement of these products. Their aim is to assist governments and other stakeholders in preparing and harmonizing their standard operating procedures."
+  },
+  {
+    "crop_name": "The guidelines cover the basic principles and stages",
+    "description": "that are important in the procurement of public health pesticides. These include planning, product selection, procurement, legal and technical requirements, quality control and administrative requirements. Year of publication: 2012 Available in: English 27"
+  },
+  {
+    "crop_name": "Use",
+    "description": "29 iloittaM ocnarF/OAF© iloittaM ocnarF/OAF©"
+  },
+  {
+    "crop_name": "Guidelines on Good Practice for Ground Application of",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines provide information and advice on",
+    "description": "all aspects of pesticide application with ground- based field crop sprayers, including: operator training, selection of pesticides and spray equipment, management of exposure, and safe practice in using, storing, transporting and disposing of pesticides and in maintaining and cleaning application equipment."
+  },
+  {
+    "crop_name": "The guidelines emphasize that pest control starts",
+    "description": "with integrated pest management, and that the decision to use a pesticide should only be taken after other control measures have been considered. The guidelines also emphasize the need to keep records, monitor operator health, and maintain a list of local emergency contacts. A list of information to include in pesticide use records is provided. The guidelines are aimed at decision-makers, managers, field supervisors and spray operatives. Year of publication: 2001 Available in: English, French, Spanish, Russian, Arabic and Chinese 30"
+  },
+  {
+    "crop_name": "Guidelines on Good Practice for Aerial Application of Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines provide information and advice on",
+    "description": "safe practice for aerial spraying of pesticides by aircraft. They identify the advantages and disadvantages of aerial spraying, and they stress the need to comply with local requirements in case problems occur."
+  },
+  {
+    "crop_name": "In addition to covering the technical aspects of safe",
+    "description": "application practice, these guidelines stress the need for cooperation between the grower, spray contractor, pilot and other ground-support staff, and the need to consider the safety of people, animals and non-target crops that can be harmed by spray drift. The guidelines also emphasize that pest control starts with integrated pest management."
+  },
+  {
+    "crop_name": "The guidelines are aimed at all those involved in the aerial application of",
+    "description": "pesticides or in decision-making about such application. Year of publication: 2001 Available in: English, French, Spanish, Russian, Arabic and Chinese 31"
+  },
+  {
+    "crop_name": "Guidelines for Personal Protection when Handling and",
+    "description": ""
+  },
+  {
+    "crop_name": "Applying Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines begin with information about",
+    "description": "pesticide hazards, risks and main routes of exposure. In a first part, they cover general principles of effective personal protection when working with pesticides, highlighting the risks for different use phases and for various stakeholders. The guidelines emphasize the importance of basic risk reduction steps such as: deciding whether a chemical pesticide is really needed, using a pesticide formulation that does not require the wearing of protective clothing, avoiding contamination especially when pouring and mixing the concentrated product, and adopting habits that help avoid contact with the pesticide. For cases when risk mitigation measures call for wearing Personal Protective Equipment (PPE), the guidelines give attention to the requirements and use of PPE. They provide technical information on the selection of appropriate PPE and present in detail the various types of PPE, with descriptions and illustrations of recommended protective clothing, coveralls, footwear, gloves, goggles, face masks, respirators, etc. In a second part, the guidelines address policy issues and recommend measures to improve personal protection and specifically the use and availability of adequate quality and affordable PPE. These guidelines update and replace the 1990 FAO guidelines on personal protection when working with pesticides in tropical climates. However, the 2020 guidelines still pay attention to use situations under such climates where protective clothing can be uncomfortable and impractical. Year of publication: 2020 Available in: English 32"
+  },
+  {
+    "crop_name": "Guidelines on Organization and Operation of Training Schemes",
+    "description": "and Certification Procedures for Operators of Pesticide"
+  },
+  {
+    "crop_name": "Application Equipment",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines outline the considerations and",
+    "description": "options available to countries for regulating the use of pesticide application equipment on farms. The guidelines explain why it is important for countries to have a training and certification scheme for equipment users, and they provide a framework that includes: the roles and responsibilities of responsible authorities; an approach to organizing, introducing and sustaining a scheme; the different elements needed; quality assurance; and financing."
+  },
+  {
+    "crop_name": "The guidelines also emphasize that candidates must have general knowledge",
+    "description": "of pesticides, crop protection, and hazards. Year of publication: 2001 Available in: English, French, Spanish, Russian, Arabic and Chinese 33"
+  },
+  {
+    "crop_name": "Other guidelines related to pesticide application",
+    "description": ""
+  },
+  {
+    "crop_name": "The guidelines previously described in this section are part of a series that",
+    "description": "also includes the following: Equipment for Vector Control: Specification Guidelines – Second Edition (2018)"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural",
+    "description": "Pesticide Application Equipment, vols. 1–Portable (operator-carried) sprayers"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural",
+    "description": "Pesticide Application Equipment, vols. 2–Vehicle-mounted and trailed sprayers"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural",
+    "description": "Pesticide Application Equipment, vols. 3–Portable (operator-carried) foggers"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural",
+    "description": "Pesticide Application Equipment, vols. 4–Ground-based locust and grasshopper sprayers"
+  },
+  {
+    "crop_name": "Guidelines on Standards for Agricultural Pesticide",
+    "description": "Application Equipment and Related Test Procedures, vols. 1–Portable (operator-carried) sprayers"
+  },
+  {
+    "crop_name": "Guidelines on Standards for Agricultural Pesticide",
+    "description": "Application Equipment and Related Test Procedures, vols. 2–Vehicle-mounted and trailed sprayers 34"
+  },
+  {
+    "crop_name": "Guidelines on Procedures for the Registration Certification",
+    "description": "and Testing of New Pesticide Application Equipment"
+  },
+  {
+    "crop_name": "Guidelines on the Organization of Schemes for Testing and",
+    "description": ""
+  },
+  {
+    "crop_name": "Certification of Agricultural Pesticide Sprayers in Use",
+    "description": "Year of publication: 2001–2018 Available in English, partly in French, Spanish and Russian 35"
+  },
+  {
+    "crop_name": "Guidelines on Operational Implementation of Vector Control",
+    "description": ""
+  },
+  {
+    "crop_name": "Interventions",
+    "description": "WHO has published a number of guidelines on vector control, insecticide resistance and research on disease vectors, some of which are listed below. Global Vector Control Response 2017–2030 Manual for Indoor Residual Spraying – Application of Residual"
+  },
+  {
+    "crop_name": "Sprays for Vector Control",
+    "description": "Indoor Residual Spraying: An Operational Manual for IRS for Malaria Transmission, Control and Elimination. Second Edition"
+  },
+  {
+    "crop_name": "Space Spray Application of Insecticides for Vector and Public",
+    "description": "Health Pest Control – A Practitioner’s Guide Larval Source Management – a Supplementary Measure for Malaria Vector Control. An Operational Manual Decision-Making for the Judicious Use of Insecticides – Facilitator’s Guide Decision-Making for the Judicious Use of Insecticides – Participant’s Guide Specifications for Pesticides – A Training Manual (Facilitator’s and Participant’s Guides) 36"
+  },
+  {
+    "crop_name": "Guidelines on Licensing of Public Health Pest Control Operators",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to assist governments",
+    "description": "in implementing a licensing scheme for public health pest control operators (PCOs), as well as to assist the PCO industry in implementing best practices. The objective is to ensure that the pest control industry is orderly, efficient, and protective of people and the environment. The guidelines apply only to PCOs who provide their services in or around premises and public places; they do not cover pest control services in the agriculture and forestry sectors. Year of publication: 2015 Available in: English 38"
+  },
+  {
+    "crop_name": "Prevention of Accumulation and",
+    "description": ""
+  },
+  {
+    "crop_name": "Disposal of Obsolete Stocks",
+    "description": "39 iredlaB ovI/OAF© iredlaB ovI/OAF©"
+  },
+  {
+    "crop_name": "This toolkit was developed to help countries plan a",
+    "description": "safe management and disposal programme for their obsolete pesticide stocks. The toolkit provides a system that should enable countries to use local resources, to be largely self-reliant, and to draw the same conclusions as would be drawn by specialists with many years of experience in obsolete pesticide projects."
+  },
+  {
+    "crop_name": "The toolkit is accompanied by a training package that aims to develop",
+    "description": "national capacity to apply the methodologies described. The following guidelines provided the basis for this Toolkit: • Guidelines for the Management of Small Quantities of Unwanted and"
+  },
+  {
+    "crop_name": "Obsolete Pesticides",
+    "description": "• Disposal of Bulk Quantities of Obsolete Pesticides in Low and Middle Income (Developing) Countries • Prevention of Accumulation of Obsolete Stocks Year of publication: 2009, 2011 Available in: English (Vols. 1, 2, 3, 4) French (Vols. 1, 2) Spanish (Vols. 1, 2) 40"
+  },
+  {
+    "crop_name": "These volumes of the toolkit deal with sites",
+    "description": "contaminated by pesticides, that present risks to human health and the wider environment. They outline the various tools and steps to follow in order to develop and implement effective risk reduction strategies for those sites. EMTK 5 includes the methodology for the Rapid environmental assessment (REA) as well as for more detailed investigation. The conclusions drawn from using EMTK 5 enable the development of a Environmental Management Plan, examined further under EMTK 6. Volume 5 is supplemented by a REA investigator handbook that provides practical guidance to investigators to help them prioritize sites for further intervention. These volumes supersede the previous 2000 publication entitled “Assessing Soil Contamination – A Reference Manual”. Year of publication: 2020 Available in: English (Vol. 5 & 6) 41"
+  },
+  {
+    "crop_name": "Other Tools Related to Obsolete Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "The Preparation of Inventories of Pesticides and",
+    "description": ""
+  },
+  {
+    "crop_name": "Contaminated Materials",
+    "description": ""
+  },
+  {
+    "crop_name": "FAO Training Manual for Inventory Taking of Obsolete",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticide Storage and Stock Control Manual",
+    "description": "Year of publication: 2010, 2001, 1995 Available in: English, partly in French and Spanish 42"
+  },
+  {
+    "crop_name": "Guidelines on Management Options for Empty Containers",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines explain how to design and",
+    "description": "implement a scheme for managing pesticide containers after the contents have been used. The objective is to ensure that containers are decontaminated as soon as they are empty, that they are not reused in inappropriate ways, and that it is easy for users to return them to the scheme. The guidelines discuss container design, methods for cleaning different types of containers, and disposal options. They explain how a country should go about developing a container management scheme, the information needed to assess the nature and scale of the issue, logistics and administration of the scheme, and the stakeholders that should be involved. The guidelines conclude with 10 examples of container management schemes operating in industrialized and low- and middle-income countries. Year of publication: 2008 Available in: English, French and Spanish 43"
+  },
+  {
+    "crop_name": "Post Registration Surveillance",
+    "description": ""
+  },
+  {
+    "crop_name": "Post Registration Surveillance",
+    "description": "45 nilessA reivilO/OAF© abmuraK ynoT/OAF©"
+  },
+  {
+    "crop_name": "Guidelines on Prevention and Management of Pesticide",
+    "description": ""
+  },
+  {
+    "crop_name": "Resistance",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines describe how to limit the",
+    "description": "development of pesticide resistance in agriculture while continuing to protect crops from pests. The guidelines are intended for scientific, technical, and policy experts who prepare or evaluate pesticide resistance management plans, and for pesticide regulators who assess the risk of resistance development during registration of new pesticides or renewal of already approved products. The guidelines outline the problem and its causes, identify the objectives and challenges in managing pesticide resistance, and tell how to assess the likelihood that resistance to a pesticide will develop. They describe practices and strategies for preventing and managing resistance, explain how to detect and verify resistance in the field, and describe how resistance has been prevented in transgenic Bacillus thuringiensis (Bt) crops. The guidelines also provide a list of resources and Internet links to real-life examples of resistance management plans. The guidelines focus explicitly on agriculture, but briefly discuss resistance in vectors of human diseases, referring to WHO guidelines for further information. Year of publication: 2012 Available in: English, French, Spanish and Arabic 46"
+  },
+  {
+    "crop_name": "Test Procedures for Insecticide Resistance Monitoring in",
+    "description": "Malaria Vector Mosquitoes – Second Edition"
+  },
+  {
+    "crop_name": "This document provides an overview of the test",
+    "description": "procedures for monitoring insecticide resistance in malaria vectors including two new methods, i.e. the intensity bioassay and the synergist bioassay. These new methods use the current WHO susceptibility test to measure the intensity of insecticide resistance and to determine one of the main underlying metabolic mechanisms. Data generated by these tests will enable countries to track the evolution of insecticide resistance, inform the development of national insecticide resistance management strategies, and ensure the effective use of available tools. The basic procedures can be adapted for testing resistance against mosquito vectors of other diseases. Year of publication: 2016 (updated June 2018) Available in: English, French, Spanish 47"
+  },
+  {
+    "crop_name": "Guidelines on Developing a Reporting System for Health",
+    "description": "and Environmental Incidents Resulting from Exposure to"
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to help governments",
+    "description": "create a basic system for reporting of incidents in which pesticide exposure has caused a health or environmental problem. The guidelines explain what type of information about pesticide incidents to collect, how to collect it, and how to determine if risk mitigation or in-depth monitoring is needed. The guidelines also explain how to investigate pesticide incidents and verify the quality of the data, and they describe the roles of the different authorities that should collect and use the information."
+  },
+  {
+    "crop_name": "The guidelines provide sample questionnaires and incident reporting forms",
+    "description": "developed by WHO and the Rotterdam Convention Secretariat. They also refer to further reading about creating a structure for self-surveillance and reporting by pesticide users, for cases where countries lack resources for a robust national reporting system. Year of publication: 2009 Available in: English, French and Spanish 48"
+  },
+  {
+    "crop_name": "Guidelines on Post Registration Surveillance and Other",
+    "description": ""
+  },
+  {
+    "crop_name": "Activities in the Field of Pesticides",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines outline the activities that should be",
+    "description": "undertaken after registration to confirm that pesticides are properly handled and distributed and are used safely and in accordance with the approved label and any relevant regulations."
+  },
+  {
+    "crop_name": "In addition to providing advice on the monitoring",
+    "description": "of pesticide use, the guidelines cover: monitoring of pesticide quality, of residues in food and in the environment, and of accidental poisoning; training of farmers, retailers, extension workers and medical practitioners; licensing of pesticide handlers including pesticide companies, pest control operators and retail shops; and enforcement and control of imports, advertisements, and packaging and labelling. The guidelines also stress the importance of information exchange among governments, to keep them abreast of new information about pesticides and actions taken elsewhere. Year of publication: 1988 Available in: English 49"
+  },
+  {
+    "crop_name": "Monitoring and Observance of the",
+    "description": ""
+  },
+  {
+    "crop_name": "Additional Manuals and Tools",
+    "description": ""
+  },
+  {
+    "crop_name": "Code of Conduct",
+    "description": ""
+  },
+  {
+    "crop_name": "These guidelines are intended to strengthen Additional manuals and tools related to pesticide management can be",
+    "description": "implementation of the Code of Conduct on Pesticide found through the FAO webpage for technical guidance, at: Management by providing a user-friendly approach http://www.fao.org/agriculture/crops/thematic-sitemap/theme/pests/code/ for monitoring how well different parties are fulfilling toolkits/en/ their responsibilities under the Code. Directed at governments and other stakeholders, the guidelines and the WHO website: https://www.who.int/neglected_diseases/vector_ecology/en/ identify information to be gathered and ways to ensure that it will be accessible and used effectively. Reporting forms for both regular and ad-hoc"
+  },
+  {
+    "crop_name": "Manual on the Submission and Evaluation of Pesticide Residues",
+    "description": "monitoring are provided. Data for the Estimation of Maximum Residue Limits in Food and Feed [2016] http://www.fao.org/3/a-i5452e.pdf Year of publication: 2006"
+  },
+  {
+    "crop_name": "Manual on the Development and Use of FAO and WHO",
+    "description": "Available in: English, French and Spanish Specifications for Pesticides [2016] http://www.fao.org/3/a-i5713e.pdf FAO/WHO Pesticide Specifications [ongoing] http://www.fao.org/3/a-i5713e.pdf and https://www.who.int/pq-vector-control/en/ [ongoing]"
+  },
+  {
+    "crop_name": "FAO Training Manual for Inventory Taking of Obsolete Pesticides",
+    "description": "[2001] http://www.fao.org/fileadmin/user_upload/obsolete_ pesticides/docs/train_man_e.pdf Pesticide Storage and Stock Control Manual [1995] http://www.fao.org/docrep/v8966e/v8966e00.htm 50"
+  },
+  {
+    "crop_name": "Additional Manuals and Tools",
+    "description": ""
+  },
+  {
+    "crop_name": "Additional manuals and tools related to pesticide management can be",
+    "description": "found through the FAO webpage for technical guidance, at: http://www.fao.org/agriculture/crops/thematic-sitemap/theme/pests/code/ toolkits/en/ and the WHO website: https://www.who.int/neglected_diseases/vector_ecology/en/"
+  },
+  {
+    "crop_name": "Manual on the Submission and Evaluation of Pesticide Residues",
+    "description": ""
+  },
+  {
+    "crop_name": "Data for the Estimation of Maximum Residue Limits in Food and",
+    "description": "Feed [2016] http://www.fao.org/3/a-i5452e.pdf"
+  },
+  {
+    "crop_name": "Manual on the Development and Use of FAO and WHO",
+    "description": "Specifications for Pesticides [2016] http://www.fao.org/3/a-i5713e.pdf FAO/WHO Pesticide Specifications [ongoing] http://www.fao.org/3/a-i5713e.pdf and https://www.who.int/pq-vector-control/en/ [ongoing]"
+  },
+  {
+    "crop_name": "FAO Training Manual for Inventory Taking of Obsolete Pesticides",
+    "description": "[2001] http://www.fao.org/fileadmin/user_upload/obsolete_ pesticides/docs/train_man_e.pdf Pesticide Storage and Stock Control Manual [1995] http://www.fao.org/docrep/v8966e/v8966e00.htm 51"
+  },
+  {
+    "crop_name": "Harmonized Glossary on Terms and Definitions for the guidelines in support of",
+    "description": "the Code of Conduct [continuously updated] http://www.fao.org/fileadmin/templates/agphome/documents/Pests_ Pesticides/Code/Glossary_March_2011.pdf Globally Harmonized System of Classification and Labelling of Chemicals (GHS) [2017]: https://www.unece.org/trans/danger/publi/ghs/ghs_welcome_e.html Rotterdam Convention: http://www.pic.int/ Stockholm Convention: http://chm.pops.int/ Montreal Convention: http://conf.montrealprotocol.org/SitePages/Home.aspx OECD: http://www.oecd.org/chemicalsafety/pesticides-biocides/ 52"
+  },
+  {
+    "crop_name": "Web Links to Guidelines and Tools",
+    "description": ""
+  },
+  {
+    "crop_name": "Policy and Legislation",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Pesticide Legislation",
+    "description": "http://www.fao.org/3/a-i5008e.pdf"
+  },
+  {
+    "crop_name": "Guidance on Pest and Pesticide Management Policy Development",
+    "description": "http://www.fao.org/3/a-a0220e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Highly Hazardous Pesticides",
+    "description": "http://www.fao.org/3/a-i5566e.pdf Guidance on Policy-making for Integrated Vector Management http://apps.who.int/iris/bitstream/handle/10665/44766/9789241502795_eng. pdf;jsessionid=B4302C756FB950DB3FE2755DD47CD9D6"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for the WHO",
+    "description": "South-East Asia Region http://www.who.int/whopes/resources/SEA_CD_214.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Public Health Pesticide Management Policy for the WHO",
+    "description": ""
+  },
+  {
+    "crop_name": "African Region",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/97939/9789241501231_eng. pdf 53"
+  },
+  {
+    "crop_name": "Registration",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines for the Registration of Pesticides",
+    "description": "http://www.fao.org/3/a-bt567e.pdf Guidelines for the Registration of Microbial, Botanical and Semiochemical"
+  },
+  {
+    "crop_name": "Pest Control Agents for Plant Protection and Public Health Uses",
+    "description": "http://www.fao.org/3/a-i8091e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Data Requirements for the Registration of Pesticides",
+    "description": "http://www.fao.org/3/a-bc870e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Efficacy Evaluation for the Registration of Plant Protection",
+    "description": ""
+  },
+  {
+    "crop_name": "Products",
+    "description": "http://www.fao.org/3/a-bt474e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Good Labelling Practice for Pesticides",
+    "description": "http://www.fao.org/3/a-i4854e.pdf Guidelines for Laboratory and Field testing of Long-lasting Insecticidal Nets http://www.who.int/whopes/resources/9789241505277/en/"
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Spatial Repellents",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/78142/9789241505024_eng. pdf"
+  },
+  {
+    "crop_name": "Guidelines for Testing the Efficacy of Insecticide Products Used in Aircraft",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/44836/9789241503235_eng. pdf"
+  },
+  {
+    "crop_name": "Guidelines for Testing mosquito Adulticides for Indoor Residual Spraying",
+    "description": "and Treatment of Mosquito Nets http://apps.who.int/iris/handle/10665/69296"
+  },
+  {
+    "crop_name": "Guidelines for Laboratory and Field testing of Mosquito Larvicides",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/69101/WHO_CDS_WHOPES_ GCDPP_2005.13.pdf 54"
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Mosquito Repellents for Human Skin",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/70072/WHO_HTM_NTD_ WHOPES_2009.4_eng.pdf Guidelines for Efficacy Testing of Household Insecticide Products - Mosquito Coils, Vaporizer Mats, Liquid Vaporizers, Ambient Emanators and Aerosols http://apps.who.int/iris/bitstream/handle/10665/70071/WHO_HTM_NTD_ WHOPES_2009.3_eng.pdf"
+  },
+  {
+    "crop_name": "Field Testing and Evaluation of Insecticides for Indoor Residual Spraying",
+    "description": ""
+  },
+  {
+    "crop_name": "Against Chagas Vectors",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/66782/WHO_CDS_WHOPES_ GCDPP_2001.1.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Laboratory and Field testing of Mosquito Larvicides",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/69101/WHO_CDS_WHOPES_ GCDPP_2005.13.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Efficacy Testing of Mosquito Repellents for Human Skin",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/70072/WHO_HTM_NTD_ WHOPES_2009.4_eng.pdf Guidelines for Efficacy Testing of Household Insecticide Products - Mosquito Coils, Vaporizer Mats, Liquid Vaporizers, Ambient Emanators and Aerosols http://apps.who.int/iris/bitstream/handle/10665/70071/WHO_HTM_NTD_ WHOPES_2009.3_eng.pdf"
+  },
+  {
+    "crop_name": "Field Testing and Evaluation of Insecticides for Indoor Residual Spraying",
+    "description": ""
+  },
+  {
+    "crop_name": "Against Chagas Vectors",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/66782/WHO_CDS_WHOPES_ GCDPP_2001.1.pdf A Generic Risk Assessment Model for Insecticide-Treated Nets – Second"
+  },
+  {
+    "crop_name": "Edition",
+    "description": "http://apps.who.int/iris/bitstream/10665/260305/1/9789241513586-eng.pdf 55"
+  },
+  {
+    "crop_name": "A Generic Risk Assessment Model for Indoor Residual Spraying of",
+    "description": "Insecticides — Second Edition http://apps.who.int/iris/bitstream/handle/10665/260549/9789241513753- eng.pdf"
+  },
+  {
+    "crop_name": "A Generic Risk Assessment Model for Indoor and Outdoor Space Spraying",
+    "description": "of Insecticides — Second Revision http://apps.who.int/iris/bitstream/handle/10665/44613/9789241501682_eng.pdf A Generic Risk Assessment Model for Insecticides Used for Larviciding —"
+  },
+  {
+    "crop_name": "Second Edition",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/44339/9789241599561_eng.pdf"
+  },
+  {
+    "crop_name": "Aircraft Disinsection Insecticides",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/100023/9789241572439_ eng.pdf"
+  },
+  {
+    "crop_name": "The WHO Recommended Classification o f Pesticides by Hazard and",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines to Classification",
+    "description": "https://apps.who.int/iris/rest/bitstreams/1278712/retrieve"
+  },
+  {
+    "crop_name": "Compliance and Enforcement",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Compliance and Enforcement of a Pesticide Regulatory",
+    "description": ""
+  },
+  {
+    "crop_name": "Programme",
+    "description": "http://www.fao.org/3/a-bt478e.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Quality Control of Pesticides",
+    "description": "http://www.fao.org/3/a-bt477e.pdf"
+  },
+  {
+    "crop_name": "Guidelines for National Laboratories",
+    "description": "https://apps.who.int/iris/bitstream/handle/10665/69158/WHO_CDS_ WHOPES_GCDPP_2005.15.pdf?sequence=1 56"
+  },
+  {
+    "crop_name": "Distribution and Sales",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Pesticide Advertising",
+    "description": "http://www.fao.org/3/a-bt478e.pdf"
+  },
+  {
+    "crop_name": "Provisional Guidelines on Tender Procedures for the Procurement of",
+    "description": ""
+  },
+  {
+    "crop_name": "Pesticides",
+    "description": "http://www.fao.org/3/a-bt481e.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Retail Distribution of Pesticides with particular Reference to",
+    "description": ""
+  },
+  {
+    "crop_name": "Storage and Handling at the Point of Supply to Users in Low and Middle",
+    "description": "Income (Developing) Countries http://www.fao.org/3/a-bt482e.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Procuring Public Health Pesticides",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/44856/9789241503426_eng.pdf"
+  },
+  {
+    "crop_name": "Use",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Good Practice for Ground Application of Pesticides",
+    "description": "http://www.fao.org/3/a-y2767e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Good Practice for Aerial Application of Pesticides",
+    "description": "http://www.fao.org/3/a-y2766e.pdf"
+  },
+  {
+    "crop_name": "Guidelines for Personal Protection when Working with Pesticides in Tropical",
+    "description": ""
+  },
+  {
+    "crop_name": "Climates",
+    "description": "http://www.fao.org/3/a-bt486e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Organization and Operation of Training Schemes and",
+    "description": ""
+  },
+  {
+    "crop_name": "Certification Procedures for Operators of Pesticide Application Equipment",
+    "description": "http://www.fao.org/3/a-y2686e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural Pesticide Application",
+    "description": "Equipment, vols. 1 http://www.fao.org/3/a-y2765e.pdf 57"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural Pesticide Application",
+    "description": "Equipment, vols. 2 http://www.fao.org/3/a-y2753e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural Pesticide Application",
+    "description": "Equipment, vols. 3 http://www.fao.org/3/a-y2757e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Minimum Requirements for Agricultural Pesticide Application",
+    "description": "Equipment, vols. 4 http://www.fao.org/3/y5774e/y5774e00.htm"
+  },
+  {
+    "crop_name": "Guidelines on Standards for Agricultural Pesticide Application Equipment",
+    "description": "and Related Test Procedures, vols. 1 http://www.fao.org/3/a-y2752e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Standards for Agricultural Pesticide Application Equipment",
+    "description": "and Related Test Procedures, vols. 2 http://www.fao.org/3/a-y2751e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Procedures for the Registration Certification and Testing of",
+    "description": ""
+  },
+  {
+    "crop_name": "New Pesticide Application Equipment",
+    "description": "http://www.fao.org/3/a-y2683e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on the Organization of Schemes for Testing and Certification of",
+    "description": ""
+  },
+  {
+    "crop_name": "Agricultural Pesticide Sprayers in Use",
+    "description": "http://www.fao.org/3/a-y2685e.pdf Guidelines on operational implementation of vector control interventions: Global vector control response 2017–2030 http://www.who.int/entity/vector-control/publications/global-control- response/en/index.html"
+  },
+  {
+    "crop_name": "Test procedures for insecticide resistance monitoring in malaria vector",
+    "description": "mosquitoes (Second edition) http://www.who.int/entity/malaria/publications/atoz/9789241511575/en/index.html 58"
+  },
+  {
+    "crop_name": "Space spray application of insecticides for vector and public health pest",
+    "description": "control - A practitioner’s guide http://apps.who.int/iris/bitstream/handle/10665/68057/WHO_CDS_WHOPES_ GCDPP_2003.5.pdf Larval source management – a supplementary measure for malaria vector control. An operational manual http://www.who.int/entity/malaria/publications/atoz/9789241505604/en/ index.html Decision-making for the judicious use of insecticides - Facilitator’s guide (Trial edition) http://www.who.int/whopes/resources/who_cds_whopes_2004.9b/en/ Decision-making for the judicious use of insecticides - Participant’s guide (Trial edition) http://apps.who.int/iris/bitstream/handle/10665/68781/WHO_CDS_ WHOPES_2004.9a.pdf Specifications for pesticides a training manual - Participant’s guide http://apps.who.int/iris/bitstream/handle/10665/85510/9789241505796_eng.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Licensing of Public Health Pest Control Operators",
+    "description": "http://apps.who.int/iris/bitstream/handle/10665/199175/9789241509923_eng.pdf 59"
+  },
+  {
+    "crop_name": "Prevention of Accumulation and disposal of Obsolete",
+    "description": ""
+  },
+  {
+    "crop_name": "Stocks",
+    "description": "Environmental Management Toolkit for Obsolete Pesticides, Vols. 1–4 Volume 1 http://www.fao.org/fileadmin/templates/agphome/documents/Pests_ Pesticides/Obsolete/EMTK_12.pdf Volume 2 http://www.fao.org/docrep/pdf/011/i0474e/i0474e.pdf Volume 3 http://www.fao.org/3/a-i2216e.pdf Volume 4 http://www.fao.org/3/a-i2022e.pdf Volume 5 http://www.fao.org/3/ca7480en/ca7480en.pdf Rapid Environmental Assessment (REA) investigator handbook http://www.fao.org/3/ca5642en/ca5642en.pdf Volume 6 http://www.fao.org/3/ca7499en/ca7499en.pdf"
+  },
+  {
+    "crop_name": "The Preparation of Inventories of Pesticides and Contaminated Materials",
+    "description": "http://www.fao.org/docrep/013/i1724e/i1724e.pdf"
+  },
+  {
+    "crop_name": "FAO Training Manual for Inventory Taking of Obsolete Pesticides",
+    "description": "http://www.fao.org/fileadmin/user_upload/obsolete_pesticides/docs/train_ man_e.pdf"
+  },
+  {
+    "crop_name": "Pesticide Storage and Stock Control Manual",
+    "description": "http://www.fao.org/docrep/v8966e/v8966e00.htm 60"
+  },
+  {
+    "crop_name": "Post Registration Surveillance",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Prevention and Management of Pesticide Resistance",
+    "description": "http://www.fao.org/3/a-bt561e.pdf"
+  },
+  {
+    "crop_name": "Test Procedures for Insecticide Resistance Monitoring in Malaria Vector",
+    "description": "Mosquitoes - second edition https://apps.who.int/iris/bitstream/handle/10665/250677/9789241511575- eng.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Developing a Reporting System for Health and Environmental",
+    "description": ""
+  },
+  {
+    "crop_name": "Incidents Resulting from Exposure to Pesticides",
+    "description": "http://www.fao.org/3/a-bt562e.pdf"
+  },
+  {
+    "crop_name": "Guidelines on Post Registration Surveillance and Other Activities in the Field",
+    "description": "of Pesticides http://www.fao.org/3/a-bt479e.pdf"
+  },
+  {
+    "crop_name": "Monitoring and Observance of the Code of Conduct",
+    "description": ""
+  },
+  {
+    "crop_name": "Guidelines on Monitoring and Observance of the Code of Conduct",
+    "description": "http://www.fao.org/3/a-bt480e.pdf 61"
+  },
+  {
+    "crop_name": "The International Code of Conduct",
+    "description": "on Pesticide Management The International Code of Conduct on Pesticide Management, developed collaboratively by FAO and WHO, sets out a framework and standards of conduct for managing pesticides throughout their life cycle. Accepted worldwide as a reference for pesticide management, the Code of"
+  },
+  {
+    "crop_name": "Conduct is directed primarily at government authorities",
+    "description": "and the pesticide industry but is also relevant for other stakeholders."
+  },
+  {
+    "crop_name": "The Code of Conduct has been updated several times",
+    "description": "since it was first published by FAO, in 1985, as The International Code of Conduct on the Distribution and Use of Pesticides. The current, fourth version of the Code was published jointly by FAO and WHO in 2014. This version gives greater attention to public health pesticides and the impacts of pesticides on health and the environment. It makes specific reference to pertinent multinational environmental agreements, the management of highly hazardous pesticides and the protection of vulnerable groups. In addition, it updates terms and definitions and aligns guidance in several areas with developments in the management of industrial chemicals. Year of publication: 2014 Available in: English, French, Spanish, Arabic, Chinese and Russian FAO: http://www.fao.org/3/I3604E/i3604e.pdf WHO: https://www.who.int/neglected_diseases/vector_ecology/pesticide- management/en/ 63"
+  },
+  {
+    "crop_name": "Articles of the Code of Conduct",
+    "description": "Article 1. Objectives of the Code Article 2. Terms and definitions Article 3. Pesticide management Article 4. Testing of pesticides Article 5. Reducing health and environmental risks Article 6. Regulatory and technical requirements Article 7. Availability and use Article 8. Distribution and trade Article 9. Information exchange Article 10. Labelling, packaging, storage and disposal Article 11. Advertising Article 12. Monitoring and observance of the Code 64"
+  },
+  {
+    "crop_name": "The international code of conduct on pesticide management",
+    "description": ""
+  },
+  {
+    "crop_name": "Managing pesticides",
+    "description": "in agriculture and public health"
+  },
+  {
+    "crop_name": "An overview of FAO and WHO",
+    "description": "guidelines and other resources ISBN 978-92-5-131596-5 9 7 8 9 2 51 3 1 5 9 65 CA5201EN/1/07.19"
+  }
+]

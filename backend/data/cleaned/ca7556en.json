@@ -1,0 +1,866 @@
+[
+  {
+    "crop_name": "Crop production manual",
+    "description": ""
+  },
+  {
+    "crop_name": "A guide to fruit and vegetable production in the",
+    "description": ""
+  },
+  {
+    "crop_name": "Federated States of Micronesia",
+    "description": "ii"
+  },
+  {
+    "crop_name": "Crop production manual",
+    "description": ""
+  },
+  {
+    "crop_name": "A guide to fruit and vegetable production in the",
+    "description": ""
+  },
+  {
+    "crop_name": "Federated States of Micronesia",
+    "description": "Compiled by:"
+  },
+  {
+    "crop_name": "Sayed Mohammad Naim Khalid",
+    "description": "This manual was produced under TCP/MIC/3601, “Strengthening the capacity of Farmers Associations to increase production and marketing of root crops, fruits and vegetables in FSM” project."
+  },
+  {
+    "crop_name": "FAO Subregional Office for the Pacific",
+    "description": ""
+  },
+  {
+    "crop_name": "Food and Agriculture Organization of the United Nations",
+    "description": "Apia, 2020 iv"
+  },
+  {
+    "crop_name": "The designations employed and the presentation of material in this information product do not imply the",
+    "description": "expression of any opinion whatsoever on the part of the Food and Agriculture Organization of the United Nations (FAO) concerning the legal or development status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. The mention of specific companies or products of manufacturers, whether or not these have been patented, does not imply that these have been endorsed or recommended by FAO in preference to others of a similar nature that are not mentioned. The views expressed in this information product are those of the author(s) and do not necessarily reflect the views or policies of FAO. ISBN 978-92-5-132128-7 © FAO, 2020 Some rights reserved. This work is made available under the Creative Commons Attribution- NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo/legalcode). Under the terms of this licence, this work may be copied, redistributed and adapted for non-commercial purposes, provided that the work is appropriately cited. In any use of this work, there should be no suggestion that FAO endorses any specific organization, products or services. The use of the FAO logo is not permitted. If the work is adapted, then it must be licensed under the same or equivalent Creative Commons licence. If a translation of this work is created, it must include the following disclaimer along with the required citation: “This translation was not created by the Food and Agriculture Organization of the United Nations (FAO). FAO is not responsible for the content or accuracy of this translation. The original [Language] edition shall be the authoritative edition.”"
+  },
+  {
+    "crop_name": "Disputes arising under the licence that cannot be settled amicably will be resolved by mediation and",
+    "description": "arbitration as described in Article 8 of the licence except as otherwise provided herein. The applicable mediation rules will be the mediation rules of the World Intellectual Property Organization http://www.wipo.int/amc/en/mediation/rules and any arbitration will be conducted in accordance with the Arbitration Rules of the United Nations Commission on International Trade Law (UNCITRAL). Third-party materials. Users wishing to reuse material from this work that is attributed to a third party, such as tables, figures or images, are responsible for determining whether permission is needed for that reuse and for obtaining permission from the copyright holder. The risk of claims resulting from infringement of any third-party-owned component in the work rests solely with the user. Sales, rights and licensing. FAO information products are available on the FAO website (www.fao.org/publications) and can be purchased through publications-sales@fao.org. Requests for commercial use should be submitted via: www.fao.org/contact-us/licence-request. Queries regarding rights and licensing should be submitted to: copyright@fao.org. Cover photographs: © FAO/ K. Hadfield v"
+  },
+  {
+    "crop_name": "Contents",
+    "description": "Preface ................................................................................................... viii Acknowledgements................................................................................... ix Farming basics ........................................................................................... 1 Introduction .................................................................................................. 3 Why start your own farm? ............................................................................ 3 Picking a good spot for your garden ............................................................. 3 Choosing what crops to plant ....................................................................... 4 Finding seeds/seedlings ................................................................................ 5 Planning your farm ........................................................................................ 5 Layout ........................................................................................................ 5 Raised beds ............................................................................................... 5 Traditional rows ........................................................................................ 6 Square foot gardening .............................................................................. 6 Mulching ................................................................................................... 6 When to plant ........................................................................................... 6 Improving the soil ......................................................................................... 7 Testing the soil .......................................................................................... 7 Clearing weeds .......................................................................................... 7 Compost .................................................................................................... 8 Manure ...................................................................................................... 8 Planting the crops ......................................................................................... 8 Succession planting ................................................................................... 9 iv"
+  },
+  {
+    "crop_name": "Preface",
+    "description": "This manual is intended to be a guide to the agriculture extension personnel, horticultural producers as well as agricultural institutions in their endeavor to improve productivity in the horticultural sub-sector. This manual will raise awareness and provide decision support information about opportunities at farm and how to do basic farming for subsistence and market and ultimately increase the income of farmers and improve their livelihoods."
+  },
+  {
+    "crop_name": "Pohnpei and Yap States currently produce limited amount of food locally and",
+    "description": "export is also limited. The imports of substantial quantities of vegetables, fruits and root crops is amounting to millions of dollars annually. This is partly owing to the fact that the necessary information on crop production locally is not readily available to assist producers in their production."
+  },
+  {
+    "crop_name": "This manual is designed to provide guidelines on seedling production and",
+    "description": "management, plant spacing, cropping program, soil fertility and crop protection. It is hoped that this manual will contribute modestly to the goal of improving vegetable production in the country. viii"
+  },
+  {
+    "crop_name": "Acknowledgements",
+    "description": "The following individual contributed to conceptualization, writing, reviewing, editing, and improving technical accuracy of this manual. Their valuable contributions are hereby gratefully acknowledged:  Mr. Adelino Lorens - Chief of Agriculture Pohnpei, FSM  Ms. Marlyter Silbanuz – National Project Coordinator, FSM  Mr. Tamdad Sulag – Chief of Agriculture Yap, FSM  Dr. Nacanieli (Nat) Tuivavalagi – Agronomy Researcher, College of Micronesia, FSM  Mr. Konrad Englberger – Volunteer Plant Protection Expert, FSM  Mr. Jackson Phillip – Program Coordinator, College of Micronesia"
+  },
+  {
+    "crop_name": "FSM",
+    "description": " Mr. Sawdey, Sharon – Resource Conservationist, NRCS/USDA - FSM  Dr. Leon Numaco – Horticulture Consultant, FAO  Mr. Gumercindo Tumbali – Farm Management & Marketing Consultant, FAO  Mr. Kadalino Lorens – Agriculturist, Division of Agriculture, Department of R&D Pohnpei State, FSM  Mr. Santos, Gibson – Soil Conservation Technician, NRCS/USDA, FSM  Mr. Nicholson Solomon – Director, Department of Resources & Development, Pohnpei, FSM ix"
+  },
+  {
+    "crop_name": "Farming basics",
+    "description": "1"
+  },
+  {
+    "crop_name": "Farming basics",
+    "description": ""
+  },
+  {
+    "crop_name": "Introduction",
+    "description": "As you can see, there"
+  },
+  {
+    "crop_name": "With so much emphasis today on",
+    "description": "are many great reasons to start your eating natural, organic foods – not to own farm. Apart from allowing you to mention the rising costs associated grow your own food, conserving with buying them, many people are energy and saving money, own farm considering growing their own will also help to control runoff from vegetables in a home garden. It’s very rainfall and guard against flooding. easy to grow your own vegetables, A farm can act as a sound buffer, and at harvest time, vegetable lowering noise levels in your gardening is a very rewarding neighborhood. Your farm will attract pastime. a variety of local and migratory"
+  },
+  {
+    "crop_name": "All your garden really needs is",
+    "description": "wildlife like birds and butterflies, not sunshine (6–8 hours of sun each day, to mention helping to conserve in the summer), some soil, fertilizer, important creatures like bees – who and a little attention to watering, are vital to our ecosystem – and weeding and pest management. helping to reduce CO in our 2 As a gardening beginner, your first atmosphere, replacing it with oxygen. vegetable garden will require the Additionally, a farm is a great space largest amount of work, but don’t let for both children and adults to that dissuade you – the work you put experience the outdoors, and get off in up front won’t have to be repeated the sofa. A garden can create ground next year, and the rewards speak for shade, helping with cooling, and can themselves. work as a filter for dust and pollutants. Why start your own farm? Across the world, many people are"
+  },
+  {
+    "crop_name": "Picking a good spot for your garden",
+    "description": "having little farms. In FSM most Now that you’ve decided to start your people have access to land and the farm, the first step is to find the climate is suitable for crop perfect location. There are several production. And for the cost of seeds, things you should keep in mind: tools, and water, they’re enjoying Start Small. As we mentioned, your food that’s as fresh and local as it can first farm is typically the most work to possibly be, all while spending less set up, so starting small is a good time shopping for groceries and more idea. Set up a manageable area for time at home, connecting with their your garden bed(s), whether they are family and friends. in the ground, raised beds, or in containers, and know what you’re 3"
+  },
+  {
+    "crop_name": "Vegetables require at least six hours Choosing what crops to plant",
+    "description": "of sun each day – and if you can get 8 Now that you have a location, it’s hours, that’s better. Don’t worry too time to decide what to plant. You’ll much about afternoon or morning want to maximize your space and sun, as long as the garden gets at grow plants suited to your local area, least six hours total, you’re golden. as well as considering the time vs. Good Soil. As farmers, we know that reward – corn, for example, is good soil means good plants! When delicious, but takes up lots of space looking at the soil in your own and takes months to get a single ground, darker tends to be better, but harvest, while pole beans are quire just about any soil is workable – as space-efficient and produce beans for long as it’s not full of rocks, roots, or weeks. other obstructions. Even mediocre soil can be improved with minerals, Easy to grow. For the beginning, manure, and sand to make it having vegetables that are basically excellent. And, if all else fails, a raised bed with formulated soil is always an Figure 1: seedling production in trays option. foolproof is a great plan. Plants like Chinese cabbage, tomatoes, gourds Water source. Apart from sun and like squash and eggplant, greens such soil, water is the third piece of the as lettuce or Swiss chard, and root puzzle to make a healthy garden. vegetables like taro tend to be very Choose a location close to a water simple. source – like river, rain water collection, a hose, well, or other Suitable for your region. When hydrant where you can easily make planning your farm, pay a visit to your sure the garden stays watered – and farmer’s market and find out what’s while we’re at it, plants don’t grow in already grown locally. This will help totally soaked soil, so avoid areas that you to ensure you aren’t fighting an tend to collect rainwater. Higher uphill battle in getting a plant that ground is best! isn’t exactly suited to your area to thrive – plus, by growing what other Wind shelter. This one is especially farmers are growing, you can always important on a rooftop, or out in an go to those folks for help if needed. 4"
+  },
+  {
+    "crop_name": "Layout",
+    "description": "want all the natural pests attracted to"
+  },
+  {
+    "crop_name": "No matter what kind of layout you",
+    "description": "the first plant to be repelled by the end up using for your farm, the first second, and vice-versa. thing to think about is location. For example, onion pairs well with"
+  },
+  {
+    "crop_name": "Choose a basically level area in higher",
+    "description": "tomatoes and leafy greens like ground if possible, for good drainage. lettuce, but if planted next to beans"
+  },
+  {
+    "crop_name": "Take in mind that sun is a concern",
+    "description": "or peas you may run into pest (6–8 hours) as well as protection from troubles. wind. Finding seeds/seedlings Buying/receiving seeds can be pretty Raised beds overwhelming for farmers because of the sheer volume of different companies and varieties out there. The best advice is, “Read the label” or, “Ask your extension officer”."
+  },
+  {
+    "crop_name": "This will let you know how difficult",
+    "description": "the plant is to grow, when to plant, and what’s required."
+  },
+  {
+    "crop_name": "Raised bed gardening has become",
+    "description": "one of the most popular way of growing vegetables today. The way they allow you to control space, soil, water levels, and location make them ideal for many gardeners. If you go with a raised bed layout, construct beds that are no more than 3–4 feet wide, with space for walking paths in between. This will ensure"
+  },
+  {
+    "crop_name": "Planning your farm",
+    "description": "Farmers usually make mistake here."
+  },
+  {
+    "crop_name": "First time farms can easily get out of",
+    "description": "hand, or unwieldy, or fall victim to 5 dilahK miaN .M.S /OAF © © FAO/ S.M."
+  },
+  {
+    "crop_name": "Naim",
+    "description": ""
+  },
+  {
+    "crop_name": "Khalid",
+    "description": "Figure 2: An example of raised bed production Figure 1: Seeding production in trays"
+  },
+  {
+    "crop_name": "Traditional rows",
+    "description": "cool, dark spaces that are the favored For those who have the space, environments of Giant African snails, traditional row gardening can be a slugs, earwigs, and other undesirables great option. Planting vegetables in –so only use a thin layer. Mulch long rows allows you to increase the should not touch the stem of plants. space between plants, improving air flow around them and giving them more space to grow. When to plant"
+  },
+  {
+    "crop_name": "When considering the question of",
+    "description": "Here’s a rule of thumb for row when to plant, you’ll have to go back gardening – try to plant the taller to the question of what to plant. plants toward the west, and shorter Remember, reading all those labels toward the east. That way your on your seed packets will ensure that shorter plants don’t spend those vital you’re planting things at the right sunshine hours in the shade of the times. taller ones. Choose seeds that make good"
+  },
+  {
+    "crop_name": "Square foot gardening",
+    "description": "For beginner farmers, square foot gardens often tend to be a great way to begin. Larger gardens are prone to weeds and can be overwhelming for the novice. Square foot gardening is similar to raised bed gardening, but it is further subdivided into individual square-foot plots."
+  },
+  {
+    "crop_name": "Mulching",
+    "description": "For farmers, the purpose of mulch is fairly straightforward: mulch is like a barrier keeping sunlight and ambient air out of the soil. Mulching allows companions, and thrive at similar soil to stay cooler, meaning less stress intervals for the best beginner gardening experience. 6 © FAO/ S M."
+  },
+  {
+    "crop_name": "Naim",
+    "description": ""
+  },
+  {
+    "crop_name": "Khalid",
+    "description": "Figure 3: Production in furrows and rows"
+  },
+  {
+    "crop_name": "Testing the soil",
+    "description": "Now, brace yourself, because we’re going to talk a little chemistry. Don’t panic, you don’t need to be a scientist. So, as you may remember from chemistry or biology class, pH is a measure of the acidity of a substance – remember, 7 is neutral, and a pH lower than 7 is acidic, while d ila a pH above 7 is basic. h K m Soil is no exception, and it has a pH ia value, and unsurprisingly, plants tend N .M to like neutral soil. For more S /O information and help please contact"
+  },
+  {
+    "crop_name": "A F the extension agents and local",
+    "description": "© agriculture department. Figure 4: An example of mulch with straw"
+  },
+  {
+    "crop_name": "Clearing weeds",
+    "description": "If 4 y ou want to think ahead, consider The amount of time you’ll spend growing something that thrives in worrying about weeds, in a sense, heat and can be harvested early – like depends on which style garden you Chinese cabbage, and then replacing use. While square-foot gardens and them as the weather cools with a raised beds using controlled soils can cool-weather plant like broccoli. Of remain fairly weed-free, a traditional course, if you’d rather simply do one row garden can inherit weeds from planting and one harvest, especially plant life that inhabited the soil as a beginner, that’s just fine too. before it was tilled."
+  },
+  {
+    "crop_name": "A good way to prevent weeds from",
+    "description": "Improving the soil starting is to smother them. After Most soils are entirely capable of clearing the ground for your garden, growing a vegetable garden – and just leave the clippings of the grass even mediocre soil can be improved. and weeds that were there For a really successful garden, some previously, and cover the area with soil improvements is a must. Let’s newspaper. take a look at some of the ways you Keep the newspaper damp by can improve your soil. watering it each day, and walk over it to keep everything pressed down."
+  },
+  {
+    "crop_name": "This will discourage the more",
+    "description": "stubborn weeds from re-growing. 7"
+  },
+  {
+    "crop_name": "Compost",
+    "description": "hard (but worthwhile) work of"
+  },
+  {
+    "crop_name": "Compost is a great way to create",
+    "description": "building your first garden behind you, extremely nutrient-rich soil, and it and really begin the enjoyable couldn’t be easier to make. Just process of growing your own food. create some layers of organic material"
+  },
+  {
+    "crop_name": "Plants can be cultivated by direct",
+    "description": "– dry leaves, kitchen veggie scraps, seeding or transplanting. shredded paper, plant clippings, and just a little bit of soil."
+  },
+  {
+    "crop_name": "How to plant the seeds",
+    "description": "Over time, this will turn into"
+  },
+  {
+    "crop_name": "The first step to actually utilizing your",
+    "description": "something called humus, and it’s garden to grow delicious vegetables is excellent for building soil. Further to plant your seeds. If you ask ten details on how to make compost is gardeners how they plant their seeds, presented in Annex 1. you’ll likely get ten different answers, as everyone develops their own routine. But, as a general guide,"
+  },
+  {
+    "crop_name": "Manure",
+    "description": "here’s our preferred method of In addition to composting, plenty of starting seeds for beginners. Seeds fertilizers and other synthetic soil can be directly planted in soil or enrichment methods are around to grown in nursery and then help improve soil. However, for many transplanted to prepared beds. gardeners, nothing is better than the"
+  },
+  {
+    "crop_name": "Begin by marking out rows with",
+    "description": "tried-and-true method of manure. stakes on either side of the garden, In comparison, manure contains a and stretching string between them. little less nutrient content than the Alternatively, you can use a long, sparkly synthetic fertilizers, but straight piece of wood as a guide. nothing is better at providing carbon Whichever method you use, use a hoe and carbon compounds. This is or trowel along your guide to cut a organic material that helps build and furrow into the soil. It should look like fortify the structure of soil, and that’s a V-shaped indentation a few inches something no fertilizer can do. deep – refer to your seed packets for more specific depth requirements."
+  },
+  {
+    "crop_name": "Planting the crops",
+    "description": "Now that you have your row defined,"
+  },
+  {
+    "crop_name": "Now that you have your garden laid",
+    "description": "you can distribute the seeds along the out, your soil prepared, and your row, taking care to distribute them 8"
+  },
+  {
+    "crop_name": "Crop rotation",
+    "description": "the case of multiple plants, wait for"
+  },
+  {
+    "crop_name": "Those of us who have been gardening",
+    "description": "one of the plants to develop three for years all have a story about a well defined sets of leaves. bumper crop one year leading to a Once the third set has developed, minuscule harvest the next. then do a little thinning – you’ll want"
+  },
+  {
+    "crop_name": "Bountiful plants followed by punier",
+    "description": "to thin out the smaller, weaker plants versions is a very common tale among so that only the stronger ones are gardeners, and the culprit isn’t the left. This ensures that the smaller validity of your (or our) green thumb plants aren’t stealing moisture and – the answer to fighting this boom- nutrients from the champions of the and-slump cycle is crop rotation. batch. Crop rotation is, essentially, an It’s best, and easiest, to thin while extension of the work you did in these seedling are small, so that initially laying out your garden, and deciding where to plant what. 9"
+  },
+  {
+    "crop_name": "Pepper This is another reason that soil",
+    "description": "Morning Glory: Sweet Potato building with compost or manure is Legumes-Bean: Long Beans, Wing highly recommended – this creates"
+  },
+  {
+    "crop_name": "Beans healthy soil that drains rainwater",
+    "description": "sufficiently while retaining just Maintaining the garden enough water for plants. Once you’ve planted your seeds, it’s As a rule of thumb, your garden soil time to get to maintaining those should be just moist. If the weather is plants. Garden maintenance isn’t rainy, you may not need to add any 10"
+  },
+  {
+    "crop_name": "Watering in the morning tends to be",
+    "description": "best, so that evaporation is reduced, Pest control but watering in the afternoon is okay, The best thing you can do for pest too. If you water later in the day, try control is companion planting, as not to let the plants get too wet – this discussed earlier. Another good can encourage fungal growth if the practice is to plant flowers in addition dampness persists into cool evenings. to your vegetables – this will attract bees and other insects, which will act as natural pest deterrents. Still, even with plenty of preparation, Weed control sometimes pests like aphids, corn Weeds compete for sunlight, water earworm, leaf footed bug, mites, and nutrient. scale and others will appear. The best If you’ve taken steps to prevent pest control method depends on your weeds when you created your plants, and the type of pests you garden, weed control on an ongoing have. Few natural pesticides that you basis should be fairly manageable – can make at home are presented in particularly if you’re using raised beds Annex 2. or square-foot gardening methods, which tend to not inherit weeds. For advice on pest management Weeds can surprise you – even in a contact your Extension Agent weed-free patch of soil, you may find that once you plant, you start seeing Fertilizer weed growth, too. So, you’ve composted and mulched This is because the seeds for those and manured – your soil is in tip-top weeds can remain deep under the shape. But, as we’ve mentioned, even soil, where they don’t get enough sun manure doesn’t have the nutrient or moisture to grow, until they’re content of a good fertilizer, so it may dredged up toward the surface by be good to consider using some your tiller, hoe, or trowel. For this (especially if you don’t use manure). reason, you should keep an eye on There are 3 major kinds of fertilizer: your garden for weed growth. When you do see weeds popping up,  Organic fertilizers are just what don’t wait for them to become a they sound like: they’re made bigger problem. Young weeds are from natural materials, and have much easier to deal with than older to be broken down naturally by ones. Once you’ve pulled them, just microorganisms in your soil, toss them on the ground – as they 11"
+  },
+  {
+    "crop_name": "Harvesting the crops",
+    "description": "around them with a garden fork This is the time you’ve been waiting before pulling – you don’t want to for! All throughout the season you’ve damage the veggies by trying to pull weeded, you’ve watered, you’ve them through solid soil! If you can, try nurtured and you’ve fertilized. Now to leverage the veggies out with the those veggies are ripe, and it’s fork after loosening the soil, rather harvest time. Here are some tips for than by pulling alone harvest time to help you make the most of your home garden. First of all, resist the urge to harvest all in one day. Vegetables ripen at different times, and some plants produce harvestable vegetables continuously for weeks."
+  },
+  {
+    "crop_name": "Make harvesting part of your daily",
+    "description": "garden routine – harvest veggies as they ripen. This ensures that you get a constant supply of fresh, ripe veggies, and it encourages production in the plant (since it isn’t wasting energy 12"
+  },
+  {
+    "crop_name": "Organic pest control",
+    "description": "14"
+  },
+  {
+    "crop_name": "Root crops production",
+    "description": "15"
+  },
+  {
+    "crop_name": "OAF",
+    "description": "© Swamp taro (Cyrtosperma merkusii)"
+  },
+  {
+    "crop_name": "Cultivation",
+    "description": " Grown in fresh water and coastal swamps  Grown in purpose-built swamp pits in low-lying coral atolls"
+  },
+  {
+    "crop_name": "Climate",
+    "description": "• It needs a constant supply of fresh water & organic material e.g. leaves and can be grown in Value: slightly brackish water, thrives in  The Swamp Taro is one of the freshwater swamps and can few subsistence crops that even be found in swiftly flowing grows well on atolls rivers and streams  The main product is the corm • Mean annual temperature  The young leaves and ranges from 230 °C to 310 °C inflorescences can be eaten as vegetables and the petioles yield Food value a fibre suitable for weaving  High concentrations of iron, zinc,  The big leaves are used as a food and calcium and the yellow corm wrapper and also to cover the varieties are usually higher in earth oven Beta-carotene"
+  },
+  {
+    "crop_name": "Propagation",
+    "description": " This species is propagated using setts, which are suckers, the top of the corm with about 30 cm  (12 in) of petiole, or cormlets, which are young, immature corms produced by a more mature plant"
+  },
+  {
+    "crop_name": "Spacing",
+    "description": " Ridges-1 m between rows  Plants within rows 50 cm  Cutting 30 cm in length  Mounds: 0.5 m/in diameter  Traditional-1 m x 1 m"
+  },
+  {
+    "crop_name": "Weed management",
+    "description": " Hand Weeding"
+  },
+  {
+    "crop_name": "Harvest yield",
+    "description": " Early Varieties: Mature in 8–10 months.  Late Varieties: Mature in"
+  },
+  {
+    "crop_name": "Recommended varieties",
+    "description": "12 months  Beqa  Yapia Damu"
+  },
+  {
+    "crop_name": "Yield",
+    "description": " Vulatolu  20–30 tonnes/ha"
+  },
+  {
+    "crop_name": "Seed rate",
+    "description": ""
+  },
+  {
+    "crop_name": "Food value",
+    "description": " Mechanised: 20 000 cuttings/ha.  Source of Vitamin A & Vitamin C  Traditional: 20 000–30 000 cuttings per ha 19 dleifdaH .K /OAF ©"
+  },
+  {
+    "crop_name": "Broadcast and mix well with soil",
+    "description": "before planting Weed management:  Hand weeding Disease management:  Corm Rot: Improve drainage &"
+  },
+  {
+    "crop_name": "Have soil test for Nutrient status",
+    "description": "Recommended varieties:  Shot Hole Spot: A seasonal  Sawa Toantoal, Pasdora, Sawhn disease; which disappears when korsae, Sawa Pwetepwet, kuat, the weather changes Sawa mwahng, Sawa Alahl, Sawa  Remove infected leaves & burn. likodopw  Good husbandry: - regular weeding and timely fertilizer application minimize loss Seed rate:  Traditional Farming System:"
+  },
+  {
+    "crop_name": "Harvest yield",
+    "description": "10 000 suckers/ha  Harvesting at 6–7 months for  Mechanize System: 16"
+  },
+  {
+    "crop_name": "Hybrid",
+    "description": "660 suckers/ha  Varieties whilst traditional varieties are ready at 9 months Planting time: for harvest  July to January Yield:  Off Season: March to June  20–25 tonnes/ha  Wet Zone: Throughout the year  Intermediate Zone: Sept to Food value:"
+  },
+  {
+    "crop_name": "March",
+    "description": " Contains large amount of  Vitamin A, Vitamin B1, Vitamin Spacing: B2 and Vitamin Traditional System: 20 dleifdaH .K /OAF ©"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Harvest 12 months after planting Cropping season:  All year around Yield  15–20 tonnes/ha."
+  },
+  {
+    "crop_name": "Recommended varieties",
+    "description": " Vula Food value:  Dravuloa  Source of Vitamin B, Vitamin C,"
+  },
+  {
+    "crop_name": "Starch and Protein",
+    "description": "Seed rate:  10 000 plants/ha 21"
+  },
+  {
+    "crop_name": "OAF",
+    "description": "©"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Planting Time: September  Immature: Harvest at 5 months Spacing: from planting Slope Land:  Mature: 10 months from  Immature: 60 cm between rows planting & 15 cm within rows  Mature: 60 cm between rows & Yield: 20 cm within rows  Immature: 20–25 tonnes/ha Flatland:  Mature: 25–30 tonnes/ha  Immature: 90 cm between rows, 15 cm within rows Food value:  Mature: 90 cm between rows &  Good source of Energy, 20 cm within rows Potassium,  Calcium & Sodium 22 drazrehS .S /OAF ©"
+  },
+  {
+    "crop_name": "Dalo",
+    "description": " Sanitation-remove all rhizomes from the field after harvesting  Proper selection of seed-choose healthy seeds"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " 10 months after planting Cropping season:"
+  },
+  {
+    "crop_name": "Yield",
+    "description": " August to November  15 to 25 tonnes Recommended varieties:"
+  },
+  {
+    "crop_name": "Food value",
+    "description": " White  (Powder) Dietary fibre,  Yellow Potassium, Iron, (very high), Calcium, Calories, Magnesium, Seed rate: Vitamin C, Thiamin, Riboflavin,  10 to 12 tonnes/ha"
+  },
+  {
+    "crop_name": "Niacin",
+    "description": " White turmeric has medicinal Planting time: value  September to October Spacing:  Between rows: 60 cm  Plants within rows: 40 cm Germination:  Require free drainage Weed management:  Hand weed or hoe regularly 23 dleifdaH .K /OAF ©"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": " Rotate with non-host plants like Recommended varieties: Cassava, Vegetables (Cabbage, Abya, Gabrach, Wonbey, Rowal, Lettuce)"
+  },
+  {
+    "crop_name": "Insect management",
+    "description": "Nagbchey, Surney, Pohnape, Alien, Gamed, Tenmen, Dugyeb, Defrow,  Use clean material Yu Ban, Chugum  Practice Crop rotation"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": "Seed rate:  Ridges: 4.2 tonnes/ha (16  October to March Harvest Index is when leaves start to 670 setts/ha) senescence & are falling off  Mounds: 3.1 tonnes/ha (12 Yield: 500 mounds/ha)  15 to 20 tonnes/ha Planting time: Food value:  Early Varieties: Between October–December  Fibre, Potassium, Modest  Late Varieties: Between Jan– amount of Vitamin B1, Vitamin C March & fair amount of Iron Spacing:  Plant Spacing: Ridges–1 m between ridges  & 0.6 m within ridges  Mounds: 1 m between mounds and 0.8 m within mounds 24 dleifdaH .K /OAF ©"
+  },
+  {
+    "crop_name": "Vegetable production",
+    "description": "25"
+  },
+  {
+    "crop_name": "Transplanting",
+    "description": " Transplanting during cloudy days d ila or late in the afternoon h K m  Seedlings raised in seed trays ia can be planted any time of the N .M day S /O  Water the plants after"
+  },
+  {
+    "crop_name": "A F transplanting and continue",
+    "description": "© afterwards Recommended varieties:"
+  },
+  {
+    "crop_name": "Fertilizer",
+    "description": " Yolo Wonder A  Poultry Manure: 10 tonnes/ha  Yolo Wonder B  Broadcast and mix well with 2  Blue Star weeks before planting Seed rate: Weed management:  300 grams/ha  Practice inter-row cultivation, hoeing or hand weeding Planting time:  Cool season (April to Sept). Can"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": "be grown all year around under  Use resistant varieties, green house  Uproot affected plants & pack in bags, bury and burn. Practice Land preparation: crop rotation of non-host plants  Field should be well prepared, 2  Destroy affected plants and ploughing & 2 harrowing is control Mites & Aphids. Use recommended clean planting materials.  Avoid planting during wet Spacing: weather. Remove all infected  Between rows: 65 cm–75 cm plants. Avoid damaging the crop  Plants within rows: 30–40 cm during weeding. Use disease free seedling Germination:  6 to 10 days after sowing 27"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Fruits are ready for harvest at 3 months after planting and picking continues for 2–3 months Yield:  8–12 tonnes/ha Food value:  A rich source of Vitamin A and"
+  },
+  {
+    "crop_name": "Vitamin C",
+    "description": "28"
+  },
+  {
+    "crop_name": "A afterwards",
+    "description": "F © Fertilizer:  Poultry Manure: 10 tonnes/ha Recommended varieties:"
+  },
+  {
+    "crop_name": "Broadcast and mix well with soil",
+    "description": " Red Fire - Long Red Cayenne 2 weeks before planting  Bird’s Eye Weed management:  Bongo Chilly  Practice inter-row cultivation Seed rate:"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " 300 grams/ha  Fruits appear 90–120 days after Planting time: planting and harvest weekly for one year  Best to plant during hot weather season from Yield:  September to February. Can be  Fresh 16 tonnes/ha, Dried 4– planted all year around 6 tonnes/ha Planting methods: Food value:  Plant seeds in seedbeds or  Dried - Dietary Fibre, (Very High) seedling trays  Calcium; Vitamin A, Riboflavin  transplant to field at 3 leaf stage and Niaci 29"
+  },
+  {
+    "crop_name": "Broadcast and mix well with soil",
+    "description": "2 weeks before planting Weed management: d  Practice manual weed control le ifd a H Disease management: .K /O  Crop rotation A F  Remove and destroy diseased © plants by either burning or burying, as soon as symptoms Recommended varieties: appear  Pak Choy  Select only healthy planting  Kwang Moon material  Wong Bok Seed rate: Harvest  300 grams/ha  Usually takes 30–60 days to get ready depending on variety Planting time:  Cool season but can be grown Yield: throughout the year  Fresh 12 tonnes/ha Planting methods: Food value:  Sow seeds in prepared seedbeds or seedling trays  Source of Vitamin A, Vitamin B &  Transplant at 3 leaf stage Vitamin C Spacing:  Row to row: 50–75 cm  within rows: 30 cm 30"
+  },
+  {
+    "crop_name": "Food value",
+    "description": " Dietary Fibre, Vitamin C Transplanting:  Transplant at 3 leaf stage 33"
+  },
+  {
+    "crop_name": "Fertilizer",
+    "description": " Poultry Manure: 10 tonnes/ha  Broadcast and mix well with soil 2 weeks before planting"
+  },
+  {
+    "crop_name": "Weed management",
+    "description": "O  Practice of hoeing A F ©  Inter row cultivation"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": ""
+  },
+  {
+    "crop_name": "Recommended varieties",
+    "description": " Plough plant remnants after  Contender harvest & rotate with Mildew  Butter Bean resistant vegetable like  Labrador  Tomato, Cabbage & Eggplant"
+  },
+  {
+    "crop_name": "Seed rate Harvest",
+    "description": " 45 kg–50 kg/ha  Harvest tender pods 40–60 days after planting Planting time  Picking continues for 4–6 weeks  Best yields from April to September Yield:  7–10 tonnes/ha"
+  },
+  {
+    "crop_name": "Spacing",
+    "description": " Between rows: 50 cm Food value  Plants within rows: 15 cm–20 cm  Dietary Fibre, Vitamin C Germination:  3 to 6 days after sowing 34"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Green Mignonette  Leafy Lettuce matures in 50–80  Butter crunch days  Rapid  Head Type matures in 12–15 Seed rate: weeks  300 grams/ha Yield: Planting time:  8–10 tonnes/ha Head Type:  March to October Food value: Leafy type:  Dietary Fibre, Source of Vitamin  All year round A,  Vitamin B and C Spacing:  Between rows: 75 cm  within rows: 30–40 cm Germination:  5 to 8 days after sowing  Raised the seedlings in seed trays/seed bed and transplant at 3 to 4 leaf stage  Seedlings raised in seed trays 35"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": "Seed rate:  Harvest at 50–60 days from  7 kg/ha planting, pick pods when still tender and harvesting continues Planting time: for about 2 – 3 weeks  Performs best during hot and wet season Yield:  7–10 tonnes /ha Spacing:  Between rows: 65–75 cm Food value:  Plants within rows: 15–20 cm  Dietary Fibre, Vitamin C, Niacin, Vitamin B Complex, Iron and Germination:"
+  },
+  {
+    "crop_name": "Zinc",
+    "description": " 3 to 6 days after sowing Fertilizer:  Poultry Manure: 10 tonnes/ha  Broadcast and mix well with soil 2 weeks before planting 36"
+  },
+  {
+    "crop_name": "A necessary and",
+    "description": "F ©  practice inter row cultivation Recommended varieties: Disease management:  Clemson Spineless  Rotate with crops  Local Long White  Plant with other vegetables of  Dwarf long Pod different families Seed rate: Harvest  8 kg/ha  Harvesting of tender pods at 60–90 days from planting; and is Planting time: carried out 2 to 3 times a week and continue for 1 year  All year around but better during hot months Yield: Spacing:  15 tonnes  Between rows: 75–1 m  within rows: 20–30 cm Food value:  Dietary Fibre, Potassium, Germination: Calcium, Magnesium, Vitamin C  3 to 6 days after sowing 37"
+  },
+  {
+    "crop_name": "F necessary but do not damage",
+    "description": "© the stem  Inter row cultivation is also Recommended varieties: recommended  Queensland Blue  Butternut Disease management:  Local Selection  Rotate with crops of different family such as Eggplants Seed rate:  1.5 kg/ha Harvest  Harvest at 12–15 weeks from planting Planting time:  All year around Yield:  10–15 tonnes Spacing:  Between rows: 1.5 m Food value:  Plants within rows: 1 m  Dietary Fibre, Potassium, Vitamin C & Vitamin A Germination:  3 to 6 days after sowing 38"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " White Lisbon  8 to 12 weeks after planting  Yellow Bermuda Yield: Seed rate:  10 to 12 tonnes/ha  4 kg/ha Food value: Planting time:  Source of Iron, Zinc, Vitamin C  At the start of the cool season. and Thiamin 40"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": "Cropping season:  10 to 12 weeks after  May to October transplanting and picking Seed rate: continues for 5 weeks  300 grams/ha Yield: Planting time:  10 to 15 tonnes  Main season in the cool months Food value: Spacing:  Source of Potassium, Calcium,  Between rows: 0.75 m to 1.0 m Sodium, Dietary fibre and Plants within rows 30 to Protein  40 cm for staked varieties  Between rows: 1.5 m  Plants within rows  30 cm for indeterminate varieties grown in open fields 41"
+  },
+  {
+    "crop_name": "Fruit production",
+    "description": "43"
+  },
+  {
+    "crop_name": "Manures and fertilizers",
+    "description": " Farm yard manure  compost Intercropping:  Legumes and vegetable crops d can be raised during pre-bearing le ifd age a H .K Insect/pest management /O A  Aphids: Spray neem oil at 3 F © ml/lit  Shoot borer: Prune the withered shoots 4 cm below the dried Varieties: portions  PKM1, Vikram  Citrus Butterfly: Spray two Soil and climate: rounds of Bacillus thuringiensis  Tropical and sub-tropical at 1g/lit or neem oil at 10 ml/lit  Deep well drained loamy soils during new flush formation are the best"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": "Season:  December–February and  Twig blight: Prune dried twigs June–September  Scab: Spray 1 percent Bordeaux mixture Planting:  Space: 5 m x 6 m Harvest:  Pit: 75 x 75 x 75 cm pits  Starts bearing from 3rd year Irrigation: after planting  Irrigate copiously after planting  After establishment at 7–10 days Yield: interval  25 t /ha /year  Avoid water stagnation 45"
+  },
+  {
+    "crop_name": "Manures and fertilizers",
+    "description": "Varieties:  Farm yard manure  Sathugudi  Compost Soil and climate: Intercropping:  Deep well drained loamy soils  Legumes and vegetable crops can be raised during pre-bearing  pH - 6.5 to 7.5 age  A dry climate with about 50– 75 cm of rainfall from June– September and with well- Harvest: defined summer and winter  Starts bearing from 5th year season is ideal after planting Season: Yield:  July to September  30 t/ha Planting material:  Budded plants (Root Stock: lime is best, now Rough lemon is also preferred) 46"
+  },
+  {
+    "crop_name": "A tree with gradient slope",
+    "description": "I ©"
+  },
+  {
+    "crop_name": "Pest management",
+    "description": " Aphids : Spray neem oil 3 ml/lit or Varieties: Fish oil rosin soap at 25 g/lit  Coorg Orange and Kodai Orange  Bag the fruits with polythene bags Soil and climate: punctured at the bottom  Sub-tropical climate  Apply smoke and set up light traps  150 cm–250 cm rainfall is required. or food lures (pieces of citrus fruits)  Deep well drained loamy soils are  Prune the withered shoots 4 cm the best below the dried portions  Soil pH should be between 5.5–6.5 Harvest: Season:  Budded plants start bearing from 3–  November–December 5 years after planting while  Planting: Seedlings and budded seedlings take 5–7 years plants  Spacing: 6 x 6 m, pit size 75 x 75 x Yield: 75 cm. planting during May–June  15–20 t/ha/year and September–October Manures and fertilizers:  Manures are to be applied in the basin 70 cm away from the trunk and incorporated 47"
+  },
+  {
+    "crop_name": "Manures and Fertilizers",
+    "description": " Manures may be applied 45 cm Varieties: away from the trunk  Oval, Cricket Ball, Kirtibarti, Guthi,  FYM – 10 kg CO 1, CO 2, CO 3, P KM 1, PKM 2,  After cultivation: Remove the root PKM 3, PKM 4, PKM (Sa) 5 and stock sprouts, water shoots, criss-"
+  },
+  {
+    "crop_name": "Kalipatti",
+    "description": "cross and lower branches Soil and climate: Inter cropping:  It can be grown in all types of soils  Legumes and short duration Planting materials: vegetable crops may be raised as Grafted on Manilkhara hexandra inter crop during pre-bearing stage (Pala) rootstock Harvest: Season of planting:  Collect when fruit brown in colour.  June–December Immature fruits it is green  The mature fruits are harvested by Spacing: hand picking  8 x 8 m (156 plants / ha) for Yield: conventional planting.  Adopt high density planting at  20–25 t/ha year 8 x 4 m (312 plants/ha) for high productivity 48"
+  },
+  {
+    "crop_name": "H Prune regularly",
+    "description": ".K /O A F Insect management: ©  No significant insect pests of concern Fruiting season:  March to July"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Normally fruits appear after 6 to 7 Recommended varieties: years from planting but"
+  },
+  {
+    "crop_name": "Local Selection",
+    "description": "grafted/budded plants come into bearing earlier at about 4 to 5 years Seed Rate:  123 plants/ha Yield:  About 10 to 15 tonnes/ha from an Planting time: orchard of about 10 to 12 years.  All year round  Prune regularly Spacing: Food value:  Plant 9 x 9 m apart and away from  Dietary fibre, Potassium & Vitamin C other trees and buildings Germination:  Seeds are quick to germinate 49"
+  },
+  {
+    "crop_name": "Use compost",
+    "description": "Weed management:  Ring weeding during early stages of growth.  Hand pollination to be practiced to a k obtain high yield, to be carried out a v o in the afternoon; after 2 pm h o T  Integrate apiculture farming with .N /O passionfruit for pollination purpose A F © Disease management: Recommended varieties  Collar Rot: The disease can be controlled by good site selection &  Local Yellow planting on raised bed"
+  },
+  {
+    "crop_name": "Seed rate",
+    "description": ""
+  },
+  {
+    "crop_name": "Insect management",
+    "description": " 1111 Seedlings/ha  Red Spider Mite: Controlled by spraying Planting time:  cool and dry months Yield:  1st Year: 12–18 tonnes/ha Spacing:  2nd Year: 20–25 tonnes/ha  Between Rows : 3 m  3rd Year: 10–12 tonnes/ha  Plants within rows : 3 m  Posts: 3 m within rows 6.2 m within Food value: rows  Good Source of Iron and Vitamin C  Seeds germinate in 10 days after sowing, ready for transplanting within 6-8 weeks 50"
+  },
+  {
+    "crop_name": "H Fertilizer",
+    "description": ".K /O  Use compost A F © Weed management:  Manual Weeding Fruiting season:  inter row cultivation  Main Season November to April Disease management:  Off Season: February to October  Planting during dry season with Recommended varieties: good field drainage  Smooth Canyenne (Large juicy fruit) Yield:  Ripley Queen (Small sweeter fruit -  Planted Crop: 40–70 tonnes/ha at thorny leaves) 1–1.5 kg/fruit Seed rate:  1st Ratoon: 30–40 tonnes/ha with ~  Sloppy Land (37 037 suckers/ha) weight of 1.0–1.5 kg  Flatland – 48 000 suckers/ha  2nd Ratoon: 20–25 tonnes/ha with ~ weight of 1–1.2 kg Planting time:  Dry season Food value:  Use raised beds on flat land  Good source of Vitamin C and  Practice phase planting for all year Vitamin B1 round production  & Fibre 51"
+  },
+  {
+    "crop_name": "S moisture and control weeds",
+    "description": ".S / O A F Disease management: ©  Have soil analyzed for level of K, and Ca Recommended varieties:  High level of N and low level of K &  Charleston Grey"
+  },
+  {
+    "crop_name": "Ca causes blossom end rot",
+    "description": " Sugar Babe  Keep your crop free from insects to  Farmers Giant avoid spread of viral diseases Seed rate:"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " 1.5–2 kg/ha  Harvest at 70–120 days from planting Planting time:  April to September during the cool Yield: season but can be grown all year  15–20 tonnes/ha round Food Value: Spacing:  Vitamin C  Between Rows: 3 m  Plants within Rows: 1 m  Germination: 6–10 days after sowing 52"
+  },
+  {
+    "crop_name": "Vitamin C",
+    "description": " Planting Materials: Select healthy and disease free as planting materials 53"
+  },
+  {
+    "crop_name": "Cocoa branches",
+    "description": "Planting time: Harvest:  Can be planted all year  Harvest at 3 years after planting  Dry Zone: Mid September to December Yield:  Wet Zone: October to December  2.5 tonnes/ha Wet beans.  Or 2.0 tonnes/ha Dry Spacing:  Between Rows: 2 m Food value:  Plants within Rows: 2 m  Source of Thiamin, Niacin & Vitamin B12 Planting materials:  Select healthy and disease free as planting materials 54"
+  },
+  {
+    "crop_name": "April",
+    "description": "55"
+  },
+  {
+    "crop_name": "A trees for ease of harvest",
+    "description": "F © Disease management:  No economic diseases Cropping season:  All year round Insect management: Recommended varieties:  No economic pests  Local Selections"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Small fruit varieties are preferred  Fruiting will start at 13–15 months Seed rate: after transplanting  625 seedlings/ha Yield:  1.0 to 1.5 kg/tree/week under Planting time: optimum management practices  Can be planted all year round but best during October to March Food value: enhance plant growth  Vitamin C Spacing:  Between rows: 4 m  Plants within rows: 4 m Germination:  Seeds germinate in 25–30 days and within 12–16 weeks, plants are ready for transplanting 56"
+  },
+  {
+    "crop_name": "Recommended varieties Harvest",
+    "description": " Kensington  Grafted plants start to fruit within 3  Tommy Atkins years  Mexican Kent  Yields vary depending on the  Parrot varieties age of tree & weather  Mango Dina conditions Seed rate: Yield:  125 plants/ha  Improved Varieties: 25–80 kg/tree in 5th–7th year Planting time:  70–150 kg/tree in 8th to 15th Year  Planting is recommended during the"
+  },
+  {
+    "crop_name": "Wet",
+    "description": "Food value:  Season (November to March)  Rich in Vitamin A as well as Spacing: Vitamin C  Between Rows: 9 m  Plants within Rows: 9 m Germination:  Grafted seedlings enhance early flowering & fruiting  Grafted plants can be produced from reliable nursery few days before transplanting 57"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": "Recommended varieties  Plant papaya in well drained fields  Sunrise Solo (Export Variety)  Waimanalo (Local markets) Insect management  Good field sanitation, remove and"
+  },
+  {
+    "crop_name": "Seed rate bury fallen fruits",
+    "description": " 1 667 plants/ha"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": "Planting time:  Fruit ripens at 8 to 10 weeks after  Can be planted all year round. flowering. Maximum yield of  60 to 80 tonnes/ha Spacing:  Between Rows: 3 m Food value:  Plants within Rows: 2 m  Excellent source of Vitamin A and"
+  },
+  {
+    "crop_name": "Vitamin C",
+    "description": "58"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " 500 plants/ha  Fruiting starts in 2 to 4 years after Planting time: planting  Can be planted all year round Yields:  Planted during November to March  8 to 10 tonnes/ha/year after 3 years enhance plant establishment from planting Spacing:  Economic life 10 to 12 years  Between rows: 4.5 m  Plants within rows: 4.5 m Food value:  Germination: Propagated by seeds,  Fair source of Protein, Dietary fibre, cuttings or grafted on same"
+  },
+  {
+    "crop_name": "Potassium and Calcium",
+    "description": "rootstock  Seedlings are grown in nursery and transplanted in to the field at 8 to 10 leaf stage 59"
+  },
+  {
+    "crop_name": "Potash per Vine per year beside the",
+    "description": "organic mulch  Soil analysis should be done before fertilizer application Weed management: e  Hand weeding or use of brush g d cutter at least four times a year e a m ilo Disease management: p A ©  Remove & destroy infected plants.  Use healthy and disease free planting materials Recommended varieties:  Wash hands after handling infected  Bourbon vanilla plants Seed rate:  Wait for a month for the virus to  1 111 plants/ha die, then replant the area Insect management: Planting time:  Can be planted all year round  Slugs & Snails: Control by hand picking and use Snail bait Spacing:  Keep area clean  Between Rows: 3 m"
+  },
+  {
+    "crop_name": "Harvest",
+    "description": " Plants within Rows: 3 m  Harvest at 3 years  Cutting: 1.5 m long sprout in 15–20 days after planting Yield: Fertilizer:  300–600 kg cured beans  Require heavy mulching: 20–30 cm Food value: around base. (Coconut husk, dry  Food flavor leaves & rotten decaying timber can be safely used as mulch) 60"
+  },
+  {
+    "crop_name": "Irrigation",
+    "description": " Annual rainfall of 500–1500 mm. Intercropping:  Legumes and vegetable"
+  },
+  {
+    "crop_name": "Manure and fertilizers",
+    "description": " None .ittu"
+  },
+  {
+    "crop_name": "Insects",
+    "description": "d  Shot hole borers, leaf feeding ia F .R caterpillars, mealy bugs and scale /O insects A F © Diseases  Tree rots, stony fruit disease, bark"
+  },
+  {
+    "crop_name": "Varieties",
+    "description": "parasite and bacterial leaf spots  Tamarindo Post-harvest"
+  },
+  {
+    "crop_name": "Propagation",
+    "description": " Fresh fruits are often dried using  Seed, vegetative and tissue culture small-scale dehydrators, however in propagation methods most countries rural households dry"
+  },
+  {
+    "crop_name": "Soil and climate pods in the sun",
+    "description": " Often known as the hurricane-"
+  },
+  {
+    "crop_name": "Yield",
+    "description": "resistant tree  sodic and saline soils  Young tree yields 20–30 kg fruits per  It can grow well between 21°C and year 37°C  Yield 150–200 kg/tree/year"
+  },
+  {
+    "crop_name": "Season Products",
+    "description": " evergreen  Tamarind juice, concentrate, tamarind pulp and pickles"
+  },
+  {
+    "crop_name": "Planting",
+    "description": " Plant in rainy season  Plant deeper than 1.5 cm.  Transplant the seedling when 10 cm to a pit of 1 x 1 x 1 m  Spacing 4 x 4 m or 5 x 5 m. 61"
+  },
+  {
+    "crop_name": "Manure and fertilizers",
+    "description": "Organic manure 100 g/plant of (compost)/each 4 months"
+  },
+  {
+    "crop_name": "Insects",
+    "description": "Generally insect free."
+  },
+  {
+    "crop_name": "Weeds",
+    "description": "Manually remove creeping weeds"
+  },
+  {
+    "crop_name": "Varieties",
+    "description": "Intercropping Yellow dragon, Purple haze, Costa"
+  },
+  {
+    "crop_name": "Rican sunset",
+    "description": ""
+  },
+  {
+    "crop_name": "Harvest",
+    "description": ""
+  },
+  {
+    "crop_name": "Propagation",
+    "description": "Selective harvesting at full maturity Seed, vegetative and tissue culture Pink red color is indicator of propagation methods maturity Soil and climate Post-harvest Well drained red yellow podzolic, Shelf life is up to 10 days. lateritic soil and reddish brown Store at 15–20°C at 85–90 percent earth relative humidity. It can grow well between 20°C–30°C. pH 5.5–6.5 Yield Around 12 000 kg/ha"
+  },
+  {
+    "crop_name": "Planting",
+    "description": "60 cm cutting. Nutritional value Open areas with more sun light is Vitamins and fiber preferred Spacing: 3 X 3 m Pit: 30 cm deep and 20 cm wide"
+  },
+  {
+    "crop_name": "Irrigation",
+    "description": "Annual rainfall of 1700–2500 mm Mulching is necessary to reduce moisture loss 62 akavohoT.N /OAF ©"
+  },
+  {
+    "crop_name": "Land Preparation and planting",
+    "description": "Clear land & plow deeply Spacing: 10 X 12 m row x hill Put 500 g to 1 kg organic fertilizer or animal manure in each hole"
+  },
+  {
+    "crop_name": "Intercropping",
+    "description": "pineapple, root crops, perennial leguminous crops and vegetable crops"
+  },
+  {
+    "crop_name": "Irrigation",
+    "description": "Water newly cultivated plants Water plant while fruiting to keep their juiciness"
+  },
+  {
+    "crop_name": "Fertilizer",
+    "description": "Soil and climate Organic fertilizer. Grows on any type of soil. 0.5 –1 kg of chicken or cow manure pH 5.5–6.0 is desirable Pest management Seed preparation Twig borers, carpenter moth, mealy Select seeds from healthy, sound bugs, scales, fruit flies, ants and bats and ripe fruits Harvesting Plant 1 cm deep & 2–3 cm apart It bear fruits at the age of 3–5 years Cultivate in shaded area grown tree bear 1 000 fruits Transplant Ripe fruit change color and are soft When 3–5 leaves have developed, Food value transplant the seedlings Used as ingredient of ice-cream and"
+  },
+  {
+    "crop_name": "Propagation sherbet",
+    "description": "Sexually by seeds and asexually by marcotting, inarching, grafting and budding 63 egde amilopA ©"
+  },
+  {
+    "crop_name": "Propagation",
+    "description": "Mangosteen (Garcinia Choose large-sized seed and early mangostana) ripening fruits, to avoid selecting for an inherited late-fruiting Soak seed for 24 hrs in water then cultivate Transplant at 2-leaf stage Grafting, air layering, budding, cutting, inarching and saddle grafting are other methods of cultivation"
+  },
+  {
+    "crop_name": "Planting",
+    "description": "Tree spacing: 8–10 x 8–10 m holes measuring 1 x 1 x 1 m deep Fill holes with compost, well decayed manure and topsoil Training and pruning"
+  },
+  {
+    "crop_name": "Fertilizer",
+    "description": "Soil and climate Limited information available humid tropical lowlands, RH 80–100 Irrigation percent Limited information available deep soil, permeable soils with high Weed management moisture and organic matter Mix cropping Need dry seasons Use cover crops and intercropping Temperatures below 5°C and above Use mulch 38°C can be lethal"
+  },
+  {
+    "crop_name": "Harvesting",
+    "description": "Hand harvest is preferred Yields of between 200 and 2000 fruits per tree, or 4–8 t/ha Fruit on 5–8 year after transplanting"
+  },
+  {
+    "crop_name": "Food value",
+    "description": "Rich in carbohydrate. The fruit rind contains tannin and dye 64 ocinemodreiP .A /OAF ©"
+  },
+  {
+    "crop_name": "Planting",
+    "description": " Plant in rainy season  Use compost in the hole and then add top soil"
+  },
+  {
+    "crop_name": "Irrigation",
+    "description": "e g  No water, no fruit d e a  Irrigate frequently m ilo  Use well drainage system p A © Fertilizers  Use organic manure"
+  },
+  {
+    "crop_name": "Soil and climate",
+    "description": ""
+  },
+  {
+    "crop_name": "Training and pruning",
+    "description": " sandy loam to clay loam soil, well  Do not cut top of the erect seedling drained, slightly acidic (5.3 to 6.5)  needs ample amount of water  Remove water sprouts of the grafted plants  Paint all wounds"
+  },
+  {
+    "crop_name": "Seed",
+    "description": " Seeds from ripe fruits are harvested Pest management and extracted after soaking in water  Ants, mealy bugs, aphids, mites, for 1–2 days to soften the aril borers, fruit flies scale insects"
+  },
+  {
+    "crop_name": "Harvesting",
+    "description": "Transplanting  Collect fruit when cluster of fruit is  produce 2–3 seedlings per seed ripe  transplant in 7 X 11 polybags  Fruit stalk color changes from green to brown when fruit ripen"
+  },
+  {
+    "crop_name": "Propagation Food value",
+    "description": " The seedlings can be asexually  dessert fruit, high in phosphorus propagated within 7–12 months and potassium from transplanting.  cleft grafting, marcotting, cutting, inarching and top working 65"
+  },
+  {
+    "crop_name": "Irrigation",
+    "description": " When no water, there is no flower and fruit  Irrigate frequently  Use well drainage system"
+  },
+  {
+    "crop_name": "Fertilizers",
+    "description": " Use organic manure at 10– e g d 30 kg/year/tree e a m Training and pruning ilo p A  yearly pruning of the dominant or © apical shoots and lateral branches"
+  },
+  {
+    "crop_name": "Soil and climate Pest management",
+    "description": " Deep, clay-loam or rich well-drained  Fruit borer, leaf eating loofer, thrips, sandy loam rich in organic matter mealy bugs, mites  pH 4.5–6.5"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": "Seed  Powdery mildew, vein necrosis,  Select well-developed seeds from sooty mold mature ripe fruits for rootstock"
+  },
+  {
+    "crop_name": "Harvesting",
+    "description": ""
+  },
+  {
+    "crop_name": "Propagation",
+    "description": " Tree bears fruit on 3–6 year old  Rootstocks are ready for asexual  When color changes from green propagation or cleft grafting in 6–8 yellow or red, fruit is ripe months  Cut clusters, use sharp knives  Cleft grafting"
+  },
+  {
+    "crop_name": "Planting",
+    "description": ""
+  },
+  {
+    "crop_name": "Food value",
+    "description": " Spacing: 10 X 10 m row X hill,  Source of vitamin A, C and fiber 100 trees/ha  Hole size 30 X 30 X 30 cm.  Put 1 kg organic matter in each hole before planting"
+  },
+  {
+    "crop_name": "Weed management",
+    "description": " Shading, intercropping, cover cropping and mulching 66"
+  },
+  {
+    "crop_name": "Pruning",
+    "description": "It is bushy shrub or small tree (to 15 feet) Multiple or single trunks which can be trained Occasionally, bushes appear to be composed of canes Branches are brittle, and easily broken"
+  },
+  {
+    "crop_name": "Pest management",
+    "description": "Caribbean fruit fly, fruit worm"
+  },
+  {
+    "crop_name": "Disease management",
+    "description": "Root-knot nematode , burrowing"
+  },
+  {
+    "crop_name": "Soil and climate",
+    "description": "nematode, leaf spotting •The tree does well on limestone, marl and clay, as long as they are"
+  },
+  {
+    "crop_name": "Harvesting",
+    "description": "well drained Manual picking of fruit •The pH should be at least 5.5. 13.5–28 kg/tree or 10–15 tonnes/ha •Mature trees can survive brief exposure to 28 F (-2.22 °C)"
+  },
+  {
+    "crop_name": "Food value",
+    "description": "•It can tolerate long periods of source of calcium, phosphorus and drought, though it may not fruit vitamin A until the coming of rain"
+  },
+  {
+    "crop_name": "Seed",
+    "description": "Select well-developed seeds from desirable clones"
+  },
+  {
+    "crop_name": "Propagation",
+    "description": "Air layering, cutting, seed and grafting 67 egde amilopA ©"
+  },
+  {
+    "crop_name": "Compost is a natural fertilizer and soil Compost",
+    "description": "conditioner. You can make it at home 1. Select a site: In a sunny, well- from organic materials such as drained location, measure out an kitchen scraps and garden waste. area to site your bin. Three square When put into a pile, these materials feet is an ideal bin size, and is the naturally decompose, turning into a minimum size necessary to rich, soil-like material called compost generate the required heat in the or humus. Composting is basically a shortest possible time. way of speeding up the natural 2. Purchase a bin: Contact your process of decomposition. municipality, a local store, or build your own rodent-proof compost"
+  },
+  {
+    "crop_name": "The Keys to Good Compost",
+    "description": "bin. Balanced diet: For optimal 3. Form base layer: In the bottom of decomposition, the carbon–nitrogen the bin, arrange a six-inch layer of ratio in a compost pile should be coarse materials such as sticks, about 30:1. Carbon-rich (“brown”) pruning, and bark pieces. This will materials include dry leaves, corn allow air to filter into the center of stalks, and sawdust. Nitrogen-rich the heap without smothering the (“green”) materials include food soil surface. scraps, coffee grounds, and grass 4. Alternate layers: After the base clippings. layer is formed, you can start using your compost bin daily. As Temperature: Compost piles are most you accumulate kitchen or yard active at temperatures of 44 to 52 °C. waste, add it to the bin in layers,"
+  },
+  {
+    "crop_name": "Decomposition drops with the",
+    "description": "starting with 2 to 4 inches of ambient temperature, and stops “green” organic matter. Follow altogether if the pile freezes. this with more carbon-rich Oxygen: Compost depends on the “brown” matter, and continue to production of aerobic (oxygen-loving) alternate between green and bacteria, which do the work of brown, ensuring that no organic decomposition. layer is ever more than 15 inches deep. 69"
+  },
+  {
+    "crop_name": "This can vary depending on things",
+    "description": "70"
+  },
+  {
+    "crop_name": "What pests can be snails and slugs as well as other crawling insects",
+    "description": "controlled by it? How to make it? Fossilized algae (diatoms), buy from shops/supermarkets. How to use it? Simply dust the ground around your plants, or even sprinkle it on the foliage. This material works not by poisoning or smothering the insects, but instead by virtue of its abrasive qualities and its affinity for absorbing the lipids (a waxy substance) from insects' exoskeleton, which then dehydrates them to death. In order to be an effective, diatomaceous earth needs to be reapplied after every rain. Name of insecticide: Garlic insecticide spray What pests can be Different insects aphids, ants, borers, caterpillar, slugs, controlled by it? whiteflies, How to make it? Take 2 whole bulbs (not just 2 cloves) and puree them in a blender or food processor with a small amount of water. quart of water. Let the mixture sit overnight, then strain it into a quart jar, adding 1/2 cup of vegetable oil (optional), 1 teaspoon of mild liquid soap, and enough water to fill the jar. How to use it? Use 1 cup of mixture with 1 quart of water and spray liberally on infested plants. Deterrent and killer of insects. Name of insecticide: Pyrethrins What pests can be Toxic to a broad spectrum of pests. Flea, potato, and bean controlled by it? beetles. How to make it? Derived from the painted daisy, Chrysanthemum cinerariifolium. How to use it? Apply dust during cloudy weather or early evening. A nerve toxin, often combined or DE. Degrades rapidly. 72"
+  },
+  {
+    "crop_name": "Name of Chile pepper insecticide spray",
+    "description": "insecticide: What pests can be Different pests. controlled by it? How to make it? Chile spray can be made from either fresh hot peppers or chile pepper powder. To make a basic chile spray from pepper powder, mix 1 tablespoon of chile powder with 1 quart of water and several drops of mild liquid soap. To make chile spray from fresh chile peppers, blend or puree 1/2 cup of peppers with 1 cup of water, then add 1 quart of water and bring to a boil. Let sit until cooled, then strain out the chile material, add several drops of liquid soap to it and spray as desired. How to use it? Spray on the infested plant. It is insect repellent. [Caution: Hot chile peppers can be very potent on humans as well, so be sure to wear gloves when handling them, and keep any sprays made from them away from eyes, nose, and mouth.] Name of insecticide: Tomato leaf as a natural insecticide"
+  },
+  {
+    "crop_name": "What pests can be aphids",
+    "description": "controlled by it? How to make it? chop 2 cups of fresh tomato leaves (which can be taken from the bottom part of the plant) into 1 quart of water, and let steep overnight. Strain out the plant material How to use it? spray onto plant foliage Name of insecticide: Bacillus thuringiensis –or Bt. What pests can be Toxic primarily to caterpillars, Cabbageworms and controlled by it? cutworms, Colorado potato beetle. How to make it? Purchase from an agricultural shop/store. How to use it? Available as spray or dust. Apply late afternoon and reapply after rain. Mix with insecticidal soap for better coverage. Bacterial toxin; causes caterpillar death usually within 24 hours. Dissipates in 2 days or less. 73"
+  },
+  {
+    "crop_name": "As with nitrogen scorching of leaves could occur",
+    "description": " A more long-term source of phosphorous is super-phosphate which is applied to the soil P deficiency  Plants are stunted x Leaves take on a purplish color. diagnosis?  The undersides of the leaves become characteristically purple especially on the veins.  Fruits mature late and seeds do not develop properly  The change in color usually develops on older leaves first. What fertilizer? Potassium (K) Why does a plant  Makes plant structure need K?  Improve plant growth.  Aids in the plants overall vigor, strength, water uptake and disease resistance.  K plays a role in maintaining plant water balance, controls transpiration, and activates enzymes.  K improves the plants’ flower, fruit and seed quality. 76"
+  },
+  {
+    "crop_name": "References and further reading",
+    "description": "Alexande, S. (n.d.). A guide to vegetable growing. Dublin: Kinsealy Centre. Loquias, V. (n.d.). Production guide for Camito (starapple). Retrieved June 14, 2018, from Bureau of Plant Industry: Gov of Philippines : http://bpi.da.gov.ph/bpi/images/Production_guide/pdf/PRODUCTION%20G UIDE%20FOR%20Starapple.pdf Allemann, L., & Young, B. (2008). Vegetable production in nutshell. Pretoria: KwaZulu- Natal Department of Agriculture, Republic of South Africa. Attfield, H. (2001). A tropical guide to year round vegetable gardening. Arlington, VA: VITA. Bac, G. (2010). Technical guidelines on tropical fruit tree management in Ethiopia. FAO. El-Siddig , K., Gunasena , H., Prasad , B., Pushpakumara , D., Ramana , K., Vijayanand, P., & Williams, J. (2006). Tamarind. Sussex, England: Southampton Centre for Underutilised Crops. FAO. (2011). Farm Business School: training of farmers program South Asia. Bangkok: Food and Agriculture Organization of United Nations. Galindo, R., & Loquias, M. (n.d.). Rumbutan production guide. Retrieved June 14, 2018, from Bureau of Plant Industry: http://bpi.da.gov.ph/bpi/images/Production_guide/pdf/RAMBUTAN.pdf GOMEZ, I., & THIVANT, L. (2015). training manual for organic agriculture. FAO. Gunasena, H., Pushpakumara, D., & Kariyawasam, M. (n.d.). Dragon Fruit. Retrieved 6 6, 2018, from World AgroForestry.org: http://www.worldagroforestry.org/downloads/Publications/PDFS/BC07324. pdf Iowa State University. (2015). A Resource Guide for beginning farmers. Iowa State University. MANAGE. (2016). Farmers handbook on basic agriculture. India: Desai Fruits & Vegetables Pvt. Ltd. Martin, F., & Ruberte, R. (1980). Techniques and Plants for the Tropical Subsistence Farm. Agricultural Research (Southern Region), USDA. Ministry of Agriculture. (2014). Fiji Farm Management Manual. Ministry of Agriculture. Molnar, T., Kahn, P., Ford, T., Funk, C., & Funk, C. (2013). Tree Crops, a Permanent Agriculture: Concepts from the Past for a Sustainable Future. Resources, 457-488. Nichols, M., & Hilmi , M. (2009). Growing vegetables for home and market. Rome: FAO. Paull, R., & Duarte, O. (2011). Tropical Fruits. In Crop Production Sciences in Horticulture Series. CAB International. 80"
+  },
+  {
+    "crop_name": "Federated States of Micronesia",
+    "description": ""
+  },
+  {
+    "crop_name": "Department of Resources",
+    "description": "& Development"
+  },
+  {
+    "crop_name": "FAO Sub Regional Office for the Pacific",
+    "description": ""
+  },
+  {
+    "crop_name": "Food and Agriculture Organization of the United Nations",
+    "description": "Apia, 2020"
+  }
+]

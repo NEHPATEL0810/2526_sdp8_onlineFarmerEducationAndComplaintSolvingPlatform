@@ -41,6 +41,7 @@ urlpatterns = [
 
     path("",include("api.urls")),
     path("api/", include("translation.urls")),
+    path("api/", include("rag.urls")),
 
 ]
 

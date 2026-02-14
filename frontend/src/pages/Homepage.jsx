@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import TranslateText from "../components/TranslateText";
 import DomeGallery from "../components/DomeGallery";
@@ -9,24 +10,41 @@ import BlogSection from "../components/BlogSection";
 import Footer from "../components/Footer";
 
 export default function HomePage() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        setIsMobile(window.innerWidth <= 768);
+      }, 150);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timerRef.current);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
 
-      {/* Hero — DomeGallery (existing) */}
+      {/* Hero — DomeGallery */}
       <section
         style={{
           marginTop: "72px",
           padding: 0,
-          height: "calc(100vh - 72px)",
+          height: "calc(100dvh - 72px)",
           width: "100%",
         }}
       >
         <DomeGallery
-          fit={0.8}
-          minRadius={600}
+          fit={isMobile ? 0.95 : 0.8}
+          minRadius={isMobile ? 320 : 600}
           maxVerticalRotationDeg={0}
-          segments={34}
+          segments={isMobile ? 20 : 34}
           dragDampening={2}
           grayscale={false}
           overlayBlurColor="#14532d"
@@ -39,7 +57,7 @@ export default function HomePage() {
         style={{ background: "#ffffc5" }}
       >
         <h1
-          className="text-4xl md:text-5xl font-extrabold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4"
           style={{ color: "#15803d" }}
         >
           <TranslateText>Welcome to</TranslateText> <span style={{ color: "#4caf50" }}>FarmEasy</span> 🌱
@@ -59,3 +77,4 @@ export default function HomePage() {
     </>
   );
 }
+

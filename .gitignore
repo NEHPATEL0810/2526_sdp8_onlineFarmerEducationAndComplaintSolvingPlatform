@@ -28,3 +28,41 @@ logs/
 education/migrations/
 education/migrations/pycache/   
 education/migrations/__pycache__/
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.local
+.env.production
+backend/.env
+*.key
+
+# ========================
+# RAG / ML Data
+# ========================
+data/processed/faiss.index
+data/processed/meta.pkl
+backend/data/processed/
+
+# ========================
+# Node / Frontend
+# ========================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# ========================
+# Test Scripts
+# ========================
+test_rag.py
+test_db_integration.py
+
+# ========================
+# OS / IDE
+# ========================
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
