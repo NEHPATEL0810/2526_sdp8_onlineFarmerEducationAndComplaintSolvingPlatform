@@ -175,6 +175,15 @@ export default function Navbar() {
               style={linkStyle}
               whileHover={linkHoverAnimation}
               whileTap={{ scale: 0.96 }}
+              onClick={() => navigate("/chatbot")}
+            >
+              🤖 <TranslateText>AI Chatbot</TranslateText>
+            </motion.span>
+
+            <motion.span
+              style={linkStyle}
+              whileHover={linkHoverAnimation}
+              whileTap={{ scale: 0.96 }}
               onClick={() => {
                 if (isLoggedIn) {
                   navigate("/profile");
@@ -329,6 +338,13 @@ export default function Navbar() {
                       </motion.div>
                     )}
                   </AnimatePresence>
+                </div>
+
+                <div
+                  style={sidebarLinkStyle}
+                  onClick={() => handleNavClick("/chatbot")}
+                >
+                  🤖 <TranslateText>AI Chatbot</TranslateText>
                 </div>
 
                 <div

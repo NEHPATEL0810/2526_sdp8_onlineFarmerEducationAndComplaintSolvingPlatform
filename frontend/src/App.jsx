@@ -16,6 +16,7 @@ import MyDoubts from "./pages/MyDoubts.jsx";
 import CreateDoubt from "./pages/CreateDoubt.jsx";
 import Profile from "./pages/Profile.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
+import Chatbot from "./pages/Chatbot.jsx";
 
 const withNavbar = (Page) => (
   <>
@@ -47,6 +48,7 @@ function AnimatedRoutes({ location }) {
         <Route path="/doubts" element={<MyDoubts />} />
         <Route path="/create/doubts" element={<CreateDoubt />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/chatbot" element={<Chatbot />} />
       </Routes>
     </AnimatePresence>
   );

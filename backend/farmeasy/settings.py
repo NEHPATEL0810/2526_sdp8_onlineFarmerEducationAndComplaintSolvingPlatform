@@ -17,10 +17,10 @@ from datetime import timedelta
 load_dotenv()
 DATA_GOV_API_KEY = os.getenv("DATA_GOV_API_KEY")
 SCHEMES_API_KEY = os.getenv("SCHEMES_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 REST_FRAMEWORK={
     "DEFAULT_AUTHENTICATION_CLASSES":(
