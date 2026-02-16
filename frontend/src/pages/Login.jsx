@@ -2,17 +2,20 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
 import TranslateText from "../components/TranslateText";
+import { useAuth } from "../context/AuthContext";
+import { User, Lock, ArrowRight, Loader } from "lucide-react";
 
-function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
-  // const { login } = useAuth();
+function Login({ OnRegisterClick, onForgotClick, onLoginSuccess }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -31,159 +34,146 @@ function Login({ OnRegisterClick, onForgotClick,onLoginSuccess }) {
 
       const text = await response.text();
       let data = {};
-
       try {
         data = JSON.parse(text);
       } catch {
         console.error("Server returned HTML:", text);
-        return; 
-   }
+        setErrors({ detail: "Server error. Please try again." });
+        setLoading(false);
+        return;
+      }
 
       if (response.ok) {
-        localStorage.setItem("access", data.access);
-        localStorage.setItem("refresh", data.refresh);
-        // alert("Login successful");
-        onLoginSuccess?.();
-        navigate("/home");
-        setFormData({ username: "", password: "" });
+        const accessToken = data.access;
+        const refreshToken = data.refresh;
+
+        const profileResp = await fetch(`${API_BASE_URL}/education/profile/`, {
+          headers: { "Authorization": `Bearer ${accessToken}` }
+        });
+
+        if (profileResp.ok) {
+          const userData = await profileResp.json();
+          login(userData, accessToken);
+          localStorage.setItem("refresh", refreshToken);
+
+          alert("Login successful!");
+          if (onLoginSuccess) onLoginSuccess();
+          navigate("/home");
+          setFormData({ username: "", password: "" });
+        } else {
+          setErrors({ detail: "Failed to load user profile." });
+        }
+
       } else {
         setErrors(data);
       }
     } catch (err) {
       console.error("Network error:", err);
-    } finally{
+      setErrors({ detail: "Network error. Please check your connection." });
+    } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={loginContainerStyle}>
-      <h1 style={titleStyle}>
-        <TranslateText>Login</TranslateText>
-      </h1>
+    <div className="w-full max-w-sm mx-auto p-2">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2 font-poppins">
+          <TranslateText>Welcome Back</TranslateText>
+        </h1>
+        <p className="text-gray-500 text-sm">
+          <TranslateText>Sign in to continue to FarmEasy</TranslateText>
+        </p>
+      </div>
 
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleChange}
-          autoComplete="username"
-          style={inputStyle}
-          required
-        />
-        {errors.username && <p style={errorStyle}>{errors.username[0]}</p>}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <User className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              autoComplete="username"
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
+              required
+            />
+          </div>
+          {errors.username && <p className="text-red-500 text-xs pl-1">{errors.username[0]}</p>}
+        </div>
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          autoComplete="current-password"
-          style={inputStyle}
-          required
-        />
-        {errors.password && <p style={errorStyle}>{errors.password[0]}</p>}
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Lock className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              autoComplete="current-password"
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
+              required
+            />
+          </div>
+          {errors.password && <p className="text-red-500 text-xs pl-1">{errors.password[0]}</p>}
+        </div>
 
-        <button type="submit" style={buttonStyle}>
-          <TranslateText>Login</TranslateText>
+        {errors.detail && (
+          <div className="p-3 bg-red-50 border border-red-100 rounded-lg">
+            <p className="text-red-600 text-sm text-center">{errors.detail}</p>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="relative w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-green-600/20 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+        >
+          {loading ? (
+            <Loader className="w-5 h-5 animate-spin" />
+          ) : (
+            <>
+              {/* Left Arrow */}
+              <ArrowRight className="w-5 h-5 absolute left-4" />
+
+              {/* Centered Text */}
+              <span className="mx-auto">
+                <TranslateText>Login</TranslateText>
+              </span>
+            </>
+          )}
         </button>
       </form>
 
-      <p style={forgotStyle} onClick={onForgotClick}>
-        <TranslateText>Forgot Password?</TranslateText>
-      </p>
+      <div className="mt-6 text-center space-y-3">
+        <p
+          onClick={onForgotClick}
+          className="text-sm text-green-600 hover:text-green-700 cursor-pointer transition-colors font-medium"
+        >
+          <TranslateText>Forgot Password?</TranslateText>
+        </p>
 
-      <p style={registerStyle}>
-        <TranslateText>Don't have an account?</TranslateText>{" "}
-        <span style={registerLinkStyle} onClick={OnRegisterClick}>
-          <TranslateText>Register</TranslateText>
-        </span>
-      </p>
+        <div className="pt-2 border-t border-gray-100">
+          <p className="text-sm text-gray-500">
+            <TranslateText>Don't have an account?</TranslateText>{" "}
+            <span
+              onClick={OnRegisterClick}
+              className="text-green-600 hover:text-green-700 font-bold cursor-pointer transition-colors ml-1"
+            >
+              <TranslateText>Register</TranslateText>
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Login;
-
-
-
-
-const loginContainerStyle = {
-  width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
-const formStyle = {
-  width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
-const titleStyle = {
-  marginBottom: "1.8rem",
-  fontSize: "2rem",
-  fontWeight: "700",
-  fontFamily: "'Poppins', sans-serif",
-};
-
-const inputStyle = {
-  width: "100%",
-  maxWidth: "280px",
-  padding: "0.75rem",
-  marginBottom: "0.9rem",
-  borderRadius: "10px",
-  border: "1px solid #334155",
-  background: "#020617",
-  color: "#ffffff",
-  textAlign: "center",
-  fontSize: "0.95rem",
-};
-
-const buttonStyle = {
-  width: "100%",
-  maxWidth: "280px",
-  padding: "0.75rem",
-  marginTop: "0.6rem",
-  borderRadius: "10px",
-  border: "none",
-  background: "#4ca750",
-  color: "#ffffff",
-  fontSize: "1rem",
-  fontWeight: "600",
-  cursor: "pointer",
-};
-
-const errorStyle = {
-  width: "100%",
-  maxWidth: "280px",
-  color: "#ef4444",
-  fontSize: "0.8rem",
-  marginTop: "-0.4rem",
-  marginBottom: "0.6rem",
-  textAlign: "left",
-};
-
-const forgotStyle = {
-  marginTop: "1rem",
-  fontSize: "0.9rem",
-  color: "#4ca750",
-  cursor: "pointer",
-};
-
-const registerStyle = {
-  marginTop: "1.5rem",
-  fontSize: "0.9rem",
-  opacity: 0.9,
-};
-
-const registerLinkStyle = {
-  color: "#4ca750",
-  cursor: "pointer",
-  fontWeight: "500",
-};

@@ -10,7 +10,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ResetPassword from "../pages/ResetPassword";
 import ForgotPassword from "../pages/ForgotPassword";
-import ElectricBorder from "./ElectricBorder";
+// import ElectricBorder from "./ElectricBorder"; // Removed unused import
+import { useAuth } from "../context/AuthContext"; // Import useAuth
 
 export default function Navbar() {
   const [openLogin, setOpenLogin] = useState(false);
@@ -23,7 +24,14 @@ export default function Navbar() {
   const [mobileEduOpen, setMobileEduOpen] = useState(false);
   const [mobileComplaintsOpen, setMobileComplaintsOpen] = useState(false);
   const navigate = useNavigate();
-  const isLoggedIn = !!localStorage.getItem("access");
+  const { isAuthenticated, logout } = useAuth(); // Use context
+
+  // Logout handler
+  const handleLogout = () => {
+    logout();
+    closeMobileMenu();
+    navigate("/"); // Redirect to landing page or home
+  };
 
   // Close sidebar if resized to desktop
   useEffect(() => {
@@ -85,8 +93,16 @@ export default function Navbar() {
             </div>
           </motion.div>
 
-          {/* ─── Desktop Menu (hidden on mobile via CSS) ─── */}
           <div style={menuStyle} className="navbar-desktop-menu">
+            <motion.span
+              style={linkStyle}
+              whileHover={linkHoverAnimation}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => navigate("/home")}
+            >
+              <TranslateText>Home</TranslateText>
+            </motion.span>
+
             <motion.span
               style={linkStyle}
               whileHover={linkHoverAnimation}
@@ -156,14 +172,26 @@ export default function Navbar() {
                   <motion.div
                     style={dropdownItemStyle}
                     whileHover={dropdownHoverAnimation}
-                    onClick={() => navigate("/create/doubts")}
+                    onClick={() => {
+                      if (isAuthenticated) {
+                        navigate("/create/doubts");
+                      } else {
+                        setOpenLogin(true);
+                      }
+                    }}
                   >
                     Create Doubt
                   </motion.div>
                   <motion.div
                     style={dropdownItemStyle}
                     whileHover={dropdownHoverAnimation}
-                    onClick={() => navigate("/doubts")}
+                    onClick={() => {
+                      if (isAuthenticated) {
+                        navigate("/doubts");
+                      } else {
+                        setOpenLogin(true);
+                      }
+                    }}
                   >
                     View My Doubts
                   </motion.div>
@@ -175,7 +203,13 @@ export default function Navbar() {
               style={linkStyle}
               whileHover={linkHoverAnimation}
               whileTap={{ scale: 0.96 }}
-              onClick={() => navigate("/chatbot")}
+              onClick={() => {
+                if (isAuthenticated) {
+                  navigate("/chatbot");
+                } else {
+                  setOpenLogin(true);
+                }
+              }}
             >
               🤖 <TranslateText>AI Chatbot</TranslateText>
             </motion.span>
@@ -185,7 +219,7 @@ export default function Navbar() {
               whileHover={linkHoverAnimation}
               whileTap={{ scale: 0.96 }}
               onClick={() => {
-                if (isLoggedIn) {
+                if (isAuthenticated) {
                   navigate("/profile");
                 } else {
                   setOpenLogin(true);
@@ -194,6 +228,17 @@ export default function Navbar() {
             >
               <TranslateText>Profile</TranslateText>
             </motion.span>
+
+            {isAuthenticated && (
+              <motion.span
+                style={linkStyle}
+                whileHover={linkHoverAnimation}
+                whileTap={{ scale: 0.96 }}
+                onClick={handleLogout}
+              >
+                <TranslateText>Logout</TranslateText>
+              </motion.span>
+            )}
 
             <motion.span
               style={linkStyle}
@@ -329,10 +374,30 @@ export default function Navbar() {
                         transition={{ duration: 0.2 }}
                         style={{ overflow: "hidden" }}
                       >
-                        <div style={sidebarSubLinkStyle} onClick={() => handleNavClick("/create/doubts")}>
+                        <div
+                          style={sidebarSubLinkStyle}
+                          onClick={() => {
+                            if (isAuthenticated) {
+                              handleNavClick("/create/doubts");
+                            } else {
+                              closeMobileMenu();
+                              setOpenLogin(true);
+                            }
+                          }}
+                        >
                           Create Doubt
                         </div>
-                        <div style={sidebarSubLinkStyle} onClick={() => handleNavClick("/doubts")}>
+                        <div
+                          style={sidebarSubLinkStyle}
+                          onClick={() => {
+                            if (isAuthenticated) {
+                              handleNavClick("/doubts");
+                            } else {
+                              closeMobileMenu();
+                              setOpenLogin(true);
+                            }
+                          }}
+                        >
                           View My Doubts
                         </div>
                       </motion.div>
@@ -342,7 +407,14 @@ export default function Navbar() {
 
                 <div
                   style={sidebarLinkStyle}
-                  onClick={() => handleNavClick("/chatbot")}
+                  onClick={() => {
+                    if (isAuthenticated) { // Use isAuthenticated
+                      handleNavClick("/chatbot");
+                    } else {
+                      closeMobileMenu();
+                      setOpenLogin(true);
+                    }
+                  }}
                 >
                   🤖 <TranslateText>AI Chatbot</TranslateText>
                 </div>
@@ -350,7 +422,7 @@ export default function Navbar() {
                 <div
                   style={sidebarLinkStyle}
                   onClick={() => {
-                    if (isLoggedIn) {
+                    if (isAuthenticated) { // Use isAuthenticated
                       handleNavClick("/profile");
                     } else {
                       closeMobileMenu();
@@ -360,6 +432,15 @@ export default function Navbar() {
                 >
                   <TranslateText>Profile</TranslateText>
                 </div>
+
+                {isAuthenticated && ( // Add Logout
+                  <div
+                    style={sidebarLinkStyle}
+                    onClick={handleLogout}
+                  >
+                    <TranslateText>Logout</TranslateText>
+                  </div>
+                )}
 
                 <div
                   style={sidebarLinkStyle}
@@ -379,73 +460,141 @@ export default function Navbar() {
         onClose={() => setOpenLogin(false)}
         PaperProps={{
           style: {
-            background: "transparent",
-            boxShadow: "none",
-            overflow: "visible",
+            borderRadius: "24px",
+            padding: "0",
+            maxWidth: "400px",
+            width: "100%",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            background: "#ffffff",
           },
         }}
+        BackdropProps={{
+          style: {
+            backgroundColor: "rgba(0,0,0,0.2)",
+            backdropFilter: "blur(4px)"
+          }
+        }}
       >
-        <DialogContent style={{ padding: 0, overflow: "visible" }}>
-          <ElectricBorder
-            color="#4ca750"
-            speed={1}
-            chaos={0.12}
-            borderRadius={16}
-            style={{ borderRadius: 16 }}
-          >
-            <div style={loginCardStyle}>
-              <Login
-                OnRegisterClick={() => {
-                  setOpenLogin(false);
-                  setOpenRegister(true);
-                }}
-                onForgotClick={() => {
-                  setOpenLogin(false);
-                  setOpenForgot(true);
-                }}
-              />
-            </div>
-          </ElectricBorder>
+        <DialogContent style={{ padding: "0" }}>
+          <div style={loginCardStyle}>
+            <button
+              onClick={() => setOpenLogin(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              style={{ zIndex: 10 }}
+            >
+            </button>
+            <Login
+              OnRegisterClick={() => {
+                setOpenLogin(false);
+                setOpenRegister(true);
+              }}
+              onForgotClick={() => {
+                setOpenLogin(false);
+                setOpenForgot(true);
+              }}
+              onLoginSuccess={() => setOpenLogin(false)}
+            />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog
         open={openRegister}
         onClose={() => setOpenRegister(false)}
+        PaperProps={{
+          style: {
+            borderRadius: "24px",
+            padding: "0",
+            maxWidth: "400px",
+            width: "100%",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            background: "#ffffff",
+          },
+        }}
+        BackdropProps={{
+          style: {
+            backgroundColor: "rgba(0,0,0,0.2)",
+            backdropFilter: "blur(4px)"
+          }
+        }}
       >
-        <DialogContent>
-          <Register
-            onBackToLogin={() => {
-              setOpenRegister(false);
-              setOpenLogin(true);
-            }}
-          />
+        <DialogContent style={{ padding: "0" }}>
+          <div style={loginCardStyle}>
+            <Register
+              onBackToLogin={() => {
+                setOpenRegister(false);
+                setOpenLogin(true);
+              }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
 
-      <Dialog open={openForgot} onClose={() => setOpenForgot(false)}>
-        <DialogContent>
-          <ForgotPassword
-            onBackToLogin={() => {
-              setOpenForgot(false);
-              setOpenLogin(true);
-            }}
-            onResetLinkSent={() => {
-              setOpenForgot(false);
-              setOpenReset(true);
-            }}
-          />
+      <Dialog
+        open={openForgot}
+        onClose={() => setOpenForgot(false)}
+        PaperProps={{
+          style: {
+            borderRadius: "24px",
+            padding: "0",
+            maxWidth: "400px",
+            width: "100%",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            background: "#ffffff",
+          },
+        }}
+        BackdropProps={{
+          style: {
+            backgroundColor: "rgba(0,0,0,0.2)",
+            backdropFilter: "blur(4px)"
+          }
+        }}
+      >
+        <DialogContent style={{ padding: "0" }}>
+          <div style={loginCardStyle}>
+            <ForgotPassword
+              onBackToLogin={() => {
+                setOpenForgot(false);
+                setOpenLogin(true);
+              }}
+              onResetLinkSent={() => {
+                setOpenForgot(false);
+                setOpenReset(true);
+              }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
 
-      <Dialog open={openReset} onClose={() => setOpenReset(false)}>
-        <DialogContent>
-          <ResetPassword
-            onBackToLogin={() => {
-              setOpenReset(false);
-              setOpenLogin(true);
-            }}
-          />
+      <Dialog
+        open={openReset}
+        onClose={() => setOpenReset(false)}
+        PaperProps={{
+          style: {
+            borderRadius: "24px",
+            padding: "0",
+            maxWidth: "400px",
+            width: "100%",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            background: "#ffffff",
+          },
+        }}
+        BackdropProps={{
+          style: {
+            backgroundColor: "rgba(0,0,0,0.2)",
+            backdropFilter: "blur(4px)"
+          }
+        }}
+      >
+        <DialogContent style={{ padding: "0" }}>
+          <div style={loginCardStyle}>
+            <ResetPassword
+              onBackToLogin={() => {
+                setOpenReset(false);
+                setOpenLogin(true);
+              }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </>
@@ -558,15 +707,14 @@ const linkHoverAnimation = {
 };
 
 const loginCardStyle = {
-  background: "#0f172a",
-  padding: "2rem",
-  width: "360px",
-  borderRadius: "16px",
-  color: "#fff",
+  width: "100%",
+  padding: "2rem 1.5rem",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
   textAlign: "center",
+  position: "relative",
 };
 
 const dropdownItemStyle = {

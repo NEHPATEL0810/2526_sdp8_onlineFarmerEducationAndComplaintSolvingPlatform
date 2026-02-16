@@ -1,16 +1,19 @@
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
-import ElectricBorder from "../components/ElectricBorder";
+import TranslateText from "../components/TranslateText";
+import { Mail, ArrowRight, Loader, CheckCircle, AlertCircle } from "lucide-react";
 
 function ForgotPassword({ onBackToLogin }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
     setError("");
+    setLoading(true);
 
     try {
       const response = await fetch(
@@ -28,14 +31,14 @@ function ForgotPassword({ onBackToLogin }) {
       try {
         data = JSON.parse(text);
       } catch {
-        console.error("Server returned HTML:", text);
         setError("Server error. Please try again later.");
+        setLoading(false);
         return;
       }
 
       if (response.ok) {
         setMessage(
-          "If an account with that email exists, a reset link has been sent."
+          "a reset link has been sent."
         );
         setEmail("");
       } else {
@@ -44,132 +47,81 @@ function ForgotPassword({ onBackToLogin }) {
     } catch (err) {
       console.error(err);
       setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div style={overlayStyle}>
-      <ElectricBorder color="#4ca750" thickness={2} speed={0.8} chaos={0.08}>
-        <div style={cardStyle}>
-          <h1 style={titleStyle}>Forgot Password</h1>
+    <div className="w-full max-w-sm mx-auto p-2">
+      <div className="text-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-800 mb-2 font-poppins">
+          <TranslateText>Forgot Password?</TranslateText>
+        </h1>
+        <p className="text-gray-500 text-sm">
+          <TranslateText>Enter your email to receive a reset link</TranslateText>
+        </p>
+      </div>
 
-          <form onSubmit={handleSubmit} style={formStyle}>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Mail className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={inputStyle}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
               required
               autoComplete="email"
             />
-
-            {error && <p style={errorStyle}>{error}</p>}
-            {message && <p style={successStyle}>{message}</p>}
-
-            <button type="submit" style={buttonStyle}>
-              Send Reset Link
-            </button>
-          </form>
-
-          <p style={footerStyle}>
-            <span style={linkStyle} onClick={onBackToLogin}>
-              Back to Login
-            </span>
-          </p>
+          </div>
         </div>
-      </ElectricBorder>
+
+        {error && (
+          <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-100">
+            <AlertCircle className="w-4 h-4 shrink-0" />
+            <p>{error}</p>
+          </div>
+        )}
+
+        {message && (
+          <div className="flex items-center gap-2 text-green-700 text-sm bg-green-50 p-3 rounded-lg border border-green-100">
+            <CheckCircle className="w-4 h-4 shrink-0" />
+            <p>{message}</p>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-green-600/20 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+        >
+          {loading ? (
+            <Loader className="w-5 h-5 animate-spin" />
+          ) : (
+            <>
+              <ArrowRight className="w-5 h-5 absolute left-4 " />
+              <span><TranslateText>Send Link</TranslateText></span>
+              
+            </>
+          )}
+        </button>
+      </form>
+
+      <div className="mt-6 text-center pt-4 border-t border-gray-100">
+        <span
+          onClick={onBackToLogin}
+          className="text-sm text-green-600 hover:text-green-700 font-bold cursor-pointer transition-colors"
+        >
+          <TranslateText>Back to Login</TranslateText>
+        </span>
+      </div>
     </div>
   );
 }
 
 export default ForgotPassword;
-
-
-/* ------------------ STYLES ------------------ */
-
-const overlayStyle = {
-  position: "fixed",
-  inset: 0,
-  background: "rgba(0,0,0,0.35)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  zIndex: 9999,
-};
-
-const cardStyle = {
-  width: "420px",
-  background: "#020617",
-  borderRadius: "22px",
-  padding: "1.8rem 1.6rem",
-  boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
-  overflow: "hidden",
-  color: "#fff",
-  textAlign: "center",
-};
-
-const titleStyle = {
-  marginBottom: "1.4rem",
-  fontSize: "2rem",
-  fontWeight: 700,
-  fontFamily: "'Poppins', sans-serif",
-};
-
-const formStyle = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.9rem",
-  alignItems: "center",
-};
-
-const inputStyle = {
-  width: "90%",
-  padding: "0.75rem",
-  borderRadius: "10px",
-  border: "1px solid #334155",
-  background: "#020617",
-  color: "#fff",
-  textAlign: "center",
-  fontSize: "0.95rem",
-};
-
-const buttonStyle = {
-  width: "90%",
-  marginTop: "0.6rem",
-  padding: "0.75rem",
-  borderRadius: "10px",
-  border: "none",
-  background: "#4ca750",
-  color: "#fff",
-  fontSize: "1rem",
-  fontWeight: 600,
-  cursor: "pointer",
-};
-
-const footerStyle = {
-  marginTop: "1.3rem",
-  fontSize: "0.9rem",
-  opacity: 0.9,
-};
-
-const linkStyle = {
-  color: "#4ca750",
-  cursor: "pointer",
-  fontWeight: 500,
-};
-
-const errorStyle = {
-  width: "90%",
-  textAlign: "left",
-  color: "#ef4444",
-  fontSize: "0.8rem",
-  marginTop: "-0.3rem",
-};
-
-const successStyle = {
-  width: "90%",
-  textAlign: "center",
-  color: "#22c55e",
-  fontSize: "0.85rem",
-};

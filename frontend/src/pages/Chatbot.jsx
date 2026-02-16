@@ -9,7 +9,6 @@ import axios from 'axios';
 
 export default function Chatbot() {
     const navigate = useNavigate();
-    const { isAuthenticated, user } = useAuth();
     const messagesEndRef = useRef(null);
     const chatContainerRef = useRef(null);
 
@@ -47,15 +46,16 @@ export default function Chatbot() {
         const storedSessionId = localStorage.getItem(`farmEasySession-${currentChatId}`);
         return storedSessionId || null;
     });
+    const { isAuthenticated, user } = useAuth(); // Get auth state
 
     // Redirect if not authenticated
     useEffect(() => {
         if (!isAuthenticated) {
-            navigate('/login');
+            // Redirect to home where Navbar can handle login or just force them out
+            // The Navbar "should" handle this if they used the link, but if they typed the URL directly:
+            navigate('/');
         }
-    }, [isAuthenticated, navigate]);
-
-    // Save messages to localStorage whenever they change
+    }, [isAuthenticated, navigate]);    // Save messages to localStorage whenever they change
     useEffect(() => {
         if (messages.length > 0) {
             localStorage.setItem(`farmEasyMessages-${currentChatId}`, JSON.stringify(messages));
@@ -162,7 +162,7 @@ export default function Chatbot() {
             setIsGenerating(true);
 
             try {
-                const token = localStorage.getItem('access');
+                const token = localStorage.getItem('token');
                 const payload = {
                     question: input,
                     session_id: sessionId,
@@ -381,8 +381,8 @@ export default function Chatbot() {
                                             >
                                                 <div
                                                     className={`group relative max-w-[85%] ${message.role === 'user'
-                                                            ? 'rounded-3xl px-5 py-3 shadow-md'
-                                                            : 'rounded-2xl px-5 py-4 shadow-lg'
+                                                        ? 'rounded-3xl px-5 py-3 shadow-md'
+                                                        : 'rounded-2xl px-5 py-4 shadow-lg'
                                                         }`}
                                                     style={{
                                                         backgroundColor: message.role === 'user'

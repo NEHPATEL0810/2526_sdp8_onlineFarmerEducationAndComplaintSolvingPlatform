@@ -29,7 +29,7 @@ def market_prices(request):
         params["filters[commodity]"] = request.GET["commodity"]
 
     try:
-        response = requests.get(url, params=params, timeout=(5, 30))
+        response = requests.get(url, params=params, timeout=20)
 
         if response.status_code == 200:
             data = response.json()
@@ -118,11 +118,17 @@ def reply_doubt(request, pk):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def user_profile(request):
-    profile = request.user.profile
+    try:
+        profile = request.user.profile
+        mobile_number = profile.mobile_number
+        role = profile.role
+    except Exception:
+        mobile_number = None
+        role = "FARMER"
 
     return Response({
         "username": request.user.username,
         "email": request.user.email,
-        "mobile_number": profile.mobile_number,
-        "role": profile.role,
+        "mobile_number": mobile_number,
+        "role": role,
     })

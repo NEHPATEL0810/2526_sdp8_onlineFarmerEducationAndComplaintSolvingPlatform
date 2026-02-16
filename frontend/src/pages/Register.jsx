@@ -1,6 +1,6 @@
 import { useState } from "react";
 import API_BASE_URL from "../services/api";
-import ElectricBorder from "../components/ElectricBorder";
+import { User, Mail, Lock, Phone, ArrowRight, Loader } from "lucide-react";
 
 function Register({ onBackToLogin }) {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ function Register({ onBackToLogin }) {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,6 +20,7 @@ function Register({ onBackToLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
+    setLoading(true);
 
     try {
       const response = await fetch(`${API_BASE_URL}/auth/register/`, {
@@ -45,158 +47,122 @@ function Register({ onBackToLogin }) {
       }
     } catch (err) {
       console.error("Network error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div style={overlayStyle}>
-      <ElectricBorder color="#4ca750" thickness={2} speed={0.8} chaos={0.08}>
-        <div style={cardStyle}>
-          <h1 style={titleStyle}>Register</h1>
+    <div className="w-full max-w-sm mx-auto p-2">
+      <div className="text-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2 font-poppins">
+          Create Account
+        </h1>
+        <p className="text-gray-500 text-sm">
+          Join FarmEasy community today
+        </p>
+      </div>
 
-          <form onSubmit={handleSubmit} style={formStyle}>
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <User className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
             <input
               name="username"
               placeholder="Username"
               value={formData.username}
               onChange={handleChange}
-              style={inputStyle}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
               required
             />
-            {errors.username && (
-              <p style={errorStyle}>{errors.username[0]}</p>
-            )}
+          </div>
+          {errors.username && <p className="text-red-500 text-xs pl-1">{errors.username[0]}</p>}
+        </div>
 
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Mail className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
             <input
               type="email"
               name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              style={inputStyle}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
               required
             />
-            {errors.email && (
-              <p style={errorStyle}>{errors.email[0]}</p>
-            )}
+          </div>
+          {errors.email && <p className="text-red-500 text-xs pl-1">{errors.email[0]}</p>}
+        </div>
 
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Lock className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
             <input
               type="password"
               name="password"
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              style={inputStyle}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
               required
             />
-            {errors.password && (
-              <p style={errorStyle}>{errors.password[0]}</p>
-            )}
+          </div>
+          {errors.password && <p className="text-red-500 text-xs pl-1">{errors.password[0]}</p>}
+        </div>
 
+        <div className="space-y-1">
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Phone className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+            </div>
             <input
               name="mobile_number"
               placeholder="Mobile Number"
               value={formData.mobile_number}
               onChange={handleChange}
-              style={inputStyle}
+              className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all font-medium"
               required
             />
-
-            <button type="submit" style={buttonStyle}>
-              Register
-            </button>
-          </form>
-
-          <p style={footerStyle}>
-            Already have an account?{" "}
-            <span style={linkStyle} onClick={onBackToLogin}>
-              Login
-            </span>
-          </p>
+          </div>
         </div>
-      </ElectricBorder>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="relative w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-green-600/20 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+        >
+          {loading ? (
+            <Loader className="w-5 h-5 animate-spin" />
+          ) : (
+            <>
+             <ArrowRight className="w-5 h-5 absolute left-4" />
+              <span>Register</span>
+              
+            </>
+          )}
+        </button>
+      </form>
+
+      <div className="mt-5 pt-3 border-t border-gray-100 text-center">
+        <p className="text-sm text-gray-500">
+          Already have an account?{" "}
+          <span
+            onClick={onBackToLogin}
+            className="text-green-600 hover:text-green-700 font-bold cursor-pointer transition-colors ml-1"
+          >
+            Login
+          </span>
+        </p>
+      </div>
     </div>
   );
 }
 
 export default Register;
-
-
-/* ------------------ STYLES ------------------ */
-
-const overlayStyle = {
-  position: "fixed",
-  inset: 0,
-  background: "rgba(0,0,0,0.35)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  zIndex: 9999,
-};
-
-const cardStyle = {
-  width: "480px",
-  background: "#020617",
-  borderRadius: "22px",
-  padding: "1.8rem 1.6rem",
-  boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
-  overflow: "hidden",
-  color: "#fff",
-  textAlign: "center",
-};
-
-const titleStyle = {
-  marginBottom: "1.4rem",
-  fontSize: "2rem",
-  fontWeight: 700,
-};
-
-const formStyle = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.85rem",
-  alignItems: "center",
-};
-
-const inputStyle = {
-  width: "90%",
-  padding: "0.75rem",
-  borderRadius: "10px",
-  border: "1px solid #334155",
-  background: "#020617",
-  color: "#fff",
-  textAlign: "center",
-  fontSize: "0.95rem",
-};
-
-const buttonStyle = {
-  marginTop: "0.8rem",
-  padding: "0.75rem",
-  borderRadius: "10px",
-  border: "none",
-  background: "#4ca750",
-  color: "#fff",
-  fontSize: "1rem",
-  fontWeight: 600,
-  cursor: "pointer",
-};
-
-const footerStyle = {
-  marginTop: "1.2rem",
-  fontSize: "0.9rem",
-  opacity: 0.9,
-};
-
-const linkStyle = {
-  color: "#4ca750",
-  cursor: "pointer",
-  fontWeight: 500,
-};
-
-const errorStyle = {
-  width: "90%",
-  textAlign: "left",
-  color: "#ef4444",
-  fontSize: "0.8rem",
-  marginTop: "-0.3rem",
-};
