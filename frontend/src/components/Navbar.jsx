@@ -84,9 +84,6 @@ export default function Navbar() {
             </div>
             <div style={brandTextContainerStyle}>
               <span style={brandTitleStyle}>FarmEasy</span>
-              <span style={brandSubtitleStyle}>
-                <TranslateText>Grow smarter, farm better</TranslateText>
-              </span>
             </div>
             <div style={brandLanguageWrapperStyle}>
               <LanguageToggle />
@@ -621,12 +618,14 @@ const navStyle = {
 
 const navInnerStyle = {
   width: "100%",
-  maxWidth: "1200px",
+  maxWidth: "1400px",
   margin: "0 auto",
   padding: "0 1.2rem",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+  flexWrap: "nowrap",
+  gap: "0.5rem",
   fontFamily:
     '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, -system-ui, "Segoe UI", sans-serif',
 };
@@ -634,7 +633,8 @@ const navInnerStyle = {
 const brandWrapperStyle = {
   display: "flex",
   alignItems: "center",
-  gap: "0.9rem",
+  gap: "0.6rem",
+  flexShrink: 0,
 };
 
 const brandLogoCircleStyle = {
@@ -662,43 +662,60 @@ const brandTextContainerStyle = {
 
 const brandTitleStyle = {
   color: "#f9fafb",
-  fontSize: "1.2rem",
+  fontSize: "1.05rem",
   fontWeight: 650,
   letterSpacing: "0.04em",
+  whiteSpace: "nowrap",
 };
 
 const brandSubtitleStyle = {
   color: "rgba(226,232,240,0.9)",
-  fontSize: "0.8rem",
+  fontSize: "0.72rem",
   fontWeight: 400,
+  whiteSpace: "nowrap",
+  display: "none",   /* hidden on narrow screens to keep one row */
+};
+
+/* Override to show subtitle on wider screens */
+const brandSubtitleVisibleStyle = {
+  ...{
+    color: "rgba(226,232,240,0.9)",
+    fontSize: "0.72rem",
+    fontWeight: 400,
+    whiteSpace: "nowrap",
+  },
 };
 
 const brandLanguageWrapperStyle = {
-  marginLeft: "1.5rem",
-  padding: "4px 10px",
+  marginLeft: "0.6rem",
+  padding: "3px 8px",
   borderRadius: 999,
   backgroundColor: "rgba(255,255,255,0.12)",
   border: "1px solid rgba(209,250,229,0.5)",
   display: "flex",
   alignItems: "center",
+  flexShrink: 0,
 };
 
 const menuStyle = {
   display: "flex",
   alignItems: "center",
-  gap: "1rem",
+  flexWrap: "nowrap",
+  gap: "0.1rem",
+  flexShrink: 0,
 };
 
 const linkStyle = {
   color: "rgba(248,250,252,0.9)",
   textDecoration: "none",
-  fontSize: "1.02rem",
+  fontSize: "0.88rem",
   fontWeight: 500,
-  padding: "0.5rem 0.9rem",
-  margin: "0 0.15rem",
+  padding: "0.4rem 0.65rem",
+  margin: "0",
   transition: "all 0.3s ease",
   cursor: "pointer",
   borderRadius: 999,
+  whiteSpace: "nowrap",
 };
 
 const linkHoverAnimation = {

@@ -12,6 +12,7 @@ from .utils import load_crops_data
 import urllib.parse
 import pandas as pd
 from pathlib import Path
+from .crop_scraper import scrape_crop_info
 
 def market_prices(request):
     url = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070"
@@ -82,6 +83,38 @@ def get_all_crops(request):
     serializer=CropSerializer(crops,many=True)
     return Response(serializer.data)
 
+@api_view(["GET"])
+def crop_details(request, crop_name):
+
+    try:
+
+        crop = Crop.objects.get(name__iexact=crop_name)
+
+        return Response({
+            "name": crop.name,
+            "scientific_name": crop.scientific_name,
+            "soil": crop.soil,
+            "climate": crop.climate,
+            "season": crop.season,
+            "water": crop.water,
+            "description": crop.description,
+            "source": "database"
+        })
+
+    except Crop.DoesNotExist:
+
+        print("[FarmEasy] Crop not in database. Scraping...")
+
+        scraped = scrape_crop_info(crop_name)
+
+        if scraped:
+
+            return Response(scraped)
+
+        return Response({
+            "error": "Crop not found"
+        }, status=404)
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def create_doubt(request):
@@ -132,3 +165,21 @@ def user_profile(request):
         "mobile_number": mobile_number,
         "role": role,
     })
+
+@api_view(["GET"])
+def scheme_details(request, scheme_id):
+
+    try:
+        scheme = Scheme.objects.get(id=scheme_id)
+
+        return Response({
+            "id": scheme.id,
+            "name": scheme.name,
+            "description": scheme.description,
+            "eligibility": scheme.eligibility,
+            "benefits": scheme.benefits,
+            "official_link": scheme.official_link,
+        })
+
+    except Scheme.DoesNotExist:
+        return Response({"error": "Scheme not found"}, status=404)
