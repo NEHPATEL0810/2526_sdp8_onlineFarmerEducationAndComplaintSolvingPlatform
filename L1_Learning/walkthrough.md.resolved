@@ -1,0 +1,103 @@
+# Feature Walkthrough: PDF Analysis + Message Editing
+
+## 1. PDF Upload & Analysis
+
+### How it works
+
+The chatbot now handles PDFs through a **2-stage pipeline**:
+
+```mermaid
+flowchart TD
+    A[User uploads PDF] --> B[Frontend detects .pdf attachment]
+    B --> C[Fetch blob → POST /api/chat/analyze-pdf/]
+    C --> D{pdfplumber extracts text?}
+    D -- Yes, text found --> E[_summarize_text via llama-3.3-70b-versatile]
+    D -- No, image-based PDF --> F[pymupdf renders pages as PNG at 150 DPI]
+    F --> G[Base64 encode images]
+    G --> H[_summarize_images via llama-4-scout vision model]
+    E --> I[Return summary + metadata]
+    H --> I
+    I --> J[Save to ChatSession & ChatMessage in DB]
+    J --> K[Frontend shows PDF Summary bubble]
+```
+
+### Backend ([rag/views.py](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py))
+
+| Function | Purpose |
+|---|---|
+| [_summarize_text()](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#85-102) | Groq `llama-3.3-70b-versatile` — for text PDFs |
+| [_summarize_images()](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#104-138) | Groq `meta-llama/llama-4-scout-17b-16e-instruct` (vision) — for image PDFs |
+| [analyze_pdf()](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#143-241) | Orchestrates: try pdfplumber → fallback to pymupdf + vision |
+
+**Stage 1 — Text extraction** (`pdfplumber`):
+- Reads all pages, strips text
+- Truncates at 12,000 chars if too large
+- Sends to `llama-3.3-70b-versatile` with agricultural analyst system prompt
+
+**Stage 2 — Image OCR** (only if Stage 1 yields no text):
+- Opens PDF via `fitz.open()` (PyMuPDF)
+- Renders up to 10 pages as PNG at 150 DPI
+- Base64-encodes each PNG
+- Sends all images + instruction to Groq vision model
+- `used_ocr: true` is returned in the response
+
+### Frontend ([Chatbot.jsx](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/frontend/src/pages/Chatbot.jsx))
+
+- `handleSendMessage` detects [.pdf](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/data/raw/pdf_knowledge/crop_guides/p3.pdf) extension in attachments
+- Fetches the blob URL back to a real [File](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/frontend/src/components/ui/multimodal-ai-chat-input.jsx#353-377) object
+- `FormData` POST to `/api/chat/analyze-pdf/`
+- Shows a **📄 PDF Summary** bubble with:
+  - Filename + page count in header
+  - `🔍 OCR` badge if vision model was used
+  - ✓ High Confidence badge
+  - Full structured summary text
+
+---
+
+## 2. Inline Message Editing
+
+### How it works
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant UI as Chatbot.jsx
+    participant API as /api/chat/
+    U->>UI: Hover user message → click ✏️ pencil
+    UI->>UI: Replace bubble with editable textarea
+    U->>UI: Edit text → "Save & Resend"
+    UI->>UI: Trim messages array after edited index
+    UI->>API: POST /api/chat/ with edited text + session_id
+    API-->>UI: New answer + confidence + sources
+    UI->>UI: Append new AI response to trimmed history
+```
+
+### State management
+
+| State | Purpose |
+|---|---|
+| `editingMessageId` | ID of message being edited (`null` = not editing) |
+| `editText` | Current textarea value |
+
+### Key behaviours
+- **Only user messages** get the pencil icon (not PDF upload messages)
+- **Save & Resend** — truncates `messages[]` at the edited index, replaces with new user message, re-calls the RAG API
+- **Cancel** or `Escape` — reverts with no changes
+- `Enter` saves, `Shift+Enter` inserts newline in editor
+
+---
+
+## Files Changed
+
+| File | Change |
+|---|---|
+| [rag/views.py](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py) | Added [_summarize_text](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#85-102), [_summarize_images](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#104-138), `AGRI_SYSTEM_PROMPT`. Rewrote [analyze_pdf](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/views.py#143-241) with 2-stage pipeline |
+| [rag/urls.py](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/backend/rag/urls.py) | Added `/chat/analyze-pdf/` route |
+| [Chatbot.jsx](file:///c:/Users/Admin/OneDrive/Desktop/NEH/BTECH_CE/SEM%20VI/FarmEasy/2526_sdp8_onlineFarmerEducationAndComplaintSolvingPlatform/frontend/src/pages/Chatbot.jsx) | PDF detection in `handleSendMessage`, `startEdit`/`saveEdit`/`cancelEdit` functions, inline edit textarea UI, OCR badge display |
+
+## Dependencies Added
+
+| Package | Version | Purpose |
+|---|---|---|
+| `pymupdf` | 1.27.1 | Render image-based PDF pages as PNG |
+| `ddgs` | 9.11.1 | Education module (pre-existing requirement) |

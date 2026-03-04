@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PureMultimodalInput } from '../components/ui/multimodal-ai-chat-input';
 import { useAuth } from '../context/AuthContext';
-import { MessageSquare, Plus, Trash2, Menu, X, Copy, Check, ChevronDown, Loader2 } from 'lucide-react';
+import {
+    MessageSquare, Plus, Trash2, Menu, X, Copy, Check,
+    ChevronDown, Loader2, Pencil, FileText
+} from 'lucide-react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 
@@ -19,7 +22,7 @@ export default function Chatbot() {
     const chatContainerRef = useRef(null);
     const { isAuthenticated, user } = useAuth();
 
-    const [chatSessions, setChatSessions] = useState([]);        // list of {session_id, title, last_message, updated_at}
+    const [chatSessions, setChatSessions] = useState([]);
     const [currentSessionId, setCurrentSessionId] = useState(null);
     const [messages, setMessages] = useState([]);
     const [attachments, setAttachments] = useState([]);
@@ -28,27 +31,25 @@ export default function Chatbot() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [copiedMessageId, setCopiedMessageId] = useState(null);
     const [expandedSources, setExpandedSources] = useState({});
+    // Edit state
+    const [editingMessageId, setEditingMessageId] = useState(null);
+    const [editText, setEditText] = useState('');
 
-    // Redirect if not authenticated
     useEffect(() => {
         if (!isAuthenticated) navigate('/');
     }, [isAuthenticated, navigate]);
 
-    // ─── Load all sessions from backend on mount ─────────────────────────────
+    // Load sessions on mount
     useEffect(() => {
         if (!isAuthenticated) return;
         axios.get(`${API}/chat/sessions/`, { headers: authHeaders() })
             .then(res => {
                 setChatSessions(res.data);
-                // Auto-select most recent session if any
-                if (res.data.length > 0) {
-                    loadSession(res.data[0].session_id);
-                }
+                if (res.data.length > 0) loadSession(res.data[0].session_id);
             })
-            .catch(() => {/* ignore – user might have no sessions yet */ });
+            .catch(() => { });
     }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    // ─── Auto-scroll ──────────────────────────────────────────────────────────
     useEffect(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTo({
@@ -58,10 +59,10 @@ export default function Chatbot() {
         }
     }, [messages]);
 
-    // ─── Load messages for a session from backend ─────────────────────────────
     const loadSession = useCallback(async (sessionId) => {
         setCurrentSessionId(sessionId);
         setMessages([]);
+        setEditingMessageId(null);
         setLoadingHistory(true);
         try {
             const res = await axios.get(`${API}/chat/sessions/${sessionId}/`, {
@@ -75,19 +76,17 @@ export default function Chatbot() {
         }
     }, []);
 
-    // ─── New chat ──────────────────────────────────────────────────────────────
     const handleNewChat = useCallback(() => {
         setCurrentSessionId(null);
         setMessages([]);
+        setEditingMessageId(null);
     }, []);
 
-    // ─── Switch session ────────────────────────────────────────────────────────
     const handleSwitchChat = useCallback((sessionId) => {
         if (sessionId === currentSessionId) return;
         loadSession(sessionId);
     }, [currentSessionId, loadSession]);
 
-    // ─── Delete session ────────────────────────────────────────────────────────
     const handleDeleteChat = useCallback(async (sessionId, e) => {
         e.stopPropagation();
         try {
@@ -99,55 +98,51 @@ export default function Chatbot() {
                 setCurrentSessionId(null);
                 setMessages([]);
             }
-        } catch {/* ignore */ }
+        } catch { }
     }, [currentSessionId]);
 
-    // ─── Copy message ──────────────────────────────────────────────────────────
     const handleCopyMessage = useCallback((content, messageId) => {
         navigator.clipboard.writeText(content);
         setCopiedMessageId(messageId);
         setTimeout(() => setCopiedMessageId(null), 2000);
     }, []);
 
-    // ─── Send message ──────────────────────────────────────────────────────────
-    const handleSendMessage = useCallback(async ({ input, attachments: msgAttachments }) => {
-        if (!input.trim() && msgAttachments.length === 0) return;
+    // ── Edit message ──────────────────────────────────────────────────────────
+    const startEdit = useCallback((message) => {
+        setEditingMessageId(message.id);
+        setEditText(message.content);
+    }, []);
 
-        const tempId = `msg-${Date.now()}`;
-        setMessages(prev => [...prev, {
-            id: tempId,
+    const cancelEdit = useCallback(() => {
+        setEditingMessageId(null);
+        setEditText('');
+    }, []);
+
+    const saveEdit = useCallback(async () => {
+        if (!editText.trim()) return;
+        const msgIndex = messages.findIndex(m => m.id === editingMessageId);
+        if (msgIndex === -1) return;
+
+        // Keep only messages up to (not including) the edited one, replace with edited version
+        const trimmed = messages.slice(0, msgIndex);
+        const editedUserMsg = {
+            id: `msg-${Date.now()}`,
             role: 'user',
-            content: input,
+            content: editText,
             timestamp: new Date().toISOString(),
-        }]);
+        };
+        setMessages([...trimmed, editedUserMsg]);
+        setEditingMessageId(null);
+        setEditText('');
         setIsGenerating(true);
 
         try {
             const res = await axios.post(`${API}/chat/`, {
-                question: input,
+                question: editText,
                 session_id: currentSessionId,
             }, { headers: { 'Content-Type': 'application/json', ...authHeaders() } });
 
-            const { answer, retrieved, confidence, session_id, title } = res.data;
-
-            // If this was a brand-new chat (no session yet), add it to the sidebar
-            if (!currentSessionId) {
-                setCurrentSessionId(session_id);
-                setChatSessions(prev => [{
-                    session_id: session_id,
-                    title: title || input.substring(0, 60),
-                    last_message: answer.substring(0, 80),
-                    updated_at: new Date().toISOString(),
-                }, ...prev]);
-            } else {
-                // Update title + last_message for existing session
-                setChatSessions(prev => prev.map(s =>
-                    s.session_id === session_id
-                        ? { ...s, last_message: answer.substring(0, 80), updated_at: new Date().toISOString() }
-                        : s
-                ));
-            }
-
+            const { answer, retrieved, confidence } = res.data;
             setMessages(prev => [...prev, {
                 id: `msg-${Date.now()}-ai`,
                 role: 'assistant',
@@ -167,6 +162,146 @@ export default function Chatbot() {
         } finally {
             setIsGenerating(false);
         }
+    }, [editText, editingMessageId, messages, currentSessionId]);
+
+    // ── Send message (with PDF detection) ─────────────────────────────────────
+    const handleSendMessage = useCallback(async ({ input, attachments: msgAttachments }) => {
+        if (!input.trim() && msgAttachments.length === 0) return;
+
+        // Detect PDF attachments
+        const pdfAttachments = msgAttachments.filter(a =>
+            a.name?.toLowerCase().endsWith('.pdf') || a.contentType === 'application/pdf'
+        );
+        const otherAttachments = msgAttachments.filter(a =>
+            !a.name?.toLowerCase().endsWith('.pdf') && a.contentType !== 'application/pdf'
+        );
+
+        // ── Case: PDF uploaded ─────────────────────────────────────────────
+        if (pdfAttachments.length > 0) {
+            for (const pdfAtt of pdfAttachments) {
+                const userMsg = {
+                    id: `msg-${Date.now()}`,
+                    role: 'user',
+                    content: input || `Please analyze and summarize this document.`,
+                    attachments: [pdfAtt],
+                    isPdfUpload: true,
+                    pdfName: pdfAtt.name,
+                    timestamp: new Date().toISOString(),
+                };
+                setMessages(prev => [...prev, userMsg]);
+                setIsGenerating(true);
+
+                try {
+                    // Fetch the actual file blob from the blob URL
+                    const blobRes = await fetch(pdfAtt.url);
+                    const blob = await blobRes.blob();
+                    const file = new File([blob], pdfAtt.name, { type: 'application/pdf' });
+
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    if (currentSessionId) formData.append('session_id', currentSessionId);
+
+                    const res = await axios.post(`${API}/chat/analyze-pdf/`, formData, {
+                        headers: { ...authHeaders() },
+                    });
+
+                    const { summary, filename, pages, truncated, used_ocr, session_id, title } = res.data;
+
+                    if (!currentSessionId) {
+                        setCurrentSessionId(session_id);
+                        setChatSessions(prev => [{
+                            session_id,
+                            title,
+                            last_message: summary.substring(0, 80),
+                            updated_at: new Date().toISOString(),
+                        }, ...prev]);
+                    }
+
+                    setMessages(prev => [...prev, {
+                        id: `msg-${Date.now()}-pdf-ai`,
+                        role: 'assistant',
+                        content: summary,
+                        confidence: 'HIGH',
+                        isPdfSummary: true,
+                        pdfFilename: filename,
+                        pdfPages: pages,
+                        pdfTruncated: truncated,
+                        pdfUsedOcr: used_ocr,
+                        timestamp: new Date().toISOString(),
+                    }]);
+                } catch (err) {
+                    const errMsg = err.response?.data?.error || 'Could not analyze PDF. Please try again.';
+                    setMessages(prev => [...prev, {
+                        id: `msg-${Date.now()}-pdf-error`,
+                        role: 'assistant',
+                        content: errMsg,
+                        isError: true,
+                        timestamp: new Date().toISOString(),
+                    }]);
+                } finally {
+                    setIsGenerating(false);
+                }
+            }
+            // If there was also text input with non-pdf attachments, fall through
+            if (!input.trim() && otherAttachments.length === 0) return;
+        }
+
+        // ── Case: Normal text message ──────────────────────────────────────
+        if (input.trim() || otherAttachments.length > 0) {
+            const tempId = `msg-${Date.now()}`;
+            setMessages(prev => [...prev, {
+                id: tempId,
+                role: 'user',
+                content: input,
+                attachments: otherAttachments,
+                timestamp: new Date().toISOString(),
+            }]);
+            setIsGenerating(true);
+
+            try {
+                const res = await axios.post(`${API}/chat/`, {
+                    question: input,
+                    session_id: currentSessionId,
+                }, { headers: { 'Content-Type': 'application/json', ...authHeaders() } });
+
+                const { answer, retrieved, confidence, session_id, title } = res.data;
+
+                if (!currentSessionId) {
+                    setCurrentSessionId(session_id);
+                    setChatSessions(prev => [{
+                        session_id,
+                        title: title || input.substring(0, 60),
+                        last_message: answer.substring(0, 80),
+                        updated_at: new Date().toISOString(),
+                    }, ...prev]);
+                } else {
+                    setChatSessions(prev => prev.map(s =>
+                        s.session_id === session_id
+                            ? { ...s, last_message: answer.substring(0, 80), updated_at: new Date().toISOString() }
+                            : s
+                    ));
+                }
+
+                setMessages(prev => [...prev, {
+                    id: `msg-${Date.now()}-ai`,
+                    role: 'assistant',
+                    content: answer,
+                    retrieved,
+                    confidence,
+                    timestamp: new Date().toISOString(),
+                }]);
+            } catch {
+                setMessages(prev => [...prev, {
+                    id: `msg-${Date.now()}-error`,
+                    role: 'assistant',
+                    content: 'Sorry, I encountered an error. Please try again.',
+                    isError: true,
+                    timestamp: new Date().toISOString(),
+                }]);
+            } finally {
+                setIsGenerating(false);
+            }
+        }
     }, [currentSessionId]);
 
     const handleStopGenerating = useCallback(() => setIsGenerating(false), []);
@@ -178,7 +313,7 @@ export default function Chatbot() {
             <Navbar />
             <div style={{ paddingTop: '72px', height: '100vh', backgroundColor: '#ffffc5', display: 'flex', overflow: 'hidden' }}>
 
-                {/* ── Sidebar ───────────────────────────────────────────────── */}
+                {/* ── Sidebar ── */}
                 <AnimatePresence>
                     {sidebarOpen && (
                         <motion.aside
@@ -189,7 +324,6 @@ export default function Chatbot() {
                             className="w-70 bg-white border-r-2 flex flex-col"
                             style={{ borderColor: '#4ade80', height: 'calc(100vh - 72px)' }}
                         >
-                            {/* New Chat button */}
                             <div className="p-4 border-b-2" style={{ borderColor: '#e5e7eb' }}>
                                 <button
                                     onClick={handleNewChat}
@@ -201,13 +335,9 @@ export default function Chatbot() {
                                     <Plus size={20} /> New Chat
                                 </button>
                             </div>
-
-                            {/* Chat History list */}
                             <div className="flex-1 overflow-y-auto p-2">
                                 {chatSessions.length === 0 && (
-                                    <p className="text-xs text-center mt-6" style={{ color: '#9ca3af' }}>
-                                        No previous chats
-                                    </p>
+                                    <p className="text-xs text-center mt-6" style={{ color: '#9ca3af' }}>No previous chats</p>
                                 )}
                                 {chatSessions.map(chat => (
                                     <motion.div
@@ -220,25 +350,15 @@ export default function Chatbot() {
                                             backgroundColor: chat.session_id === currentSessionId ? '#f0fdf4' : 'transparent',
                                             border: chat.session_id === currentSessionId ? '1px solid #4ade80' : '1px solid transparent',
                                         }}
-                                        onMouseEnter={e => {
-                                            if (chat.session_id !== currentSessionId)
-                                                e.currentTarget.style.backgroundColor = '#f9fafb';
-                                        }}
-                                        onMouseLeave={e => {
-                                            if (chat.session_id !== currentSessionId)
-                                                e.currentTarget.style.backgroundColor = 'transparent';
-                                        }}
+                                        onMouseEnter={e => { if (chat.session_id !== currentSessionId) e.currentTarget.style.backgroundColor = '#f9fafb'; }}
+                                        onMouseLeave={e => { if (chat.session_id !== currentSessionId) e.currentTarget.style.backgroundColor = 'transparent'; }}
                                     >
                                         <div className="flex items-start gap-2">
                                             <MessageSquare size={16} className="mt-1 flex-shrink-0" style={{ color: '#16a34a' }} />
                                             <div className="flex-1 min-w-0">
-                                                <div className="font-medium text-sm truncate" style={{ color: '#1f2937' }}>
-                                                    {chat.title}
-                                                </div>
+                                                <div className="font-medium text-sm truncate" style={{ color: '#1f2937' }}>{chat.title}</div>
                                                 {chat.last_message && (
-                                                    <div className="text-xs truncate mt-1" style={{ color: '#6b7280' }}>
-                                                        {chat.last_message}
-                                                    </div>
+                                                    <div className="text-xs truncate mt-1" style={{ color: '#6b7280' }}>{chat.last_message}</div>
                                                 )}
                                             </div>
                                             <button
@@ -252,39 +372,27 @@ export default function Chatbot() {
                                     </motion.div>
                                 ))}
                             </div>
-
-                            {/* User info at bottom */}
                             <div className="p-4 border-t-2" style={{ borderColor: '#e5e7eb' }}>
                                 <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold"
-                                        style={{ backgroundColor: '#16a34a' }}>
+                                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold" style={{ backgroundColor: '#16a34a' }}>
                                         {user?.username?.[0]?.toUpperCase() || 'U'}
                                     </div>
-                                    <div className="text-sm font-medium" style={{ color: '#1f2937' }}>
-                                        {user?.username || 'User'}
-                                    </div>
+                                    <div className="text-sm font-medium" style={{ color: '#1f2937' }}>{user?.username || 'User'}</div>
                                 </div>
                             </div>
                         </motion.aside>
                     )}
                 </AnimatePresence>
 
-                {/* ── Main Chat Area ────────────────────────────────────────── */}
+                {/* ── Main Chat Area ── */}
                 <div className="flex-1 flex flex-col" style={{ height: 'calc(100vh - 72px)' }}>
-                    {/* Header */}
                     <div className="flex items-center gap-3 p-4 bg-white border-b-2" style={{ borderColor: '#e5e7eb' }}>
-                        <button
-                            onClick={() => setSidebarOpen(!sidebarOpen)}
-                            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                        >
+                        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 rounded-lg hover:bg-gray-100 transition-colors">
                             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
                         </button>
-                        <h2 className="text-lg font-semibold" style={{ color: '#15803d' }}>
-                            🌾 FarmEasy AI Assistant
-                        </h2>
+                        <h2 className="text-lg font-semibold" style={{ color: '#15803d' }}>🌾 FarmEasy AI Assistant</h2>
                     </div>
 
-                    {/* Messages */}
                     <div
                         ref={chatContainerRef}
                         className="flex-1 overflow-y-auto"
@@ -294,15 +402,12 @@ export default function Chatbot() {
                         }}
                     >
                         <div className="max-w-4xl mx-auto px-4 py-6">
-
-                            {/* Loading spinner */}
                             {loadingHistory && (
                                 <div className="flex justify-center py-12">
                                     <Loader2 size={32} className="animate-spin" style={{ color: '#16a34a' }} />
                                 </div>
                             )}
 
-                            {/* Empty state */}
                             {!loadingHistory && messages.length === 0 && (
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
@@ -312,17 +417,15 @@ export default function Chatbot() {
                                 >
                                     <div>
                                         <div className="text-8xl mb-6">🌱</div>
-                                        <h3 className="text-2xl font-bold mb-3" style={{ color: '#15803d' }}>
-                                            Welcome, {user?.username || 'Farmer'}!
-                                        </h3>
+                                        <h3 className="text-2xl font-bold mb-3" style={{ color: '#15803d' }}>Welcome, {user?.username || 'Farmer'}!</h3>
                                         <p className="text-gray-700 max-w-md mx-auto">
                                             Ask me anything about crops, pest management, soil health, or farming best practices!
+                                            You can also <strong>upload a PDF</strong> to get an instant summary.
                                         </p>
                                     </div>
                                 </motion.div>
                             )}
 
-                            {/* Messages list */}
                             {!loadingHistory && messages.length > 0 && (
                                 <div className="space-y-6 pb-4">
                                     <AnimatePresence mode="popLayout">
@@ -335,71 +438,123 @@ export default function Chatbot() {
                                                 transition={{ duration: 0.3, delay: index === messages.length - 1 ? 0.1 : 0 }}
                                                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                             >
-                                                <div
-                                                    className={`group relative max-w-[85%] ${message.role === 'user'
-                                                        ? 'rounded-3xl px-5 py-3 shadow-md'
-                                                        : 'rounded-2xl px-5 py-4 shadow-lg'}`}
-                                                    style={{
-                                                        backgroundColor: message.role === 'user' ? '#16a34a'
-                                                            : message.isError ? '#fee2e2' : '#ffffff',
-                                                        color: message.role === 'user' ? '#ffffff' : '#1f2937',
-                                                        border: message.role === 'assistant' && !message.isError ? '1px solid #e5e7eb' : 'none',
-                                                    }}
-                                                >
-                                                    {/* AI header: name + confidence badge */}
-                                                    {message.role === 'assistant' && !message.isError && (
-                                                        <div className="flex items-center justify-between mb-2 pb-2 border-b" style={{ borderColor: '#f3f4f6' }}>
-                                                            <div className="flex items-center gap-2">
-                                                                <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f0fdf4' }}>
-                                                                    <span className="text-sm">🤖</span>
-                                                                </div>
-                                                                <span className="font-semibold text-sm" style={{ color: '#15803d' }}>
-                                                                    FarmEasy AI
-                                                                </span>
-                                                            </div>
-                                                            {message.confidence && (
-                                                                <span
-                                                                    className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                                                                    style={{
-                                                                        backgroundColor: message.confidence === 'HIGH' ? '#dcfce7'
-                                                                            : message.confidence === 'MEDIUM' ? '#fef9c3' : '#fee2e2',
-                                                                        color: message.confidence === 'HIGH' ? '#15803d'
-                                                                            : message.confidence === 'MEDIUM' ? '#854d0e' : '#991b1b',
+                                                {/* ── User message ─────────────────── */}
+                                                {message.role === 'user' && (
+                                                    <div className="group relative max-w-[85%] flex flex-col items-end gap-1">
+                                                        {/* Edit mode */}
+                                                        {editingMessageId === message.id ? (
+                                                            <div className="w-full" style={{ minWidth: '320px' }}>
+                                                                <textarea
+                                                                    value={editText}
+                                                                    onChange={e => setEditText(e.target.value)}
+                                                                    className="w-full rounded-2xl px-4 py-3 text-sm resize-none border-2 focus:outline-none"
+                                                                    style={{ borderColor: '#16a34a', minHeight: '80px', color: '#1f2937' }}
+                                                                    autoFocus
+                                                                    onKeyDown={e => {
+                                                                        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); saveEdit(); }
+                                                                        if (e.key === 'Escape') cancelEdit();
                                                                     }}
+                                                                />
+                                                                <div className="flex gap-2 mt-1 justify-end">
+                                                                    <button
+                                                                        onClick={cancelEdit}
+                                                                        className="text-xs px-3 py-1 rounded-lg border"
+                                                                        style={{ borderColor: '#d1d5db', color: '#6b7280' }}
+                                                                    >Cancel</button>
+                                                                    <button
+                                                                        onClick={saveEdit}
+                                                                        className="text-xs px-3 py-1 rounded-lg text-white"
+                                                                        style={{ backgroundColor: '#16a34a' }}
+                                                                    >Save & Resend</button>
+                                                                </div>
+                                                            </div>
+                                                        ) : (
+                                                            <>
+                                                                <div
+                                                                    className="rounded-3xl px-5 py-3 shadow-md"
+                                                                    style={{ backgroundColor: '#16a34a', color: '#ffffff' }}
                                                                 >
-                                                                    {message.confidence === 'HIGH' ? '✓ High Confidence'
-                                                                        : message.confidence === 'MEDIUM' ? '~ Medium Confidence'
-                                                                            : '⚠ Low Confidence'}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    )}
-
-                                                    {/* Message text */}
-                                                    <div className="whitespace-pre-wrap break-words text-[15px] leading-relaxed">
-                                                        {message.content}
-                                                    </div>
-
-                                                    {/* Image attachments */}
-                                                    {message.attachments && message.attachments.length > 0 && (
-                                                        <div className="mt-3 flex gap-2 flex-wrap">
-                                                            {message.attachments.map((att, idx) => (
-                                                                <div key={idx} className="w-24 h-24 rounded-lg overflow-hidden border shadow-sm">
-                                                                    {att.contentType?.startsWith('image/') ? (
-                                                                        <img src={att.url} alt={att.name} className="w-full h-full object-cover" />
-                                                                    ) : (
-                                                                        <div className="w-full h-full bg-gray-100 flex items-center justify-center text-xs p-2 text-center">
-                                                                            {att.name}
+                                                                    {/* PDF badge */}
+                                                                    {message.isPdfUpload && (
+                                                                        <div className="flex items-center gap-1 mb-2 text-xs opacity-80">
+                                                                            <FileText size={12} /> {message.pdfName}
                                                                         </div>
                                                                     )}
+                                                                    <div className="whitespace-pre-wrap break-words text-[15px] leading-relaxed">
+                                                                        {message.content}
+                                                                    </div>
+                                                                    <div className="text-xs opacity-60 mt-1">
+                                                                        {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                                                    </div>
                                                                 </div>
-                                                            ))}
-                                                        </div>
-                                                    )}
+                                                                {/* Edit button — only for non-PDF messages */}
+                                                                {!message.isPdfUpload && (
+                                                                    <button
+                                                                        onClick={() => startEdit(message)}
+                                                                        className="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded"
+                                                                        title="Edit message"
+                                                                        style={{ color: '#6b7280' }}
+                                                                    >
+                                                                        <Pencil size={13} />
+                                                                    </button>
+                                                                )}
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                )}
 
-                                                    {/* ── Collapsible Sources panel ──────────────── */}
-                                                    {message.role === 'assistant' && !message.isError &&
-                                                        message.retrieved && message.retrieved.length > 0 && (
+                                                {/* ── Assistant message ────────────── */}
+                                                {message.role === 'assistant' && (
+                                                    <div
+                                                        className={`group relative max-w-[85%] rounded-2xl px-5 py-4 shadow-lg`}
+                                                        style={{
+                                                            backgroundColor: message.isError ? '#fee2e2' : '#ffffff',
+                                                            color: '#1f2937',
+                                                            border: !message.isError ? '1px solid #e5e7eb' : 'none',
+                                                        }}
+                                                    >
+                                                        {/* Header: name + confidence */}
+                                                        {!message.isError && (
+                                                            <div className="flex items-center justify-between mb-2 pb-2 border-b" style={{ borderColor: '#f3f4f6' }}>
+                                                                <div className="flex items-center gap-2">
+                                                                    <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f0fdf4' }}>
+                                                                        {message.isPdfSummary ? <FileText size={14} style={{ color: '#16a34a' }} /> : <span className="text-sm">🤖</span>}
+                                                                    </div>
+                                                                    <span className="font-semibold text-sm" style={{ color: '#15803d' }}>
+                                                                        {message.isPdfSummary ? `PDF Summary` : 'FarmEasy AI'}
+                                                                    </span>
+                                                                    {message.isPdfSummary && (
+                                                                        <span className="text-xs" style={{ color: '#6b7280' }}>
+                                                                            · {message.pdfFilename} ({message.pdfPages}p{message.pdfTruncated ? ', truncated' : ''})
+                                                                        </span>
+                                                                    )}
+                                                                    {message.pdfUsedOcr && (
+                                                                        <span className="text-xs font-medium px-1.5 py-0.5 rounded" style={{ backgroundColor: '#eff6ff', color: '#1d4ed8' }}>
+                                                                            🔍 OCR
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                                {message.confidence && (
+                                                                    <span
+                                                                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                                                                        style={{
+                                                                            backgroundColor: message.confidence === 'HIGH' ? '#dcfce7' : message.confidence === 'MEDIUM' ? '#fef9c3' : '#fee2e2',
+                                                                            color: message.confidence === 'HIGH' ? '#15803d' : message.confidence === 'MEDIUM' ? '#854d0e' : '#991b1b',
+                                                                        }}
+                                                                    >
+                                                                        {message.confidence === 'HIGH' ? '✓ High Confidence' : message.confidence === 'MEDIUM' ? '~ Medium Confidence' : '⚠ Low Confidence'}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        )}
+
+                                                        {/* Message text */}
+                                                        <div className="whitespace-pre-wrap break-words text-[15px] leading-relaxed">
+                                                            {message.content}
+                                                        </div>
+
+                                                        {/* Sources panel */}
+                                                        {!message.isError && message.retrieved && message.retrieved.length > 0 && (
                                                             <div className="mt-3" style={{ borderTop: '1px solid #f0fdf4', paddingTop: '10px' }}>
                                                                 <button
                                                                     onClick={() => setExpandedSources(prev => ({ ...prev, [message.id]: !prev[message.id] }))}
@@ -408,35 +563,19 @@ export default function Chatbot() {
                                                                 >
                                                                     <ChevronDown
                                                                         size={14}
-                                                                        style={{
-                                                                            transform: expandedSources[message.id] ? 'rotate(180deg)' : 'rotate(0deg)',
-                                                                            transition: 'transform 0.2s',
-                                                                        }}
+                                                                        style={{ transform: expandedSources[message.id] ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
                                                                     />
                                                                     {expandedSources[message.id] ? 'Hide' : 'Show'} Sources ({message.retrieved.length})
                                                                 </button>
                                                                 {expandedSources[message.id] && (
                                                                     <div className="mt-2 space-y-2">
                                                                         {message.retrieved.map((src, idx) => (
-                                                                            <div
-                                                                                key={idx}
-                                                                                className="text-xs p-2 rounded-lg"
-                                                                                style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}
-                                                                            >
+                                                                            <div key={idx} className="text-xs p-2 rounded-lg" style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
                                                                                 <div className="flex items-center justify-between mb-1">
-                                                                                    <span className="font-semibold" style={{ color: '#15803d' }}>
-                                                                                        📄 {src.source}
-                                                                                    </span>
-                                                                                    <span
-                                                                                        className="text-xs px-1.5 py-0.5 rounded"
-                                                                                        style={{ backgroundColor: '#dcfce7', color: '#166534' }}
-                                                                                    >
-                                                                                        {src.category}
-                                                                                    </span>
+                                                                                    <span className="font-semibold" style={{ color: '#15803d' }}>📄 {src.source}</span>
+                                                                                    <span className="text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: '#dcfce7', color: '#166534' }}>{src.category}</span>
                                                                                 </div>
-                                                                                <div className="text-gray-500">
-                                                                                    Relevance: <strong>{(src.score * 100).toFixed(0)}%</strong>
-                                                                                </div>
+                                                                                <div className="text-gray-500">Relevance: <strong>{(src.score * 100).toFixed(0)}%</strong></div>
                                                                                 <div className="mt-1 text-gray-600 line-clamp-2">{src.text}</div>
                                                                             </div>
                                                                         ))}
@@ -445,29 +584,29 @@ export default function Chatbot() {
                                                             </div>
                                                         )}
 
-                                                    {/* Timestamp + copy */}
-                                                    <div className="flex items-center justify-between mt-2 pt-2" style={{ borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-                                                        <div className="text-xs opacity-60">
-                                                            {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                                        {/* Timestamp + copy */}
+                                                        <div className="flex items-center justify-between mt-2 pt-2" style={{ borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+                                                            <div className="text-xs opacity-60">
+                                                                {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                                            </div>
+                                                            {!message.isError && (
+                                                                <button
+                                                                    onClick={() => handleCopyMessage(message.content, message.id)}
+                                                                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded hover:bg-gray-100"
+                                                                    title="Copy message"
+                                                                >
+                                                                    {copiedMessageId === message.id
+                                                                        ? <Check size={14} style={{ color: 'white' }} />
+                                                                        : <Copy size={14} style={{ color: 'white' }} />}
+                                                                </button>
+                                                            )}
                                                         </div>
-                                                        {message.role === 'assistant' && !message.isError && (
-                                                            <button
-                                                                onClick={() => handleCopyMessage(message.content, message.id)}
-                                                                className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded hover:bg-gray-100"
-                                                                title="Copy message"
-                                                            >
-                                                                {copiedMessageId === message.id
-                                                                    ? <Check size={14} style={{ color: 'white' }} />
-                                                                    : <Copy size={14} style={{ color: 'white' }} />}
-                                                            </button>
-                                                        )}
                                                     </div>
-                                                </div>
+                                                )}
                                             </motion.div>
                                         ))}
                                     </AnimatePresence>
 
-                                    {/* Typing indicator */}
                                     {isGenerating && (
                                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
                                             <div className="rounded-2xl px-5 py-4 shadow-lg bg-white">
@@ -484,7 +623,7 @@ export default function Chatbot() {
                         </div>
                     </div>
 
-                    {/* Input area */}
+                    {/* Input */}
                     <div className="bg-white border-t-2 p-4" style={{ borderColor: '#e5e7eb' }}>
                         <div className="max-w-4xl mx-auto">
                             <PureMultimodalInput
