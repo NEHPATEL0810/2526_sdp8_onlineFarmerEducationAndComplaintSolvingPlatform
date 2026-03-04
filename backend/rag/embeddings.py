@@ -1,22 +1,29 @@
+"""
+Text embedding utilities using SentenceTransformer.
+
+Uses batch encoding with progress reporting for large corpora.
+"""
 from sentence_transformers import SentenceTransformer
+import numpy as np
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-def embed_text(text):
-    return model.encode(text, convert_to_numpy=True)
 
-# def embed_corpus(texts):
-#     return model.encode(texts, convert_to_numpy=True)
+def embed_text(texts, batch_size=256, show_progress=False):
+    """
+    Encode a list of texts into embeddings.
 
-# if __name__ == "__main__":
-#     texts = [
-#         "What is the best fertilizer for wheat?",
-#         "How to control pests in cotton?",
-#         "When to sow paddy?",
-#         "What is the market price of wheat?",
-#         "How to control pests in cotton?",
-#         "When to sow paddy?",
-#         "What is the market price of wheat?",
-#     ]
-#     embeddings = embed_corpus(texts)
-#     print(embeddings.shape)
+    Args:
+        texts: list of strings to embed
+        batch_size: number of texts to encode at once (reduces peak memory)
+        show_progress: if True, show a progress bar
+
+    Returns:
+        numpy array of shape (len(texts), embedding_dim)
+    """
+    return model.encode(
+        texts,
+        convert_to_numpy=True,
+        batch_size=batch_size,
+        show_progress_bar=show_progress,
+    )

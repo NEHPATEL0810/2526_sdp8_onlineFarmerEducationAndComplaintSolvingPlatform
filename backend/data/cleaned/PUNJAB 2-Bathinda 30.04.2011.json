@@ -1,354 +1,158 @@
 [
   {
-    "crop_name": "Geographic coordinates of district headquarter Latitude Longitude Altitude",
-    "description": "30012’ 10.82” N 740 56’ 21.22” E 226 m Name and address of concerned Regional Station, Punjab Agricultural University, Bathinda-151001 (Punjab) ZRS/ZARS/RARS/RRS/RRTTS Mention the KVK located in the district with KVK, Dabwali Road, Bathinda-151001 (Punjab) address Name and address of the nearest Agromet Field AMFU, Regional Station, Bathinda -151001 (Punjab) unit (AMFU,IMD) for agro-advisories in the zone 1"
+    "text": "State: PUNJAB Agriculture Contingency Plan for District: BATHINDA . District Agriculture profile . Agro-Climatic/Ecological Zone Agro Ecological Sub Region (ICAR) Rajasthan Bagar, North Gujarat plain and South Western Punjab plain, hot typic arid eco-subregion (.) Agro-Climatic Region (Planning Commission) Trans-Gangetic Plain Region (VI) Agro Climatic Zone (NARP) Western Zone (PB-) List all the districts falling under the NARP zone Faridkot, Bathinda, Ferozepur, Mansa, Musktsar. (50% area falling in the Zone) Geographic coordinates of district headquarter Latitude Longitude Altitude 30012’ 10.82” 740 56’ 21.22” 226 Name and address of concerned Regional Station, Punjab Agricultural University, Bathinda-151001 (Punjab) ZRS/ZARS/RARS/RRS/RRTTS Mention the KVK located in the district with KVK, Dabwali Road, Bathinda-151001 (Punjab) address Name and address of the nearest Agromet Field AMFU, Regional Station, Bathinda -151001 (Punjab) unit (AMFU,IMD) for agro-advisories in the zone",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 1
   },
   {
-    "crop_name": "July in remaining parts September",
-    "description": "NE Monsoon(Oct-Dec): 29.3 1 1.3 - - Winter (Jan- March) 42.1 3 3.5 Summer (Apr-May) 17.1 4 1.4 Annual: 423.9 23 20.8 1.3 Land use pattern of the Total Cultivable Forests Land under Permanent Cultivable Land Barren Current Other district geographical area area non- pastures waste land under and fallow fellows area agricultural misc. cultivable use tree land crops and groves Area ('000 ha) 337 297 8 32 - - - - - - 1. 4 Major Soil types Area ('000 ha) % Area Sandy(s) soils 0.65 19.5 Loamy sand (ls) soils 1.33 39.8 Sandy loam (sl) soils 1.36 40.7 1.5 Agricultural Land Use Area (‘000 ha.) Cropping Intensity Net sown area 297 Area sown more than once 258 187% Gross sown area 555 2"
+    "text": ". Rainfall (Jan. – Dec. 2009) Normal Rainfall Rainy days Average (mm) Normal Onset Normal Cessation (mm) SW monsoon (June-Sep): 335. 15 14. 29th June in parts and 1st week of After 2nd week of July in remaining parts September NE Monsoon(Oct-Dec): 29. . - - Winter (Jan- March) 42. . Summer (Apr-May) 17. . Annual: 423. 23 20. . Land use pattern of the Total Cultivable Forests Land under Permanent Cultivable Land Barren Current Other district geographical area area non- pastures waste land under and fallow fellows area agricultural misc. cultivable use tree land crops and groves Area ('000 ha) 337 297 32 - - - - - - . Major Soil types Area ('000 ha) % Area Sandy() soils .65 19. Loamy sand (ls) soils .33 39. Sandy loam (sl) soils .36 40. . Agricultural Land Use Area (‘000 ha.) Cropping Intensity Net sown area 297 Area sown more than once 258 187% Gross sown area 555",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 2
   },
   {
-    "crop_name": "Ground water quality Mostly unfit for High content of fluorides in addition to",
-    "description": "irrigation purpose in salinity in irrigation water four blocks 3"
+    "text": ". Irrigation Area ('000 ha) Net irrigated area 295 Gross irrigated area 552 Rainfed - Sources of irrigation Area ('000 ha) Percentage of irrigated area Canal ( 35% area is canal irrigated) - 215 72. Tanks - - - Open wells - - - Bore wells 34896. 80. 27. Lift irrigation schemes - - - Micro-irrigation - - - Other sources - - - Total irrigated area 295. 100 Pump sets 34896 Tractors 22500 Ground water availability and use Number of blocks % Area Quality of water Over exploited 81 Critical 14 Semi critical - - Safe Waste water availability and use - - Ground water quality Mostly unfit for High content of fluorides in addition to irrigation purpose in salinity in irrigation water four blocks",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 3
   },
   {
-    "crop_name": "Kharif Rabi Summer Total",
-    "description": "crops (000ha)"
+    "text": ". Area under major field crops & horticulture (2008-09) Area (000ha) . Area under major field Kharif Rabi Summer Total crops (000ha) Crop Irrigated Rainfed Total Irrigated Rainfed Total Cotton 165 165 165 Rice 86 86 86 Wheat 245 245 245 Rape seed & Mustard others Horticulture crops Area ('000 ha) Production (‘000 ) Fruits Total Citrus .736 57.935 Orange and malta .097 .563 Lemon .002 .008 Mango - Litchi - Guava .484 .377 Pear .016 .367 Peach .060 .084 Grapes .487 .177 Ber .379 .182 Misc. .430 TOTAL .304",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 4
   },
   {
-    "crop_name": "Crop Irrigated Rainfed Total Irrigated Rainfed Total",
-    "description": "Cotton 165 165 165 Rice 86 86 86 Wheat 245 245 245 Rape seed & Mustard 6 6 6 others 1 1 2 2 3 Horticulture crops Area ('000 ha) Production (‘000 t)"
+    "text": "Vegetable crops Area ('000 ha) Total Potato .460 Cucurbits .345 Chilli .325 Onion .270 Root crops .285 Others (Tomato,brinjal,okra etc.) .780 Sericulture NA Medicinal and Aromatic crops NA Plantation crops NA Grazing lands (ha) -------- Fodder crops ( 2007-08 ) Area (' ha) Total Irrigated Rainfed Jowar 1730 1730 - Bajra 1905 1905 - Mak Chari 595 595 - Berseem 7020 7020 - Oats 5185 5185 -",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 5
   },
   {
-    "crop_name": "Fruits Total",
-    "description": "Citrus 2.736 57.935 Orange and malta 0.097 0.563 Lemon 0.002 0.008 Mango - Litchi - Guava 0.484 9.377 Pear 0.016 0.367 Peach 0.060 1.084 Grapes 0.487 8.177 Ber 0.379 6.182 Misc. 0.430 TOTAL 4.304 4"
+    "text": ". Livestock (in number) Male (‘000) Female (‘000) Total (‘000) Non descriptive Cattle (local low yielding) 25. 25. 51. Crossbred cattle 11. 42. 54. Non descriptive Buffaloes (local low yielding) . . . Graded Buffaloes 33. 236. 269. Goat . 30. 39. Sheep . 23. 29. Others Equine (Horse &Pony) . . . Commercial dairy farms (Number) .02 . Poultry No. of farms Total No. of birds (‘000) Commercial 33 206. Backyard - 40. .10 Fisheries (Data source: Chief Planning Officer of district) . Capture ) Marine (Data Source: Fisheries Department) No. of fishermen Boats Nets Storage facilities (Ice plants etc.) Mechanized Non- Mechanized Non-mechanized mechanized (Trawl nets, (Shore Seines, Gill nets) Stake & trap nets) No. Farmer owned ponds No. of Reservoirs No. of village tanks ii) Inland (Data Source: Fisheries Department) 34 - 568 . Culture Water Spread Area (ha) Yield (/ha) Production (‘000 tons)",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 6
   },
   {
-    "crop_name": "Total",
-    "description": "Potato 6.460 Cucurbits 0.345 Chilli 0.325 Onion 0.270 Root crops 0.285 Others (Tomato,brinjal,okra etc.) 0.780"
+    "text": ") Brackish water (Data Source: MPEDA/ Fisheries Department) 785. .67 .4520 ii) Fresh water (Data Source: Fisheries Department) .11 Production and productivity of major crops (2008-09) .11 Nam Kharif Rabi / Summer Total of Production ('000 Productivity (kg/ha) Production ('000 Productivity (kg/ha) Production Productivity Productio Productivity crop ) ) ('000 ) (kg/ha) ('000 ) (kg/ha) Cotto 692* 756 - - - - 692* 756 Rice 384 4261 - - - - 384 4261 Whea - - 1025 4183 - - 1025 4183 oilsee 1230 1230 Barle 3333 3333 Pulse 770 770 * refers to 000 bales .12 Sowing window Cotton Rice Wheat Oilseed Kharif-rainfed - - - - Kharif-irrigated First April to 15th of May Paddy (15th of May to 15th of June) Rabi-rainfed Rabi-irrigated Wheat (Last week of • October-March October to Last Rapeseed and Mustard week of November • Taramira (whole",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 7
   },
   {
-    "crop_name": "Sericulture NA",
-    "description": ""
+    "text": "October), • Raya (mid October to mid November), • Toria (First fortnight of September), • Gobhi Sarson (October10 to October 20) .13 What is the major contingency the district is prone to? (Tick mark) Regular Occasssional None Drought √ Flood √ Cyclone √ Hail storm √ Heat wave √ Cold wave √ Frost √ Sea water inundation √ Pests and diseases √ .14 Include Digital maps of the district for Location map of district with in State as Annexure YES Mean annual rainfall as Annexure YES Soil map as Annexure YES",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 8
   },
   {
-    "crop_name": "Medicinal and Aromatic crops NA",
-    "description": ""
+    "text": ". Strategies for weather related contingencies . Drought: .. Rainfed situation: Not applicable Condition Suggested Contingency measures Early season Major Farming Normal Crop/cropping system Change in crop/cropping Agronomic measures Remarks on drought (delayed situation system Implementation onset) Delay by weeks Not applicable Delay by weeks Delay by weeks Delay by weeks Condition Suggested Contingency measures Early season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (Normal onset) situation conservation measues Implementation Normal onset followed by 15-20 days dry spell after sowing leading to poor germination/crop stand etc. Condition Suggested Contingency measures Mid season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (long dry spell, situation conservation measues Implementation consecutive weeks rainless (>. mm) period) At vegetative stage 12",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 12
   },
   {
-    "crop_name": "Plantation crops NA",
-    "description": "Grazing lands (ha) -------- Fodder crops ( 2007-08 ) Area (' ha)"
+    "text": "Condition Suggested Contingency measures Mid season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (long dry spell) situation conservation measues Implementation At flowering/ fruiting stage Condition Suggested Contingency measures Terminal drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on situation conservation measues Implementation (Early withdrawal of monsoon) .. Irrigated situation Condition Suggested Contingency measures Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Delayed/ limited Canal / Tubewell Cotton - Wheat Prefer short duration maize release of water in irrigated varieties like PMH2 and canals due to low Alluvial soils JH -3459 can be grown rainfall Rice - Wheat Gram (PDG and PDG ) Deep tillage should be done up to 22. cm found to be increase the yield Mix poor quality water Wheat Grow late sown varieties PBW 590, PBW 509, PBW 373. Bi-directional sowing increases the yield of 2q/ acre. Bed planting increases the yield about -% closed spacing (. 22. cms) Seed priming 13",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 13
   },
   {
-    "crop_name": "Total Irrigated Rainfed",
-    "description": "Jowar 1730 1730 - Bajra 1905 1905 - Mak Chari 595 595 - Berseem 7020 7020 - Oats 5185 5185 - 5"
+    "text": "Condition Suggested Contingency measures Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Limited release of Cotton - Wheat Cotton should be replaced with Short duration maize varieties like PMH2 and JH -3459 can be grown water in canals under delayed onset of monsoon in catchment Condition Suggested Contingency measures Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Non release of water Not Applicable in canals under delayed onset of monsoon in catchment Condition Suggested Contingency measures Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Lack of inflows into Not Applicable tanks due to insufficient /delayed onset of monsoon Condition Suggested Contingency measures Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Insufficient Not Applicable groundwater recharge due to low rainfall 14",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 14
   },
   {
-    "crop_name": "October to Last Rapeseed and Mustard",
-    "description": "week of November • Taramira (whole 7"
+    "text": ". Un-timely (unseasonal) rains Condition Suggested contingency measure Heavy rainfall with high Vegetative stage Flowering stage Crop maturity stage Post harvest speed winds in short span Cotton Ridge planting, pumping out Pumping out excess rain water, Pumping out excess rain water Storage of produce at safer excess rain water application of nitrogenous and chemical control of pests/ place fertilizer, diseases Foliar spay of % KNO Rice Pumping out excess rain water, Pumping out excess rain water. Pumping out excess rain water Nitrogenous fertilizer Shifting of produce at safer application place for drying. Wheat Bed/ bidirectional sowing Pumping out excess rain water, Pumping out excess rain water Shifting of produce at safer increases the yield about -% foliar spray of %urea solution place for drying (specify the details), Pumping out excess rain water, apply Nitrogenous fertilizer and Gypsum(100 kg/acre) to check nitrogen & sulphur Deficiency respectively Horticulture Citrus Cultivation on well drained soils, Drain out excess rain water and Drain out excess water, Drain out excess water drainage of excess water, prune out broken branches Application of growth regulators raising of soil surface around the to check fruit drop due to water- tree trunks, chemical control of imbalance foot rot (Give sprays of 50g streptocyclin + 25 copper sulphate in 500 of water one each in October, December and Feburary)/ phytophthora, remove 15",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 15
   },
   {
-    "crop_name": "LOCATION OF BATHINDA",
-    "description": "9"
+    "text": "broken branches Grapes Drainage of excess water, Drain out excess rain water Cultivation of early ripening Shifting and storage of rainy chemical control cultivars and application of season harvested fruits at Prune the shoots in Jan and Feb, Israeli technique for quality proper place. improvement Spray Bordeaux mixture in last week of March, Spray Bavistan 50 WP @ 500g in last week of May in 500 of water , Spray Bavistan 50 WP @ 500g in mid July in 500 of water, of anthracnose Guava Drainage of excess water, raising Drain out excess rain water Shifting and storage of of soil surface around the tree harvested fruits at proper place trunks Chilli Re sowing Wilting and lodging. Pumping of access rain water and spray the crop with -45 or Blitox @ gm per litter water - Cucurbits - Rottening of flowers and fruit, Spray -45@ 3gm per litter water - Outbreak of pests and diseases due to unseasonal rains Cotton Spray Larwin@250g Or Ekalux . Insect/Pests: Spray Imedachloprid 40 ml/ Pride20ml/acre for Storage of produce in dry place 800ml/acre to check Mealy bug Jassid; Hostathion 600 ml/acreagainst white fly; Larwin@250gOr Ekalux 800ml/acre to check Mealy bug; synthetic pyrethroids / Carbamate insecticides against Pink/ spotted /American(small size) boll worm ; Organophosphate/Naturalite/oxaddiazine against American(big size) boll worm and Carbamate/ Organochlorinate/ Organophosphates against Tobacco boll worm. . Diseases: grow LH 144/LH 2076 against Leaf curl;; Cobalt chloride(COCl ) to check para wilt disease,Spray blitox + streptocycline against Bacterial Blight and Blitox/ Captan for control of Anthrcnose, leaf blightand leaf spot . Rice Spray Nuvacron/Monocil@ . Insect/Pests:Spray Nuvacron/Monocil@ 560 ml/acreagainst leaf Storage of produce in dry place 560 ml/acre against leaf folder folder and stem borer; Confidor @40 ml/acre/ Ekalux @ 800 ml/acre and stem borer. against Plant hoppers/ Rice ear cutting caterpillar. . Diseases: Grow PR 120, PR 111 against Bacterial leaf blight 16",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 16
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Early season Major Farming Normal Crop/cropping system Change in crop/cropping Agronomic measures Remarks on drought (delayed situation system Implementation onset) Delay by 2 weeks Not applicable Delay by 4 weeks Delay by 6 weeks Delay by 8 weeks"
+    "text": "(BLB); spray Blitox (500ml)/Tilt (200ml) per acre to control False smut;Spray Tilt @ 200ml/acre against sheath blight ,Sheath rot and Bunt diseases. Wheat Spray pesticide to control pink Spray Nuvacron @150ml/acre to Spray Nuvacron @150ml/acre to Treat the produce meant for boll worm especially in rice control sucking pest (Aphid) control Aphid, Ekalux for Army seed with 250gmMalathion fields. worm (@400 ml); Bollworm dust (%) and disinfest (800 ml) per acre and Tilt 10gunny bags with ml @200ml/acre to check Karnal cymbush/10 litres water, bunt & rusts. Godowns with 100 ml ythion/10 litres water. Horticulture Citrus Chemical control of Chemical control of Chemical control of Application of fungicides/ phytophthora / foot rot with phytophthora / foot rot with phytophthora / foot rot with nutrients to check post harvest Ridomil-MZ/ Alliette as per Ridomil-MZ/ Alliette as per Ridomil-MZ/ Alliette as per losses recommendation, Control of recommendation, Control of recommendation, Control of sucking pests with systemic sucking pests with systemic sucking pests with systemic pesticides pesticides pesticides Guava Chemical control of sucking Chemical control of sucking Chemical control of sucking Timely harvesting of grapes, pests and diseases like powdery pests and diseases like powdery pests and diseases like powdery storage in proper CFB boxes. mildew/ anthracnose mildew/ anthracnose mildew/ anthracnose/ hen and chicken disease/shot berry etc. Grapes Chemical control of sucking Chemical control of sucking Chemical control of fruit fly and Storage at proper place pests pests and diseases like anthracnose of guava. anthracnose. Harvesting at proper maturity level. Chilli Pumping out of excess rain Spray Blitox @ / water to Keep in dry place - water to check wilt check rottening of fruit Cucurbits Spray Indofil 45 @ / Spray Blitox @ / water to - water against downy mildew check rottening of fruit. Also destroy the infested fruits and spray the crop with Endosulfan @ ml/ or Sevin - @ / water to control fruit fly 17",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 17
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Early season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (Normal onset) situation conservation measues Implementation"
+    "text": ". Floods: NA Condition Suggested contingency measure Heavy rainfall with high Vegetative stage Flowering stage Crop maturity stage Post harvest speed winds in short span Not Applicable . Extreme events: Heat wave / Cold wave/Frost/ Hailstorm Extreme event type Suggested contingency measure Seedling / nursery stage Vegetative stage Reproductive stage At harvest Heat Wave Heavy rain (psi) with canal water, planting of crop on eastern Apply light irrigation NA NA Cotton side Of - ridge, gap filling and light irrigation Correct Iron deficiency with . per cent iron sulphate spray, Pounding of water for NA NA light and frequent irrigation fifteen days after Rice transplanting to check iron deficiency and for crop establishment Wheat NA NA Apply light irrigation NA Horticulture Light and frequent irrigation and shelter from western side to Apply light and frequent irrigation to check Dropping of NA Citrus check sun scald and burning injury, application of white wash flowers and fruit with growth regulator like --/GA. pint on main stems, Frequent irrigation and shelter from western side to check Apply frequent irrigation to check Drooping of flowers and NA Cucurbit burning of crops drawing of pollens. Mulching and frequent irrigation Mulching and Mulching and frequent irrigation NA Chilli frequent irrigation Horticulture 18",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 18
   },
   {
-    "crop_name": "Normal onset",
-    "description": "followed by 15-20 days dry spell after sowing leading to poor germination/crop stand etc."
+    "text": "Apply light and frequent irrigation , protect the plants by Apply light and frequent irrigation , protect the plants by NA Citrus providing shelter from North-West direction, smoking providing shelter from North-West direction, smoking Sweet pepper Provide shelter with sarkanda or cover crop with polythene in low tunnel - - Tomato Provide shelter with sarkanda or cover crop with polythene in low tunnel - - Frost Horticulture New plantation, and cover the plants with Installation of wind breaks, smoking etc. NA Citrus grass or sarkanda etc Potato - Apply light irrigation or use sprinkler irrigation mid night - Apply light irrigation or cover the crop with Ployteen, - - - Capsicum sarkanda. Hailstorm Horticulture Protection of nursery with sarkanda etc/ growing of nursery Removal of broken limbs Apply light irrigation and sparys NA Citrus under protected structures. fungicide to check fungal infection with blitox, Bordeaux mixture etc. - Re sowing or re transplanting Apply light irrigation Apply light irrigation and Cucurbit and sprays fungicide sprays fungicide Re sowing or re transplanting Apply light irrigation Apply light irrigation and - Tomato and sprays fungicide sprays fungicide 19",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 19
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Mid season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (long dry spell, situation conservation measues Implementation consecutive 2 weeks rainless (>2.5 mm) period)"
+    "text": ". Contingent strategies for Livestock, Poultry & Fisheries for District: BATHINDA .. Livestock Suggested contingency measures Before the event During the event After the event Drought Not applicable Floods Not applicable Cyclone Not applicable Cold wave Covering all the wire meshed walls / open area with gunny bags/ Allow for late grazing between 10AM to 3PM during cold Feed the animals as per routine polyethylene sheets (with mechanism for lifting during the day waves schedule time and putting down during night time) Add 25-50 ml of edible oil in concentrates and fed to the Allow the animals for grazing animal during cold waves (normal timings) In severe cases, put on the heaters at night times Apply / sprinkle lime powder in the animal shed during cold waves to neutralize ammonia accumulation Heat wave Arrangement for protection from heat wave Allow the animals early in the morning or late in the evening Feed the animals as per routine ) Plantation around the shed for grazing during heat waves schedule ii) HO sprinklers / foggers in the shed Feed green fodder (maize or perennial fodder)/silage / Allow the animals for grazing concentrates/complete feed or feed blocks during day time and (normal timings) iii) Application of white reflector paint on the roof roughages / hay during night time in case of heat waves iv) Thatched sheds should be provided as shelter to Put on the foggers / sprinkerlers/fans during heat weaves in animal to minimize heat stress case of high yielders (Jersey/HF crosses) In severe cases, vitamin ‘’ and electrolytes should be added in HO during heat waves. Insurance Encouraging insurance of livestock Listing out the details of the dead animals Submission for insurance claim and availing insurance benefit Purchase of new productive animals 20",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 20
   },
   {
-    "crop_name": "At vegetative stage",
-    "description": "12"
+    "text": ".. Poultry Suggested contingency measures Convergence/ linkages with ongoing programs, if any Before the event During the event After the event Not applicable Drought Not applicable Floods Not applicable Cyclone Heat wave and cold wave Shelter/environment Heat wave: Provision of proper shelter with In severe cases, foggers/water sprinklers/wetting Routine practices are followed management good ventilation of hanged gunny bags should be arranged Don’ allow for scavenging during mid day Cold wave: Provision of proper shelter Close all openings with polythene sheets Routine practices are followed Arrangement for brooding In severe cases, arrange heaters Assure supply of continuous electricity Don’ allow for scavenging during early morning and late evening Health and disease Deworming and vaccination against RD and Supplementation of house hold grain Routine practices are followed management fowl pox Provide cool and clean drinking water with electrolytes and vit. In hot summer, add anti-stress probiotics in drinking water or feed 21",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 21
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Mid season drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on (long dry spell) situation conservation measues Implementation At flowering/ fruiting stage"
+    "text": "... Fisheries/ Aquaculture Suggested Contingency measures Before the event During the event After the event . Drought . Capture Marine - - - Inland () Shallow water depth due to ) Critical analysis of long range ) Use stored water. ) Need based monitoring through research insufficient rains/inflow forecast data. ii) Use surface water flow. plan. ii) Storage of water. iii) Divert water from unutilized areas. ii) Intensive afforestation program. iii) Afforestation program. iv) Utilize canal water. iii) Augmentation of surface water flow. iv) Conservation of rivers/reservoir/ponds. ) Aeration of water in ponds/reservoirs. iv) Strengthening of water reservoirs. ) Re-excavation of local canals and ) Rain water harvesting . reservoirs. vi) Compensation claims. vii) Prepare vulnerability map and place it to management committee. (ii) Changes in water quality ) Prohibit dumping of solid, liquid and waste ) Use disinfectants and therapeutic )Need based research data should be in water sources. drugs. generated on water quality. ii) Preparedness with stocks of chemicals, ii) Adoption of bio-remedial measures ii) Dumping of solid, liquid and waste in disinfectants and therapeutic drugs. water bodies should be stopped through enactment of legislation. (iii) Any other . Aquaculture () Shallow water in ponds due ) Critical analysis of long range ) Use stored water. ) Need based monitoring through research to insufficient rains/inflow 22",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 22
   },
   {
-    "crop_name": "Condition Suggested Contingency",
-    "description": "measures Terminal drought Major Farming Normal Crop/cropping system Crop management Soil nutrient & moisture Remarks on situation conservation measues Implementation (Early withdrawal of monsoon) 2.1.2 Irrigated situation"
+    "text": "forecast data. ii) Use surface water flow. plan. ii) Storage of water. iii) Divert water from unutilized areas. ii) Intensive afforestation program. iii) Afforestation program. iv) Utilize canal water. iii) Augmentation of surface water flow. iv) Conservation of rivers/reservoir/ponds. ) Aeration of ponds. iv) Construction of water reservoirs. ) Re-excavation of local canals and ) Adoption of rain harvesting methods. reservoirs. vi) Compensation claims . vii) Prepare vulnerability map and place it to management committee. (ii) Impact of salt load build up ) Prohibit dumping of solid, liquid and waste ) Use disinfectants and therapeutic )Need based research data should be in ponds/Changes in water in water sources. drugs. generated on water quality. quality ii) Preparedness with stocks of chemicals, ii) Adoption of bio-remedial measures ii) Dumping of solid, liquid and waste should disinfectants and therapeutic drugs. be stopped through enactment of legislation. (iii) Any other - - - . Flood . Capture Marine - - - Inland () Average compensation paid ) Be prepared to evacuate at short notice. ) Human evacuation from the area. ) Arrangement for rescue and casualty care. due to loss of human life ii) Preparation of flood control action plan. ii) Coordination of assistance. ii) Arrangement for burial control room. iii) Warning dissemination and precautionary iii) Damage and need assessment. iii) Restoration of essential services, security response. iv) Immediate management of relief and protection of property. iv) Formation of flood management supplies. iv) Support to rehabilitation, logistics, committee. ) Immediate help delivery. training and awareness build up & testing and ) Enhancement in coping capabilities of updating the plan. common people. ) Insurance and compensation claim. 23",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 23
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Delayed/ limited Canal / Tubewell Cotton - Wheat Prefer short duration maize release of water in irrigated varieties like PMH2 and canals due to low Alluvial soils JH -3459 can be grown rainfall Rice - Wheat Gram (PDG 4 and PDG 3) Deep tillage should be done up to 22.5 cm found to be increase the yield"
+    "text": "vi) Insurance for the life of people/fishermen. (ii) No. of boats/nets damaged ) Annual repair of boats/nets and gears. ) Coordination of assistance ) Education and training for the repair of ii) Insurance of boats/nets/gears. iii) Immediate management of relief boats/nets and gears. supplies. ii) Loss assessment & insurance claim. iv) Govt. support and compensation. (iii) No. of houses damaged ) Education and training for the repair of ) Arrangement of temporary shelters for )Loss assessment & insurance claim. houses. homeless people. ii) Govt. assistance claim. ii) Store raw material for emergency repair of ) Damaged house enumeration and need houses. assessment. iii) House insurance. ii)Coordination of assistance. iii) Immediate management of relief supplies. (iv) Loss of stock ) Keep boats, nets/gears ready for ) Search/locate the stock/input. ) Locate backup stocks and verify its emergency use. ii) Mobilize local people for protection. usability time. ii) Store fuels, food/other item iii) Hire stock/inputs from distant ii) Follow flood control management plan. iii) Develop flood control management plans. areas/company/ farmers who are not iii) Notify utilities of the critical demand iv) Stock material insurance. affected by flood. about loss of stock and inputs. iv) Loss assessment & insurance claim. () Changes in water quality ) Provision to stop/close the ) Do not use contaminated water ) Need based research data should be effluent/sewerage discharge point in water ii) Proper preparation and management generated to maintain water quality, bodies through emergency aeration. iii) Dumping of solid, liquid and waste ii) Store chemicals, disinfectants and iii) Use appropriate amount of should be stopped through enactment of therapeutic drugs. disinfectants, chemicals and therapeutic legislation. iii) Develop flood control management plan. drugs. iv) Contact Govt. and industrial organization iv) Immediate support of for immediate remedy and cleaning of the 24",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 24
   },
   {
-    "crop_name": "Mix poor quality water",
-    "description": ""
+    "text": "Govt./industrial organizations for water bodies. maintaining the purity and quality of ) Regular water monitoring and bio- water bodies. monitoring of water bodies for formulation of ) Need based bioremediation management plan (vi) Health and disease ) Advance planning and preparedness. ) Prompt action or immediate removal ) Laboratory diagnosis of diseased fish, ii) Store chemicals, disinfectants and of disease causing agents/ dead fish, generation of data about type or kind of therapeutic drugs. followed by sterile or landfill disposal. disease spread. iii) Stock sufficient stores of medicines. ii) Use appropriate amount of iv) Eradicating the disease where possible. disinfectants, chemicals and therapeutic ) Follow up surveillance and monitoring drugs. after disease outbreak. iii) Emergency aeration or splashing in vi) Bio-monitoring and maintaining water water bodies. quality. vii) Need based research data should be generated. vii) Loss assessment & insurance claim. . Aquaculture () Inundation with flood water ) Proper facility construction for ponds and ) Arrangement for evacuation. ) Support to rehabilitation, logistics, training its stock safety. ii) Arrangement for rescue and casualty and awareness build up & testing and ii) Development of flood control care. updating the plan management plan. iii) Arrangement for burial control room. ii) Reallocate fish to maintain appropriate iii)Preparedness with emergency backup iv) Restoration of essential services, biomass so that waste assimilation capacity equipment on site. security and protection of property. of pond is not exceeded. iv) Stock insurance. ) Coordination of assistance. iii) Reduce or cease feeding because uneaten ) Preventive measures against entry of vi) Damage and need assessment. food and fish waste decreases the dissolved alien/wild organisms through flood water. vii) Immediate management of relief oxygen level. 25",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 25
   },
   {
-    "crop_name": "Wheat Grow late sown varieties",
-    "description": "PBW 590, PBW 509, PBW 373. Bi-directional sowing increases the yield of 2q/ acre. Bed planting increases the yield about 3-4% closed spacing (7.5 x 22.5 cms)"
+    "text": "supplies. iv) Strengthening of water bodies/ponds. viii) Release excess water from height of ) Loss assessment & insurance claim. . viii) Lower the water level in culture facilities. (ii) Water contamination and ) Store chemicals, disinfectants and ) Do not use contaminated water. ) To maintain water quality, need based changes in water quality therapeutic drugs ii) Proper preparation and management research data should be generated ii) Develop flood control management plan through emergency aeration (paddle ii) Dumping of solid, liquid and waste should wheel aerator/circulating aerator), that be stopped through enactment of legislation. may improve water quality in affected iii) Immediate remedy and cleaning of water areas. bodies. iii) Use appropriate amount of iv) Regular water monitoring and bio- disinfectants, chemicals and therapeutic monitoring of water bodies for formulation of drugs. management plan. iv) Maintaining the purity and quality of water bodies. iv) Need based bioremediation. (iii) Health and diseases ) Advance planning and preparedness. )Identification of type of disease ) Laboratory diagnosis of diseased fish, ii) Store chemicals, disinfectants and outbreak, immediate removal of disease generation of data about type or kind of therapeutic drugs. causing agents/ dead fish. disease spread. iii) Stock sufficient emergency medicines. ii) Use appropriate amount of ii) Eradicating the disease. disinfectants, chemicals and therapeutic iii) Follow up surveillance and monitoring. drugs. iv) Proper disposal of dead fish. iii) Determination of nature and speed of ) Loss assessment & insurance claim. transmission of diseases. 26",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 26
   },
   {
-    "crop_name": "Seed priming",
-    "description": "13"
+    "text": "vi )Emergency aeration or splashing in water bodies. (iv) Loss of stock and input ) Keep the stock/input at safe place for ) Search/locate the stock/input. ) Strengthening of stocks. (feed, chemicals) emergency purpose. ii) Purchase/hire valuable stock/inputs ii) Assessment of total loss. ii) Store fuels, food/other item. from distant areas not affected by flood. iii) Insurance claims. iii) Develop flood control management plan. iv) Stock material insurance. () Infrastructure damage ) Educate and provide training for the repair ) Notify utilities of the critical demand. )Damaged infrastructure enumeration and (pumps, aerators, huts etc) of infrastructure. ii)Coordination of assistance. need assessment. ii) Follow flood control management plan. iii) Immediate management of relief ii) Locate backup equipment and verify its iii) Store raw materials for repairing of supplies. operation. pumps aerators, huts etc. iii) Repair of damaged infrastructure. iv) Infrastructure insurance. iv) Loss assessment & insurance claim. . Cyclone / Tsunami Not cyclone affected district. . Capture - - - Marine - - - () Average compensation paid - - - due to loss of fishermen lives (ii) Avg. no. of boats/nets - - - damaged (iii) Avg. no. of houses - - - damaged Inland - - - . Aquaculture - - - () Overflow / flooding of ponds - - - 27",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 27
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation Limited release of Cotton - Wheat Cotton should be replaced with Short duration maize varieties like PMH2 and JH -3459 can be grown water in canals under delayed onset of monsoon in catchment"
+    "text": "(ii) Changes in water quality - - - (freshwater/brackish water ratio) (iii) Health and disease - - - (iv) Loss of stock and input - - - (feed, chemicals etc.) () Infrastructure damage - - - (pumps, aerators, shelters/huts etc.) (vi) Any other - - - . Heat wave and cold wave . Capture Marine - - - Inland )Stay aware of upcoming temperature ) Monitor fishing sites frequently to ) Intensive afforestation program for changes. ensure that they are not affected by heat reducing heat waves. ii) Arrange the aerators. or cold waves. ii) Collect basic weather data and incidence iii) Ensure sufficient water level in water ii) Use dark materials to cover the water of extreme and physical data of water bodies, bodies. bodies during excessive heat waves. water chemistry and seasonal changes, vi) Formulate strategic fishing management iii) Stay hydrated by drinking plenty of plankton profile and seasonal blooms, during the heat/ cold waves. fluids during fishing/field work. topography and soil composition. ) Tree plantation around fish ponds iv) Educating the farmers through iii) Gather information about history of catch electronic or print media per unit effort as well as fish yield rate during heat wave and cold wave and accordingly simulate future plan for sustainable fishing. ) Loss assessment & insurance claim. . Aquaculture () Changes in pond )Listen to local weather forecasts and stay ) Monitor fishing sites frequently to ) Intensive afforestation program for environment (water quality) 28",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 28
   },
   {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation"
-  },
-  {
-    "crop_name": "Non release of water Not Applicable",
-    "description": "in canals under delayed onset of monsoon in catchment"
-  },
-  {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation"
-  },
-  {
-    "crop_name": "Lack of inflows into Not Applicable",
-    "description": "tanks due to insufficient /delayed onset of monsoon"
-  },
-  {
-    "crop_name": "Condition Suggested Contingency measures",
-    "description": "Major Farming Crop/cropping system Change in crop/cropping Agronomic measures Remarks on situation system Implementation"
-  },
-  {
-    "crop_name": "Insufficient Not Applicable",
-    "description": "groundwater recharge due to low rainfall 14"
-  },
-  {
-    "crop_name": "Condition Suggested contingency measure",
-    "description": ""
-  },
-  {
-    "crop_name": "Heavy rainfall with high Vegetative stage Flowering stage Crop maturity stage Post harvest",
-    "description": "speed winds in a short span Cotton Ridge planting, pumping out Pumping out excess rain water, Pumping out excess rain water Storage of produce at safer excess rain water application of nitrogenous and chemical control of pests/ place fertilizer, diseases Foliar spay of 2 % KNO 3 Rice Pumping out excess rain water, Pumping out excess rain water. Pumping out excess rain water"
-  },
-  {
-    "crop_name": "Nitrogenous fertilizer Shifting of produce at safer",
-    "description": "application place for drying. Wheat Bed/ bidirectional sowing Pumping out excess rain water, Pumping out excess rain water Shifting of produce at safer increases the yield about 3-4% foliar spray of 3%urea solution place for drying (specify the details), Pumping out excess rain water, apply Nitrogenous fertilizer and Gypsum(100 kg/acre) to check nitrogen & sulphur"
-  },
-  {
-    "crop_name": "Deficiency respectively",
-    "description": ""
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": "Citrus Cultivation on well drained soils, Drain out excess rain water and Drain out excess water, Drain out excess water drainage of excess water, prune out broken branches Application of growth regulators raising of soil surface around the to check fruit drop due to water- tree trunks, chemical control of imbalance foot rot (Give 3 sprays of 50g streptocyclin + 25 g copper sulphate in 500 L of water one each in October, December and Feburary)/ phytophthora, remove 15"
-  },
-  {
-    "crop_name": "Spray Bordeaux mixture in last",
-    "description": "week of March, Spray Bavistan 50 WP @ 500g in last week of May in 500 L of water , Spray Bavistan 50 WP @ 500g in mid July in 500 L of water, of anthracnose Guava Drainage of excess water, raising Drain out excess rain water Shifting and storage of of soil surface around the tree harvested fruits at proper place trunks Chilli Re sowing Wilting and lodging. Pumping of access rain water and spray the crop with M -45 or Blitox @ 3 gm per litter water - Cucurbits - Rottening of flowers and fruit, Spray M-45@ 3gm per litter water -"
-  },
-  {
-    "crop_name": "Outbreak of pests and",
-    "description": "diseases due to unseasonal rains Cotton Spray Larwin@250g Or Ekalux 1. Insect/Pests: Spray Imedachloprid 40 ml/ Pride20ml/acre for Storage of produce in dry place 800ml/acre to check Mealy bug Jassid; Hostathion 600 ml/acreagainst white fly; Larwin@250gOr Ekalux 800ml/acre to check Mealy bug; synthetic pyrethroids / Carbamate insecticides against Pink/ spotted /American(small size) boll worm ; Organophosphate/Naturalite/oxaddiazine against American(big size) boll worm and Carbamate/ Organochlorinate/ Organophosphates against Tobacco boll worm. 2. Diseases: grow LH 144/LH 2076 against Leaf curl;; Cobalt chloride(COCl ) to check para wilt disease,Spray blitox + 2 streptocycline against Bacterial Blight and Blitox/ Captan for control of Anthrcnose, leaf blightand leaf spot . Rice Spray Nuvacron/Monocil@ 1. Insect/Pests:Spray Nuvacron/Monocil@ 560 ml/acreagainst leaf Storage of produce in dry place 560 ml/acre against leaf folder folder and stem borer; Confidor @40 ml/acre/ Ekalux @ 800 ml/acre and stem borer. against Plant hoppers/ Rice ear cutting caterpillar. 2. Diseases: Grow PR 120, PR 111 against Bacterial leaf blight 16"
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": "Citrus Chemical control of Chemical control of Chemical control of Application of fungicides/ phytophthora / foot rot with phytophthora / foot rot with phytophthora / foot rot with nutrients to check post harvest Ridomil-MZ/ Alliette as per Ridomil-MZ/ Alliette as per Ridomil-MZ/ Alliette as per losses recommendation, Control of recommendation, Control of recommendation, Control of sucking pests with systemic sucking pests with systemic sucking pests with systemic pesticides pesticides pesticides Guava Chemical control of sucking Chemical control of sucking Chemical control of sucking Timely harvesting of grapes, pests and diseases like powdery pests and diseases like powdery pests and diseases like powdery storage in proper CFB boxes. mildew/ anthracnose mildew/ anthracnose mildew/ anthracnose/ hen and chicken disease/shot berry etc."
-  },
-  {
-    "crop_name": "Grapes Chemical control of sucking Chemical control of sucking Chemical control of fruit fly and Storage at proper place",
-    "description": "pests pests and diseases like anthracnose of guava. anthracnose. Harvesting at proper maturity level. Chilli Pumping out of excess rain Spray Blitox @ 5 g/ l water to Keep in dry place - water to check wilt check rottening of fruit Cucurbits Spray Indofil M 45 @ 3 g/l Spray Blitox @ 5 g/ l water to - water against downy mildew check rottening of fruit."
-  },
-  {
-    "crop_name": "Also destroy the infested fruits",
-    "description": "and spray the crop with Endosulfan @ 8 ml/l or Sevin - @ 5 g/l water to control fruit fly 17"
-  },
-  {
-    "crop_name": "Condition Suggested contingency measure",
-    "description": ""
-  },
-  {
-    "crop_name": "Heavy rainfall with high Vegetative stage Flowering stage Crop maturity stage Post harvest",
-    "description": "speed winds in a short span"
-  },
-  {
-    "crop_name": "Not Applicable",
-    "description": "2.4 Extreme events: Heat wave / Cold wave/Frost/ Hailstorm"
-  },
-  {
-    "crop_name": "Extreme event type Suggested contingency measure",
-    "description": "Seedling / nursery stage Vegetative stage Reproductive stage At harvest"
-  },
-  {
-    "crop_name": "Heat Wave",
-    "description": "Heavy rain (psi) with canal water, planting of crop on eastern Apply light irrigation NA NA"
-  },
-  {
-    "crop_name": "Cotton",
-    "description": "side Of N-S ridge, gap filling and light irrigation Correct Iron deficiency with 0.5 per cent iron sulphate spray, Pounding of water for NA NA light and frequent irrigation fifteen days after"
-  },
-  {
-    "crop_name": "Rice transplanting to check iron",
-    "description": "deficiency and for crop establishment"
-  },
-  {
-    "crop_name": "Wheat NA NA Apply light irrigation NA",
-    "description": ""
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": ""
-  },
-  {
-    "crop_name": "Light and frequent irrigation and shelter from western side to Apply light and frequent irrigation to check Dropping of NA",
-    "description": "Citrus check sun scald and burning injury, application of white wash flowers and fruit with growth regulator like 2-4-D/GA. pint on main stems,"
-  },
-  {
-    "crop_name": "Frequent irrigation and shelter from western side to check Apply frequent irrigation to check Drooping of flowers and NA",
-    "description": ""
-  },
-  {
-    "crop_name": "Cucurbit",
-    "description": "burning of crops drawing of pollens."
-  },
-  {
-    "crop_name": "Mulching and frequent irrigation Mulching and Mulching and frequent irrigation NA",
-    "description": ""
-  },
-  {
-    "crop_name": "Chilli",
-    "description": "frequent irrigation"
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": "18"
-  },
-  {
-    "crop_name": "Citrus",
-    "description": "providing shelter from North-West direction, smoking providing shelter from North-West direction, smoking Sweet pepper Provide shelter with sarkanda or cover crop with polythene in low tunnel - - Tomato Provide shelter with sarkanda or cover crop with polythene in low tunnel - -"
-  },
-  {
-    "crop_name": "Frost",
-    "description": ""
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": "New plantation, and cover the plants with Installation of wind breaks, smoking etc. NA"
-  },
-  {
-    "crop_name": "Citrus",
-    "description": "grass or sarkanda etc Potato - Apply light irrigation or use sprinkler irrigation mid night - Apply light irrigation or cover the crop with Ployteen, - - -"
-  },
-  {
-    "crop_name": "Capsicum",
-    "description": "sarkanda."
-  },
-  {
-    "crop_name": "Hailstorm",
-    "description": ""
-  },
-  {
-    "crop_name": "Horticulture",
-    "description": "Protection of nursery with sarkanda etc/ growing of nursery Removal of broken limbs Apply light irrigation and sparys NA Citrus under protected structures. fungicide to check fungal infection with blitox, Bordeaux mixture etc. -"
-  },
-  {
-    "crop_name": "Re sowing or re transplanting Apply light irrigation Apply light irrigation and",
-    "description": ""
-  },
-  {
-    "crop_name": "Cucurbit",
-    "description": "and sprays fungicide sprays fungicide Re sowing or re transplanting Apply light irrigation Apply light irrigation and -"
-  },
-  {
-    "crop_name": "Tomato",
-    "description": "and sprays fungicide sprays fungicide 19"
-  },
-  {
-    "crop_name": "Suggested contingency measures",
-    "description": ""
-  },
-  {
-    "crop_name": "Before the event During the event After the event",
-    "description": ""
-  },
-  {
-    "crop_name": "Drought Not applicable",
-    "description": ""
-  },
-  {
-    "crop_name": "Floods Not applicable",
-    "description": ""
-  },
-  {
-    "crop_name": "Cyclone Not applicable",
-    "description": "Cold wave Covering all the wire meshed walls / open area with gunny bags/ Allow for late grazing between 10AM to 3PM during cold Feed the animals as per routine polyethylene sheets (with a mechanism for lifting during the day waves schedule time and putting down during night time) Add 25-50 ml of edible oil in concentrates and fed to the Allow the animals for grazing animal during cold waves (normal timings) In severe cases, put on the heaters at night times Apply / sprinkle lime powder in the animal shed during cold waves to neutralize ammonia accumulation"
-  },
-  {
-    "crop_name": "Heat wave Arrangement for protection from heat wave Allow the animals early in the morning or late in the evening Feed the animals as per routine",
-    "description": "i) Plantation around the shed for grazing during heat waves schedule ii) HO sprinklers / foggers in the shed Feed green fodder (maize or perennial fodder)/silage / Allow the animals for grazing 2 concentrates/complete feed or feed blocks during day time and (normal timings) iii) Application of white reflector paint on the roof roughages / hay during night time in case of heat waves iv) Thatched sheds should be provided as a shelter to Put on the foggers / sprinkerlers/fans during heat weaves in animal to minimize heat stress case of high yielders (Jersey/HF crosses) In severe cases, vitamin ‘C’ and electrolytes should be added in HO during heat waves. 2"
-  },
-  {
-    "crop_name": "Insurance Encouraging insurance of livestock Listing out the details of the dead animals Submission for insurance claim",
-    "description": "and availing insurance benefit"
-  },
-  {
-    "crop_name": "Purchase of new productive",
-    "description": "animals 20"
-  },
-  {
-    "crop_name": "Before the event During the event After the event",
-    "description": ""
-  },
-  {
-    "crop_name": "Not applicable",
-    "description": ""
-  },
-  {
-    "crop_name": "Drought",
-    "description": ""
-  },
-  {
-    "crop_name": "Not applicable",
-    "description": ""
-  },
-  {
-    "crop_name": "Floods",
-    "description": ""
-  },
-  {
-    "crop_name": "Not applicable",
-    "description": ""
-  },
-  {
-    "crop_name": "Cyclone",
-    "description": ""
-  },
-  {
-    "crop_name": "Heat wave and cold wave",
-    "description": "Shelter/environment Heat wave: Provision of proper shelter with In severe cases, foggers/water sprinklers/wetting Routine practices are followed management good ventilation of hanged gunny bags should be arranged Don’t allow for scavenging during mid day Cold wave: Provision of proper shelter Close all openings with polythene sheets Routine practices are followed Arrangement for brooding In severe cases, arrange heaters Assure supply of continuous electricity Don’t allow for scavenging during early morning and late evening"
-  },
-  {
-    "crop_name": "Health and disease Deworming and vaccination against RD and Supplementation of house hold grain Routine practices are followed",
-    "description": "management fowl pox"
-  },
-  {
-    "crop_name": "Provide cool and clean drinking water with",
-    "description": "electrolytes and vit. C In hot summer, add anti-stress probiotics in drinking water or feed 21"
-  },
-  {
-    "crop_name": "Suggested Contingency measures",
-    "description": ""
-  },
-  {
-    "crop_name": "Before the event During the event After the event",
-    "description": "1. Drought A. Capture Marine - - -"
-  },
-  {
-    "crop_name": "Inland",
-    "description": "(i) Shallow water depth due to I) Critical analysis of long range i) Use stored water. i) Need based monitoring through research insufficient rains/inflow forecast data. ii) Use surface water flow. plan. ii) Storage of water. iii) Divert water from unutilized areas. ii) Intensive afforestation program. iii) Afforestation program. iv) Utilize canal water. iii) Augmentation of surface water flow. iv) Conservation of rivers/reservoir/ponds. v) Aeration of water in ponds/reservoirs. iv) Strengthening of water reservoirs. v) Re-excavation of local canals and v) Rain water harvesting . reservoirs. vi) Compensation claims. vii) Prepare vulnerability map and place it to management committee. (ii) Changes in water quality i) Prohibit dumping of solid, liquid and waste i) Use disinfectants and therapeutic i)Need based research data should be in water sources. drugs. generated on water quality. ii) Preparedness with stocks of chemicals, ii) Adoption of bio-remedial measures ii) Dumping of solid, liquid and waste in disinfectants and therapeutic drugs. water bodies should be stopped through enactment of legislation. (iii) Any other B. Aquaculture (i) Shallow water in ponds due ) Critical analysis of long range i) Use stored water. i) Need based monitoring through research to insufficient rains/inflow 22"
-  },
-  {
-    "crop_name": "Inland",
-    "description": "(i) Average compensation paid i) Be prepared to evacuate at a short notice. i) Human evacuation from the area. i) Arrangement for rescue and casualty care. due to loss of human life ii) Preparation of flood control action plan. ii) Coordination of assistance. ii) Arrangement for burial control room. iii) Warning dissemination and precautionary iii) Damage and need assessment. iii) Restoration of essential services, security response. iv) Immediate management of relief and protection of property. iv) Formation of flood management supplies. iv) Support to rehabilitation, logistics, committee. v) Immediate help delivery. training and awareness build up & testing and v) Enhancement in coping capabilities of updating the plan. common people. v) Insurance and compensation claim. 23"
+    "text": "aware of upcoming temperature changes. ensure that they are not affected by heat reducing heat waves. ii) Arrange the aerators. or cold waves. ii) Collect basic weather data and incidence iii) Ensure sufficient water quantity in water ii) Use dark materials to cover the water of extreme and physical data of water bodies, bodies. bodies during excessive heat waves. water chemistry and seasonal changes, iv)Formulate strategic fishing management iii) Stay hydrated by drinking plenty of plankton profile and seasonal blooms, for the heat /cold waves. fluids during fishing/field work. topography and soil composition. ) Tree plantation around fish ponds vi) Adopt proper care and management iii) Gather information about history of catch during the fishing period of cold/heat per unit effort as well as fish yield rate during wave like keeping stock of drinking heat wave and cold wave and accordingly water and extra cloths. simulate future plan for sustainable fishing. vi) Educating the farmers through vi) Loss assessment & insurance claim. electronic or print media (ii) Health and disease ) Advance planning and preparedness. )Identification of type of disease ) Laboratory diagnosis of diseased fish, management ii) Store chemicals, disinfectants and outbreak, immediate removal of disease generation of data about type or kind of therapeutic drugs. causing agents/ dead fish. disease spread. iii) Develop heat/ cold wave control ii) Use appropriate amount of ii) Eradicating the disease. management plan. disinfectants, chemicals and therapeutic iii) Follow up surveillance and monitoring. iv) Stock sufficient emergency medicines. drugs. iv) Proper disposal of dead fish. iii) Determination of nature and speed of ) Loss assessment & insurance claim. transmission of diseases. vi )Emergency aeration or splashing in water bodies 29",
+    "source": "PUNJAB 2-Bathinda 30.04.2011.pdf",
+    "category": "schemes",
+    "page": 29
   }
 ]
