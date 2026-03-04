@@ -404,7 +404,7 @@ export default function Chatbot() {
                                                                 <button
                                                                     onClick={() => setExpandedSources(prev => ({ ...prev, [message.id]: !prev[message.id] }))}
                                                                     className="flex items-center gap-1 text-xs font-medium"
-                                                                    style={{ color: '#16a34a' }}
+                                                                    style={{ color: 'white' }}
                                                                 >
                                                                     <ChevronDown
                                                                         size={14}
@@ -457,8 +457,8 @@ export default function Chatbot() {
                                                                 title="Copy message"
                                                             >
                                                                 {copiedMessageId === message.id
-                                                                    ? <Check size={14} style={{ color: '#16a34a' }} />
-                                                                    : <Copy size={14} style={{ color: '#6b7280' }} />}
+                                                                    ? <Check size={14} style={{ color: 'white' }} />
+                                                                    : <Copy size={14} style={{ color: 'white' }} />}
                                                             </button>
                                                         )}
                                                     </div>
