@@ -1,25 +1,20 @@
-import { createContext,useContext,useState,useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user,setUser] = useState(null);
-    const [isAuthenticated,setIsAuthenticated] = useState(false);
-
-    useEffect(() => {
+    // Synchronously initialize state so we don't flash 'unauthenticated' on refresh
+    const [user, setUser] = useState(() => {
         const storedUser = localStorage.getItem("user");
-        const token = localStorage.getItem("token");
+        return storedUser ? JSON.parse(storedUser) : null;
+    });
+    const [isAuthenticated, setIsAuthenticated] = useState(() => {
+        return !!localStorage.getItem("token");
+    });
 
-        if(storedUser && token){
-            setUser(JSON.parse(storedUser));
-            setIsAuthenticated(true);
-
-        }
-    },[]);
-
-    const login = (userData,token) => {
-        localStorage.setItem("user",JSON.stringify(userData));
-        localStorage.setItem("token",token);
+    const login = (userData, token) => {
+        localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem("token", token);
         setUser(userData);
         setIsAuthenticated(true);
     };
@@ -31,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{user,isAuthenticated,login,logout }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

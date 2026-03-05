@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from rag.models import ChatSession, ChatMessage
-from rag.rag_pipeline import get_answer
+from rag.rag_pipeline import get_answer, vector_store
 from groq import Groq
 from django.conf import settings
 import pdfplumber
@@ -74,18 +74,25 @@ def farmer_chat(request):
 
 AGRI_SYSTEM_PROMPT = (
     "You are an expert agricultural document analyst. "
-    "When given content from a farming or agricultural document, provide:\n"
-    "1. A concise summary (3-5 sentences)\n"
-    "2. Key topics covered (bullet list)\n"
-    "3. Practical takeaways for farmers (bullet list)\n\n"
-    "Use simple, farmer-friendly language. Do not mention source filenames."
+    "FIRST, evaluate if the provided document is relevant to agriculture, farming, crops, livestock, soil, weather, or rural development. "
+    "If it is NOT relevant to agriculture, reply EXACTLY with:\n"
+    "'This document does not appear to be related to agriculture or farming. I can only assist with agriculture-related documents.'\n"
+    "If it IS relevant, fulfill the user's specific request based on the document's content. "
+    "If the user asks to summarize, analyze, or explain, follow their instructions strictly using the provided document text. "
+    "If the user does not provide specific instructions, provide a concise summary (3-5 sentences), key topics (bullet list), and practical takeaways. "
+    "Use simple, farmer-friendly language.\n\n"
+    "CRITICAL RULES:\n"
+    "- NEVER use phrases like 'According to the source document' or 'Based on the provided text'.\n"
+    "- NEVER mention 'Sources', 'Source 1', or filenames in your response.\n"
+    "- Answer directly as if you are the domain expert providing the analysis."
 )
 
 
-def _summarize_text(client, filename, text, truncated):
+def _summarize_text(client, filename, text, truncated, user_prompt=None):
     """Summarize extracted text via Groq text model."""
+    req_text = user_prompt if user_prompt else "Please analyze this agricultural document and summarize it."
     prompt = (
-        f"Please analyze this agricultural document and summarize it.\n\n"
+        f"User Request: {req_text}\n\n"
         f"Document: {filename}\n\nContent:\n{text}"
         + ("\n\n[Note: Document was truncated due to length]" if truncated else "")
     )
@@ -101,22 +108,20 @@ def _summarize_text(client, filename, text, truncated):
     return resp.choices[0].message.content.strip()
 
 
-def _summarize_images(client, filename, page_images):
+def _summarize_images(client, filename, page_images, user_prompt=None):
     """
     Send PDF page images to Groq vision model for OCR + analysis.
     page_images: list of (page_num, base64_png_string)
     """
+    req_text = user_prompt if user_prompt else "Please analyze this agricultural document and summarize it."
     # Build a multi-image message — Groq vision accepts multiple image_url content parts
     content = [
         {
             "type": "text",
             "text": (
-                f"The following are pages from an agricultural PDF document '{filename}'. "
-                f"Please analyze the content across all pages and provide:\n"
-                "1. A concise summary (3-5 sentences)\n"
-                "2. Key topics covered (bullet list)\n"
-                "3. Practical takeaways for farmers (bullet list)\n\n"
-                "Use simple, farmer-friendly language."
+                f"User Request: {req_text}\n\n"
+                f"The following are pages from a PDF document '{filename}'. "
+                f"Please follow the system instructions and evaluate/analyze the content."
             ),
         }
     ]
@@ -130,7 +135,10 @@ def _summarize_images(client, filename, page_images):
 
     resp = client.chat.completions.create(
         model="meta-llama/llama-4-scout-17b-16e-instruct",
-        messages=[{"role": "user", "content": content}],
+        messages=[
+            {"role": "system", "content": AGRI_SYSTEM_PROMPT},
+            {"role": "user", "content": content}
+        ],
         temperature=0.2,
         max_tokens=1024,
     )
@@ -150,6 +158,8 @@ def analyze_pdf(request):
         return Response({"error": "Only PDF files are supported"}, status=400)
 
     pdf_bytes = pdf_file.read()
+    user_prompt = request.data.get("prompt", "").strip()
+
     used_ocr = False
     summary = ""
     pages_processed = 0
@@ -173,16 +183,12 @@ def analyze_pdf(request):
         truncated_text = full_text[:MAX_CHARS]
         was_truncated = len(full_text) > MAX_CHARS
         pages_processed = len(pages_text)
-        try:
-            summary = _summarize_text(client, pdf_file.name, truncated_text, was_truncated)
-        except Exception as e:
-            return Response({"error": f"LLM error: {str(e)}"}, status=500)
     else:
         # ── Stage 2: Image-based PDF — render pages → vision model ────────────
         used_ocr = True
         try:
             doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-            MAX_PAGES = 10  # Limit to avoid exceeding Groq context
+            MAX_PAGES = 5  # Limit to avoid exceeding Groq context (max 5 images)
             page_images = []
             for i, page in enumerate(doc):
                 if i >= MAX_PAGES:
@@ -202,8 +208,60 @@ def analyze_pdf(request):
         if not page_images:
             return Response({"error": "PDF appears to be empty or unreadable."}, status=422)
 
+        # For OCR PDFs, we need to extract some text to check relevance against the DB
+        # Run a quick dummy call or just rely on the LLM to reject it?
+        # Since OCR is expensive, let's just let the LLM reject it using the AGRI_SYSTEM_PROMPT.
+        # But for text PDFs, we CAN check the vector DB for relevance.
+        
+    # ── Database Relevance Check (Text PDFs) ─────────────────────────────────
+    if not used_ocr and full_text.strip():
+        # Check relevance: search the vector store with the first chunk of the PDF
+        check_text = full_text[:1000]
+        results = vector_store.search(check_text, k=3, threshold=0.0) # get top 3 regardless of threshold
+        if results:
+            max_score = max(r["score"] for r in results)
+            # If the best match in our agricultural database has a cosine similarity < 0.15,
+            # it's highly likely this document has nothing to do with agriculture.
+            if max_score < 0.15:
+                err_msg = "This document does not appear to be related to agriculture or farming. I can only assist with agriculture-related documents."
+                # Save as a rejected chat
+                session_id = request.data.get("session_id")
+                session = None
+                if session_id:
+                    try:
+                        session = ChatSession.objects.get(session_id=session_id, user=request.user)
+                    except ChatSession.DoesNotExist:
+                        pass
+                if not session:
+                    session = ChatSession.objects.create(
+                        user=request.user,
+                        session_id=str(uuid.uuid4()),
+                        title=f"Rejected: {pdf_file.name[:30]}",
+                    )
+                user_msg_content = user_prompt if user_prompt else "Please analyze and summarize this document."
+                user_msg = f"[PDF Uploaded: {pdf_file.name}]\n{user_msg_content}"
+                ChatMessage.objects.create(session=session, role="user", input_text=user_msg)
+                ChatMessage.objects.create(session=session, role="assistant", output_text=err_msg, confidence="LOW")
+                
+                return Response({
+                    "summary": err_msg,
+                    "filename": pdf_file.name,
+                    "pages": pages_processed,
+                    "truncated": was_truncated,
+                    "used_ocr": used_ocr,
+                    "session_id": session.session_id,
+                    "title": session.title,
+                })
+
+    # ── LLM Analysis ─────────────────────────────────────────────────────────
+    if not used_ocr:
         try:
-            summary = _summarize_images(client, pdf_file.name, page_images)
+            summary = _summarize_text(client, pdf_file.name, truncated_text, was_truncated, user_prompt)
+        except Exception as e:
+            return Response({"error": f"LLM error: {str(e)}"}, status=500)
+    else:
+        try:
+            summary = _summarize_images(client, pdf_file.name, page_images, user_prompt)
         except Exception as e:
             return Response({"error": f"Vision LLM error: {str(e)}"}, status=500)
 
@@ -225,7 +283,8 @@ def analyze_pdf(request):
         session.title = f"Analysis: {pdf_file.name[:60]}"
         session.save(update_fields=["title"])
 
-    user_msg = f"[PDF Uploaded: {pdf_file.name}]\nPlease analyze and summarize this document."
+    user_msg_content = user_prompt if user_prompt else "Please analyze and summarize this document."
+    user_msg = f"[PDF Uploaded: {pdf_file.name}]\n{user_msg_content}"
     ChatMessage.objects.create(session=session, role="user", input_text=user_msg)
     ChatMessage.objects.create(session=session, role="assistant", output_text=summary, confidence="HIGH")
 

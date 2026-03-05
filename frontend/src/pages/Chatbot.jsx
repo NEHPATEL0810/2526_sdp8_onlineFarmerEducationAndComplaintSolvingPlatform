@@ -199,6 +199,7 @@ export default function Chatbot() {
 
                     const formData = new FormData();
                     formData.append('file', file);
+                    if (input.trim()) formData.append('prompt', input.trim());
                     if (currentSessionId) formData.append('session_id', currentSessionId);
 
                     const res = await axios.post(`${API}/chat/analyze-pdf/`, formData, {
@@ -553,36 +554,7 @@ export default function Chatbot() {
                                                             {message.content}
                                                         </div>
 
-                                                        {/* Sources panel */}
-                                                        {!message.isError && message.retrieved && message.retrieved.length > 0 && (
-                                                            <div className="mt-3" style={{ borderTop: '1px solid #f0fdf4', paddingTop: '10px' }}>
-                                                                <button
-                                                                    onClick={() => setExpandedSources(prev => ({ ...prev, [message.id]: !prev[message.id] }))}
-                                                                    className="flex items-center gap-1 text-xs font-medium"
-                                                                    style={{ color: 'white' }}
-                                                                >
-                                                                    <ChevronDown
-                                                                        size={14}
-                                                                        style={{ transform: expandedSources[message.id] ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
-                                                                    />
-                                                                    {expandedSources[message.id] ? 'Hide' : 'Show'} Sources ({message.retrieved.length})
-                                                                </button>
-                                                                {expandedSources[message.id] && (
-                                                                    <div className="mt-2 space-y-2">
-                                                                        {message.retrieved.map((src, idx) => (
-                                                                            <div key={idx} className="text-xs p-2 rounded-lg" style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
-                                                                                <div className="flex items-center justify-between mb-1">
-                                                                                    <span className="font-semibold" style={{ color: '#15803d' }}>📄 {src.source}</span>
-                                                                                    <span className="text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: '#dcfce7', color: '#166534' }}>{src.category}</span>
-                                                                                </div>
-                                                                                <div className="text-gray-500">Relevance: <strong>{(src.score * 100).toFixed(0)}%</strong></div>
-                                                                                <div className="mt-1 text-gray-600 line-clamp-2">{src.text}</div>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                        )}
+                                                        {/* Sources panel removed by user request (only keeping confidence badge) */}
 
                                                         {/* Timestamp + copy */}
                                                         <div className="flex items-center justify-between mt-2 pt-2" style={{ borderTop: '1px solid rgba(0,0,0,0.05)' }}>
