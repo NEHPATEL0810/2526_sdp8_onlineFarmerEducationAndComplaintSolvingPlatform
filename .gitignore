@@ -44,6 +44,11 @@ backend/.env
 data/processed/faiss.index
 data/processed/meta.pkl
 backend/data/processed/
+backend/data/raw/image_datasets/
+backend/data/raw/pdf_knowledge/
+backend/data/raw/structured/
+*.zip
+backend/media/
 
 # ========================
 # Node / Frontend

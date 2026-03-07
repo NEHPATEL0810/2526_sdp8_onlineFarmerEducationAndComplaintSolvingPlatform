@@ -1,0 +1,40 @@
+# RAG Image Analysis Feature Implementation Plan
+
+## User Review Required
+> [!IMPORTANT]
+> Please review this plan to confirm the approach for vector relevance on images and endpoints. Also, there are two large zip files (`archive (8).zip` which is ~2.8GB and `archive (9).zip` which is ~235MB) in `data/raw/image_datasets`. This plan includes a step to extract the smaller `archive (9).zip` and the larger `archive (8).zip` as requested, but I want to ensure you have enough disk space for the 2.8GB archive before I extract it. Should I extract both?
+
+## Proposed Changes
+
+### Data Extraction
+- **Command**: Run `Expand-Archive` on the zip files in `backend/data/raw/image_datasets/` to extract the samples.
+
+---
+### Backend API & Vision Logic
+#### [MODIFY] backend/rag/urls.py
+- Add a new endpoint `path("chat/analyze-image/", views.analyze_image, name="analyze_image")` to handle image uploads from the chat interface.
+
+#### [MODIFY] backend/rag/views.py
+- Implement `analyze_image` API view that receives a `prompt` and an `image` file via `multipart/form-data`.
+- **Vector Relevance Check**: since vector stores index text, we will check the user's `prompt` against the `vector_store`. If there is no text prompt, we will first ask the vision model to briefly describe the image, and then run that text through the `vector_store` to ensure it is relevant to agriculture/education. If similarity is below threshold (< 0.15), it will be rejected.
+- **Vision Call**: Send the image and prompt to Groq's Vision model (`llama-3.2-11b-vision-preview` or `llama-4-scout-17b-16e-instruct`), instructing it to identify the "Cause", "Issue", and "Solution" based on the image, returning a structured summary.
+- Save the results into `ChatSession` and `ChatMessage` identically to the PDF analysis approach.
+
+---
+### Frontend Chat Integration
+#### [MODIFY] frontend/src/pages/Chatbot.jsx
+- Update the `handleSendMessage` function to detect image attachments (e.g. `a.contentType.startsWith('image/')`).
+- When an image is attached, bundle the image and the `input` prompt into a `FormData` object and send a POST request to the new `/api/chat/analyze-image/` endpoint.
+- Display the result in the chat using a badge (e.g., `📷 Image Analysis`) similar to the PDF summary badge.
+
+## Verification Plan
+
+### Automated Tests
+- Run `pytest backend/test_rag.py` and `pytest backend/test_db_integration.py` to ensure existing RAG features aren't broken.
+
+### Manual Verification
+1. Run the backend server (`python manage.py runserver`).
+2. Run the frontend server (`npm run dev`).
+3. Open the chat interface, write a prompt (e.g., "What is wrong with my plant?"), attach one of the sample `.jpg` files from the dataset, and click send.
+4. Verify that the chatbot analyzes the image, checks vector relevance, and responds with the cause, issue, and solution.
+5. Upload a non-agricultural image (or prompt) and verify it gets rejected based on the vector relevance check.

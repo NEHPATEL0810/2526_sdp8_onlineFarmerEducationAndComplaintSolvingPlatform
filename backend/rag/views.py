@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from rag.models import ChatSession, ChatMessage
-from rag.rag_pipeline import get_answer, vector_store
+from rag.rag_pipeline import get_answer, _get_vector_store
 from groq import Groq
 from django.conf import settings
 import pdfplumber
@@ -12,7 +12,15 @@ import io
 import base64
 import fitz  # pymupdf
 
-client = Groq(api_key=settings.GROQ_API_KEY)
+_client = None
+
+
+def _get_client():
+    """Lazy-load the Groq client for views."""
+    global _client
+    if _client is None:
+        _client = Groq(api_key=settings.GROQ_API_KEY)
+    return _client
 
 
 # ─────────────────────────────────────────────
@@ -88,7 +96,7 @@ AGRI_SYSTEM_PROMPT = (
 )
 
 
-def _summarize_text(client, filename, text, truncated, user_prompt=None):
+def _summarize_text(llm_client, filename, text, truncated, user_prompt=None):
     """Summarize extracted text via Groq text model."""
     req_text = user_prompt if user_prompt else "Please analyze this agricultural document and summarize it."
     prompt = (
@@ -96,7 +104,7 @@ def _summarize_text(client, filename, text, truncated, user_prompt=None):
         f"Document: {filename}\n\nContent:\n{text}"
         + ("\n\n[Note: Document was truncated due to length]" if truncated else "")
     )
-    resp = client.chat.completions.create(
+    resp = llm_client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": AGRI_SYSTEM_PROMPT},
@@ -108,7 +116,7 @@ def _summarize_text(client, filename, text, truncated, user_prompt=None):
     return resp.choices[0].message.content.strip()
 
 
-def _summarize_images(client, filename, page_images, user_prompt=None):
+def _summarize_images(llm_client, filename, page_images, user_prompt=None):
     """
     Send PDF page images to Groq vision model for OCR + analysis.
     page_images: list of (page_num, base64_png_string)
@@ -133,7 +141,7 @@ def _summarize_images(client, filename, page_images, user_prompt=None):
             },
         })
 
-    resp = client.chat.completions.create(
+    resp = llm_client.chat.completions.create(
         model="meta-llama/llama-4-scout-17b-16e-instruct",
         messages=[
             {"role": "system", "content": AGRI_SYSTEM_PROMPT},
@@ -217,7 +225,7 @@ def analyze_pdf(request):
     if not used_ocr and full_text.strip():
         # Check relevance: search the vector store with the first chunk of the PDF
         check_text = full_text[:1000]
-        results = vector_store.search(check_text, k=3, threshold=0.0) # get top 3 regardless of threshold
+        results = _get_vector_store().search(check_text, k=3, threshold=0.0) # get top 3 regardless of threshold
         if results:
             max_score = max(r["score"] for r in results)
             # If the best match in our agricultural database has a cosine similarity < 0.15,
@@ -256,12 +264,12 @@ def analyze_pdf(request):
     # ── LLM Analysis ─────────────────────────────────────────────────────────
     if not used_ocr:
         try:
-            summary = _summarize_text(client, pdf_file.name, truncated_text, was_truncated, user_prompt)
+            summary = _summarize_text(_get_client(), pdf_file.name, truncated_text, was_truncated, user_prompt)
         except Exception as e:
             return Response({"error": f"LLM error: {str(e)}"}, status=500)
     else:
         try:
-            summary = _summarize_images(client, pdf_file.name, page_images, user_prompt)
+            summary = _summarize_images(_get_client(), pdf_file.name, page_images, user_prompt)
         except Exception as e:
             return Response({"error": f"Vision LLM error: {str(e)}"}, status=500)
 
@@ -294,6 +302,183 @@ def analyze_pdf(request):
         "pages": pages_processed,
         "truncated": was_truncated,
         "used_ocr": used_ocr,
+        "session_id": session.session_id,
+        "title": session.title,
+    })
+
+
+# ─────────────────────────────────────────────
+# Helpers: session + message persistence
+# ─────────────────────────────────────────────
+
+def _get_or_create_session(request, session_id, title="New Chat"):
+    """Find existing session or create a new one."""
+    session = None
+    if session_id:
+        try:
+            session = ChatSession.objects.get(session_id=session_id, user=request.user)
+        except ChatSession.DoesNotExist:
+            pass
+    if not session:
+        session = ChatSession.objects.create(
+            user=request.user,
+            session_id=str(uuid.uuid4()),
+            title=title,
+        )
+    if session.title == "New Chat":
+        session.title = title
+        session.save(update_fields=["title"])
+    return session
+
+
+def _save_messages(session, user_text, assistant_text, confidence="HIGH"):
+    """Save a user + assistant message pair."""
+    ChatMessage.objects.create(session=session, role="user", input_text=user_text)
+    ChatMessage.objects.create(
+        session=session, role="assistant",
+        output_text=assistant_text, confidence=confidence,
+    )
+
+
+# ─────────────────────────────────────────────
+# POST /api/chat/analyze-image/
+# ─────────────────────────────────────────────
+
+IMAGE_ANALYSIS_SYSTEM_PROMPT = (
+    "You are an expert agricultural image analyst for the FarmEasy platform.\n"
+    "Analyze the provided image and identify:\n"
+    "1. **Issue**: What problem or condition is visible in the image\n"
+    "2. **Cause**: What is likely causing this issue\n"
+    "3. **Solution**: Practical, step-by-step advice to address the issue\n\n"
+    "Use simple, farmer-friendly language.\n"
+    "If the image does not appear to show an agricultural issue, say so clearly.\n\n"
+    "CRITICAL RULES:\n"
+    "- NEVER use phrases like 'According to the source' or 'Based on the provided text'.\n"
+    "- Answer directly as if you are the domain expert providing the analysis.\n"
+    "- Structure your response clearly with the three headings: Issue, Cause, Solution."
+)
+
+ALLOWED_IMAGE_TYPES = {
+    "image/jpeg", "image/png", "image/webp", "image/gif", "image/bmp",
+}
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def analyze_image(request):
+    image_file = request.FILES.get("image")
+    if not image_file:
+        return Response({"error": "No image uploaded"}, status=400)
+
+    content_type = image_file.content_type or ""
+    if content_type not in ALLOWED_IMAGE_TYPES:
+        return Response(
+            {"error": f"Unsupported file type '{content_type}'. Please upload a JPG, PNG, or WebP image."},
+            status=400,
+        )
+
+    user_prompt = request.data.get("prompt", "").strip()
+    session_id = request.data.get("session_id", "").strip() or None
+
+    # ── Read and encode image ────────────────────────────────────────────────
+    image_bytes = image_file.read()
+    b64_image = base64.b64encode(image_bytes).decode("utf-8")
+    mime = content_type if content_type else "image/jpeg"
+
+    # ── Vector relevance check ───────────────────────────────────────────────
+    check_text = user_prompt
+    if not check_text:
+        # No prompt — ask the vision model for a short description first
+        try:
+            desc_resp = _get_client().chat.completions.create(
+                model="meta-llama/llama-4-scout-17b-16e-instruct",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "Describe this image in one short sentence focusing "
+                            "on what it shows (crop, plant, soil, animal, etc.)."
+                        ),
+                    },
+                    {
+                        "role": "user",
+                        "content": [
+                            {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64_image}"}},
+                            {"type": "text", "text": "What does this image show?"},
+                        ],
+                    },
+                ],
+                temperature=0.1,
+                max_tokens=100,
+            )
+            check_text = desc_resp.choices[0].message.content.strip()
+        except Exception:
+            check_text = ""
+
+    if check_text:
+        results = _get_vector_store().search(check_text, k=3, threshold=0.0)
+        if results:
+            max_score = max(r["score"] for r in results)
+            if max_score < 0.15:
+                err_msg = (
+                    "This image/query does not appear to be related to agriculture "
+                    "or farming. I can only assist with agriculture-related queries."
+                )
+                session = _get_or_create_session(
+                    request, session_id, title=f"Rejected: {image_file.name[:30]}",
+                )
+                _save_messages(
+                    session,
+                    user_text=f"[Image Uploaded: {image_file.name}]\n{user_prompt or 'Analyze this image.'}",
+                    assistant_text=err_msg,
+                    confidence="LOW",
+                )
+                return Response({
+                    "summary": err_msg,
+                    "filename": image_file.name,
+                    "session_id": session.session_id,
+                    "title": session.title,
+                })
+
+    # ── Vision LLM Analysis ──────────────────────────────────────────────────
+    analysis_prompt = (
+        user_prompt
+        if user_prompt
+        else "What issue does this image show? Please identify the problem, its cause, and suggest a solution."
+    )
+    content = [
+        {"type": "text", "text": analysis_prompt},
+        {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64_image}"}},
+    ]
+
+    try:
+        resp = _get_client().chat.completions.create(
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
+            messages=[
+                {"role": "system", "content": IMAGE_ANALYSIS_SYSTEM_PROMPT},
+                {"role": "user", "content": content},
+            ],
+            temperature=0.2,
+            max_tokens=1024,
+        )
+        summary = resp.choices[0].message.content.strip()
+    except Exception as e:
+        return Response({"error": f"Vision LLM error: {str(e)}"}, status=500)
+
+    # ── Save to session ──────────────────────────────────────────────────────
+    session = _get_or_create_session(
+        request, session_id, title=f"Image Analysis: {image_file.name[:50]}",
+    )
+    _save_messages(
+        session,
+        user_text=f"[Image Uploaded: {image_file.name}]\n{user_prompt or 'Analyze this image.'}",
+        assistant_text=summary,
+        confidence="HIGH",
+    )
+
+    return Response({
+        "summary": summary,
+        "filename": image_file.name,
         "session_id": session.session_id,
         "title": session.title,
     })

@@ -1,15 +1,13 @@
 """
 RAG pipeline: retrieval, re-ranking, and LLM answer generation.
+
+All heavy resources (Groq client, VectorStore) are lazy-loaded
+on first use to avoid slow server startup.
 """
 from rag.vector_store import VectorStore
 from rag.prompts import FARMER_SYSTEM_PROMPT, FARMER_USER_PROMPT
 from groq import Groq
 import os
-
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
-vector_store = VectorStore()
-vector_store.load()
 
 # Number of candidates to retrieve before re-ranking
 RETRIEVE_K = 5
@@ -18,6 +16,29 @@ TOP_N = 3
 # Below this many relevant chunks, flag as low confidence
 LOW_CONFIDENCE_THRESHOLD = 2
 
+# ── Lazy singletons ──────────────────────────────────────────
+_client = None
+_vector_store = None
+
+
+def _get_client():
+    """Return (and cache) the Groq client."""
+    global _client
+    if _client is None:
+        _client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+    return _client
+
+
+def _get_vector_store():
+    """Return (and cache) the loaded VectorStore."""
+    global _vector_store
+    if _vector_store is None:
+        _vector_store = VectorStore()
+        _vector_store.load()
+    return _vector_store
+
+
+# ── Helpers ──────────────────────────────────────────────────
 
 def _format_context(results):
     """Format retrieved chunks into a context string with source citations."""
@@ -61,8 +82,11 @@ def get_answer(question):
     4. Generate answer with system + user prompts
     5. Return answer, retrieved chunks with metadata, and confidence level
     """
+    vs = _get_vector_store()
+    client = _get_client()
+
     # --- Retrieve & re-rank ---
-    results = vector_store.search(question, k=RETRIEVE_K)
+    results = vs.search(question, k=RETRIEVE_K)
 
     # Take the top-N (already sorted by score from FAISS)
     top_results = results[:TOP_N]

@@ -5,7 +5,7 @@ import { PureMultimodalInput } from '../components/ui/multimodal-ai-chat-input';
 import { useAuth } from '../context/AuthContext';
 import {
     MessageSquare, Plus, Trash2, Menu, X, Copy, Check,
-    ChevronDown, Loader2, Pencil, FileText
+    ChevronDown, Loader2, Pencil, FileText, Image
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
@@ -168,12 +168,17 @@ export default function Chatbot() {
     const handleSendMessage = useCallback(async ({ input, attachments: msgAttachments }) => {
         if (!input.trim() && msgAttachments.length === 0) return;
 
-        // Detect PDF attachments
+        // Classify attachments
         const pdfAttachments = msgAttachments.filter(a =>
             a.name?.toLowerCase().endsWith('.pdf') || a.contentType === 'application/pdf'
         );
+        const imageAttachments = msgAttachments.filter(a =>
+            a.contentType?.startsWith('image/')
+        );
         const otherAttachments = msgAttachments.filter(a =>
-            !a.name?.toLowerCase().endsWith('.pdf') && a.contentType !== 'application/pdf'
+            !a.name?.toLowerCase().endsWith('.pdf') &&
+            a.contentType !== 'application/pdf' &&
+            !a.contentType?.startsWith('image/')
         );
 
         // ── Case: PDF uploaded ─────────────────────────────────────────────
@@ -192,7 +197,6 @@ export default function Chatbot() {
                 setIsGenerating(true);
 
                 try {
-                    // Fetch the actual file blob from the blob URL
                     const blobRes = await fetch(pdfAtt.url);
                     const blob = await blobRes.blob();
                     const file = new File([blob], pdfAtt.name, { type: 'application/pdf' });
@@ -211,8 +215,7 @@ export default function Chatbot() {
                     if (!currentSessionId) {
                         setCurrentSessionId(session_id);
                         setChatSessions(prev => [{
-                            session_id,
-                            title,
+                            session_id, title,
                             last_message: summary.substring(0, 80),
                             updated_at: new Date().toISOString(),
                         }, ...prev]);
@@ -243,7 +246,78 @@ export default function Chatbot() {
                     setIsGenerating(false);
                 }
             }
-            // If there was also text input with non-pdf attachments, fall through
+            if (!input.trim() && imageAttachments.length === 0 && otherAttachments.length === 0) return;
+        }
+
+        // ── Case: Image uploaded ───────────────────────────────────────────
+        if (imageAttachments.length > 0) {
+            for (const imgAtt of imageAttachments) {
+                const userMsg = {
+                    id: `msg-${Date.now()}-img`,
+                    role: 'user',
+                    content: input || 'Analyze this image.',
+                    attachments: [imgAtt],
+                    isImageUpload: true,
+                    imageName: imgAtt.name,
+                    imagePreviewUrl: imgAtt.url,
+                    timestamp: new Date().toISOString(),
+                };
+                setMessages(prev => [...prev, userMsg]);
+                setIsGenerating(true);
+
+                try {
+                    const blobRes = await fetch(imgAtt.url);
+                    const blob = await blobRes.blob();
+                    const file = new File([blob], imgAtt.name, { type: imgAtt.contentType || 'image/jpeg' });
+
+                    const formData = new FormData();
+                    formData.append('image', file);
+                    if (input.trim()) formData.append('prompt', input.trim());
+                    if (currentSessionId) formData.append('session_id', currentSessionId);
+
+                    const res = await axios.post(`${API}/chat/analyze-image/`, formData, {
+                        headers: { ...authHeaders() },
+                    });
+
+                    const { summary, filename, session_id, title } = res.data;
+
+                    if (!currentSessionId) {
+                        setCurrentSessionId(session_id);
+                        setChatSessions(prev => [{
+                            session_id, title,
+                            last_message: summary.substring(0, 80),
+                            updated_at: new Date().toISOString(),
+                        }, ...prev]);
+                    } else {
+                        setChatSessions(prev => prev.map(s =>
+                            s.session_id === session_id
+                                ? { ...s, last_message: summary.substring(0, 80), updated_at: new Date().toISOString() }
+                                : s
+                        ));
+                    }
+
+                    setMessages(prev => [...prev, {
+                        id: `msg-${Date.now()}-img-ai`,
+                        role: 'assistant',
+                        content: summary,
+                        confidence: 'HIGH',
+                        isImageAnalysis: true,
+                        imageFilename: filename,
+                        timestamp: new Date().toISOString(),
+                    }]);
+                } catch (err) {
+                    const errMsg = err.response?.data?.error || 'Could not analyze image. Please try again.';
+                    setMessages(prev => [...prev, {
+                        id: `msg-${Date.now()}-img-error`,
+                        role: 'assistant',
+                        content: errMsg,
+                        isError: true,
+                        timestamp: new Date().toISOString(),
+                    }]);
+                } finally {
+                    setIsGenerating(false);
+                }
+            }
             if (!input.trim() && otherAttachments.length === 0) return;
         }
 
@@ -421,7 +495,7 @@ export default function Chatbot() {
                                         <h3 className="text-2xl font-bold mb-3" style={{ color: '#15803d' }}>Welcome, {user?.username || 'Farmer'}!</h3>
                                         <p className="text-gray-700 max-w-md mx-auto">
                                             Ask me anything about crops, pest management, soil health, or farming best practices!
-                                            You can also <strong>upload a PDF</strong> to get an instant summary.
+                                            You can also <strong>upload a PDF</strong> to get an instant summary or <strong>upload an image</strong> of your crop/soil issue to get a diagnosis.
                                         </p>
                                     </div>
                                 </motion.div>
@@ -481,6 +555,20 @@ export default function Chatbot() {
                                                                             <FileText size={12} /> {message.pdfName}
                                                                         </div>
                                                                     )}
+                                                                    {/* Image badge */}
+                                                                    {message.isImageUpload && (
+                                                                        <div className="flex items-center gap-1 mb-2 text-xs opacity-80">
+                                                                            <Image size={12} /> {message.imageName}
+                                                                        </div>
+                                                                    )}
+                                                                    {/* Image thumbnail */}
+                                                                    {message.isImageUpload && message.imagePreviewUrl && (
+                                                                        <img
+                                                                            src={message.imagePreviewUrl}
+                                                                            alt={message.imageName}
+                                                                            className="rounded-lg mb-2 max-w-[200px] max-h-[150px] object-cover border border-white/30"
+                                                                        />
+                                                                    )}
                                                                     <div className="whitespace-pre-wrap break-words text-[15px] leading-relaxed">
                                                                         {message.content}
                                                                     </div>
@@ -519,14 +607,25 @@ export default function Chatbot() {
                                                             <div className="flex items-center justify-between mb-2 pb-2 border-b" style={{ borderColor: '#f3f4f6' }}>
                                                                 <div className="flex items-center gap-2">
                                                                     <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f0fdf4' }}>
-                                                                        {message.isPdfSummary ? <FileText size={14} style={{ color: '#16a34a' }} /> : <span className="text-sm">🤖</span>}
+                                                                        {message.isPdfSummary
+                                                                            ? <FileText size={14} style={{ color: '#16a34a' }} />
+                                                                            : message.isImageAnalysis
+                                                                                ? <Image size={14} style={{ color: '#16a34a' }} />
+                                                                                : <span className="text-sm">🤖</span>}
                                                                     </div>
                                                                     <span className="font-semibold text-sm" style={{ color: '#15803d' }}>
-                                                                        {message.isPdfSummary ? `PDF Summary` : 'FarmEasy AI'}
+                                                                        {message.isPdfSummary ? 'PDF Summary'
+                                                                            : message.isImageAnalysis ? '📷 Image Analysis'
+                                                                                : 'FarmEasy AI'}
                                                                     </span>
                                                                     {message.isPdfSummary && (
                                                                         <span className="text-xs" style={{ color: '#6b7280' }}>
                                                                             · {message.pdfFilename} ({message.pdfPages}p{message.pdfTruncated ? ', truncated' : ''})
+                                                                        </span>
+                                                                    )}
+                                                                    {message.isImageAnalysis && (
+                                                                        <span className="text-xs" style={{ color: '#6b7280' }}>
+                                                                            · {message.imageFilename}
                                                                         </span>
                                                                     )}
                                                                     {message.pdfUsedOcr && (
